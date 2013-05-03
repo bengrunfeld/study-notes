@@ -29,7 +29,9 @@
 
 `echo -n "hello"; echo "world"` - you can use semi-colons `;` to break up commands on a single line, and when you press return, they will simply execute one after the other as if you have entered them seperately.
 
-`echo $SHELL` - prints out which Shell you're working in.
+`echo $SHELL` - Will tell you which Shell will be used to log you in.
+
+`echo $0` - Will show you which Shell you're working in right now. 
 
 ##Concepts
 

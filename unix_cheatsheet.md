@@ -33,6 +33,22 @@
 
 `echo $0` - Will show you which Shell you're working in right now. 
 
+`tcsh` or `bash` - To change Shells, just type in the shortened name of that shell
+
+`man echo` - man is short for manual pages. This will show you the help page for any command. Use `spacebar` or `f` to forward a page, `b` to go back a page, and `q` to quit.
+
+`man -h banner` - will give you a shortened version
+
+`man -k banner` - is the same as using `apropos`, which gives you a very short description of what the command does.
+
+With the above `man` or `apropos` commands, if you only type part of the command you're searching for, it will give you a list of possible options.
+
+`whatis banner` - whatis does the same things as `man`, but it will not give you a list of possible options if you only enter part of the command. (e.g. `whatis ban`).
+
+`pwd` - present working directory
+
+
+
 ##Concepts
 
 **The Kernel** is the core of the Operating System in Unix.

@@ -45,7 +45,9 @@ With the above `man` or `apropos` commands, if you only type part of the command
 
 `whatis banner` - whatis does the same things as `man`, but it will not give you a list of possible options if you only enter part of the command. (e.g. `whatis ban`).
 
-`pwd` - present working directory
+`pwd` - present working directory. Will show you the directory you're currently in.
+
+
 
 
 

@@ -245,6 +245,116 @@ To find your current working directory, use
 
 Which stands for present working directory.
 
+	ls 
+
+Will list the files and directories in our present working directory. 
+
+	ls -l -a -h
+
+`-l` will show you a long listing, meaning files will be shown vertically stacked.
+
+`-a` will show us hidden files, meaning files that begin with a dot `.` E.g. `.git`
+
+`-h` will return the size of the files and directories in human readable terms.
+
+Dot files, e.g. `.git` is an invisible config file.
+
+`.DS_STORE` is for the desktop/finder to store information about how we're viewing this folder. Window size, which way we're viewing it, etc.
+
+`.bash_history` is a history of the commands we've been typing. 
+
+Regarding the results from `ls`:
+
+	drwxr-xr-x   8 bengrunfeld  staff    272 May  3 15:38 .
+	drwx------+ 10 bengrunfeld  staff    340 May  2 15:19 ..
+	drwxr-xr-x  13 bengrunfeld  staff    442 May  3 15:36 .git
+	-rw-r--r--@  1 bengrunfeld  staff  64326 May  2 08:49 git_notes.md
+	-rw-r--r--@  1 bengrunfeld  staff   1107 Apr 17 17:12 mou_cheatsheet.md
+	-rw-r--r--@  1 bengrunfeld  staff   4938 Apr 17 17:12 mou_full_help.md
+
+The `d` at the beginning of the permissions means that it is a directory. The dash `-` means that it is a file. Also, you can sometimes have an `l` there, which means link, or shortcut.
+
+`cd Library/Books` - when using `cd`, you should leave off the slash `/` at the beginning of the path, because if you put it in, it means that this is an absolute path, starting from the root directory.
+
+`cd /` - will take you to the root directory.
+
+`cd ~` - takes you to your user directory. 
+
+`cd -` - takes you to the previous directory that you were in.
+
+###File System Orgranization
+
+In a typical Unix organization, you have the following directories and folders:
+
+**/** - Root of the Hard Drive
+
+Inside the Root, there is typically the following:
+
+**/bin** - where binaries and programs are stored. These are Unix programs, not applications like Dreamweaver.
+
+**/sbin** - are for system binaries and system programs
+
+**/dev** - are where there are references and files for different devices like Keyboard, hard drives, mouse, etc
+
+**/etc** - where system configurations go
+
+**/home** - where user home directories go
+
+On most Unix systems when you log in, you'll be placed into a directory somewhere inside of **/home**. Not on Mac, but on most Unix systems.
+
+**/lib** - is a place for storing Libraries of code that are referred to by various programs. 
+
+**/tmp** - is for temporary files. Temp files are files that you won't really mind if someone comes in and deletes them
+
+**/var** - is for various files that the system uses. 
+
+**/usr** - where the user would put programs, tools and libraries. Not their files, the User's files live in their **/home** directory. These are programs that are for the user.
+
+**/usr/bin**
+**/usr/etc**
+**/usr/lib**
+**/usr/local** - as above
+
+Most versions of Unix will adhere to this structure. They may add a folder or take away a folder, but it they'll mostly be the same. 
+
+Mac is different though.
+
+###Naming Files
+
+Rules of Unix File Naming:
+
+1. Maximum of 255 characters
+2. Avoid most symbols - e.g. `/ \ * & ^ % $ # < >` and others
+3. Use A-Z, a-z, 0-9, period, underscore, hyphen (but don't start with symbols)
+4. Mostly use lowercase letters because Unix is case-sensitive, although not on a Mac. But it's still an issue if you're trying to pull files on to your Mac from a regular Unix system
+5. Underscores are better than spaces  
+6. escape spaces with `\`
+7. Use quotes around names with spaces
+8. File extensions (.txt, .php, .html) are not necessary but are very helpful
+9. Can't name a file `.` or `..` and shouldn't name any file a Unix command, e.g. `echo.txt`
+
+###Creating Files in Unix
+
+There are 3 main ways to create files in Unix.
+
+1 Unix text editors
+2 Direct output to file
+3 Touch  
+ 
+	touch
+
+What `touch` does is that it reaches out to a file, and if it exists, it touches it and updates its access time. If it doesn't exist, it creates it for us. 
+
+But if you `touch` a file or directory that exists, it will update the time at which it was accessed last.
+
+
+
+
+
+
+
+
+
 
 
 

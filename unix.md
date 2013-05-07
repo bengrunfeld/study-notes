@@ -348,6 +348,209 @@ What `touch` does is that it reaches out to a file, and if it exists, it touches
 But if you `touch` a file or directory that exists, it will update the time at which it was accessed last.
 
 
+##Using Text Editors
+
+In the beginning, developers working on Unix used to use a text editor called "ed", which is short for editor, and is not user-friendly.
+
+Then Unix developers came out with something that was a little more user friendly, called 
+`vi` which is short for 'visual editing mode', which was upgraded and called `vim` (vi improved). 
+
+Vim is still in use. It's a modal editor, where your fingers stay in the middle of the keyboard.
+
+Another popular editor is `Emacs`, which is short for "editor macros". It's power comes from all the macros that have been developed around it, which allow you to automate a lot of your work
+
+A better editor for beginners was pico (pine composer), which lager became nano (1000x larger than pico), which has basic features and is easy to use. Pico was a very simple email program. 
+
+If you type pico into your mac, it will put you into nano.
+
+
+##Reading Files
+
+Yes, you can nano to read file, but there are other tools in Unix that are JUST for reading files. 
+
+This is important, because you can output the text of a file to different commands and different programs, not just the screen.
+
+Here are some tools to read files: 
+
+`cat` - concatenate. `cat` at its simplest level allows you to read files, but the reason it's called concatenate is that it can also join several files together and print them to the screen, hence the term. The problem with `cat` is that it doesn't paginate the results, so you have to scroll up and down.
+
+`more` - prints a file to the screen, and paginates it, but doesn't allow you to go back through the pages.
+
+`less` - is an improvement of `more` that paginates results but allows you to go backwards through the pages. `less` has completely replaced `more`, (the joke is that less is greater than more), so if you type `more` onto a Mac, it will actually activate `less`. 
+
+`man` pages use `less`. `spacebar` or `f` goes forward, `b` goes backward, `q` exits. `g` goes to the start of the document. `shift + g` goes to the end.
+
+`less -M filename.txt` - gives you a better prompt, shows you how far you've got through the document and which lines you're viewing
+
+`less -N filename.txt` - shows you line numbers
+
+###Reading portions of files
+
+`head` - displays lines from beginning of a file (default: first 10 lines)
+
+`tail` - displays lines form end of a file (default: end 10 lines)
+
+Usefull for peeking at the beginning or end of a file. Good for logs, where newest stuff is at beginning or end of file.
+
+`tail -f` - will follow the file. It won't exit immeditately from viewing the file, but will watch for changes to the file and update your screen if anyone saves something else there.
+
+To exit, use `Control + c`
+
+To look at your system log, use:
+
+	tail -f /var/log/system.log
+
+To see the system log, i.e. requests coming into the server, use:
+
+	tail -f /var/log/apache2/access_log
+
+Or to see the error log, use:
+
+	tail -f /var/log/apache2/error_log
+	
+##Creating Directories
+
+To create directories, use:
+
+	mkdir directory_name
+
+Or to create a directory inside of another directory:
+
+	mkdir parent/child
+
+But if you create a directory 2 levels deep, it will create 2 directories. So in this example, if parent exists, but the other 2 don't, it will create child and grand_child. You need to pass in the `-p` option, otherwise it won't work. `-p` stands for **parent**.
+
+	mkdir -p parent/child/grand_child
+
+You can also pass in the `-v` option, which stands for **verbose**. Using this will print to the screen a report of which directories were created.
+
+###Copying Files and Directories
+
+To copy a file, use:
+
+	cp oldname.txt newfile.txt
+
+**`cp` Options:**
+
+* `-n` - no overwriting
+* `-f` - force overwriting (**default**)
+* `-i` - interactive overwriting "ask me"
+* `-v` - verbose
+
+
+Copying directories works the same way, except with one difference. You need to use the `-R` option, which stands for copy Recursively down the line until you finish.
+
+	cp -R dir1 dir2
+
+Sometimes `-r` will work as well, but you should really use `-R`.
+
+###Moving and Renaming Files and Directories
+
+To move a file, use:
+
+	mv filename.txt destination/filename.txt
+
+But destination needs to be an existing directory.
+
+You can even use 
+
+	mv filename.txt destination/
+	mv filename.txt destination
+
+And these will both work.
+
+To rename a file:
+
+	mv oldfilename.txt newfilename.txt
+	mv oldfile.txt destination/newfile.txt
+
+To rename a directory:
+
+	mv old_dir_name new_dir_name
+
+This only works if new_dir_name doesn't exist. If it exists, it will simple move the directory. But if `new_dir_name` doesn't exist, it will say, "oh, you want to do a rename. ok. BANG!"
+
+**`mv` Options**
+
+* `-n` - no overwriting
+* `-f` - force overwriting (**default**)
+* `-i` - interactive overwriting "ask me"
+* `-v` - verbose
+
+
+
+
+###Deleting Files and Directories
+
+When you delete something, it is destructive, meaning that it is destroyed completely. It is not placed in the trash. It is totally destroyed.
+
+To delete a file, use:
+
+	rm filename.txt
+
+I tested it, and you can also delete multiple files this way just by adding more on to the end.
+
+	rm file1.txt file2.txt
+
+To delete a directory, we have 2 options:
+
+	rmdir dir_name
+
+The issue with this is that `rmdir` will only remove directories that are empty.
+
+To delete a directory that is NOT empty, use
+
+	rm -R dir_name
+
+This will destroy everything inside of the directory, plus the directory itself.
+
+
+
+##Links and File Aliases
+
+Conceptually, links are similar to file aliases that you create in the Mac OS X Finder. They're not the same thing, though. 
+
+1. Create a file
+2. Go to the Finder and then navigate to `File -> Make Alias` (or `Cmd + L`) or we can `option + command + drag the file` to create the Alias
+3. Rename the new file
+4. There will be an arrow on the icon in the Finder that tells you it's an Alias
+
+If the file or the alias moves, it still points to the file, no matter where we relocate either.
+
+If you delete the file, it will break the alias.
+
+We can also make aliases of folders the same way.
+
+Aliases are bigger files, because that is the info the Finder uses to keep track of the original file.
+
+If we open the file alias or directory alias in the Finder, it will open the original file. This doesn't happen in Unix.
+
+If we open the file alias in Unix, it will open as Gibberish (compliled code). They are only for the Finder.
+
+Instead, we'll need to use the Unix version of aliases, which are called **Links**.
+
+###Hard Links
+
+To make a Hard Link
+
+	ln file_to_link.txt hard_link_name.txt
+
+Creates a reference to a file in the filesystem.
+
+Does not break if file is moved.
+
+Unlike Aliases in the Finder, the file does not break if the original file is deleted.
+
+This is because both files are pointing to the same storage address on the hard drive. This is different to the Alias in the Finder, which points to the file, instead of the memory address.
+
+The hard link doesn't even have to have a file extension.
+
+
+
+
+
+
+
 
 
 

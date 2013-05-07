@@ -47,6 +47,8 @@ With the above `man` or `apropos` commands, if you only type part of the command
 
 `pwd` - present working directory. Will show you the directory you're currently in.
 
+`nano` - starts the nano text editor.
+
 
 
 

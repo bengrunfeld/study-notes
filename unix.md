@@ -644,6 +644,30 @@ The group that owns most of the files about is `staff`
 
 We can set permissions based on the owner or based on the group.
 
+We can share files with other users.
+
+To change the permissions of a file, we use 
+
+	chown user:group filename.txt
+
+which stands for **"change ownership"**.
+
+To change only the owner or only the group, use:
+
+	chown user filename.txt
+	chown :group filename.txt
+
+We can do this for directories as well, but it won't change all of the contents of the directory. The files inside will keep the ownership they already have. To change everything in the directory as well, we use:
+
+	chown -R user:group filename.txt
+
+`-R` stands for recursively. This will go down through everythign inside the directory.
+
+You can't just change the ownership to another user, since that would be a security concern. You can only do this if you are an administrator on the machine, and then you need to use `sudo`. E.g.
+
+	sudo chown user:group filename.txt 
+
+Then it will ask for your password to make sure.
 
 
 

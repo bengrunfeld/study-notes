@@ -547,13 +547,102 @@ The hard link doesn't even have to have a file extension.
 
 
 
+###Symbolic Links
+
+Also know as **sym links**. To create a symbolic link, use:
+
+	ln -s filetolink symlink
+	
+The difference between hard links and symbolic links is that symbolic links reference the path to the file. Not the file itself.
+
+So sym links are more interested in the directory the file is in.
+
+Will break if moved. Will break if deleted.
+
+If you do 
+	
+	ls -la
+
+it will appear as 
+
+	`symlink -> filtolink.txt`
+
+##Searching for Files and Directories
+
+Spotlight is the searchbar that the finder uses. But here's the Unix way:
+
+	find path expression
+
+e.g.
+
+	find ~/Documents -name "myimage.png"
+	
+This will return anything in **Documents** that has exactly the name **myimage.png**.
+
+To search for something less specific, we need to use wildcard characters. In Unix, these are:
+
+	*	//zero or more characters (glob)
+	?	//any one character
+	[]	//any character in the brackets
+	
+
+Here is an example of how to use a wildcard
+
+	find ~/downloads -name '*.csv'
+	find ~/Documents -name 'git_notes.[p]??'
+	find ~/Documents -name 'git_notes.*'
+
+And there are many other options you can feed in. If you don't want something that has a certain path, use
+
+	find ~/Documents -name 'git_notes.*' -and -not -path *notes*
 
 
+##File Ownership and Priveledges
 
+Because Unix is designed to be a multi user system, it would not make sense if all users has all permissions to everyone elses files.
 
+To find out who you are, use:
 
+	whoami
 
+This is useful if you are logged into a remote user, or if you switch users, etc.
 
+If for some reason your permissions are denied, you can check which user you are, just to be sure.
+
+Each user gets a home directory. `cd ~` to get to it.
+
+That value is stored in `$HOME`
+
+You can create other users through OS X interface, but we prefer to do it from the command line.
+
+###Unix Groups 
+
+A **Group** in Unix is a set of users. Each user belongs to at least 1 group. A primary group. And they can belong to any number of other groups as well.
+
+Groups are good for associating a group of users with a file. So file permissions can be set by group. (e.g. IT Group), so all you'd have to do is add a user to a group and they'd have access to that file.
+
+Groups are really used for shared systems, like remote servers, etc.
+
+To see which groups you belong to, use:
+	
+	groups
+
+###File and Directory Ownership
+
+Ownership is an essential part of working in a multi-user environment. It's how Unix determines which files you can access and which ones you can't. You can see the ownership of files and directories everytime you use `ls -la`
+
+It's the second and third columns in the results list. E.g.
+
+	drwxr-xr-x    6 root         admin    204 Jan 17 12:53 ..
+	-rw-------    1 bengrunfeld  staff      3 Jan 26 09:11 .CFUserTextEncoding
+	-rw-r--r--@   1 bengrunfeld  staff  15364 May  6 08:25 .DS_Store
+	drwx------   20 bengrunfeld  staff    680 May  8 09:09 .Trash
+
+The owner for almost all of the files above is `bengrunfeld`.
+
+The group that owns most of the files about is `staff` 
+
+We can set permissions based on the owner or based on the group.
 
 
 

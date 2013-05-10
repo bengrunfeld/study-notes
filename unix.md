@@ -337,11 +337,13 @@ Rules of Unix File Naming:
 
 There are 3 main ways to create files in Unix.
 
-1 Unix text editors
-2 Direct output to file
-3 Touch  
+1. Unix text editors
+2. Direct output to file
+3. Touch  
+
+.
  
-	touch
+	touch filename.txt
 
 What `touch` does is that it reaches out to a file, and if it exists, it touches it and updates its access time. If it doesn't exist, it creates it for us. 
 
@@ -669,13 +671,661 @@ You can't just change the ownership to another user, since that would be a secur
 
 Then it will ask for your password to make sure.
 
+###File and Directory Permissions
+
+To see permissions we use `ls -la`.
+
+	drwxr-xr-x    6 root         admin    204 Jan 17 12:53 ..
+	-rw-------    1 bengrunfeld  staff      3 Jan 26 09:11 .CFUserTextEncoding
+	-rw-r--r--@   1 bengrunfeld  staff  15364 May  6 08:25 .DS_Store
+	drwx------   20 bengrunfeld  staff    680 May  8 09:09 .Trash
+
+We see permissions in the first column, where the first character indicates if it is a file, directory, or link. So, `d` for directory, `-` for file, `l` for symbolic link.
+
+The next 9 characters after that are an indicator of the permissions for this file or directory.
+
+This system is called **Alpha Notation**
+
+We have 3 groups: User, Group, Other
+
+User is us, Group is whatever group we belong to, and Other who is everyone else who might have access to this file.
+
+For each group, we can have 3 levels of permissions: Read, Write and Execute.
+
+Read means we can read the contents of the file. Write means we can change the contents of the file. Execute for a file means that we can run it, but for a Directory, it means that we can search inside of it.
+
+To represent the permissions, we use
+
+	read (r)
+	write (w)
+	execute (x)
+
+Here's how to notate the permissions that you'd like to grant:
+
+	rwx
+	rw-
+	r--
+
+If you put them all together, you get 9 characters, which is what you see with `ls -la`
+
+Usually for text files, you don't enable execute permission, because it's not a script. You only need to read it.
+
+By default, directories are given execute permission when they are created.
+
+###Changing Permissions for Files and Directories
+
+We use `chmod` to change permissions - which stands for **Change Mode**, which is how Unix refers to the mode of these files (i.e. permissions).
+
+	chmod mode filename.txt
+
+We're going to use U, G, and O, to stand for User, Group, and Other.
+
+To give ALL groups ALL permissions, use:
+
+	chmod ugo=rwx myfile.txt
+	
+To set different permissions for different groups, use:
+
+	chmod u=rwx,g=rw,o=r myfile.txt
+
+To change the permissions to something slightly different without having to write all that out, use:
+
+Give User and Group write permissions to this file:
+
+	chmod ug+w myfile.txt
+
+Or to take away permissions, use:
+
+	chmod o-w myfile.txt
+
+A shorthand notation to do all 3 groups together. Instead of:
+
+	chmod ugo+rw myfile.txt
+
+Use:
+
+	chmod a+rw myfile.txt
+
+which has the same effect.
+
+If we `chmod` a directory, it will only change the directory itself, not all the files that are in it. To recursively change all the files in the directory, and all of its sub-directories, use:
+	
+	chmod -R g+x dirname
 
 
+###Changing Permissions with Octal Notation
+
+Octal notation is very popular and a lot of people use it.
+
+Instead of using letters, **Octal Notation** uses numbers.
+
+	r = 4
+	w = 2
+	x = 1
+
+Here's how to use Octal Notation
+
+. 		    | User | Group | Other
+---------   | ---- | ----- | -----
+Read (r)    | 4    | 4     | 4
+Write (w)   | 2    | 2     | 0
+Execute (x) | 1    | 0     | 0
+**Total:**  | 7    | 6     | 4
+
+So the total when you add them up is:
+
+Those 3 digits (764) are the Octal notation of the 9 rwx characters. Hence:
+
+	rwxrw-r-- = 764
+
+So to give a file ALL permissions using Octal notation, use:
+
+	chmod 777 myfile.txt
+
+To give rwxrw-r-- permissions, use:
+
+	chmod 764 myfile.txt
+
+A popular combination is:
+
+	chmod 755 myfile.txt
+
+This means that I (User) have all priveledges, but everyone else (Group + Other) only have read and execute permissions. 
+
+	chmod 000 myfile.txt
+
+Means that no-one has ANY priveledges, but a more common way of doing this is by giving the User priveledges, but no-one else, so:
+
+	chmod 700 myfile.txt
+
+###The Root User
+
+The Root User is a super-user account that can do **ANYTHING** on the Unix system.
+
+It's an all-powerful user that can read, write, or execute anything, delete user accounts, change permissions, etc.
+
+The Root User is disabled by default on Mac OS X after it has set everything up for you. Recommended NOT to re-enable it, because there's another way.
+
+Remote Unix servers usually do have Root enabled. 
+
+###Sudo
+
+Sudo is a command that allows us to temporarily take on the powers of the Root user.
+
+Even though the Root User is disabled on the Mac, as Admin users, we can do everything that the Root User can do. We just have to do it using the `sudo` command.
+
+`sudo` stands for **Substitute User and Do**.
+
+Some people mistakenly believe that it stands for **Super User Do** because the Root User is a super user, but what it's actually doing is substituting in a different User identity.
+
+`sudo` is a command that prefixes other commands.
+
+E.g.
+
+	sudo la -la
+
+This just means, do `ls -la` as the Root User.
+
+It will then ask for a password, just to make sure.
+
+Once you've entered your password, it won't ask for your password again for about 5 minutes, even if you use the `sudo` command again. This can be changed in your configuration file.
+
+To expire the password right now, use:
+
+	sudo -k
+
+**Changing Users**
+
+Root is not the only User you can become. 
+
+	sudo whoami
+
+Will tell you that you're Root
+
+	sudo -u greg whoami
+
+This will return greg (assuming greg is a User on your machine).
+
+We're substituting our identity before we execute the command. So we can become a different User and take on THEIR priveledges and THEIR role as easily as we can root.
+
+So I could look at, write to, or read their files AS THEM.
+
+Not everyone can do `sudo`. If you go into settings in the GUI -> Settings -> Accounts, you'll see some Users are Admins and some aren't. Being an Admin means you can use `sudo`. If you're not an admin, you can't use it.
+
+In Unix, there's something called a `sudoers` file. To get to it, use:
+
+	sudo cat /etc/sudoers
+
+The bottom lines set which Users and which Groups have `sudo` access, aka admin access.
+
+##Unix Command and Programs
+
+Every command is a program, but we call them commands for convenience. Commands are files that are executable that get executed when you run them.
+
+Command files are stored in `/bin` in Unix, so for example, `echo` is stored in `/bin/echo`.
+
+To execute a file, you just type the filename and hit `return`. This is a shortcut for typing `/bin/echo "hello there!"`
+
+Commands are just a shorthand for saying 'go to these files and execute them'.
+
+To find where the file of a command is, use either of:
+
+	whereis echo
+	which echo
+
+We can also use 
+
+	whatis echo
+
+but that will return much more information. 
+
+####Command Basics
+
+Most of the time (but not always), you can pass in the following options successfully:
+
+	-v
+	--version
+	--help
+
+To exit out of a program, use one of the following:
+
+	q
+	x
+	Control + q
+	Control + x
+	ESCAPE
+
+Or if you're really stuck, you can perform a FORCE QUIT with
+
+	Control + c
+	
+Or you could close the window, but the process might keep running.
+
+We can also put semi-colons `;` between commands to run multiple commands on one line.
+
+###The PATH Variable
+
+`echo` is just a shortcut to `/bin/echo`. But if I create another file called `echo`, how does Unix know which one to use?
+
+Unix manages all this by using a variable called `$PATH`.
+
+`echo $PATH` will show you the current value of your Path. i.e.
+
+	/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin
+
+The Path is always a colon-separated list of file paths and this is the list that Unix will use when trying to locate commands to execute. The early entries take presedence over the later ones, so what it does is that is starts at the left, and when we type echo, it says, "I'll start in /usr/bin". If it doesn't find echo there, it will look in `/bin`. In this case, it will find `echo` there, but if it didn't, it would then keep looking in the file paths that come after it.
+
+If it didn't find it in any of those places, it would say that the command could not be found.
+
+This is what happens if you just typing in some gibberish like `fstenr`. It will look in all of those paths and then say that it could not find it. 
+
+We can change this in **bash** by just typing
+
+	PATH=<whatever you want the path to be>
+
+With Web Development, we'll usually have a mysql folder, which we want Unix to look in when we type a MySQL command.
+
+Setting the Path like this only lasts for the current session. So if you close the window and then open it again, whatever you saved into Path will have been reset.
+
+If we use `which ls`, it will tell us which verson of `ls` we're using. There may be several versions of `ls` that are there, but it tells us the Path variable as a way of telling us which version it will use.
+
+`which` is slightly different that `whereis` because `which` uses our path to tell us which one is active. 
+
+###System Information Commands
+
+To see the current date, use
+	
+	date
+
+Remember, this is the date that the computer has currently been set to, which may not be entirely correct if it has been set to something else. Same as on clock in GUI.
+
+	uptime
+
+Will tell you how long the computer has been on for, and returns something like this:
+
+	11:42  up 2 days, 17:45, 2 users, load averages: 2.09 1.98 1.86
+
+Here you can see that there are 2 users. If you type:
+
+	users
+
+It will show you what users are there, but will only return 1 User. To see the other User, you'll need to use:
+
+	who
+
+this shows us a list of ALL users and what they're doing, and it doesn't remove duplicates. `users` DOES remove duplicates. 
+
+One of these Users is the terminal window, and the other is the GUI of the operating system (console).
+
+	uname
+
+Will return the operating system name. This is the Unix name. OS X runs on top of that.
+
+	uname -mnrsvp
+
+Will give you a heap of information about hhe operating system. A shortcut for this command is to use `-a` which covers everything besides `-p`, so you still have to add it in there.
+
+	uname -ap
+
+For network environments (e.g. on a remote server): To find the name of the host that you're on, use:
+
+	hostname
+
+And to find the domain name, use
+
+	domainname
+
+###Hard Drive Information Command (aka Disk Info Commands)
+
+	df
+
+Stands for **disk freespace**, and will return the amount of disk freespace available to us. 
+
+There are a couple of devices, but usually we ignore these. We look for the things with the big numbers.
+
+Because these numbers can be a bit hard to read, we have the `-h` option, which stands for **humanize**.
+
+	df -h
+
+This will display memory units in kilobytes, megabytes, and gigabytes. There is an issue with this, though. Memory units can be calculated in base 2 and base 10.
+
+To use base 10, use `-H`
+
+	df -H
+
+This will show us the bigger number.
+
+To see Disk Usage, use:
+
+	du
+
+We need to provide it the path that we want it to look at, and it will give us a lot of information about the disk usage at that path.
+
+We wouldn't want to do this at the root of our hard drive because it would tell us every single file and folder on the hard drive.
+
+	du ~/Documents
+
+This will tell you what the size is for each of the directories that it sees.
+
+For the Human Readable version of the memory units, use `-h`. e.g.
+
+	du -h ~/Documents
+
+It has a `-H` option, but it is totally unrelated to Human Readable output, so you wouldn't want to use it.
+
+To see all of the files as well as the directories, use the `-a` option.
+
+	du -ah ~/Documents
+
+To tell Unix how many directories deep it needs to go, use the depth option `-d`
+
+	du -hd 1 ~/Documents
+
+This will only return results 1 directory deep. If we wanted to see 2 directories deep, we'd use 2. etc. 0 means just this directory.
+
+`du` returns the size that has been set aside for these files on the hard drive. That's different from the size the files are actually using.
+
+To see the actual size the files are using, use:
+
+	ls -lah ~/Documents
+
+and you'll see that most of the time the files use much smalled amounts than what is returned with `du`. The reason for this is because the file systems sets aside **blocks** of space for files, even if the file doesn't take it all up. There is a minimum size for that. `du` returns the block size, not the actual size.
+
+This is what defragmenting the hard drive does. It reclaims size by changing the block size to be much closer to what the actual file size is.
+
+###Unix Commands for Managing Processes
+
+There is the Kernel and there is the Shell, which in our case is Bash.
+
+Whenever we run a command inside our Shell, a file executes and it communicates with the Kernel. Essentially, it says to the Kernel "there are some things I need to accomplish here. Can you help me out?" The Kernel sets aside some memory space and starts a process running in it. 
+
+Then whenever there's output from that process, it returns it back to the Shell for us to see, and whenever the process is done, the Kernel closes it out and reclaims that memory space so that it can be used by other processes. That's what the Kernel does, it manages the processes for us. 
+
+We can have processes that are really short (like the `echo` command), or we could have **longer running processes** (e.g. feeding 5 pages to a printer).
+
+We can also have background processes, e.g. a database server like MySQL, it will just sit in the background waiting for connections and requests, which it will respond to.
+
+To see those processes, use:
+
+	ps
+
+stands for Process Status. It gives us a snapshot of the processes that are running. There are a lot of processes running on the machine, but we don't see these with `ps`. What is we are processes that are owned by me, and processes that have a **controlling terminal**, i.e. that is, I'm in control of them. They are not **background processes**.
+
+To see processes that are owned by other users, use:
+
+	ps -a
+
+If you actually run `ps -a`, it will return `ps -a`, even though we don't own it. Root owns `ps -a`, but we can still see it because it is acting on our behalf.
+
+To get a different implementation of ps, use
+
+	ps a
+
+This no-hyphen version is from a different version of Unix. The reason this is important is because the most classic way to us `ps` is:
+
+	ps aux
+
+`a` means show my all processes regardless of who they're used by, `u` means include a column that shows the user who owns the process, and `x` shows me the background processes too.
+
+This will really show you a list of all the processes you have running right now.
+
+	USER  PID  %CPU  %MEM  VSZ  RSS  TT  STAT  STARTED  TIME  COMMAND
+
+This is the header information. 
+
+`PID` is Process ID. Every process gets assigned a unique ID to help us keep track of it. 
+
+Then the percentag of CPU being used `%CPU`. Then the percentage of memory that it is taking up `%MEM`, then the amount of virtual memory that it is taking up `VSZ`, then it shows us if the terminal has launched it `TT`. Question markes under `TT` means that Mac OS X launched it. 
+
+`STAT` means status. `STARTED` means the time that it started. `TIME` tells us the amount of time that it's been running, and `COMMAND` is the command itself, i.e. a Path to where the file of the command lives.
+
+Remember that `ps` command only gives you a snapshot of what's going on, and this changes. 
+
+###Monitoring Processes
+
+To really watch the process live, i.e. to monitor it, and see the CPU and MEMORY go up and down and processes start and stop, use:
+
+	top
+
+This will show you a list of the top processes. The top processes depends on how you sorted it, and by default it is sorted by PID.
+
+The most recent processes are at the top. Above the results, you'll see some summary information. To exit out, just use `q`.
+
+To set how many processes will show, use
+	
+	top -n 10
+
+This will show only 10 processes. By default it shows how ever many fit into the window you're viewing.
+
+To sort by CPU, use
+
+	top -o cpu
+
+To set the refresh rate (default is 1 second):
+
+	top -s 3
+	
+Will set the refresh rate to 3 seconds
+
+To filter by User, use 
+
+	top -U bengrunfeld
+
+The `?` key will bring up a help screen.
+
+You can also update options while `top` is running.
+
+If you hit `s` and then `1`, it will set the refresh rate to 1 second. To see ALL users, hit `U`. The only thing we can't change from within the program is the `-n` value - i.e. how many processes are showing. 
+
+Linux has a lot more options that you can use with the interactive mode of `top`.
+
+###Stopping Processes
+
+The best way to stop a process is to use `Control + c`. Sometimes we can't use that, though. This usually happens when it's a background process, or the process has gone out of control.
+
+To stop a process, we use the `kill` command. What we need though is the process ID (PID), that's how we tell Unix which process we want to kill.
+
+	kill PID
+
+e.g.
+
+	kill 1953
+
+Some processes can't be killed by using this process.
+
+Try `kill` first, but if it can't do it, use:
+
+	kill -9 1842
+
+This says to Unix "I know better than you! You really need to kill this thing off."
 
 
+###Text File Helpers
+
+These commands help with text files - which are files that have nothing in them besides text.
+
+`wc` - word count
+`sort` - sort lines
+`uniq` - filter in/out repeated lines
+
+If we use `wc`, we get back 3 numbers and then the name of the file:
+
+	       8       7      41 basket.txt
+
+The first number is the number of lines in the file. The second number is the number of words in the file. The third number is the number of characters in the file. 
+
+Unix defines a word as text with spaces on either side of it.
+
+Unix defines a line as something ending with a line return. So a paragraph with wrap around text wouldn't necessarily constitute a whole bunch of lines.
+
+To sort the lines in a file, use
+
+	sort basket.txt
+
+This won't actually modify the file, it will only sort the output that is printed to the screen.
+
+Usually upper-case letters come before lower case letters (ASCII) in a sort, but we can pass in the `-f` option to tell Unix that we want an `A-Z` sort regardless of upper or lower case.
+
+	sort -f basket.txt
+
+To reverse sort, use `-r`, so:
+
+	sort -r basket.txt
+
+To sort with uniques removed, use the `-u` option:
+
+	sort -u basket.txt
+
+To remove repeated lines, where the repeated line came directly after its copy, use
+
+	uniq basket.txt
+
+To only print the lines that are repeated, use 
+	
+	uniq -d basket.txt
+
+To see ONLY the un-repeated lines, use
+
+	uniq -u basket.txt
+	
+
+###Utility Programs
+
+`cal/ncal` - Calculator Program
+`bc` - bench calculator
+`expr` - expression evaluator: a simple one-line calculator
+`units` - units of measure conversion
+
+**Calendar**
+
+`cal` will give you the current month's calendar
+
+	cal 12 2020
+
+Will give you a calendar of the month of December in 2020.
+
+	cal -y 1980
+
+Will show a calendar of the full year of 1980.
+
+`ncal` is a different program that rotates the calendar so that the days of the week run down the left hand side vertically.
+
+**Bench Calculator**
+
+If you enter `bc`, you will go into a program. It's quite a powerful program with it's own maths-related programming language which is similar to C.
+
+You can just enter `1+1` and hit return and it will give you the answer. To quit, type `quit`.
+
+To change the precision re decimal places, use `scale=10` for 10 decimal places.
+
+By default, the precision is 0.
+
+**Expression Evaluator**
+
+To calculate something really simple, you can use `expr`. You need to put spaces in between values, so:
+
+	1 + 1
+
+To do multiplication:
+
+	123 \* 456
+
+You need to escape the `*` first.
+
+**Units**
+
+Typing `units` will drop you into the units program. It then tells you how many different units of measurement it has, and how many prefixes.
+
+	You have: 2 feet
+	You want: meters
+	* 0.6096
+	/ 1.6404199
+	
+I entered in 2 feet, and then meters, and it tells me that that 2 feet is equal to 0.6096 meters. Then it gives us the reverse calculation 1.6404199, because this is sometimes more precise.
+
+For temp:
+
+	You have: 60 degF
+	You want: degC
+
+To quit, use `Control + c`.
+
+We can also use `units` from the command line without dropping into the program. E.g.
+
+	units '2 miles' 'meters'
 
 
+###Unix Command History
 
+Unix remembers our previous commands (e.g. when you use the up arrow). Even if you close the Terminal window and even reboot your machine, it will still remember your last command. 
+
+This history is stored in a file at `~/.bash_history`
+
+Bash only writes your old commands to bash_history when it quits, so right now it won't have your last few commands made from the current window. Until we quit, it just holds onto the current commands in memory.
+
+To really see all commands, including the ones not yet written to bash_history, use:
+
+	history
+
+The list that comes back is numbered, and we can use those numbers to do the command again. Using these numbers is easier that hitting the up arrow, so if something was made 200 commands ago, it's better to do it this way.
+
+To run an old command when you have its number, use:
+
+	!5
+
+for the command with the history id of 5.
+
+If you then hit the up arrow, it will bring up the last command itself, not `!5` which is a shortcut. If you then edit it and press the down arrow, then run `history`, it will show you the edited version with an asterisk next to it to indicate that the command was edited.
+
+To tell Unix that you want to run a command from 2 commands ago, use:
+
+	!-2
+
+This will run edited commands.
+
+If you ran `expr 32 + 62` a few commands ago, you can run that exact command again by typing:
+
+	!expr
+
+This will look for the last `expr` command you ran and then run it again. You could even type `!ex` and it will still work.
+
+A way of saying "run the last command" is `!!`. So say you run:
+
+	chown bengrunfeld file.txt
+
+and it throws you an error, you can just run
+
+	sudo !!
+
+Alternatively, `!$` will reference the arguments from the previous command.
+
+To delete a line out of `history`, use:
+
+	history -d 68
+
+where 68 is the line number. Everything will then shift up one.
+
+	history -c
+
+will remove all of your history. Or you can just delete the `.bash_history` file.
+
+
+##Standard Input and Standard Output
+
+**Standard Input**
+
+The standard input is the Keyboard. 
+`stdin`
+`/dev/stdin`
+
+**Standard Output**
+
+The standard output is the window or terminal, where it outputs its results to.
+`stdout`
+`text/terminal`
+`/dev/stdout`
+
+We're going to be changing each of these.
 
 
 

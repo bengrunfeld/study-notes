@@ -1327,6 +1327,263 @@ The standard output is the window or terminal, where it outputs its results to.
 
 We're going to be changing each of these.
 
+###Directing Output to a File
+
+To direct the output of a command to a file, we use the `>` character. E.g. with sort:
+
+	sort mylist.txt > sortedlist.txt
+
+The file `sortedlist.txt` doesn't have to exist yet, as this process will create it on the fly.
+
+Any command that outputs to the screen can be outputted to a file instead. 
+
+This command does overwrite in a destructive fashion. It will replace anything inside a file that already exists, if you write to it.
+
+A classic use case for this command is:
+
+	cat file1.txt file2.txt > joined_files.txt
+
+This concatenates file1 and file2 and then writes the output into joined_files.txt
+
+**Appending Output to the End of a File**
+
+To append something to the end of a list instead of completely overwriting an existing file, use `>>` instead of `>`.
+
+	echo "apple" >> fruitbasket.txt
+
+###Directing Input from a File
+
+Instead of using input from the Keyboard, we can use input from a file.
+
+	sort < fruitbasket.txt
+
+This will take the input from the file `fruitbasket.txt` and direct it to the command `sort`. Of course, this doesn't do anything different, because that's what the command does anyway, but this is the general theory.
+
+A clearer way of seeing this work is with `bc`. 
+
+	echo "768+49-(6/2)" > calc.txt
+	bc < calc.txt
+
+**Combining Input and Output Methods**
+
+We can use both `<` and `>` in the same command.
+
+	sort < fruitbasket.txt > sortedfruit.txt
+
+This will input `fruitbasket.txt` to the `sort` command, and then write the output to `sortedfruit.txt`.
+
+Two rules:
+
+1. The input always has to come before the output
+2. The arguments to these always have to be files
+
+###Taking the Output of a Command and Using it as the Input to Another Command
+
+To take the output of a command and use it as the input for another command without having to use a file as a go-between, we use:
+
+	echo "Hey there" | wc
+
+This will take the output of `echo` "Hey there", and use it as the input for `wc`.
+
+Or we can use it like this:
+
+	echo "(4*7)-6" | bc 
+
+We use Pipe `|` as a verb, saying we want to pipe something into something else.
+
+You can use pipe `|` multiple times in a single line.
+
+	echo "(4*7)-6" | bc > calc.txt
+
+This can be really useful, like if we wanted a paginated of our processes:
+
+	ps aux | less
+
+Remember, when using pipe `|`, we are piping it into a command - not a file - and the output from it should be from a command - not a file.
+
+###Suppressing Output
+
+There are times when you don't want to output anything to the screen, and you don't really want to output it ot a file either.
+
+To suppress the output altogether, we output it to a special file called the "null device", aka the "bit bucket" or the "black hole". It lives in `/dev/null`.
+
+Unix discards any data that is sent there.
+
+	ls -la > /dev/null
+
+##Configuring Bash to Your Personal Preferences
+
+To do this, we provide commands inside Bash resource files. 
+
+Upon login to a bash shell:
+* /etc/profile
+* ~/.bash_profile, ~/.bash_login, ~/.profile, ~/.login
+
+When you open a terminal window, or log into a bash shell in any other way, the first thing it does is it reads any commands that are inside `/etc/profile`. Those are master default commands that every Bash user will get. We don't want to mess with those, so we'll leave them alone. 
+
+Instead, we want to take care of personal customizations that apply only to us. Because they're personal customizations, they're going to live inside our User directory. 
+
+The 4 file paths above all begin with `~`, which means they're all in our User directory. Also, they are all dot files. As a dot file, they are not visible in the finder, and the dot also says that they're really a configuration file.
+
+We have 4 choices. After Bash reads through `/etc/profile`, it goes to our user directory and it sees which one of these 4 files it can find, *in the order above*.
+
+When it finds one, it reads the commands that are in there, and then it ignores the rest of the files. So it just goes until it finds one and then executes only that file. So there's no point in putting commands in both `.bash_profile` and `.bash_login`. Any commands in `.bash_login` will just get ignored in that instance.
+
+We're going to put everything into `~/.bash_profile`. 
+
+`~/.bash_profile` and `~/.bash_login` are there for bash. `~/.profile` and  `~/.login` are there for historical and backwards compatability reasons, and they apply to other shells. 
+
+If we're using other shells, we're better off using their profiles instead.
+
+That only covers when we open a new shell by opening a new terminal window. 
+
+If we type `bash` from the command line, it will open up a new shell, but it's not a login shell. There's a distinction between them. The login shell is the first time when we open up the terminal window, but typing `bash` on the command line opens up a sub-shell. 
+
+When we start a new bash subshell, it executes the commands inside of `~/.bashrc` where `rc` indicates resource. 
+
+So anything we put into `~/.bash_profile` isn't available to us when we go into a subshell, and anything we put into `~/.bashrc` isn't available to us *until* we go into a subshell. 
+
+So we want to have a way where we have one set of commands that are available to us in both cases. We want the same configuration regardless of whether we're in the master shell or in a subshell.
+
+Upon logging out of a bash shell, Unix will run any command that's inside the `~/.bash_logout` file.
+
+To get the load order for other shells, use:
+
+[http://en.wikipedia.org/wiki/Unix_shell](http://en.wikipedia.org/wiki/Unix_shell)
+
+The way to deal with the difference between the shell and the subshell is to write a script that says "if you find `.bashrc` then load it into the main `.bash_profile` file."
+
+Add to `~/.bash_profile`:
+
+	if [ -f ~/.bashrc ]; then 
+		source ~/.bashrc
+	fi
+
+Now whatever is in `.bashrc` will be inside of `.bash_profile`. When you load the terminal window, whatever is inside `.bash_profile` and `.bashrc` will run, and whenever you load a subshell, whatever is inside `.bashrc` will run.
+
+
+###Setting up Command Aliases
+
+This is not a Finder alias. It is a Command alias - which is a shortcut that will execute different commands in bash.
+
+	alias
+
+Will return a list of all the currently defined aliases.
+
+	alias ll='la -la'
+
+This means that anytime in the future that I type `ll` in the command line, it will run `la -la`.
+
+Aliases only last for the current login. To make sure you can use them every time you log into Unix, put the alias definitions in `.bash_profile`.
+
+Another use of `alias` is to redefine some unix commands, but with options.
+
+	alias mv='mv -i'
+
+Another thing some Unix users do is correct their typos ahead of time
+
+	alias pdw='pwd'
+
+###The Source Command
+
+You can use `source` to run the contents of a file.
+
+	source .test
+
+this will run the code inside the `.test` file.
+
+
+###Setting and Exporting Environment Variables
+
+Environment variables are also known as Shell variables. We use environment variables so that we can configure our working environment. 
+
+An example of Shell Variables is:
+
+	echo $SHELL
+
+and it returns the default login shell for the current user. Shell variables are written in all caps. The dollar sign `$` is not actually part of the variable name. The dollar sign `$` is there to serve as an indication to Unix that we want it to return the value that's stored in the Shell variable. 
+
+We can also define our own Shell variables as well. e.g.
+
+	MYNAME='Ben Grunfeld'
+	echo $MYNAME
+
+Like command aliases, any Shell variables that we set in the current session will be erased once we exit the session. If we want them to always be available, they have to be defined in `.bash_profile` or in `.bashrc`. 
+
+Unfortunately, defining it this way means that the Shell variable won't be available to child processes that Bash starts for us. It will only be available in Bash itself. To indicate to Bash that it should also pass along these variables, or export them to other commands, programs and scripts, we need to use the `export` command. 
+
+	MYNAME='Ben Grunfeld'
+	export MYNAME
+
+Now Bash will know that it needs to export the Shell variable to all of the programs that it runs as well. 
+
+While it's is kind of useful to set your own variables, it is much more useful to use variables to set configuration options for our Unix environment and the programs we use. 
+
+E.g. with Less, there is an environment variable that can be used to configure the default settings that Less will use when it starts up. e.g.
+
+	export LESS='<options we want less to use>'
+
+You can initialize the variable, set it, and export it by just using the `export` command.
+
+	export LESS='-M'
+
+By putting this declaration inside of `.bashrc`, it will be transfered by Bash to all the programs that Bash starts, including Less.
+
+###Setting the PATH Variable
+
+Path is a colon delimited list of file paths that Unix uses when it's trying to locate a command that you want it to run. To see it, use
+
+	echo $PATH
+
+Unix will look in those directories for the command in that order. To set the `PATH` variable use the same as above:
+
+	PATH=''
+
+This will essentially unset the `PATH` variable, meaning that no command will work.
+
+So it is best to put the `PATH` variable in the `.bashrc` file, using an export as above, as a starting point.
+
+	export PATH='/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin'
+
+A common change that people make is to change the order which Unix uses to find the command.
+
+You can also use the `PATH` variable to create a new path, like so, but we need to use double quotes `""`. Single quotes `'` won't work.:
+
+	export PATH="/usr/local/bin:$PATH"
+
+###Configuring Unix History with Variables
+
+Environments variables can help us configure how the Unix history works. There are 5 different variables that we can configure. 
+
+	HISTSIZE=10000							# Default is 500
+	HISTFILESIZE=1000000	
+	HISTTIMEFORMAT='%b %d %I:%M %p '		# Using strftime format
+	HISTCONTROL=ignoreboth					# ignoredups:ignorespace
+	HISTIGNORE="history:pwd:exit:df:ls:ls -la:ll"
+	
+`HISTSIZE=10000` is the number of commands Unix will remember. When it gets to 10000, the oldest command will drop off the top.
+
+`HISTFILESIZE=1000000` is the maximum file size that the history file is allowed to become. This means 1000000 kb, which is a large amount. When it gets to that file size, the oldest command drops off, so that the file doesn't exceed this size.
+
+`HISTTIMEFORMAT='%b %d %I:%M %p '` provides a timestamp next to each of your history entries, letting you know when they were added. 
+
+`HISTCONTROL=ignoreboth`. There are 3 things you can set this to. `ignoredups` means ignore duplicates, i.e., don't record the same line multiple times. `ignorespace` tells history not to record any time that begins with a space. Why would we use this? If you're typing a command that contains sensitive information, like a password, then all you have to do is begin it with a space, and Unix will run it, but History won't record it.
+
+`HISTIGNORE="history:pwd:exit:df:ls:ls -la:ll"` ignores certain commands all the time. 
+
+###Customizing the Unix Command Prompt
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

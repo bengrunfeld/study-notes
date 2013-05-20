@@ -1931,8 +1931,357 @@ If you wanted to use the backslash in SED, you could, but you would need to esca
 
 SED takes a second argument which is a filename.
 
+When using input from a file with TR, we needed to use the `<` character, but with SED you can just put the filename in without it. E.g.
+
+	sed 's/apple/banana/' fruitbox.txt
+
+To redirect the output into a different file:
+
+	sed 's/apple/banana/' fruitbox.txt > bananabox.txt
+
+When working with files, each line gets treated as a stream, so if you don't use the `g` modifier, it will only change the first instance of the search string on each line.
+
+So, if you have a list:
+
+	apple
+	mango
+	banana
+	strawberry
+	apple
+
+It will change it to:
+
+	banana
+	mango
+	banana
+	strawberry
+	banana
+
+But if you have more than one instance of the search string per line, you'll need to use the `g` modifier to make sure they all change.
+
+You can have multiple expressions on the same line, you just need to delimit them with the `-e` option.
+
+	echo 'poop shoot' | sed -e 's/poop/crap/' -e 's/shoot/pipe/'
+
+It's easy to remember the `-e` option, because it stands for `edit`.
+
+If you have a lot of SED commands you want to run on a single input stream, you can put all these edit commands into a file, and you can use the `-f` option to run them all at once
+
+###Using Regex with SED
+
+SED is really similar to GREP. In fact, the only serious difference is that SED adds substitution.
+
+Anything you can find with GREP, you can change with SED. 
+
+Like with GREP, there is an issue with basic vs. extended expressions.
+This will work:
+
+	echo 'who needs chocolate' | sed 's/[ao]/_/g'
+
+But this won't:
+
+	echo 'who needs chocolate' | sed 's/[ao]+/_/g'
+
+To use extended expressions, you need to use the `-E` option, like so:
+
+	echo 'who needs chocolate' | sed -E 's/[ao]+/_/g'
+
+SED doesn't understand the shortcut for tab `\t`. In BASH, you need to hit `Control v` and then the character.
+
+This trick works for other characters as well.
+
+**Back References**
+
+Back references are part of regular expressions and SED makes good use of them. 
+
+A backreference is an regular expression that meets a certain criteria that you can reference later on.
+
+	echo "paydate" | sed -E 's/(...)date/\1time/'
+
+So here, we're looking for anything that is `...time`. We can then reference that `...` as a variable with `\1`. If we have several back references, the first on will be `\1`, the second will be `\2`, etc..
+
+As above, it won't work. Either we need to escape the brackets, or use the `-E` option to enable extended expressions.
+
+##Using CUT
+
+Cut allows you to cut out selected portions of each line of a file. While we could use a SED command to do the same thing, CUT is a much simpler way of doing it.
+
+CUT can cut 3 things: characters, bytes, or fields, and we're always going to need to pick one of those. We'll only do characters and fields here.
+
+	cut -c 2-10 filename.txt
+
+`-c` if for characters, `-b` is for bytes, and `-f` is for fields.
+
+What this will do is that it will return characters in columns 2-10 on each line of the file, excluding everything else. In an `la -lah` command, this will be the permissions.
+
+If you want to cut multiple pieces from a line, use:
+
+	cut -c 2-10,13-22,45- filename.txt	
+
+This will grab columns 2-10, 13-22, and 45 until the end of the line. That is what the dash `-` without an end value represents. We could also use the open dash at the beginning to say, everything from the beginning of the line until column 10, like so `-10`.
+
+We could even pipe `ls -lah` through this, like so:
+
+	ls -lah | cut -c 2-10,13-22,45-
+
+**Using fields with CUT**
+
+We need to have a tab delimited file. CUT will use the tabs to figure out where the columns are.
+
+So if you had a tab delimited file called tabbed_stuff.txt and you ran it in CUT like so,
+
+	cut -f 1,3 tabbed_stuff.tsv
+
+It would return columns 1 and 3.
+
+If you want to use something else as a delimiter, e.g. a CSV, then you'll need to use the `-d` option.
+
+	cut -f 1,3 -d "," comma_file.csv
+
+There's also a `-s` options that does nothing to lines that don't have delimiters.
+
+##Using DIFF
+
+DIFF compares 2 file and reports back on what the differences between them are.
+
+	diff file_1.txt file_2.txt
+
+DIFF then spits out a report of what it found, including a code and an extract of the difference.
+
+If there is a `d` in the reporting code, then it means it detected a deletion.
+
+If there is a `c` in the reporting code, then it means it detected a change.
+
+If there is a `a` in the reporting code, then it means it detected an append.
+
+e.g.
+	
+	2d1
+	< yo mama is so ugly
+
+The numbers on either side of the `d` tell us the line numbers where this would occur in each of the 2 files. The number on the left `2` is from the file on the left: `file_1.txt`, and the number on the right `1` is from the file on the right: `file_2.txt`.
+
+The `<` character before the excerpt lets us know that excerpt comes from the left file, i.e. `file_1.txt`.
+
+With deletions and appends, you'll only get 1 line of excerpt, but with change you'll get 2.
+
+**Diff Options**
+
+Option | Description
+:-----------: | -----------
+`-i`         | Case insensitive
+`-b`         | Ignore changes to blank characters
+`-w`         | Ignore all whitespace
+`-B`         | Ignore blank lines
+`-r`         | Recursively compare directories
+`-s`         | Show identical files
+
+`-r` will allow you to compare 2 directories. It will look for files in each directory that have the same filename and then see if there are differences between them. If the files are identical, it will ignore them, unless you use the `-s` option.
+
+**Controlling Diff's Output Format**
+
+Option | Description
+:-----------: | -----------
+`-c`         | Copied context
+`-u`         | Unified context
+`-y`         | Side-by-side
+`-q`         | Only whether the files differ (returns yes or no)
+
+The `-c` option gives you the full file for each, and then puts in a `-` where something was deleted, a `!` when something changes, and a `+` where something was added.
+
+`-y` does the same thing, but side-by-side.
+
+`-u` really smashes everything together and is the GIT format.
+
+If you want to output results from Diff as a file, suffix the file with `.diff`
+
+To only get a summary of the changes, use:
+
+	diff file_1.txt file_2.txt | diffstat
+
+A change inside a file using diffstat will be reported as an insertion and a deletion. 
+
+Diff works best on 2 files that are similar. Using it on files that differ greatly is pretty much useless.
+
+##Using XARGS
+
+We use Xargs to pass argument lists to commands. XARGS is short for "execute as arguments". It parses an input stream into items and then it loops through each item in that list and passes it to a command. 
+
+If you want to pass a file to `wc`, you could try
+
+	echo "myfile.txt" | wc
+
+But this wouldn't work well. It would only count the words in the string given - i.e. `myfile.txt`.
+
+To actually pass `wc` the contents of the file, we'd need to use:
+
+	echo "myfile.txt" | xargs wc
+
+The man pages define what comes after `xargs` as its utility command. 
+
+If we wanted to see the command before it ran, we could use the `-t` option, like so:
+
+	echo "myfile.txt" | xargs -t wc	
+
+To summarize, XARGS passes its input as an argument to a utility command. 
+
+But the power of XARGS is looping through a list of arguments.
+
+To run multiple files through `wc`, we could do:
+
+	echo "myfile.txt yourfile.csv" | xargs -t wc
+
+And that would work nicely, but sometimes you don't want XARGS to run the utility command with ALL of the arguments, you want it to loop. To do this, we need to use the `-n` option to limit the number of arguments it will pass through. 
+
+	echo "myfile.txt yourfile.csv" | xargs -t -n1 wc
+
+This will only take 1 argument, and then pass it to `wc`, and then it will LOOP, and then pass another argument to `wc`. 
+
+So in the above example, it would run `wc` twice.
+
+To limit the number of lines from a file returned to us, we'd use
+
+	head somefile.txt | xargs -L 2
+
+We can also use a placeholder, similar to a back reference in SED.
+
+	cat fruitbox.txt | xargs -I {} echo "yo mama is a: {}"
+
+That will echo out all of the results in the `{}`.
+
+So we can take that argument and placeit in a specific place. You can use any placeholder, e.g.
+
+	cat fruitbox.txt | xargs -I :FRUIT: echo "yo mama is a: :FRUIT:"
+	
+XARGS will try to split things up by spaces or control characters. This can cause problems because if one of your arguments has a space in it, XARGS might interpret this as a different argument.
+
+The way to solve this problem is to use the `-0` option to tell XARGS that it should only split things by NULL characters as separators instead of spaces and new lines. The main reason you'd use the `-0` option is
+
+	ls ~/Library/ | grep 'A.*' | xargs -0 -n1
+	
+###Ways People Use XARGS
+
+One technique is using a `file manifest`, which is a text file containing file names you've chosen and placed in a particular order, separated by line breaks.
+
+i.e.
+
+	myfile1.txt
+	myfile2.txt
+	myfile3.txt
+
+If the filename is `file_manifest.txt`,
+
+	cat file_manifext.txt | xargs cat | less
+
+This will output all of the file names, pipe them as arguments into CAT, and then pipe all of that output into LESS so that it paginates, because there'll be a lot of output.
+
+	cat fruitbox.txt | sort | uniq | xargs -I {} mkdir -p ~/Desktop/fruitbox/{}
+
+This would create a directory for each piece of fruit in fruitbox.txt, with it being named as that piece of fruit.
+
+Imagine that we have 50 workers, and we need to create a directory for every worker. 
+
+To kill processes, based on id, in an automated way:
+
+	ps aux | grep 'badstuff' | cut -c 11-15 | xargs kill -9
+
+XARGS works really well with GREP and FIND.
+
+`find` is one of the places that you'll need to use the `-0` option, but `find` also has its own option called `-print0`, which tells `find` to use the NULL character to separate results. This is great, because it acts like a handshake between `find` and `xargs`, since `find` delimits results with a NULL character, and `xargs` loops through them, delimiting them by that NULL character.
+
+To automate the `chmod` of certain files based on a find, use:
+
+	find test1/ -type f -print0 | xargs -0 chmod 755
+
+To automate the creation of backup files, use:
+
+	find . -name "*fruit.txt" -print0 | xargs -0 -I [] cp [] ~/Desktop/{}.backup
+
+To then find and remove those backup files:
+
+	find ~/Desktop/ -name "*.backup" -print0 | xargs -p -0 rm 
+	
+We can't use the interactive option `-i` with `rm` because xargs doesn't allow it. Instead, we need to use the `-p` option which stands for "prompt". This will prompt you before it carries out an action.
+
+Caution: When you perform actions like copy or remove, you don't want to delve too deeply. A great way of avoiding this is by setting the find depth to only the current directory - e.g.
+
+	find ~/Desktop/ -name "*.backup" -depth 1 -print0 | xargs -p -0 rm 
+
+To go 2 folders deep, set the depth to 2.
+
+The above statement will only ask you once if you want to delete ALL of them. If you want Unix to ask you for each file, use:
+
+	find ~/Desktop/ -name "*.backup" -depth 1 -print0 | xargs -p -0 -n1 rm 
+
+You can also use `find` and `grep` together with `xargs`.
+
+E.g. Imagine you're looking through a directory full of invoices and want to find invoices that have the work "plumbing" in them:
+	
+	find . -name "*invoices*" -print0 | xargs -0 | grep -li 'plumbing'
+
+E.g. 2. Imagine that you're a web developer (haha, I am!) and you want to look through the directory of a theme and find every HTML file that contains the `<h1>` tag:
+
+	find ~/theme/ -name '*.html' -print0 | xargs -0 grep -l "<h3>"
 
 
+You should think about using `xargs` when you want to performa a command on many items in a list. That list can be stored in a file, or dynamically created with `grep` `find` or others.
+
+##Mac-Only Techniques
+
+###Working with the Finder and Unix
+
+If you're working in the Finder, you can drag and drop a folder into Terminal, and it will copy the path there. 
+
+You can use this for any command that takes a path.
+
+To do the reverse and open a finder window at a specific path from the Unix command line, use: 
+
+	open ~/Desktop/Work/Project1
+
+You can do the same with a file, and the Finder will open it up using the default program. E.g.
+
+	open ~/Desktop/Work/Project1/index.html
+
+To open the current directory or the parent directory
+	
+	open .
+	open ..
+
+To open an application, use
+
+	open -a calculator
+
+The `-a` option says "go to the application folder and find an app there with the same name"
+
+To open up a file in a specific application, use:
+
+	open -a TextEdit monologue.txt
+
+A time saving technique is to use aliases, so
+
+	alias chrome='open -a chrome'
+
+That way, all you have to type is `chrome`. Remeber, you'd have to put this into the `.bashrc` file.
+
+`open` will also accept standard input `stdin`, such as:
+
+	ls -lah | open -f
+
+The `-f` option with `open` will output the contents instead of printing it to the screen
+
+This is good because it allows us to use the power of Unix to construct exactly what we want and then we can send it to a regular Mac application. 
+
+We could even look at the `man` pages in Preview. The `-t` option will say "format this as postscript".
+
+	man -t bash | open -fa Preview
+
+We can send parts of tab-separated files to Excel or Numbers this way:
+
+	cut -f 2,6 accounts.tsv | open -fa Numbers
+
+OPEN will also open URL's for you in your default browser:
+
+	open http://bengrunfeld.com
 
 
 

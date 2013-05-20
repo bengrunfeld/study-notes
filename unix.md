@@ -1573,13 +1573,363 @@ Environments variables can help us configure how the Unix history works. There a
 
 ###Customizing the Unix Command Prompt
 
+It's really nice to make the prompt look exactly how you'd like it to. We'll use a Shell variable to do this - `PS1`. There is also `PS2, PS3, PS3` etc, but those are for other prompts. 
+
+Like other Shell variables, we need to store it in the `.bashrc` file or `.bash_profile` to make sure it stays there. Remember to use `export` as above.
+
+To print out your username, use:
+
+	PS1='\u '
+
+Here are some popular formatting codes:
+
+	\u		# username
+	\s		# current shell
+	\w		# current working directory (full path)
+	\W		# basename of current working directory
+	\d		# date in "weekday of month" format (Mon Feb 22)
+	\D{format}	# date in strftime format ("%Y-%m-%d")
+	\A		# time in 24 hour HH:MM format
+	\t		# time in 24 hour HH:MM:SS format
+	\@		# time in 12 hour HH:MM am/pm format
+	\T		# time in 12 hour HH:MM:SS format
+	\H		# hostname
+	\h		# hostname up to first " . "
+	\!		# history number of this command
+	\$		# when User ID is root (0), will display "#", otherwise a "$"
+	\\		# a literal backslash
+
+The default Mac setting is:
+	
+	PS1='\h:\W \u$ '
+
+###Customizing the Logout File
+
+In your `~/` directory, you can createa  `.bash_logout` file that runs whenever you `exit` the terminal or close the window.
+
+##Unix Power Tools
+
+###Searching with Grep
+
+Grep is a very powerful Unix tool. Grep stands for "Global Regular Expression Print". Grep was created for Unix. 
+
+To search for a text string inside of a file, use:
+
+	grep <expression> <filename>
+
+e.g.
+	
+	grep banana fruitbasket.txt
+
+This will return the entire line which contains the expression you're searching for. Grep is REALLY fast.
+
+When used like this, Grep is case sensitive.
+
+Grep Options:
+
+	-i		# makes Grep case insensitive
+	-w		# match only on whole words
+	-v		# return lines the DON'T match the expression
+	-n		# returns matches with line numbers
+	-c		# count option: returns a number of how many matches there were
+	
+
+####Grepping for Multiple Files & Other Inputs
+
+To check inside of a directory, use the recursive option `-R`.
+
+	grep -R banana food/fruitbox/
+
+This will look in the directory and in sub-directories as well.
+
+Will return matches it made, plus the files where it occurred. 
+
+	-h		# will suppress the file name, and just show you the line itself
+	-l		# will just show you the file name, but will suppress the path
+	-L		# gives you file names that did NOT contain a matching expression
+
+To search inside files matching a regex:
+
+	grep banana *fruit.txt
+	
+To use input from another file:
+
+	cat fruitbox.txt | grep apple
+
+To use piped input in a more useful way, use:
+
+	ps aux | grep terminal
+
+This will take everything that gets outputted form `ps aux` and only print to the screen things containing `terminal`.
+
+So to see all of your applications that are running:
+
+	ps aux | grep applications
+
+Or
+
+	history | grep unix_files
+
+Or
+
+	history | grep nano | less
+
+will give us a paginated list of all the times stored in our history that we've used nano.
+
+####Coloring matching expressions
+
+	grep --color banana fruitbox.txt
+
+This will color any matching expressions.
+
+	grep --color=auto banana fruitbox.txt
+	grep --color=always banana fruitbox.txt	#always uses color
+	grep --color=never banana fruitbox.txt		#never usus color
+
+`auto` says "color it if you're showing it to me on the terminal but not when you're sending it somewhere else like to a file or a pipe." This is because special formatting is used to create the colors around phrase matches, and if you export this to a file using `always`, it will copy the colors across. `auto` strips the formatting if you are exporting.
+
+The default color of phrase matches is red, but we can change that with a Shell variable. Add this to `.bashrc` or `.bash_profile`.
+
+	export GREP_COLOR="34;47"
+
+We can also set other options in the `.bashrc` file, e.g. color should always be turned on, and Grep should always be case insensitive:
+
+	export GREP_OPTIONS="--color=auto -i"
 
 
+**Grep Color Codes**
+
+Attributes | Text Color 	| Background
+------------ | --------	 	| ------------
+0 = reset | 30 = Black  	| 40 = Black
+1 = reset | 31 = Red  		| 41 = Red
+2 = reset | 32 = Green  	| 42 = Green
+3 = reset | 33 = Yellow  	| 43 = Yellow
+4 = reset | 34 = Blue  		| 44 = Blue
+5 = reset | 35 = Purple  	| 45 = Purple
+6 = reset | 36 = Cyan		| 46 = Cyan
+7 = reset | 37 = White  	| 47 = White
+8 = reset | 				| 
 
 
+###Using Regular Expressions
 
+In general when working with Regex, it's a good idea to put quotes around the expression you're searching for:
 
+	grep 'banana' fruitbox.txt
 
+The reason for that is you use special characters in Regex that have their own meaning to Unix, so by putting them in quotes, you're making sure that no confusion occurs.
+
+When you search for `banana`, you're only searching for those exact characters.
+
+A one character wildcard is the dot character `.` so if you had:
+
+	grep 'b..ana' fruitbox.txt
+
+Any 2 characters could go there and it would return a match. 
+
+	grep 'app[lr]' fruitbox
+
+The square brackets `[]` means one of the characters in the square brackets, so the above grep would return `apple` as well as `appropriate`
+
+###Regex Expression Basics
+
+Regex 	| Meaning	| Example
+:----: 	| :------:	| :------:
+. | Wild card, any one character except line breaks | gre.t
+[] | Any one character listed inside [] | gr[ea]y
+[^] | Any one character NOT listed inside [] | [^aeiou]
+- | Range Indicator (only when inside a character set) | [A-Za-z0-9]
+* | Preceding element can occur zero or more times | file.*
++ | Preceding element can occur one or more times`*` | gro+ve
+? | Preceding element can occur zero or one times`*` | colou?r
+| | Alternator, OR operator`*` | (jpg|gif|png)
+^ | Expression after `^` must be at beginning of line to match | ^Hello
+$ | Expression before `$` must be at end of line to match | Goodbye$
+\ | Escape the next character so it is not used as Regex. | image\.jpg
+\d| Any digit | 20\d\d-20-03
+\D| Anything NOT a digit | ^\D+
+\w| Any word character (alphanumeric or underscore) | \w_archive\.sql
+\W| Anything NOT a word character | \w+\W+\w
+\s| White space (space, tab, line break) | \w+\s\w+
+\S| Anything NOT white space | \S+\s\S+
+
+There are 3 expressions above that have been marked with an asterisk `*`. These are the **Extended Regular Expression Syntax**.
+
+###Regex Character Classes
+
+Class 	| Represents
+:---: 	| :--------:
+[:alpha:] | Alphabetic Characters
+[:digit:] | Numeric Characters
+[:alnum:] | Alphanumeric Characters
+[:lower:] | Lower-case Alphabetic Characters
+[:upper:] | Upper-case Alphabetic Characters
+[:punct:] | Punctuation Characters
+[:space:] | Space Characters (space, tab, new line)
+[:blank:] | Whitespace Characters
+[:print:] | Printable Characters (including space)
+[:graph:] | Printable Characters (NOT including space)
+[:cntrl:] | Control Characters (non-printing)
+[:xdigit:] | Hexadecimal Characters (0-9, A-F, a-f)
+
+###Using Regex with Grep
+
+Things to watch out for:
+
+Be careful about mixing up Regex expressions inside Grep, and Unix special characters. So `*` inside grep means something different to its Unix equivalent.
+
+If we use the **Extended Regular Expression Syntax**, we need to add in the `-E` option. Like so:
+
+	grep -E 'ap+le' fruitbasket.txt
+
+If we leave out the `-E`, it won't work.
+
+##TR: Translating Characters
+
+TR is short for "translate", and what it does is it copies from the input it receives to output, but with the substitution of selected characters with translation rules that we give it.
+
+	tr <string to search for> <replacement string>
+
+e.g.
+
+	echo 'a,b,c' | tr ',' '-'
+
+To really see how powerful it is, we can use `tr` like this:
+
+	echo '572089421' | tr '1234567890' 'ABCDEFGHIJ'
+
+It takes all the 1's and turns them into A's, etc.
+
+If something is not in our translation string, it simply won't get mapped and will be left alone.
+
+To use character sets with `tr`, use:
+
+	echo 'This is a secret message' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	
+This will move all the characters 13 places (aka ROT-13)
+
+	Guvf vf n frperg zrffntr		# Outputs the encrypted message
+	
+To unencrypt it, use 
+
+	echo 'Guvf vf n frperg zrffntr' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	
+Because the English langauge has 26 characters, moving it 13 places twice brings you back to where you started from.
+
+What `tr` is NOT for:
+
+	echo 'good day' | tr 'day' 'night'
+	goon nig 		# output
+
+What it has done here is that it has searched the string, then swapped any 'd' for an 'n', then swapped any 'a' for an 'i', then swapped any 'y' for a 'g'.
+
+If the replacement set is smaller than the search set, then the last item in the replacement set will repeat. If the replacement set is bigger than the search set, then the extra characters will simply never get reached. E.g.
+
+	echo 'abcdefg123455' | tr 'bd1-4' 'x'
+	axcxefgxxxx55	# output
+
+	echo 'abcdefg123455' | tr 'bd1-4' 'xz'
+	axczefgzzzz55 	# output
+
+So here you see that `b` is swapped for `x`, but everything else `d1-4` is swapped for `z`.
+
+To translate upper case to lower case:
+
+	echo 'KeViN' | tr 'A-Z' 'a-z' 
+
+we can also use Regex to achieve the same goal. e.g.
+
+	echo 'KeViN' | tr '[:upper:]' '[:lower:]'
+
+###Deleting and Sqeezing Characters
+
+By using certain options, `tr` can also delete or filter our certain characters, and to de-dupe repeating characters (squeezing). 
+
+Option 	| Description
+:----: 	| :------:
+-d | Delete characters in listed set
+-s | Squeeze repeats in listed set
+-c | Use complimentary set
+-dc | Delete characters not in listed set
+-sc | Squeeze characters not in listed set
+
+E.g.
+
+	echo "abcd1234aaa1111" | tr -d [:digit:] 	# abcdaaa
+	echo "abcd1234aaa1111" | tr -dc [:digit:] 	# 12341111
+	
+Using the `-dc` option will strip out any character that is not a digit, including white space characters.
+
+	echo "abcd1234aaa1111" | tr -s [:digit:] 	# abcd1234aaa1
+	echo "abcd1234aaa1111" | tr -sc [:digit:] 	# abcd1234a1111
+
+The first expression above says sqeeze (remove duplicates) anything that is a digit. The second expression says squeeze anything that is NOT a digit.
+
+You can also combine the options, like so:
+
+	echo "abcd1234aaa1111" | tr -ds [:digit:] [:alpha:]   # abcda
+	echo "abcd1234aaa1111" | tr -dsc [:digit:]	[:digit:]  # 12341
+
+Because you have 2 options together, the first argument is going to be the thing you want to delete. The second argument is going to be the thing you want to sqeeze.
+
+In the second expression, it's important to note that the `-c` option will only apply to the delete, NOT the squeeze. So it will delete anything that is not a digit, and then squeeze the digits.
+
+**Windows -> Unix Conversion**
+
+Return surplus carriage return and end of file characters:
+
+	tr -d '\015\032' < windows_file > unix file
+
+##Using SED: Stream Editor
+
+SED is a Unix program (short for Stream Editor). SED modifies a stream of input according to a list of commands before passing it on to the output. It's very similar to the way that TR works, but with SED, we can modify the stream of input in many more ways.
+
+SED is a complex tool that offers several modes of working and many features. 
+
+It's most use is substitution. 
+
+	sed 's/a/b' 
+
+`s` is for substitution
+`a` is the search string
+`b` is the replacement string
+
+So we're going to search for whatever is in `a`, and replace it with whatever is in `b`.
+
+The difference between this and `TR` is that `TR` uses 2 difference arguments for search string and replacement string. Here, they're all inside 1 argument, and they're inside those delimiters. 
+
+SED is really based on this one expression.
+
+This is different to TR because TR was translating each thing. This is more like the traditional find and replace you get in a regular word processor.
+
+	echo 'leftward' | sed 's/left/right/'
+
+will return `rightward`.
+
+SED doesn't do a global search by default, so if you enter 
+
+	echo 'leftward and left' | sed 's/left/right/'
+
+it will return `rightward and left`.
+
+This is different to GREP, because when we were GREPing for something, it was finding all occurances of the search string. Remember, the `G` in GREP stands for GLOBAL, so to do the same thing in SED, we need a `g` modifier:
+
+	echo 'leftward and left' | sed 's/left/right/g'
+
+Regarding the delimiters, SED looks at whatever comes after the first `s` and uses that as a delimiter. This is good because sometimes the character you wanted to use as a delimiter is actually part of the search string or replacement string. So then you'd need to change your delimiter. E.g.
+
+	echo 'Mac OS X/Unix is really cool!' | sed 's|Mac OS X/Unix|Ben|'
+
+You could also use:
+
+	echo 'Mac OS X/Unix is really cool!' | sed 's:Mac OS X/Unix:Ben:'
+
+If you wanted to use the backslash in SED, you could, but you would need to escape all instances of the backslash in the search and replacement string. Switching to a different delimiter is an easier and cleaner technique.
+
+**Working With Files**
+
+SED takes a second argument which is a filename.
 
 
 

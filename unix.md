@@ -2283,6 +2283,190 @@ OPEN will also open URL's for you in your default browser:
 
 	open http://bengrunfeld.com
 
+##Clipboard Integration with Unix
+
+Unix doesn't have a clipboard, but we can use the Mac clipboard to store stuff from Unix.
+
+Because we can't actually select anything in Unix, we use standard output - i.e.
+
+	ls -lah | pbcopy
+
+PB stands for Paste Board. If you then go to notepad and hit paste, the `ls -lah` command will print to your application.
+
+	cut -f 2,6 accounts.tsv | pbcopy
+
+This will copy to the clipboard.
+
+	pbcopy < myfile.txt
+
+If you then do 
+	
+	pbpaste
+
+It will print whatever is on the clipboard.
+
+We can also direct this output to a file:
+
+	pbpaste > clipboard.txt
+
+We could create an alias to do a sort of stuff on the clipboard, then copy it again.
+
+	alias pbsort='pbpaste | sort | pbcopy'
+
+**Working with Multiple Clipboards**
+
+There are 4 clipboards in Mac OS x: 
+
+* The general clipboard (used above)
+* Find
+* Font
+* Ruler
+
+When you do a find in your web browser or some other applcation, it usually copies to the Find clipboard. 
+
+To copy to the different clipboards, use:
+
+	echo "General" | pbcopy -pboard {general/find/font/ruler}
+
+e.g.
+
+	echo "Find" | pbcopy -pboard find
+
+Then you can paste it out with:
+
+	pbpaste -pboard find
+
+##Taking Screenshots from the Command Line
+
+To take a regular screenshot, use
+	
+	Command + Shift + 3
+
+To take an interactive screenshot which allows you to use crosshairs to choose the portion you want to take a shot of, use
+
+	Command + Shift + 4
+
+To take a screenshot from the command line, use:
+
+	screencapture <name of file to save to>
+
+E.g.
+	
+	screencapture ~/Desktop/shot.png
+
+This way, we can specify our own filename and destination
+
+Option | Description
+:-----------: | :----------- 
+`-i`         | Interactive capture (esc to cancel)
+`-m`         | Main monitor only (when you have multiple monitors)
+`-C`         | Show cursor
+`-t`         | Which format you'dlike (png, pdf, jpg, tiff)
+`-T`         | Delay in seconds
+`-P`         | Open file with Preview
+`-M`         | Open file in Mail message
+`-c`         | Capture to clipboard
+
+E.g.
+
+	screencaptire -mCP -T 3 -t jpg screen_shot.jpg
+
+
+##Mac Shutdown, Reboot And Sleep with Unix
+
+Usually we do this via the user interface on a Mac, but if we do it via the Unix command line, we can schedule these actions.
+
+The command we use for all 3 is
+
+	sudo shutdown {h/r/s}
+
+`h` stands for halt, meaning shutdown, at a specific time
+`r` reboot at a specific time
+`s` sleep at a specific time
+
+The time format you pass it can be 1 of the following 3 options:
+
+* now
+* +minutes
+* yymmddhhmm
+
+.
+
+	sudo shutdown -h now	//shutdown now
+	sudo shutdown -r now	//reboot now
+	sudo shutdown -h now	//sleep now
+	
+	sudo shutdown -h +45	//shutdown in 45 mins
+	sudo shutdown -r +45	//reboot in 45 mins
+	sudo shutdown -h +45	//sleep in 45 mins
+	
+	sudo shutdown -h 1303200000	//shutdown at midnight on that date
+	sudo shutdown -r 1303200000	//reboot at midnight on that date
+	sudo shutdown -h 1303200000	//sleep at midnight on that date
+
+Unix does have a `sleep` command, but it works as a timer before the next command is executed. So if we had
+
+	sleep 5; echo "Good Morning!"
+
+Unix would wait 5 seconds, then run the second command.
+
+##Text to Speech
+
+You can make your computer say stuff from the command line with `say`
+
+	say "hello there"
+
+You can change the voice (list of all voice is in Settings) 
+
+	say "ben rules" -v Zarvox
+
+You can pipe in input
+
+	echo "ben rocks" | say -v Bells
+
+You can even `say` a whole file
+	
+	say -f memoirs.txt
+
+You can output a file to an audio file, which is good for visually impaired people.
+
+	say -f memoirs.txt -o audio_file.aiff
+
+Use `say` to tell you when a long process has completed
+
+	cp -R dir1 dir2; say 'You task has finished'
+
+##Using Spotlight from the Command Line
+
+Spotlight is a fast find tool based on file metadata. Usually you'll use `find` or `grep`, or you'll just use Spotlight in the UI, but there are times when you'll need Unix to have access to the meta data that Spotlight keeps.
+
+	mdfind "thing"
+
+The `md` stands for meta data. This is the same as going into Spotlight in the UI and typing "thing"
+
+The meta data has much more information contained in it that we are usually used to working with.
+
+To hone down the search, use this, otherwise it will search your entire hard drive.
+
+	mdfind -onlyin <path> "search term"
+
+To use a negative: This will make sure that anything with "day" doesn't come up in the results. 
+
+	mdfind -onlyin <path> "summer night -day"
+
+The docs recommend using the `-interpret` option, which forces the command to act EXACTLY as the regular UI Spotlight would.
+
+To ensure that the result is in the file name
+
+	mdfind -onlyin <path> -name "filename"
+
+To tell `mdfind` to end every line with a NULL character so that we can use it with `xargs`:
+
+	mdfind -onlyin <path> -name "filename" -9 | xargs -9 | open
+
+
+
+
 
 
 

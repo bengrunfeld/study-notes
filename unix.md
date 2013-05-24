@@ -2465,10 +2465,115 @@ To tell `mdfind` to end every line with a NULL character so that we can use it w
 	mdfind -onlyin <path> -name "filename" -9 | xargs -9 | open
 
 
+###Meta Data Attributes with Spotlight
+
+	mdls filename.txt
+
+`mdls` stands for Meta Data Listing. This will show us all the metadata for the file. We can use that info then. e.g. search for that info with Spotlight. E.g.
+
+	mdfind -onlyin ~/Desktop/Studies 'kMDItemDisplayName == "*git*"'
+
+When you start using time, can only use single quotes.
+
+	mdfind -onlyin ~/Desktop/Studies 'kMDItemDateAdded <= $time.today'
+
+Instead of using `today`, you can also have `yesterday`, `this_month`, `this_year`, `now`.
+
+With `now`, you can provide a time relative to it in seconds. E.g.
+
+	mdfind -onlyin ~/Desktop/Studies 'kMDItemDateAdded <= $time.now(-36000)'
+
+We can also use this relative time option with `today`.
+
+	mdfind -onlyin ~/Desktop/Studies 'kMDItemDateAdded <= $time.today(-2)'
+
+This means 2 days ago. You can do the same thing for `yesterday`, `this_month`, `this_year`, etc
+
+You can also use an absolute time format with `iso`.
+
+	mdfind -onlyin ~/Desktop/Studies 'kMDItemDateAdded <= $time.iso(2010-01-01 12:35:00 -0930)'
 
 
+##Applescript with Unix
+
+We can do some really cool things with Applescript. The way we're going to call applescripts is the use the Mac-only command
+
+	osascript {filename}|{script}
+
+`osa` stands for open scripting architecture. After `osascript`, we can either provide a path to a filename, or an individual script. E.g.
+
+	osascript -e 'set volume output muted true'
+	osascript -e 'set volume output muted false'
+
+We can also use Applescript to talk to different applications, like the Finder.
+
+	osascript -e 'tell application "Finder" to display dialog "Hello"'
+
+If you're going to create a file, suffix it with `.scpt`.
+
+There is also a command called `osacompile` which compiles scripts.
 
 
+##System configurations: Viewing and Setting
+
+There are hundreds of configuration options on a Mac. You can see some of them, but you can access many more via Unix. 
+
+Some changes require a logout and login. Others require a total shutdown.
+
+The different configurations are stored both in `Ben/Library`, and some are stored in `Macintosh HD/Library`.
+
+The settings in `Macintosh HD/Library` apply to every user on the system. The settings in `Ben/Library` apply to just me.
+
+Inside `Library` for each of them, there's also a `Preferences` folder. That's where the settings are typically stored, although sometimes they exist in other places.
+
+Usually the format of the files is
+
+	com.apple.<application name>.plist
+
+`plist` lets you know that it's a preferences list. If you open a `plist` file, it will open the Mac preferences editor, where you can change some of the values.
+
+To change these values in Unix, we'll use the `defaults` command.
+
+`defaults` takes care of whether the preference is a user preference or a system preference. It goes and finds it in the right place and changes it there.
+
+	defaults read <domain> <key>
+	defaults write <domain> <key> <value>
+
+Domain is typically in the format: com.companyname.appname. E.g.
+
+	defaults read com.apple.finder CopyProgressWindowLocation
+	defaults write com.apple.finder CopyProgressWindowLocation "168, 270"
+
+Sometimes a preference file won't exist in the Library. Defaults will then go and create the necessary file.
+
+The best place to learn about these is on the internet.
+
+
+###Examples of System Configurations
+
+To show dot files `.` in Finder
+
+	defaults write com.apple.finder AppleShowAllFiles -bool TRUE
+
+To display Unix path in Finder windows
+
+	defaults write com.apple.finder _FXShowPosixPathInTitle -bool TRUE
+
+To modify the screen capture file type:
+
+	defaults write com.apple.screencapture type PNG
+
+Formats available: PNG, BMP, GIF, JPEG, PDF, PICT, PSD, SGI, TGA, TIFF
+
+To modify the screen caption file save location:
+	
+	defaults write com.apple.screencapture location "/Users/Ben/Desktop"
+
+To change the login screen background:
+	
+	sudo defaults write com.apple.loginwindow DesktopPicture "/Library/Desktop Pictures/Aqua Blue.jpg"
+
+We need `sudo` because this is a system level preference.
 
 
 

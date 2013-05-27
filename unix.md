@@ -1,3 +1,4 @@
+
 #Unix
 
 ##What is Unix?
@@ -101,7 +102,7 @@ There is a very definite structure to the commands in Unix.
 
 	Command		Options		Arguments
 
-You can't pu the Options after the Arguments. They have to go in the middle.
+You can't put the Options after the Arguments. They have to go in the middle.
 
 The Command is always a single word. It's the thing we want to do.
 

@@ -1738,13 +1738,13 @@ The square brackets `[]` means one of the characters in the square brackets, so 
 Regex 	| Meaning	| Example
 :----: 	| :------:	| :------:
 . | Wild card, any one character except line breaks | gre.t
-[] | Any one character listed inside [] | gr[ea]y
+[ ] | Any one character listed inside [] | gr[ea]y
 [^] | Any one character NOT listed inside [] | [^aeiou]
 - | Range Indicator (only when inside a character set) | [A-Za-z0-9]
 * | Preceding element can occur zero or more times | file.*
 + | Preceding element can occur one or more times`*` | gro+ve
 ? | Preceding element can occur zero or one times`*` | colou?r
-| | Alternator, OR operator`*` | (jpg|gif|png)
+  | Alternator, OR operator`*` | (jpg|gif|png)
 ^ | Expression after `^` must be at beginning of line to match | ^Hello
 $ | Expression before `$` must be at end of line to match | Goodbye$
 \ | Escape the next character so it is not used as Regex. | image\.jpg

@@ -66,7 +66,16 @@ In Unix there is only one type of file, and all that is required to access it is
 Programs retrieve the data in a file by a system call (a subroutine in the kernel) called `read`. Each time `read` is called, it retrieves the next part of a file. E.g. the next line of text typed on the terminal.
 
 	rm -f			//forces removal without interactive request
-	
+
+Parentheses can be used to group commands. Here the output of `date` and `who` are concatenated into a single stream that can be sent down a pipe.
+
+	(date; who) | wc
+
+You can grab the interum output from a command that is being piped and store it in a file with the `tee` command. E.g.
+
+	(date; who) | tee save | wc
+
+WC receives the data as if `tee` weren't int he pipeline.
 	
 ##Processes
 
@@ -158,5 +167,42 @@ The number printed between permissions and owner with the `ls -lah` command is t
 
 
 ##Devices
+
+Instead of system routines to control devices, there are files in `/dev` that contains device information that the kernel references before issueing hardware commands.
+
+If you do `ls -l /dev`, the first char of the permissions will be either `b` or `c`. For a device file, the inode contains the internal name for the device, which consists of its type - character `c` or block `b`, and a pair of numbers calle dthe major and minor device numbers. 
+
+The major number encodes the type of device, while the minor number distinguishes different instances of the device.
+
+Disks are block devices, and everything else is a character device. On Mac Unix, nearly everything is a `c`. Only 4 or so `b`'s
+
+`mesg n` Will turn off messages
+`mesg y` Will turn them back on again
+
+To time a command without your screen getting filled up with junk output, you can use `/dev/null`. E.g.
+
+	time ls -R / > /dev/null
+	
+You get
+
+	real	0m21.931s
+	user	0m2.174s
+	sys	0m3.378s
+
+In order, these times are elapsed clock time, CPU time spent in the program, and CPU time spent in the kernel while the program was running.
+
+
+##The Shell
+
+###Metacharacters
+
+Characters like `*` that have special properties are known as metacharacters. There are a lot of them. To stop a character from being interpreted as a metacharacter, enclose it in single quotes `'`.
+
+Double quotes don't work as well, because the Shell still looks inside for a `$` or a `\`.
+
+Another way is to escape every instance of the metacharacter with a slash `\`.
+
+A `\` at the end of the line tells the shell to ignore the line break.
+
 
 

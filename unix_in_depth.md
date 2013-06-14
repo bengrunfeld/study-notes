@@ -669,13 +669,30 @@ If you use `echo -n`, it suppresses the final newline so the response can be typ
 
 C is the standard language of UNIX systems – the kernal and all user programs are written in C.
 
+##Standard Input and Output: VIS
 
+Many programs read only 1 input and write only 1 output. 
 
+`vis` copies its standard input to its standard output, except that it makes all non-printing characters visible by printing them as \nnn. where nnn is the octal value of the character.
 
+Great for detecting strange characters that may have crept into files.
 
-	
+To scan multiple files:
 
+	cat file1 file2 | vis
 
+`vis` was meant for non-text files. 
+
+The simplest input and output routines are called `getchar` and `putchar`. Each call to `getchar` gets the next character from the standard input, which may be a file or a pipe or the terminal (default) – the program doesn't know which.
+
+Similarly, `putchar(a)` puts the character `a` on the standard output, which is also the terminal by default.
+
+The function `printf` does output format conversion. Calls to `printf` and `putchar`can be intermixed in any order.
+
+There is a corresponding function `scanf` for input format conversion - it will read the standard input and break it up into strings, numbers, etc, as desired.
+Calls to `scanf` and `getchar` can also be intermixed in any order.
+
+-
 
 #PROBLEMS
 

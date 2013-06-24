@@ -82,3 +82,95 @@ Within `f`, the parameter declaration can read
 If one is sure that the elements exist, it is also possible to index backwards in an array; p[-1], p[-2], and so on. 
 ##Address Arithmetic
 If p is a pointer to some element of an array, then p++ increments p to point to the next element.
+Pointers and integers are not interchangeable. Zero is the sole exception: the constant zero may be assigned to a pointer, and a pointer may be compared with the constant zero. The symbolic constant NULL is often used in place of zero, as a mnemonic to indicate more clearly that this is a special value for a pointer. NULL is defined in <stdio.h>.
+Pointers may be compared under certain circumstances. If p and q point to members of the same array, then relations like ==, !=, <, >=, etc., work properly.
+For example, `p<q` is true if p points to an earlier element of the array than q does.
+The valid pointer operations are assignment of pointers of the same type, adding or subtracting a pointer and an integer, subtracting or comparing two pointers to members of the same array, and assigning or comparing to zero. All other pointer arithmetic is illegal. It is not legal to add two pointers, or to multiply or divide or shift or mask them, or to add float or double to them, or even, except for void *, to assign a pointer of one type to a pointer of another type without a cast.
+##Character Pointers and Functions
+A string constant, written as	"I am a string"is an array of characters. In the internal representation, the array is terminated with the null character '\0' so that programs can find the end. The length in storage is thus one more than the number of characters between the double quotes.
+A string can be initialized by one of the following methods:
+	char d[] = "hello dude"; 		#an array	char *s =  "hello snood"; 		#a pointer
+
+`d[]` is an array that contains the string
+`*s` is a pointer that points to a string
+
+To mess around with the strings via pointers, use:
+	
+	while (*s != '\0') {
+		printf("%c", *s);
+		s++;
+	}
+	
+Using `*s` in the `printf` statement means that you're targeting the contents of the specific character or array index that `s` is currently pointing to.
+
+Conversely, `s` is the pointer to the beginning of the string, so if you just wanted to print out the string without a loop, you'd need to use `s` without the `*`, like so:
+
+	printf("%s", s);
+
+You could also try to write the above loop as:
+	
+	while (*s++ != '\0')
+		printf("%c", s)			#will start 1 letter after 1st
+
+Since we're using `*s++`, and not `++(*s)`, the value of `*s` is retrieved first, and THEN it is incremented. BUT... because the `*s++` is executed in the test before we perform the first `printf` statement, it means that `*s` already points to the second position in the string by the time you read the `printf` statement.
+
+You could also omit the `= '\0'` since it is essentially redundant, because loops test for zero as a failure, so you could just rewrite the loop as:
+
+	while (*s) {
+		printf("%c", *s);
+		s++;
+	}
+
+Other ways to write loops using pointers and arrays:
+
+	 for ( ; *s == *t; s++, t++)
+	 for (i = 0; s[i] == t[i]; i++)
+
+
+##Pointer Arrays; Pointers to PointersSince pointers are variables themselves, they can be stored in arrays just as other variables can.
+**Need help with this one**
+To initialize the array:
+	char *names[] = {
+		"ben",
+		"bob",
+		"shamir",
+		"ralph"
+	};
+
+Since the size of the array name is not specified, the compiler counts the initializers and fills in the correct number.##Multi-dimensional Arrays
+In C, a two-dimensional array is really a one-dimensional array, each of whose elements is an array. 
+	daytab[i][j]    /* [row][col] */
+Elements are stored by rows, so the rightmost subscript, or column, varies fastest as elements are accessed in storage order.To declare and initialize a multi-dimensional array:
+
+	int days[2][5];			#declaration
+	days[1][5] = 22;		#initialization
+
+
+##The difference between pointer arrays and multi-dimensional arrays
+
+The important advantage of the pointer array over a regular multi-dimensional array is that the rows of the array may be of different lengths. That is, each element of `a` need not point to a twenty-element vector; some may point to two elements, some to fifty, and some to none at all.
+
+	//Declare variables
+	char *a[] = {
+		"hello there",
+		"how are you today",
+		"what is your name"
+	};
+
+	printf("\nanswer: %c\n", a[1][2]);
+
+The difference is that you can't set a mult-dimensional array like we do above, so that it expands to fit each string in a new array position, and each letter of each string in a sub-array position automatically. I.e. you can't do:
+
+	a[][] = {
+		"hello",
+		"how are you",
+		"nice tie"
+	};
+
+##Command-line Arguments
+In environments that support C, there is a way to pass command-line arguments or parameters to a program when it begins executing. When main is called, it is called with two arguments. The first (conventionally called argc, for argument count) is the number of command-line arguments the program was invoked with; the second (argv, for argument vector) is a pointer to an array of character strings that contain the arguments, one per string.
+This is a huge chapter, and I don't want to write notes about it all. To learn all about it, go to Page 105.
+##Pointers to Functions
+In C, a function itself is not a variable, but it is possible to define pointers to functions, which can be assigned, placed in arrays, passed to functions, returned by functions, and so on.
+
+	

@@ -297,7 +297,7 @@ Cases and the default clause can occur in any order.
 	
 		default:
 		y++;
-		break; 
+		break;
 	}
 
 The break statement causes an immediate exit from the switch. Because cases serve just as labels, after the code for one case is done, execution falls through to the next unless you take explicit action to escape. break and return are the most common ways to leave a switch. A break statement can also be used to force an immediate exit from while, for, and do loops.
@@ -370,11 +370,11 @@ defines a new word, forever, for an infinite loop.
 It is also possible to define macros with arguments, so the replacement text can be different for different calls of the macro. As an example, define a macro called max:	
 	#define max(A, B) ((A) > (B) ? (A) : (B))Although it looks like a function call, a use of max expands into in-line code. Each occurrence of a formal parameter (here A or B) will be replaced by the corresponding actual argument.
 Thus the line	x = max(p+q, r+s);will be replaced by the line	x = ((p+q) > (r+s) ? (p+q) : (r+s));
-If, however, a parameter name is preceded by a # in the replacement text, the combination will be expanded into a quoted string with the parameter replaced by the actual argument. e.g.
+If, however, a parameter name is preceded by a `#` in the replacement text, the combination will be expanded into a quoted string with the parameter replaced by the actual argument. e.g.
 
 	#define  dprint(expr)   printf(#expr " = %g\n", expr)
 
-The preprocessor operator ## provides a way to concatenate actual arguments during macro expansion. If a parameter in the replacement text is adjacent to a ##, the parameter is replaced by the actual argument, the ## and surrounding white space are removed, and the result is re- scanned. 
+The preprocessor operator `##` provides a way to concatenate actual arguments during macro expansion. If a parameter in the replacement text is adjacent to a `##`, the parameter is replaced by the actual argument, the `##` and surrounding white space are removed, and the result is re- scanned. 
 
 ###Const
 
@@ -419,18 +419,17 @@ The standard headers `<limits.h>` and `<float.h>` contain symbolic constants for
 `<math.h>` – Math functions
 
 
-##Compiling Across Mulptiple
+##Compiling Across Multiple Files
 
 There must be only one definition of an external variable among all the files that make up the source program; other files may contain extern declarations to access it. (There may also be extern declarations in the file containing the definition.) Array sizes must be specified with the definition, but are optional with an extern declaration.
 
 Initialization of an external variable goes only with the definition.
 
-Suppose that the three functions are stored in three files called main.c, getline.c, and strindex.c. Then the commanddeclarations and statements64￼
-cc main.c getline.c strindex.ccompiles the three files, placing the resulting object code in files main.o, getline.o, and strindex.o, then loads them all into an executable file called a.out. If there is an error, say in main.c, the file can be recompiled by itself and the result loaded with the previous object files, with the command
+Suppose that the three functions are stored in three files called main.c, getline.c, and strindex.c. Then the commanddeclarations and statements cc main.c getline.c strindex.c compiles the three files, placing the resulting object code in files main.o, getline.o, and strindex.o, then loads them all into an executable file called a.out. If there is an error, say in main.c, the file can be recompiled by itself and the result loaded with the previous object files, with the command
 
 ##Functions
 
-*Functions can be defined in any order, in one source file or several, although no file can be split between files.* (Not sure.)
+Functions can be defined in any order, in one source file or several, although no function can be split between files.
 
 Functions must be declared before main.
 
@@ -475,7 +474,7 @@ when a string constant like
 ##Signed vs Unsigned Chars or Ints
 The qualifier `signed` or `unsigned` may be applied to char or any integer. unsigned numbers are always positive or zero. So, for instance, if chars are 8 bits, unsigned char variables have values between 0 and 255, while signed chars have values between -128 and 127 (in a two's complement machine.)
 
-##The `/0` Character in C
+##The `\0` Character in C
 
 The character constant '\0' represents the character with value zero, the null character. '\0' is often written instead of 0 to emphasize the character nature of some expression, but the numeric value is just 0.
 
@@ -523,8 +522,7 @@ The bitwise AND operator `&` is often used to mask off some set of bits, e.g.	
 The bitwise exclusive OR operator `^` sets a one in each bit position where its operands have different bits, and zero where they are the same.
 One must distinguish the bitwise operators `&` and `|` from the logical operators `&&` and `||`, which imply left-to-right evaluation of a truth value. For example, if x is 1 and y is 2, then `x & y` is zero while `x && y` is one.
 
-The shift operators `<<` and `>>` perform left and right shifts of their left operand by the number of bit positions given by the right operand, which must be non-negative. Thus `x << 2` shifts46
-47the value of x by two positions, filling vacated bits with zero; this is equivalent to multiplication by 4. Right shifting an unsigned quantity always fits the vacated bits with zero. Right shifting a signed quantity will fill with bit signs (arithmetic shift) on some machines and with 0-bits (logical shift) on others.
+The shift operators `<<` and `>>` perform left and right shifts of their left operand by the number of bit positions given by the right operand, which must be non-negative. Thus `x << 2` shifts the value of x by two positions, filling vacated bits with zero; this is equivalent to multiplication by 4. Right shifting an unsigned quantity always fits the vacated bits with zero. Right shifting a signed quantity will fill with bit signs (arithmetic shift) on some machines and with 0-bits (logical shift) on others.
 The unary operator ~ yields the one's complement of an integer; that is, it converts each 1-bit into a 0-bit and vice versa. For examplex = x & ~077sets the last six bits of x to zero. Note that x & ~077 is independent of word length, and is thus preferable to, for example, x & 0177700, which assumes that x is a 16-bit quantity. The portable form involves no extra cost, since ~077 is a constant expression that can be evaluated at compile time.
 ##Strings
 

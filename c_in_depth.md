@@ -92,6 +92,7 @@ Within `f`, the parameter declaration can read
 	char d[] = "hello dude"; 		#an array	char *s =  "hello snood"; 		#a pointer
 
 `d[]` is an array that contains the string
+
 `*s` is a pointer that points to a string
 
 To mess around with the strings via pointers, use:
@@ -360,4 +361,15 @@ strchr(s,c)strrchr(s,c)return pointer to first c in s, or NULL if not present 
 	int *ip;	ip = (int *) calloc(n, sizeof(int));
 ##Random Number generation
 The function rand() computes a sequence of pseudo-random integers in the range zero to RAND_MAX, which is defined in <stdlib.h>. One way to produce random floating-point numbers greater than or equal to zero but less than one is	#define frand() ((double) rand() / (RAND_MAX+1.0))
-END OF FILE!!!!!
+
+##System Calls
+System Calls are in functions within the operating system that may be called by user programs.
+This chapter is divided into three major parts: input/output, file system, and storage allocation.
+###File DescriptorsIn the UNIX operating system, all input and output is done by reading or writing files, because all peripheral devices, even keyboard and screen, are files in the file system. This means that a single homogeneous interface handles all communication between a program and peripheral devices.
+In the most general case, before you read and write a file, you must inform the system of your intent to do so, a process called opening the file. If you are going to write on a file it may also be necessary to create it or to discard its previous contents. The system checks your right to do so (Does the file exist? Do you have permission to access it?) and if all is well, returns to the program a small non-negative integer called a `file descriptor`. 
+
+Whenever input or output is to be done on the file, the file descriptor is used instead of the name to identify the file.
+
+(A file descriptor is analogous to the file pointer used by the standard library, or to the file handle of MS-DOS.) All information about an open file is maintained by the system; the user program refers to the file only by the file descriptor.When the command interpreter (the ``shell'') runs a program, three files are open, with file descriptors 0, 1, and 2, called the standard input, the standard output, and the standard error.
+If a program reads 0 and writes 1 and 2, it can do input and output without worrying about opening files.
+

@@ -1163,14 +1163,14 @@ There are 3 choices of how to resolve merge conflicts
 
 .
 
-1. Abort the Merge
+1 – Abort the Merge
 
 	git merge --abort
 
 This will totally abort the merge and nothing will get merged.
 
 
-2. Resolve the conflicts manually (usually best option)
+2 – Resolve the conflicts manually (usually best option)
 
 Go into the file, make one copy of the text you want to keep, then delete the text underneath `<<<<<< HEAD` and get rid of all the Git markings.
 
@@ -1178,7 +1178,7 @@ Then do an `add` and a `commit`.
 
 Git has a standard commit message for resolving conflicts, so instead of using `git commit -m "message"`, it's best to just use `git commit`.
 
-3. Use a merge tool
+3 – Use a merge tool
 
 To use a merge tool, type
 	

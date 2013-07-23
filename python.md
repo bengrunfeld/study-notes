@@ -817,3 +817,115 @@ Users of the package can import individual modules from the package, for example
 The import statement uses the following convention: if a package’s `__init__.py` code defines a list named `__all__`, it is taken to be the list of module names that should be imported when `from package import *` is encountered.
 For example, the file `sounds/effects/__init__.py` could contain the following code:	__all__ = ["echo", "surround", "reverse"]This would mean that from `sound.effects import *` would import the three named submodules of the sound package.
 If `__all__` is not defined, the statement `from sound.effects import *` does not import all submodules from the package `sound.effects` into the current namespace; it only ensures that the package `sound.effects` has been imported (possibly running any initialization code in `__init__.py`) and then imports whatever names are defined in the package. This includes any names defined (and submodules explicitly loaded) by `__init__.py`. 
+##Output Formatting
+To convert any value to a string, use the `repr()` or `str()` functions. 
+The `str()` function is meant to return representations of values which are fairly human-readable, while `repr()` is meant to generate representations which can be read by the interpreter (or will force a SyntaxError if there is no equivalent syntax).
+
+The `str.rjust()` method of string objects right-justifies a string in a field of a given width by padding it with spaces on the left. There are similar methods `str.ljust()` and `str.center()`.
+
+These methods do not write anything, they just return a new string.
+
+	>>> for x in range(1, 11):	... print repr(x).rjust(2), repr(x*x).rjust(3),	... # Note trailing comma on previous line	... print repr(x*x*x).rjust(4)There is another method, str.zfill(), which pads a numeric string on the left with zeros. It understands about plus and minus signs. E.g.	>>> ’12’.zfill(5)
+	’00012’	>>> ’-3.14’.zfill(7) 	’-003.14’
+Basic usage of the `str.format()` method looks like this:	>>> print ’We are the {} who say "{}!"’.format(’knights’, ’Ni’)	We are the knights who say "Ni!"
+The brackets and characters within them (called format fields) are replaced with the objects passed into the `str.format()` method. A number in the brackets refers to the position of the object passed into the `str.format()` method.	>>> print ’{0} and {1}’.format(’spam’, ’eggs’) 	spam and eggs	>>> print ’{1} and {0}’.format(’spam’, ’eggs’) 	eggs and spam
+If keyword arguments are used in the `str.format()` method, their values are referred to by using the name of the argument.	>>> print ’This {food} is {adjective}.’.format(	... food=’spam’, adjective=’absolutely horrible’) 	This spam is absolutely horrible.
+Positional and keyword arguments can be arbitrarily combined:	>>> print ’The story of {0}, {1}, and {other}.’.format(’Bill’, ’Manfred’, 	... other=’Georg’)	The story of Bill, Manfred, and Georg.
+`’!s’` (apply `str()`) and `’!r’` (apply `repr()`) can be used to convert the value before it is formatted.
+	>>> print ’The value of PI is approximately {!r}.’.format(math.pi) 	The value of PI is approximately 3.141592653589793.
+An optional `:` and format specifier can follow the field name. This allows greater control over how the value is formatted. The following example rounds Pi to three places after the decimal.	>>> import math	>>> print 'The value of PI is approximately {0:.3f}.'.format(math.pi)
+Passing an integer after the `:` will cause that field to be a minimum number of characters wide. This is useful for making tables pretty.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 7678} 	>>> for name, phone in table.items():	... print ’{0:10} ==> {1:10d}’.format(name, phone)
+If you have a really long format string that you don’t want to split up, it would be nice if you could reference the variables to be formatted by name instead of by position. This can be done by simply passing the dict and using square brackets `[]` to access the keys
+	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678} 	>>> print (’Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; ’	... ’Dcab: {0[Dcab]:d}’.format(table))	Jack: 4098; Sjoerd: 4127; Dcab: 8637678This could also be done by passing the table as keyword arguments with the ‘**’ notation.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678}	>>> print ’Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; 	... Dcab: {Dcab:d}’.format(**table) 		Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+##The `vars()` Method
+`vars()` returns a dictionary containing all local variables.
+
+##Reading and Writing Files`open()` returns a file object, and is most commonly used with two arguments: `open(filename, mode)`.	>>> f = open(’workfile’, ’w’)	>>> print f	<open file ’workfile’, mode ’w’ at 80a0960>
+
+The second argument is another string containing a few charac- ters describing the way in which the file will be used. `r` = read. `w` = write (overwrites destructively). `a` = append. Any data written to the file is automatically added to the end.
+
+`r+` opens the file for both reading and writing. The mode argument is optional; `r` will be assumed if it’s omitted.
+
+On Windows, you need to use special syntax (see documentation 7.2). ##Methods of File Objects
+
+Assume that a file object called `f` has already been created.
+To read a file’s contents, call `f.read(size)`, which reads some quantity of data and returns it as a string. When size is omitted or negative, the entire contents of the file will be read and returned. 
+`f.readline()` reads a single line from the file; a newline character `\n` is left at the end of the string, and is only omitted on the last line of the file if the file doesn’t end in a newline.If `f.readline()` returns an empty string, the end of the file has been reached, while a blank line is represented by `\n`.
+For reading lines from a file, you can loop over the file object. This is memory efficient, fast, and leads to simple code:	>>> for line in f: 			print line,
+If you want to read all the lines of a file in a list you can also use `list(f)` or `f.readlines()`.
+
+###Writing to the file 
+`f.write(string)` writes the contents of string to the file, returning None.	>>> f.write(’This is a test\n’)
+To write something other than a string, it needs to be converted to a string first:
+
+###Cursor Manipulation
+`f.tell()` returns an integer giving the file object’s current position in the file, measured in bytes from the beginning of the file. To change the file object’s position, use `f.seek(offset, from_what)`.
+A from_what value of `0` measures from the beginning of the file, `1` uses the current file position, and `2` uses the end of the file as the reference point. `from_what` can be omitted and defaults to `0`.
+###Closing the file
+When you’re done with a file, call `f.close()` to close it and free up any system resources taken up by the open file. After calling `f.close()`, attempts to use the file object will automatically fail.
+###Using `with` when dealing with file objects
+It is good practice to use the `with` keyword when dealing with file objects. This has the advantage that the file is properly closed after its suite finishes, even if an exception is raised on the way.	>>> with open(’workfile’, ’r’) as f: 	... 	read_data = f.read()	>>> f.closed	True
+##The PICKLE Module
+Strings can easily be written to and read from a file. Numbers take a bit more effort, since the `read()` method only returns strings, which will have to be passed to a function like `int()`.
+The Pickle module helps with this. The Pickle module can take almost any Python object (even some forms of Python code!), and convert it to a string representation; this process is called **pickling**. Reconstructing the object from the string representation is called **unpickling**.
+If you have an object x, and a file object f that’s been opened for writing:
+	pickle.dump(x, f)
+To unpickle the object again:
+	x = pickle.load(f)
+Pickle is the standard way to make Python objects which can be stored and reused by other programs or by a future invocation of the same program.
+#Errors and Exceptions
+There are (at least) two distinguishable kinds of errors: **syntax errors** and **exceptions**.
+Errors detected during execution are called **exceptions** and are not unconditionally fatal
+
+The string printed as the exception type is the name of the built-in exception that occurred.`bltin-exceptions` lists the built-in exceptions and their meanings.
+##Exception Handling
+It is possible to write programs that handle selected exceptions.
+Here's how the `try` statement works:* First, the try clause (the statement(s) between the try and except keywords) is executed.* If no exception occurs, the except clause is skipped and execution of the try statement is finished.* If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then if its type matches the exception named after the except keyword, the except clause is executed, and then execution continues after the try statement.* If an exception occurs which does not match the exception named in the except clause, it is passed on to outer try statements; if no handler is found, it is an unhandled exception and execution stops with a message as shown above.
+A try statement may have more than one except clause, to specify handlers for different exceptions. At most one handler will be executed.
+Handlers only handle exceptions that occur in the corresponding try clause, not in other handlers of the same try statement.
+An except clause may name multiple exceptions as a parenthesized tuple, for example:	... except (RuntimeError, TypeError, NameError):	... 	pass
+The last except clause may omit the exception name(s), to serve as a wildcard.
+	try:
+		f = open(’myfile.txt’) s = f.readline()
+		i = int(s.strip())
+	except IOError as e:
+		print "I/O error({0}): {1}".format(e.errno, e.strerror)
+	except ValueError:
+		print "Could not convert data to an integer."
+	except:
+		print "Unexpected error:", sys.exc_info()[0] raise
+	
+The `try ... except` statement has an optional `else` clause, which, when present, must follow all except clauses. It is useful for code that must be executed if the try clause does not raise an exception. For example:
+	for arg in sys.argv[1:]: 		try:			f = open(arg, ’r’) 		except IOError:			print ’cannot open’, arg 		else:			print arg, ’has’, len(f.readlines()), ’lines’ 			f.close()
+The use of the else clause is better than adding additional code to the try clause because it avoids accidentally catching an exception that wasn’t raised by the code being protected by the `try ... except` statement.
+When an exception occurs, it may have an associated value, also known as the exception’s argument. The presence and type of the argument depend on the exception type.The except clause may specify a variable after the exception name (or tuple). The variable is bound to an exception in- stance with the arguments stored in instance.args. For convenience, the exception instance defines `__str__()` so the arguments can be printed directly without having to reference .args.One may also instantiate an exception first before raising it and add any attributes to it as desired.	>>> try:	... 	raise Exception(’spam’, ’eggs’) 	... except Exception as inst:	... 	print type(inst)			# the exception instance	... 	print inst.args				# arguments stored in .args	... 	print inst					# __str__ allows args to printed directly	... 	x, y = inst.args	... 	print ’x =’, x	... 	print ’y =’, y 	...	<type ’exceptions.Exception’>	(’spam’, ’eggs’)	(’spam’, ’eggs’)	x = spam	y = eggs
+If an exception has an argument, it is printed as the last part (‘detail’) of the message for unhandled exceptions.
+Exception handlers also handle exceptions from functions called inside the `try` block.
+###Raising Exceptions
+The raise statement allows the programmer to force a specified exception to occur.
+	>>> raise NameError(’HiThere’) 	Traceback (most recent call last):		File "<stdin>", line 1, in ? 	NameError: HiThere
+###User Defined Exceptions
+Programs may name their own exceptions by creating a new exception class.  Exceptions should typically be derived from the Exception class, either directly or indirectly. E.g.
+
+	class MyError(Exception):
+		def __init__(self, value): 
+			self.value = value
+		def __str__(self):	
+			return repr(self.value)
+	try:
+		raise MyError(2*2)
+	except MyError as e:
+		print ’My exception occurred, value:’, e.value
+In this example, the default `__init__()` of Exception has been overridden. This replaces the default behavior of creating the args attribute.
+Exception classes can be defined which do anything any other class can do, but are usually kept simple.
+BEST PRACTICE: When creating a module that can raise several distinct errors, a common practice is to create a base class for exceptions defined by that module, and subclass that to create specific exception classes for different error conditionsMost exceptions are defined with names that end in “Error”.
+##Defining Clean Up Actions
+The try statement has another optional clause which is intended to define clean-up actions that must be executed under all circumstances. For example:	>>> try:	... raise KeyboardInterrupt 	... finally:	... print ’Goodbye, world!’
+A finally clause is always executed before leaving the try statement, whether an exception has occurred or not.
+When an exception has occurred in the try clause and has not been handled by an except clause (or it has occurred in a except or else clause), it is re-raised after the finally clause has been executed. The finally clause is also executed “on the way out” when any other clause of the try statement is left via a break, continue or return statement.
+##Predefined Clean-up Actions
+Some objects define standard clean-up actions to be undertaken when the object is no longer needed.
+The `with` statement allows objects like files to be used in a way that ensures they are always cleaned up promptly and correctly.
+	with open("myfile.txt") as f: 		for line in f:			print line,
+After the statement is executed, the file `f` is always closed, even if a problem was encountered while processing the lines.
+

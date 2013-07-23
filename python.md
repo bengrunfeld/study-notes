@@ -576,7 +576,7 @@ List comprehensions can contain complex expressions and nested functions. E.g.
 
 Referencing the `l` after this returns an error unless you declare it with somethign else.
 
-##The Tuple Data Type
+##The TUPLE Data Type
 
 Lists and Strings are both of data type "sequence". Tuples are also of type "sequence", although Tuples have different rules to the others.
 
@@ -618,7 +618,7 @@ The statement `t = 12345, 54321,’hello!’` is an example of tuple packing : t
 
 This is called, appropriately enough, sequence unpacking and works for any sequence on the right-hand side. Sequence unpacking requires the list of variables on the left to have the same number of elements as the length of the sequence.
 
-##The SET datatype
+##The SET Datatype
 
 A set is an unordered collection with no duplicate elements. Set objects support mathematical operations like union, intersection, difference, and symmetric difference.
 
@@ -633,4 +633,187 @@ Curly braces or the `set()` function can be used to create sets. Note: to create
 	>>> 'lydon' in roster
 	False
 
+Here is a list of `set` operations:
 
+	>>> a = set('abcd')
+	>>> b = set('cdef')
+	>>> a
+	set(['a', 'c', 'b', 'd'])
+	>>> b
+	set(['c', 'e', 'd', 'f'])
+	>>> a - b					#letters that are in a but not b
+	set(['a', 'b'])
+	>>> a | b					#letters that are in either a or b
+	set(['a', 'c', 'b', 'e', 'd', 'f'])
+	>>> a & b					#only letters that are in both a and b
+	set(['c', 'd'])
+	>>> a ^ b 					#only letters that are NOT in both a and b
+	set(['a', 'b', 'e', 'f'])
+	
+##The DICTIONARY Datatype
+
+Dictionaries are indexed by keys, which can be any immutable type; strings and numbers can always be keys. Tuples can be used as keys if they contain only strings, numbers, or tuples; if a tuple contains any mutable object either directly or indirectly, it cannot be used as a key. You can’t use lists as keys.
+
+Dictionaries are called "associative arrays" in other languages.
+
+Keys must be unique.
+
+A pair of braces creates an empty dictionary: `{}`.
+
+It is possible to delete a key:value pair with `del`.
+
+If you store using a key that is already in use, the old value associated with that key is forgotten.
+
+The `keys()` method of a dictionary object returns a list of all the keys used in the dictionary, in arbitrary order (if you want it sorted, just apply the `sorted()` function to it).
+
+To check whether a single key is in the dictionary, use the `in` keyword.
+
+	>>> postcodes = {}
+	>>> postcodes
+	{}
+	>>> postcodes['table mesa'] = 80303
+	>>> postcodes
+	{'table mesa': 80303}
+	>>> postcodes['boulder'] = 80302
+	>>> boulder in postcodes
+	>>> 'boulder' in postcodes
+	True
+
+The dict() constructor builds dictionaries directly from sequences of key-value pairs: 
+
+	>>> dict([(’sape’, 4139), (’guido’, 4127), (’jack’, 4098)])
+	>>> dict(sape=4139, guido=4127, jack=4098)
+
+In addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:	>>> {x: x**2 for x in (2, 4, 6)} {2: 4, 4: 16, 6: 36}
+##Looping Techniques
+
+When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the `enumerate()` function.
+	>>> for x, y in enumerate(['kafka', 'fritz', 'nichze']):
+	...     print x, y
+	... 
+	0 kafka
+	1 fritz
+	2 nichze
+
+To loop over two or more sequences at the same time, the entries can be paired with the zip() function.
+
+	>>> questions = ['name', 'quest', 'favorite color']
+	>>> answers = ['lancelot', 'the holy grail', 'blue']
+	>>> for q, a in zip(questions, answers):
+	... print 'What is your {0}? It is {1}.'.format(q, a)
+
+To loop over a sequence in reverse, first specify the sequence in a forward direction and then call the `reversed()` function.
+
+	>>> for x in reversed(range(3)):
+	...     print x
+	... 
+	2
+	1
+	0
+
+To loop over a sequence in sorted order, use the `sorted()` function which returns a new sorted list while leaving the source unaltered.
+
+	>>> basket = [’apple’, ’orange’, ’apple’, ’pear’, ’orange’, ’banana’] >>> for f 	in sorted(set(basket)):	... print f	...
+When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the `iteritems()` method.
+	>>> knights = {’gallahad’: ’the pure’, ’robin’: ’the brave’} 	>>> for k, v in knights.iteritems():	... print k, v
+To change a sequence you are iterating over while inside the loop (for example to duplicate certain items), it is recommended that you first make a copy. Looping over a sequence does not implicitly make a copy. The slice notation makes this especially convenient:	>>> words = [’cat’, ’window’, ’defenestrate’]	>>> for w in words[:]: 			# Loop over a slice copy of the entire list. 	... 	if len(w) > 6:
+	...			words.insert(0, w)		...	>>> words	[’defenestrate’, ’cat’, ’window’, ’defenestrate’]
+##More on ConditionsThe conditions used in while and if statements can contain any operators, not just comparisons.
+Permitted Statements:
+	in					
+	not in				#for sequences
+	is
+	is not				#compare whether 2 objects are the same object (e.g. lists)
+	
+Comparisons may be combined using the Boolean operators `and`,`or`, and `not`. As always, parentheses can be used to express the desired composition.
+
+Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing = in an expression when == was intended.
+
+##Comparing Sequences and Other Types
+Sequence objects may be compared to other objects with the same sequence type. First the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted.
+	If all items of two sequences compare equal, the sequences are considered equal.
+Note that comparing objects of different types is legal. The types are ordered by their name.	
+Thus, a list is always smaller than a string, a string is always smaller than a tuple, etc.
+
+#Modules
+Python has a way to put definitions in a file and use them in a script or in an interactive instance of the interpreter. Such a file is called a module; definitions from a module can be imported into other modules or into the main module.
+A module is a file containing Python definitions and statements suffixed with `.py`.
+Within a module, the module’s name (as a string) is available as the value of the global variable `__name__`.
+If you write and save a module as `file.py`, you import it with the `import` command, minus the suffix.
+	import fileThis does not enter the names of the functions defined in fibo directly in the current symbol table; it only enters the module name 'file' there. Using the module name you can access the functions. E.g.
+	file.add_nums(10)
+
+To get the name of the file:
+
+	>>> file.__name__
+	'file'
+	
+You can assign a function to a local name to speed things up.
+
+	func = file.add_nums
+	func(100)
+
+##More on Modules
+
+A module can contain executable statements as well as function definitions. These statements are intended to initialize the module. They are executed only the first time the module name is encountered in an import statement.
+
+You can touch a module's global variables with the same notation as above:
+
+	file.somevar
+
+There is a variant of the import statement that imports names from a module directly into the importing module’s symbol table. For example:
+	>>> from file import add_nums, sub_nums
+This does not introduce the module name from which the imports are taken in the local symbol table (so in the example, `file` is not defined).There is even a variant to import all names that a module defines:	>>> from file import *
+This imports all names except those beginning with an underscore `_`.
+Note that in general the practice of importing `*` from a module or package is frowned upon, since it often causes poorly readable code. However, it is okay to use it to save typing in interactive sessions.
+##Executng Modules as Scripts
+You can execute a module with:
+	python fibo.py <arguments>
+The module will execute normally, but with the `__name__` set to `__main__`.
+If you want the module to act both as a main script, as well a module that is imported into other programs, you can mess around with:
+	if __name__ == "__main__":
+		import crab
+		add_num(crab.claw("schwak"))
+	
+##The `dir()` FunctionThe built-in function `dir()` is used to find out which names a module defines. 
+	>>> dir(fibo)
+	['__name__', 'fib', 'fib2']
+
+Without arguments, `dir()` lists the names you have defined currently:
+
+`dir()` does not list the names of built-in functions and variables. If you want a list of those, they are defined in thestandard module `__builtin__`:	>>> import __builtin__	>>> dir(__builtin__)
+##Packages
+Packages are a way of structuring Python’s module namespace by using “dotted module names”. For example, the module name A.B designates a submodule named B in a package named A. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like NumPy or the Python Imaging Library from having to worry about each other’s module names.
+Suppose you want to design a collection of modules (a “package”) called `sound`.
+	sound/                		#Top-level package
+    	__init__.py         	#Initialize the sound package
+		formats/          		#Subpackage for file format conversions	  		__init__.py
+       		wavread.py
+	        wavwrite.py
+	        aiffread.py
+       		aiffwrite.py
+	        auread.py
+	        auwrite.py
+       		...
+       			
+     	effects/         		#Subpackage for sound effects
+       		__init__.py
+	        echo.py
+       		surround.py
+	        reverse.py
+	        ...
+
+The `__init__.py` files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as string, from unintentionally hiding valid modules that occur later on the module search path. In the simplest case, `__init__.py` can just be an empty file, but it can also execute initialization code for the package or set the `__all__` variable, described later.	
+Users of the package can import individual modules from the package, for example:	import sound.effects.echo
+This loads the submodule sound.effects.echo. It must be referenced with its full name. 
+	sound.effects.echo.echofilter(input, output, delay=0.7, atten=4) 
+An alternative way of importing the submodule is:
+	from sound.effects import echoThis also loads the submodule echo, and makes it available without its package prefix, so it can be used as follows: 
+	echo.echofilter(input, output, delay=0.7, atten=4)Yet another variation is to import the desired function or variable directly:	from sound.effects.echo import echofilterAgain, this loads the submodule echo, but this makes its function `echofilter()` directly available: 
+	echofilter(input, output, delay=0.7, atten=4)
+Note that when using `from package import item` , the item can be either a submodule (or subpackage) of the package, or some other name defined in the package, like a function, class or variable.
+
+##Importing * From a Package
+The import statement uses the following convention: if a package’s `__init__.py` code defines a list named `__all__`, it is taken to be the list of module names that should be imported when `from package import *` is encountered.
+For example, the file `sounds/effects/__init__.py` could contain the following code:	__all__ = ["echo", "surround", "reverse"]This would mean that from `sound.effects import *` would import the three named submodules of the sound package.
+If `__all__` is not defined, the statement `from sound.effects import *` does not import all submodules from the package `sound.effects` into the current namespace; it only ensures that the package `sound.effects` has been imported (possibly running any initialization code in `__init__.py`) and then imports whatever names are defined in the package. This includes any names defined (and submodules explicitly loaded) by `__init__.py`. 

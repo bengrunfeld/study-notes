@@ -928,4 +928,96 @@ Programs may name their own exceptions by creating a new exception class.  Excep
 The `with` statement allows objects like files to be used in a way that ensures they are always cleaned up promptly and correctly.
 	with open("myfile.txt") as f: 		for line in f:			print line,
 After the statement is executed, the file `f` is always closed, even if a problem was encountered while processing the lines.
+#Classes
+The class inheritance mechanism allows multiple base classes, a derived class can override any methods of its base class or classes, and a method can call the method of a base class with the same name. Objects can contain arbitrary amounts and kinds of data.
+Normally class members (including variables) are **public**, and all member functions are virtual. 
+There are no shorthands for referencing the object’s members from its methods.
+The method function is declared with an explicit first argument representing the object, which is provided implicitly by the call.
+Classes themselves are objects. This provides semantics for importing and renaming.
+Built-in types can be used as base classes for extension by the user.
+
+##AliasesObjects have individuality, and multiple names (in multiple scopes) can be bound to the same object. This is known as aliasing in other languages.
+Aliases behave like pointers in some respects. For example, passing an object is cheap since only a pointer is passed by the implementation; and if a function modifies an object passed as an argument, the caller will see the change.
+##Python Scopes and Namespaces
+A namespace is a mapping from names to objects. E.g. built-in exception names.
+The important thing to know about namespaces is that there is absolutely no relation between names in different namespaces.
+According to Python, any name following a dot is called an attribute (e.g. function via module name).
+References to names in modules are attribute references. E.g.
+In the expression `modname.funcname`, `modname` is a module object and funcname is an attribute of it.
+The statements executed by the top-level invocation of the interpreter, either read from a script file or interactively, are considered part of a module called `__main__`, so they have their own global namespace. (The built-in names actually also live in a module; this is called `__builtin__`.)
+The local namespace for a function is created when the function is called, and deleted when the function returns or raises an exception that is not handled within the function.
+A scope is a textual region of a Python program where a namespace is directly accessible.
+At any time during execution, there are at least three nested scopes whose namespaces are directly accessible:
+* the innermost scope, which is searched first, contains the local names* the scopes of any enclosing functions, which are searched starting with the nearest enclosing scope, contains non-local, but also non-global names* the next-to-last scope contains the current module’s global names* the outermost scope (searched last) is the namespace containing built-in names
+All variables found outside of the innermost scope are read-only (an attempt to write to such a variable will simply create a new local variable in the innermost scope, leaving the identically named outer variable unchanged).
+##Intro to Classes
+The simplest form of class definition looks like this:	class ClassName:	    <statement-1>	    .	    <statement-N>
+Class definitions, like function definitions (def statements) must be executed before they have any effect.
+
+##Class Objects
+
+When a class definition is left normally (via the end), a class object is created. This is basically a wrapper around the contents of the namespace created by the class definition
+Class objects support two kinds of operations: attribute references and instantiation.
+Attribute references use the standard syntax used for all attribute references in Python: `obj.name`.So with:
+	class MyClass:	"""A simple example class""" 	i = 12345	def f(self):		return ’hello world’`MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object.
+Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment.
+`__doc__` is also a valid attribute, returning the docstring belonging to the class: "A simple example class".
+Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. E.g.
+	x = MyClass()
+Creates a new instance of the class and assigns this object to the local variable `x`.Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named `__init__()`, like this:	def __init__(self): 		self.data = []When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance.If the `__init__()` method has more arguments, then any arguments given to the class instantiation operator are passed on to `__initi__()`.	class Complex:		def __init__(self, realpart, imagpart): 			self.r = realpart			self.i = imagpart
+		x = Complex(3.0, -4.5) 	x.r, x.i	(3.0, -4.5)##Instance Objects
+The only operations understood by instance objects are attribute refer- ences. There are two kinds of valid attribute names, data attributes and methods.
+**data attributes** correspond to **instance variables** in Smalltalk, and to **data members** in C++.
+Data attributes need not be declared; like local variables, they spring into existence when they are first assigned to.
+The other kind of instance attribute reference is a method. A method is a function that “belongs to” an object.
+
+##Method ObjectsUsually, a method is called right after it is bound.	x.f()But methods can be used later as well. 	xf = x.f while True:	print xf()The special thing about methods is that the object is passed as the first argument of the function.In our example, the call `x.f()` is exactly equivalent to `MyClass.f(x)`.
+##General Knowledge
+Data attributes override method attributes with the same name.Use verbs for methods and nouns for data attributes to avoid conflicts (or some other convention).
+Classes are not usable to implement pure abstract data types. In fact, nothing in Python makes it possible to enforce data hiding — it is all based upon convention.(On the other hand, the Python implementation, written in C, can completely hide implementation details and control access to an object if necessary; this can be used by extensions to Python written in C.)Often, the first argument of a method is called `self`. This is nothing more than a convention: the name self has absolutely no special meaning to Python.
+It is not necessary that the function definition is textually enclosed in the class definition: assigning a function object to a local variable in the class is also ok. E.g.
+	# Function defined outside the class	def f1(self, x, y): 		return min(x, x+y)	class C:		f = f1		def g(self):			return ’hello world’		h=gMethods may call other methods by using method attributes of the self argument. E.g.
+	class Bag:		def __init__(self):			self.data = [] 
+		def add(self, x):			self.data.append(x)		def addtwice(self, x):	        self.add(x)	        self.add(x)Methods may reference global names in the same way as ordinary functions. The global scope associated with a method is the module containing its definition. (A class is never used as a global scope.)
+Each value is an object, and therefore has a class (also called its type). It is stored as `object.__class__`.
+
+##Inheritance
+The syntax for a derived class definition looks like this:	class DerivedClassName(BaseClassName):	    <statement-1>	    .	    .	    <statement-N>The name BaseClassName must be defined in a scope containing the derived class definition. In place of a base class name, other arbitrary expressions are also allowed. This can be useful, for example, when the base class is defined in another module:		class DerivedClassName(modname.BaseClassName):Execution of a derived class definition proceeds the same as for a base class. When the class object is constructed, the base class is remembered.Derived classes may override methods of their base classes.There is a simple way to call the base class method directly: just call `BaseClassName.methodname(self, arguments)`.An overriding method in a derived class may in fact want to extend rather than simply replace the base class method of the same name. Python has two built-in functions that work with inheritance:* Use `isinstance()` to check an instance’s type: `isinstance(obj, int)` will be True only if `obj.__class__` is int or some class derived from int.* Use `issubclass()` to check class inheritance: `issubclass(bool, int)` is True since bool is a subclass of int. However, `issubclass(unicode, str)` is False since unicode is not a subclass of `str` (they only share a common ancestor, basestring).#Mupltiple Inheritance
+Python supports a limited form of multiple inheritance as well. A class definition with multiple base classes looks like this:	class DerivedClassName(Base1, Base2, Base3):	    <statement-1>	    .	    .	    .	    <statement-N>For old-style classes, the only rule is depth-first, left-to-right.Therefore, if an attribute is not found in `DerivedClassName`, it is searched in `Base1`, then (recursively) in the base classes of `Base1`, and only if it is not found there, it is searched in `Base2`, and so on.For new-style classes, the method resolution order changes dynamically to support cooperative calls to `super()`.With new-style classes, dynamic ordering is necessary because all cases of multiple inheritance exhibit one or more diamond relationships (where at least one of the parent classes can be accessed through multiple paths from the bottommost class). For example, all new-style classes inherit from object, so any case of multiple inheritance provides more than one path to reach object.
+To keep the base classes from being accessed more than once, the dynamic algorithm linearizes the search order in a way that preserves the left-to-right ordering specified in each class, that calls each parent only once, and that is monotonic (meaning that a class can be subclassed without affecting the precedence order of its parents).
+
+##Private Variables and Class-local References
+
+“Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. 
+
+However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member).
+
+Python believes that the main use case for class-private members is to avoid name clashes with subclasses. So Python has a mechanism called **name mangling**. Any identifier of the form `__spam` (at least two leading underscores, at most one trailing underscore) is textually replaced with `_classname__spam`, where `classname` is the current class name with leading underscore(s) stripped.
+Name mangling is helpful for letting subclasses override methods without breaking intraclass method calls.
+Note that the mangling rules are designed mostly to avoid accidents; it still is possible to access or modify a variable that is considered private.	class Mapping:
+		def __init__(self, iterable):
+	        self.items_list = []
+	        self.__update(iterable)
+	
+		def update(self, iterable): 
+		for item in iterable:
+			self.items_list.append(item)
+	
+		__update = update # private copy of original update() method
+	
+	class MappingSubclass(Mapping):
+		def update(self, keys, values):
+			# provides new signature for update() 
+			# but does not break __init__()
+			for item in zip(keys, values):
+				self.items_list.append(item)##Bundling
+Sometimes it is useful to bundle together a few named data items. To do this we use an empty class definition.
+
+	class Employee: 
+		pass			john = Employee() # Create an empty employee record		# Fill the fields of the record	john.name = ’John Doe’	john.dept = ’computer lab’	john.salary = 1000A piece of Python code that expects a particular abstract data type can often be passed a class that emulates the methods of that data type instead. For instance, if you have a function that formats some data from a file object, you can define a class with methods `read()` and `readline()` that get the data from a string buffer instead, and pass it as an argument.Instance method objects have attributes, too: m.im_self is the instance object with the method `m()`, and `m.im_func` is the function object corresponding to the method.##Exceptions Are Classes Too
+User-defined exceptions are identified by classes as well. Using this mechanism it is possible to create extensible hierarchies of exceptions.There are two new valid (semantic) forms for the raise statement: 
+	raise Class, instance
+	raise instanceIn the first form, `instance` must be an instance of `Class` or of a class derived from it. The second form is a shorthand for:	raise instance.__class__, instance
+A class in an except clause is compatible with an exception if it is the same class or a base class thereof (but not the other way around — an except clause listing a derived class is not compatible with a base class).
+For example, the following code will print B, C, D in that order:	class B: 		pass	class C(B):		pass	class D(C): 		pass	for c in [B, C, D]: 		try:			raise c() 		except D:			print "D" 		except C:			print "C" 		except B:			print "B"
 

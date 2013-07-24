@@ -342,7 +342,7 @@ If you need to modify the sequence you are iterating over while inside the loop 
 
 ##The `RANGE` Statement
 
-If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates lists containing arithmetic progressions:
+If you do need to iterate over a sequence of numbers, the built-in function `range()` comes in handy. It generates lists containing arithmetic progressions:
 
 	>>> range(10)
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -370,13 +370,13 @@ To iterate over the indices of a sequence, you can combine range() and len() as 
 
 
 
-##4.4 break and continue Statements, and else 
+##4.4 `break` and `continue` Statements, and else 
 
-Clauses on Loops The break statement, like in C, breaks out of the smallest enclosing for or while loop.
+The break statement, like in C, breaks out of the smallest enclosing for or while loop.
 
 Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the list.
 
-a try statement’s else clause runs when no exception occurs, and a loop’s else clause runs when no break occurs. E.g.
+A `try` statement’s else clause runs when no exception occurs, and a loop’s else clause runs when no break occurs. E.g.
 
 	#! /usr/bin/python
 	names = ['b', 'e', 'n', 'n', 'y']
@@ -389,7 +389,7 @@ a try statement’s else clause runs when no exception occurs, and a loop’s el
 
 The continue statement, also borrowed from C, continues with the next iteration of the loop:
 
-##pass Statements
+##The `PASS` Statement
 The pass statement does nothing. It can be used as a placeholder.
 	>>> while True:	... 	pass # Busy-wait
 or
@@ -397,15 +397,20 @@ The continue statement, also borrowed from C, continues with the next iteration 
 	>>> class MyEmptyClass: 
 	... 	pass
 
+##The IN Keyword
+
+The `in` keyword tests whether or not a sequence contains a certain value.
+
+
 ##Defining Functions
 
 To define a function:
 
-	def speakLoud(input)
+	def speakLoud(input):
 
 The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
 
-The first statement of the function body can optionally be a string literal; this string literal is the function’s documenta- tion string, or docstring.
+The first statement of the function body can optionally be a string literal; this string literal is the function’s documentation string, or docstring.
 
 There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write
 
@@ -414,9 +419,6 @@ It is also possible to define functions with a variable number of arguments. The
 ##Default Argument Values
 The most useful form is to specify a default value for one or more arguments. This creates a function that can be called with fewer arguments than it is defined to allow. For example:	def ask_ok(prompt, retries=4, complaint=’Yes or no, please!’):
 
-##The IN Keyword
-
-The `in` keyword tests whether or not a sequence contains a certain value.
 
 ##Functions with a Variable Number of Arguments
 
@@ -463,7 +465,8 @@ Basically, in a function declaration, `*` stands for any regular argument, and y
 
 Seriosly, I don't get it…
 
-	def write_multiple_items(file, separator, *args): 		file.write(separator.join(args)) 
+	def write_multiple_items(file, separator, *args):
+		file.write(separator.join(args)) 
 
 ##Unpacking Argument Lists
 
@@ -481,7 +484,7 @@ The reverse situation occurs when the arguments are already in a list or tuple b
 
 ##Lambda Forms
 
-With the `lambda` keyword, small anonymous functions can be created. Lambda forms can be used wherever function objects are required.lambda forms can reference variables from the containing scope. E.g.
+With the `lambda` keyword, small anonymous functions can be created. Lambda forms can be used wherever function objects are required. Lambda forms can reference variables from the containing scope. E.g.
 
 	>>> def inc(n):
 	...     return lambda x: x + n
@@ -512,12 +515,12 @@ With the `lambda` keyword, small anonymous functions can be created. Lambda form
 	>>> filter(func, list)
 	[2, 4, 6, 8, 10, 12, 14, 16, 18]
 `map(function, sequence)` calls `function(item)` for each of the sequence’s items and returns a list of the return values. E.g.
-	>>> def add_two(y): return y * 2
+	>>> def add_two(y): return y + 2
 	... 
 	>>> map(add_two, list)
 	[4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38]
 More than one sequence may be passed; the function must then have as many arguments as there are sequences and is called with the corresponding item from each sequence (or None if some sequence is shorter than another). 
-`reduce(function, sequence)` returns a single value constructed by calling the binary function function on the first two items of the sequence, then on the result and the next item, and so on.
+`reduce(function, sequence)` returns a single value constructed by calling the binary function `function` on the first two items of the sequence, then on the result and the next item, and so on.
 	>>> def add(x,y): return x+y 
 	...
 	>>> reduce(add, range(1, 11)) 55
@@ -582,21 +585,30 @@ Lists and Strings are both of data type "sequence". Tuples are also of type "seq
 
 A tuple consists of a number of values separated by commas, for instance:
 
-	>>> t = 12345, 54321, ’hello!’ >>> t[0]
+	>>> t = 12345, 54321, ’hello!’ 
+	>>> t[0]
 	12345
 	>>> t
 	(12345, 54321, ’hello!’)
 	>>> # Tuples may be nested:
 	... u = t, (1, 2, 3, 4, 5)
 	>>> u
-	((12345, 54321, ’hello!’), (1, 2, 3, 4, 5)) >>> # Tuples are immutable:
+	((12345, 54321, ’hello!’), (1, 2, 3, 4, 5)) 
+	>>> # Tuples are immutable:
 	... t[0] = 88888
 	Traceback (most recent call last):
 	File "<stdin>", line 1, in <module>
-	TypeError: ’tuple’ object does not support item assignment >>> # but they can contain mutable objects:
+	TypeError: ’tuple’ object does not support item assignment 
+	>>> # but they can contain mutable objects:
 	... v = ([1, 2, 3], [3, 2, 1])
 	>>> v
 	([1, 2, 3], [3, 2, 1])
+
+**Rules:**
+
+1. Tuples can be nested
+2. Tuples are immutable
+3. Tuples may contain mutable objects
 
 On output tuples are always enclosed in parentheses, so that nested tuples are interpreted correctly; they may be input with or without surrounding parentheses, although often parentheses are necessary anyway (if the tuple is part of a larger expression).
 
@@ -1020,4 +1032,14 @@ Python believes that the main use case for class-private members is to avoid nam
 	raise instanceIn the first form, `instance` must be an instance of `Class` or of a class derived from it. The second form is a shorthand for:	raise instance.__class__, instance
 A class in an except clause is compatible with an exception if it is the same class or a base class thereof (but not the other way around — an except clause listing a derived class is not compatible with a base class).
 For example, the following code will print B, C, D in that order:	class B: 		pass	class C(B):		pass	class D(C): 		pass	for c in [B, C, D]: 		try:			raise c() 		except D:			print "D" 		except C:			print "C" 		except B:			print "B"
-
+##Iterators
+Most container objects can be looped over using a for statement:	for element in [1, 2, 3]: 		print element	for element in (1, 2, 3): 		print element	for key in {’one’:1, ’two’:2}: 		print key	for char in "123": 
+		print char	for line in open("myfile.txt"): 
+		print line,
+
+This next part (chapter 9.9) explains how to make your own iterator. Feel free to read it if you need to.
+
+##Generators
+
+Generators are a simple and powerful tool for creating iterators. Chapter 9.10. As above.
+

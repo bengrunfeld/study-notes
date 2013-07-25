@@ -617,14 +617,15 @@ It is not possible to assign to the individual items of a tuple, however it is p
 Empty tuples are constructed by an empty pair of parentheses; a tuple with one item is constructed by following a value with a comma (it is not sufficient to enclose a single value in parentheses).
 
 	>>> empty = ()
-	>>> singleton = ’hello’, >>> len(empty)
+	>>> singleton = ’hello’, 
+	>>> len(empty)
 	0
 	>>> len(singleton)
 	1
 	>>> singleton
 	(’hello’,)
 
-The statement `t = 12345, 54321,’hello!’` is an example of tuple packing : the values 12345, 54321 and ’hello!’ are packed together in a tuple. The reverse operation is also possible:
+The statement `t = 12345, 54321,'hello!'` is an example of tuple packing. The values `12345`, `54321` and `hello!` are packed together in a tuple. The reverse operation is also possible:
 
 	>>> x, y, z = t
 
@@ -632,7 +633,7 @@ This is called, appropriately enough, sequence unpacking and works for any seque
 
 ##The SET Datatype
 
-A set is an unordered collection with no duplicate elements. Set objects support mathematical operations like union, intersection, difference, and symmetric difference.
+A `set` is an unordered collection with no duplicate elements. `set` objects support mathematical operations like union, intersection, difference, and symmetric difference.
 
 Curly braces or the `set()` function can be used to create sets. Note: to create an empty set you have to use `set()`, not `{}`.
 
@@ -691,12 +692,12 @@ To check whether a single key is in the dictionary, use the `in` keyword.
 	>>> 'boulder' in postcodes
 	True
 
-The dict() constructor builds dictionaries directly from sequences of key-value pairs: 
+The `dict()` constructor builds dictionaries directly from sequences of key-value pairs: 
 
 	>>> dict([(’sape’, 4139), (’guido’, 4127), (’jack’, 4098)])
 	>>> dict(sape=4139, guido=4127, jack=4098)
 
-In addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:	>>> {x: x**2 for x in (2, 4, 6)} {2: 4, 4: 16, 6: 36}
+In addition, dict comprehensions can be used to create dictionaries from arbitrary key and value expressions:	>>> {x: x**2 for x in (2, 4, 6)} 	{2: 4, 4: 16, 6: 36}			#result
 ##Looping Techniques
 
 When looping through a sequence, the position index and corresponding value can be retrieved at the same time using the `enumerate()` function.
@@ -739,7 +740,7 @@ To loop over a sequence in sorted order, use the `sorted()` function which retur
 	
 Comparisons may be combined using the Boolean operators `and`,`or`, and `not`. As always, parentheses can be used to express the desired composition.
 
-Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing = in an expression when == was intended.
+Note that in Python, unlike C, assignment cannot occur inside expressions. C programmers may grumble about this, but it avoids a common class of problems encountered in C programs: typing `=` in an expression when `==` was intended.
 
 ##Comparing Sequences and Other Types
 Sequence objects may be compared to other objects with the same sequence type. First the first two items are compared, and if they differ this determines the outcome of the comparison; if they are equal, the next two items are compared, and so on, until either sequence is exhausted.
@@ -778,7 +779,7 @@ There is a variant of the import statement that imports names from a module dire
 This does not introduce the module name from which the imports are taken in the local symbol table (so in the example, `file` is not defined).There is even a variant to import all names that a module defines:	>>> from file import *
 This imports all names except those beginning with an underscore `_`.
 Note that in general the practice of importing `*` from a module or package is frowned upon, since it often causes poorly readable code. However, it is okay to use it to save typing in interactive sessions.
-##Executng Modules as Scripts
+##Executing Modules as Scripts
 You can execute a module with:
 	python fibo.py <arguments>
 The module will execute normally, but with the `__name__` set to `__main__`.
@@ -827,7 +828,7 @@ Users of the package can import individual modules from the package, for example
 
 ##Importing * From a Package
 The import statement uses the following convention: if a package’s `__init__.py` code defines a list named `__all__`, it is taken to be the list of module names that should be imported when `from package import *` is encountered.
-For example, the file `sounds/effects/__init__.py` could contain the following code:	__all__ = ["echo", "surround", "reverse"]This would mean that from `sound.effects import *` would import the three named submodules of the sound package.
+For example, the file `sounds/effects/__init__.py` could contain the following code:	__all__ = ["echo", "surround", "reverse"]This would mean that `from sound.effects import *` would import the three named submodules of the sound package.
 If `__all__` is not defined, the statement `from sound.effects import *` does not import all submodules from the package `sound.effects` into the current namespace; it only ensures that the package `sound.effects` has been imported (possibly running any initialization code in `__init__.py`) and then imports whatever names are defined in the package. This includes any names defined (and submodules explicitly loaded) by `__init__.py`. 
 ##Output Formatting
 To convert any value to a string, use the `repr()` or `str()` functions. 
@@ -848,13 +849,13 @@ These methods do not write anything, they just return a new string.
 An optional `:` and format specifier can follow the field name. This allows greater control over how the value is formatted. The following example rounds Pi to three places after the decimal.	>>> import math	>>> print 'The value of PI is approximately {0:.3f}.'.format(math.pi)
 Passing an integer after the `:` will cause that field to be a minimum number of characters wide. This is useful for making tables pretty.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 7678} 	>>> for name, phone in table.items():	... print ’{0:10} ==> {1:10d}’.format(name, phone)
 If you have a really long format string that you don’t want to split up, it would be nice if you could reference the variables to be formatted by name instead of by position. This can be done by simply passing the dict and using square brackets `[]` to access the keys
-	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678} 	>>> print (’Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; ’	... ’Dcab: {0[Dcab]:d}’.format(table))	Jack: 4098; Sjoerd: 4127; Dcab: 8637678This could also be done by passing the table as keyword arguments with the ‘**’ notation.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678}	>>> print ’Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; 	... Dcab: {Dcab:d}’.format(**table) 		Jack: 4098; Sjoerd: 4127; Dcab: 8637678
+	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678} 	>>> print (’Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; ’	... ’Dcab: {0[Dcab]:d}’.format(table))	Jack: 4098; Sjoerd: 4127; Dcab: 8637678This could also be done by passing the table as keyword arguments with the `**` notation.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678}	>>> print ’Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; 	... Dcab: {Dcab:d}’.format(**table) 		Jack: 4098; Sjoerd: 4127; Dcab: 8637678
 ##The `vars()` Method
 `vars()` returns a dictionary containing all local variables.
 
 ##Reading and Writing Files`open()` returns a file object, and is most commonly used with two arguments: `open(filename, mode)`.	>>> f = open(’workfile’, ’w’)	>>> print f	<open file ’workfile’, mode ’w’ at 80a0960>
 
-The second argument is another string containing a few charac- ters describing the way in which the file will be used. `r` = read. `w` = write (overwrites destructively). `a` = append. Any data written to the file is automatically added to the end.
+The second argument is another string containing a few characters describing the way in which the file will be used. `r` = read. `w` = write (overwrites destructively). `a` = append. Any data written to the file is automatically added to the end.
 
 `r+` opens the file for both reading and writing. The mode argument is optional; `r` will be assumed if it’s omitted.
 
@@ -910,7 +911,7 @@ The string printed as the exception type is the name of the built-in exception t
 The `try ... except` statement has an optional `else` clause, which, when present, must follow all except clauses. It is useful for code that must be executed if the try clause does not raise an exception. For example:
 	for arg in sys.argv[1:]: 		try:			f = open(arg, ’r’) 		except IOError:			print ’cannot open’, arg 		else:			print arg, ’has’, len(f.readlines()), ’lines’ 			f.close()
 The use of the else clause is better than adding additional code to the try clause because it avoids accidentally catching an exception that wasn’t raised by the code being protected by the `try ... except` statement.
-When an exception occurs, it may have an associated value, also known as the exception’s argument. The presence and type of the argument depend on the exception type.The except clause may specify a variable after the exception name (or tuple). The variable is bound to an exception in- stance with the arguments stored in instance.args. For convenience, the exception instance defines `__str__()` so the arguments can be printed directly without having to reference .args.One may also instantiate an exception first before raising it and add any attributes to it as desired.	>>> try:	... 	raise Exception(’spam’, ’eggs’) 	... except Exception as inst:	... 	print type(inst)			# the exception instance	... 	print inst.args				# arguments stored in .args	... 	print inst					# __str__ allows args to printed directly	... 	x, y = inst.args	... 	print ’x =’, x	... 	print ’y =’, y 	...	<type ’exceptions.Exception’>	(’spam’, ’eggs’)	(’spam’, ’eggs’)	x = spam	y = eggs
+When an exception occurs, it may have an associated value, also known as the exception’s argument. The presence and type of the argument depend on the exception type.The except clause may specify a variable after the exception name (or tuple). The variable is bound to an exception instance with the arguments stored in `instance.args`. For convenience, the exception instance defines `__str__()` so the arguments can be printed directly without having to reference `.args`.One may also instantiate an exception first before raising it and add any attributes to it as desired.	>>> try:	... 	raise Exception(’spam’, ’eggs’) 	... except Exception as inst:	... 	print type(inst)			# the exception instance	... 	print inst.args				# arguments stored in .args	... 	print inst					# __str__ allows args to printed directly	... 	x, y = inst.args	... 	print ’x =’, x	... 	print ’y =’, y 	...	<type ’exceptions.Exception’>	(’spam’, ’eggs’)	(’spam’, ’eggs’)	x = spam	y = eggs
 If an exception has an argument, it is printed as the last part (‘detail’) of the message for unhandled exceptions.
 Exception handlers also handle exceptions from functions called inside the `try` block.
 ###Raising Exceptions
@@ -932,8 +933,8 @@ Programs may name their own exceptions by creating a new exception class.  Excep
 Exception classes can be defined which do anything any other class can do, but are usually kept simple.
 BEST PRACTICE: When creating a module that can raise several distinct errors, a common practice is to create a base class for exceptions defined by that module, and subclass that to create specific exception classes for different error conditionsMost exceptions are defined with names that end in “Error”.
 ##Defining Clean Up Actions
-The try statement has another optional clause which is intended to define clean-up actions that must be executed under all circumstances. For example:	>>> try:	... raise KeyboardInterrupt 	... finally:	... print ’Goodbye, world!’
-A finally clause is always executed before leaving the try statement, whether an exception has occurred or not.
+The try statement has another optional clause, `finally`, which is intended to define clean-up actions that must be executed under all circumstances. For example:	>>> try:	... raise KeyboardInterrupt 	... finally:	... print ’Goodbye, world!’
+A `finally` clause is always executed before leaving the try statement, whether an exception has occurred or not.
 When an exception has occurred in the try clause and has not been handled by an except clause (or it has occurred in a except or else clause), it is re-raised after the finally clause has been executed. The finally clause is also executed “on the way out” when any other clause of the try statement is left via a break, continue or return statement.
 ##Predefined Clean-up Actions
 Some objects define standard clean-up actions to be undertaken when the object is no longer needed.
@@ -976,9 +977,9 @@ When a class definition is left normally (via the end), a class object is create
 `__doc__` is also a valid attribute, returning the docstring belonging to the class: "A simple example class".
 Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. E.g.
 	x = MyClass()
-Creates a new instance of the class and assigns this object to the local variable `x`.Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named `__init__()`, like this:	def __init__(self): 		self.data = []When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance.If the `__init__()` method has more arguments, then any arguments given to the class instantiation operator are passed on to `__initi__()`.	class Complex:		def __init__(self, realpart, imagpart): 			self.r = realpart			self.i = imagpart
+Creates a new instance of the class and assigns this object to the local variable `x`.Many classes like to create objects with instances customized to a specific initial state. Therefore a class may define a special method named `__init__()`, like this:	def __init__(self): 		self.data = []When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance.If the `__init__()` method has more arguments, then any arguments given to the class instantiation operator are passed on to `__init__()`.	class Complex:		def __init__(self, realpart, imagpart): 			self.r = realpart			self.i = imagpart
 		x = Complex(3.0, -4.5) 	x.r, x.i	(3.0, -4.5)##Instance Objects
-The only operations understood by instance objects are attribute refer- ences. There are two kinds of valid attribute names, data attributes and methods.
+The only operations understood by instance objects are attribute references. There are two kinds of valid attribute names, data attributes and methods.
 **data attributes** correspond to **instance variables** in Smalltalk, and to **data members** in C++.
 Data attributes need not be declared; like local variables, they spring into existence when they are first assigned to.
 The other kind of instance attribute reference is a method. A method is a function that “belongs to” an object.
@@ -1026,7 +1027,7 @@ Python believes that the main use case for class-private members is to avoid nam
 Sometimes it is useful to bundle together a few named data items. To do this we use an empty class definition.
 
 	class Employee: 
-		pass			john = Employee() # Create an empty employee record		# Fill the fields of the record	john.name = ’John Doe’	john.dept = ’computer lab’	john.salary = 1000A piece of Python code that expects a particular abstract data type can often be passed a class that emulates the methods of that data type instead. For instance, if you have a function that formats some data from a file object, you can define a class with methods `read()` and `readline()` that get the data from a string buffer instead, and pass it as an argument.Instance method objects have attributes, too: m.im_self is the instance object with the method `m()`, and `m.im_func` is the function object corresponding to the method.##Exceptions Are Classes Too
+		pass			john = Employee() # Create an empty employee record		# Fill the fields of the record	john.name = ’John Doe’	john.dept = ’computer lab’	john.salary = 1000A piece of Python code that expects a particular abstract data type can often be passed a class that emulates the methods of that data type instead. For instance, if you have a function that formats some data from a file object, you can define a class with methods `read()` and `readline()` that get the data from a string buffer instead, and pass it as an argument.Instance method objects have attributes, too: `m.im_self` is the instance object with the method `m()`, and `m.im_func` is the function object corresponding to the method.##Exceptions Are Classes Too
 User-defined exceptions are identified by classes as well. Using this mechanism it is possible to create extensible hierarchies of exceptions.There are two new valid (semantic) forms for the raise statement: 
 	raise Class, instance
 	raise instanceIn the first form, `instance` must be an instance of `Class` or of a class derived from it. The second form is a shorthand for:	raise instance.__class__, instance

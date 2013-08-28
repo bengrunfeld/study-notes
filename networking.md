@@ -197,5 +197,59 @@ Network `0.0.0.0` designates the default route and network `127.0.0.1` is the lo
 
 An IP address contains a network part and a host part, but the format of these parts is not the same in every IP address.
 
-The prefix length is determined by the address bit mask.
-
+The number of address bits used to identify the net- work and the number used to identify the host vary according to the prefix length of the address. The prefix length is determined by the address bit mask. 
+
+An address bit mask works like this: if a bit is on in the mask, that equivalent bit in the address is interpreted as a network bit; if a bit in the mask is off, the bit belongs to the host part of the address.
+
+A shorthand notation is available for writing an address with its associated address mask. We can write `172.31.26.32/27`. The format of this notation is address/prefix-length, where prefix-length is the number of bits in the network portion of the address. Without this notation, the address `172.31.26.32` could easily be misinterpreted.
+
+Organizations usually obtain official IP addresses by purchasing a block of addresses from their Internet service provider. The ISP normally assigns a single organization a continuous block of addresses that is appropriate for the needs of the organization.
+
+Internally, however, the organization may have several separate physical networks within the address block. The flexibility of address masks means that service provid- ers can assign arbitrary length blocks of addresses to their customers, and the cus- tomers can subdivide those address blocks using different length masks.
+
+##Subnets
+
+The structure of an IP address can be locally modified by using host address bits as additional network address bits. Essentially, the “dividing line” between network address bits and host address bits is moved, creating additional networks but reduc- ing the maximum number of hosts that can belong to each network. These newly designated network bits define an address block within the larger address block, which is called a **subnet**.
+
+Organizations usually decide to subnet in order to overcome topological or organizational problems. Subnetting allows decentralized management of host addressing.
+
+Subnetting divides a single address block into many unique subnet addresses, so that each physical network can have its own unique address.
+
+On the outside, the address is still interpreted using the address mask known to the outside world.
+
+Because of the dual role of IP addresses, the flexibility of address masks not only makes more addresses available for use, but also has a positive impact on routing.
+
+## CIDR Blocks and Route Aggregation
+
+The use of an address mask instead of the old address classes to determine the destination network is called Classless Inter-Domain Routing (CIDR).
+
+In the TCP/IP protocol suite, addressing is defined by the IP protocol. There- fore, to define a new address structure, the Internet Engineering Task Force (IETF) created a new version of IP called IPv6.##IPv6
+IPv6 has a very large 128-bit address, so address depletion is not an issue.
+Other benefits of IPv6 are:* Improved security built into the protocol* Simplified, fixed-length, word-aligned headers to speed header processing and reduce overhead* Improved techniques for handling header options## Internet Routing Architecture
+The routing information passed to the other network systems is called reachability information.
+* **reachability information** – The routing information passed to the other network systems is called reachability information. It simply says which networks can be reached through that autonomous system.
+The new routing model is based on co-equal collections of autonomous systems called routing domains. Routing domains exchange routing information with other domains using Border Gateway Protocol (BGP).
+NSF created the Routing Arbiter (RA) servers when it created the Network Access Points (NAPs) that provide interconnection points for the various service provider networks. A route arbiter is located at each NAP. The server pro- vides access to the Routing Arbiter Database (RADB), which replaced the PRDB. ISPs can query servers to validate the reachability information advertised by an autono- mous system.
+The RADB is only part of the Internet Routing Registry (IRR).
+Creating an effective routing architecture continues to be a major challenge for the Internet, and the routing architecture will certainly evolve over time. No matter how it is derived, the routing information eventually winds up in your local gateway, where it is used by IP to make routing decisions.
+## The Routing Table
+Gateways route data between networks, but all network devices, hosts as well as gateways, must make routing decisions. For most hosts, the routing decisions are simple:
+* If the destination host is on the local network, the data is delivered to the desti- nation host.* If the destination host is on a remote network, the data is forwarded to a local gateway.
+IP routing decisions are simply table lookups. Packets are routed toward their destinations as directed by the routing table (also called the forwarding table).The routing table maps destinations to the router and network interface that IP must use to reach that destination.Most systems use two routing tables: the Forwarding Information Base (FIB), which is the table we are interested in because it is used for the routing decision, and the kernel routing cache, which lists the source and destination of recently used routes.
+Each entry in the routing table starts with a destination value.
+When an address matches an entry in the table, the Gateway field tells IP how to reach the specified destination. If the Gateway field contains the IP address of a router, the router is used.
+If the Gateway field contains all 0s (i.e. 0.0.0.0), the destination network is a directly connected network and the “gateway” is the computer’s network interface.
+The destination, gateway, mask, and interface define the route.
+The routing cache is different from the routing table because the cache shows established routes. The routing table is used to make routing decisions; the routing cache is used after the decision is made. The routing cache shows the source and destina- tion of a network connection and the gateway and interface used to make that connection.
+The default route is the other reserved network number mentioned earlier: `0.0.0.0.` The default gateway is used whenever there is no specific route in the table for a destination network address.
+All of the gateways that appear in the routing table are on networks directly connected to the local system.The gateways that a host uses to reach the rest of the Internet must be on its subnet.
+A routing table does not contain end-to-end routes. A route points only to the next gateway, called the next hop, along the path to the destination network. The host relies on the local gateway to deliver the data, and the gateway relies on other gateways. 
+IP uses the network portion of the address to route the datagram between networks. The full address, including the host information, is used to make final delivery when the datagram reaches the destination network.
+## Address Resolution
+The IP address and the routing table direct a datagram to a specific physical network, but when data travels across a network, it must obey the physical layer proto- cols used by that network. The physical networks underlying the TCP/IP network do not understand IP addressing. Physical networks have their own addressing schemes, and there are as many different addressing schemes as there are different types of physical networks. One task of the network access protocols is to map IP addresses to physical network addresses.
+
+The most common example of this Network Access Layer function is the translation of IP addresses to Ethernet addresses, performed by the **Address Resolution Protocol (ARP)**.
+
+The ARP software maintains a table of translations between IP addresses and Ethernet addresses. This table is built dynamically.
+
+

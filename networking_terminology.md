@@ -25,7 +25,17 @@
 * **Addressing** – IP addresses, which uniquely identify every host on the network, deliver data to the correct host.* **Routing** – Gateways deliver data to the correct network.* **Multiplexing** – Protocol and port numbers deliver data to the correct software module within the host.
 * **IP Address** – An IP address is a 32-bit value that uniquely identifies every device attached to a TCP/IP network. Each of the four numbers in the IP address is in the range 0–255 (the decimal values possible in a single byte). 
 * **host addresses** – Another name for IP Addresses
+* **CIDR** – The use of an address mask instead of the old address classes to determine the destination network is called Classless Inter-Domain Routing (CIDR).
+* **AS** – Autonomous System. An autonomous system is not merely an independent network. It is a collection of networks and gateways with its own inter- nal mechanism for collecting routing information and passing it to other indepen- dent network systems.
+* **reachability information** – The routing information passed to the other network systems is called reachability information. It simply says which networks can be reached through that autonomous system.
+* **Routing Domains** – The new routing model is based on co-equal collections of autonomous systems called routing domains. Routing domains exchange routing information with other domains using **Border Gateway Protocol (BGP)**.
+* **Routing Table** – aka forwarding table. The routing table maps destinations to the router and network interface that IP must use to reach that destination.
+* **Address Resolution Protocol (ARP)** – translates IP addresses to Ethernet addresses.
 * 
+
+
+
+
 
 ##Differences in Terminology
 
@@ -48,3 +58,4 @@ Most networks refer to transmitted data as `packets` or `frames`.
 ￼3 – **Host-to-Host Transport Layer** provides end-to-end data delivery services.
 ￼2 – **Internet Layer** defines the datagram and handles the routing of data.
 ￼1 – **Network Access Layer** consists of routines for accessing physical networks.
+

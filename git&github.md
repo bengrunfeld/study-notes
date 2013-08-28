@@ -340,7 +340,7 @@ The `--` ensures that you stay within the current branch.
 
 This is also referred to as 'unstaging' things that we've staged there.
 
-If you're putting together a commit of multiple files, and you accidentally add a file that you actually don't want to commit, you can remove it from the staging index without changing the file in your working directory. This has the effect of taking whatever is in the staging index and placing it in the working directory. Here is the code:
+If you're putting together a commit of multiple files, and you accidentally add a file that you actually don't want to commit, you can remove it from the staging index without changing the file in your working directory. *This has the effect of taking whatever is in the staging index and placing it in the working directory.* **(I don't think this is right)** Here is the code:
 
 	git reset HEAD filename.txt
 

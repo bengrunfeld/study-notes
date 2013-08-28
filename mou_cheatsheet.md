@@ -26,6 +26,7 @@ Reference links point to whereve the reference is later in the doc, so this is t
 #### Images: 
 ![alt text](http://smallerapp.com/favicon.ico "Title text")
 
+
 A ![Resize icon][2] reference style image.
 
 [2]: http://resizesafari.com/favicon.ico "Title"

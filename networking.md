@@ -252,4 +252,84 @@ The most common example of this Network Access Layer function is the translation
 
 The ARP software maintains a table of translations between IP addresses and Ethernet addresses. This table is built dynamically.
 
-
+Answering ARP queries for other computers is called **proxy ARP**. Proxy ARP is used to answer queries for systems that can’t answer for themselves.
+
+ARP tables normally don’t require any attention because they are built automatically by the ARP protocol, which is very stable.
+
+## Protocols, Ports, and Sockets
+
+Once data is routed through the network and delivered to a specific host, it must be delivered to the correct user or process.
+
+As the data moves up or down the TCP/IP layers, a mechanism is needed to deliver it to the correct protocols in each layer. The system must be able to combine data from many applications into a few transport protocols, and from the transport protocols into the Internet Protocol. Combining many sources of data into a single data stream is called **multiplexing**.
+
+Data arriving from the network must be **demultiplexed**: divided for delivery to multiple processes. To accomplish this task, IP uses protocol numbers to identify transport protocols, and the transport protocols use port numbers to identify applications.
+
+The protocol numbers and port numbers are assigned to well-known services by the Internet Assigned Numbers Authority (IANA). Officially assigned numbers are documented at [http://www.iana.org](http://www.iana.org).
+
+### Protocol Numbers
+
+The protocol number is a single byte in the third word of the datagram header.
+
+On a Unix system, the protocol numbers are defined in `/etc/protocols`.
+
+When a datagram arrives and its destination address matches the local IP address, the IP layer knows that the datagram has to be delivered to one of the transport protocols above it. To decide which protocol should receive the datagram, IP looks at the datagram’s protocol number.
+
+### Port Numbers
+
+After IP passes incoming data to the transport protocol, the transport protocol passes the data to the correct application process. Application processes (also called network services) are identified by port numbers, which are 16-bit values.
+Port numbers below 1024 are reserved for well-known services (like FTP and Telnet) and are assigned by the IANA.
+
+Ports numbered from 1024 to 49151 are “registered ports.” IANA tries to maintain a registry of services that use these ports, but it does not officially assign port numbers in this range.The port numbers from 49152 to 65535 are the “private ports.” Private port numbers are available for any use.It is the combination of protocol and port numbers that uniquely identifies the specific process to which the data should be delivered.
+On Unix systems, port numbers are defined in `/etc/services`.
+The `/etc/services` file, combined with the `/etc/protocols` file, provides all of the information necessary to deliver data to the correct application.
+A datagram arrives at its destination based on the destination address in the fifth word of the datagram header. Using the protocol number in the third word of the datagram header, IP delivers the data from the datagram to the proper transport layer protocol. The first word of the data delivered to the transport protocol contains the destination port number that tells the transport protocol to pass the data up to a specific application.
+The `portmapper` program makes it possible to install widely used services without formally obtaining a well-known port.
+### Sockets
+Well-known ports are standardized port numbers that enable remote computers to know which port to connect to for a particular network service. This simplifies the connection process because both the sender and receiver know in advance that data bound for a specific process will use a specific port.
+Equally important is a second type of port number called a **dynamically allocated port**. As the name implies, dynamically allocated ports are not pre-assigned; they are assigned to processes when needed.Dynamically allocated ports provide the flexibility needed to support multiple users.
+
+It is the *pair of port numbers*, source and destination, that uniquely identifies each network connection.
+
+The combination of an IP address and a port number is called a **socket**.
+
+A **socket** uniquely identifies a single network process within the entire Internet.A pair of sockets, one socket for the receiving host and one for the sending host, define the connection for connection-oriented protocols such as TCP.
+# Network Services
+Some network servers provide essential computer-to-computer services. These differ from application services in that they are not directly accessed by end users.
+Some of these services include:
+* Name service for converting IP addresses to hostnames* Configuration servers that simplify the installation of networked hosts by handling part or all of the TCP/IP configuration* Electronic mail services for moving mail through the network from the sender to the recipient* File servers that allow client computers to transparently share files* Print servers that allow printers to be centrally maintained and shared by all users
+Every Unix host on your network can be both a server and a client. The hosts on a TCP/IP network are **peers**. All systems are equal, and the network is not dependent on any one server.
+## Names and Addresses
+The Internet Protocol document defines names, addresses, and routes as follows:
+> A name indicates what we seek.<br> > An address indicates where it is.<br> > A route indicates how to get there.
+
+Every network interface attached to a TCP/IP network is identified by a unique 32-bit IP address. A name (called a hostname) can be assigned to any device that has an IP address. Names are assigned to devices because, compared to numeric Internet addresses, names are easier to remember and type correctly. Names aren’t required by the network software, but they do make it easier for humans to use the network.
+
+In most cases, hostnames and numeric addresses can be used interchangeably.
+
+A user wishing to telnet to the workstation at IP address `172.16.12.2` can enter:
+
+	$ telnet 172.16.12.2or use the hostname associated with that address and enter the equivalent command:	$ telnet rodent.wrotethebook.comWhether a command is entered with an address or a hostname, the network connection always takes place based on the IP address. The system converts the hostname to an address before the network connection is made.
+There are two common methods for translating names into addresses. The older method simply looks up the hostname in a table called the host table. The newer technique uses a distributed database system called the **Domain Name System (DNS)** to translate names to addresses.
+
+## The Host Table
+
+The host table is a simple text file that associates IP addresses with hostnames. On most Unix systems, the table is in the file `/etc/hosts`.
+
+In a host table, you can have many names resolving to the same IP address. Much like aliases.
+
+`loghost` is a special hostname used by Solaris in the syslog.conf configuration file. Other commonly used generic hostnames are `lprhost`, `mailhost`, and `dumphost`.
+
+The host address `127.0.0.1` is a special address used to designate the loopback address of the local host—hence the hostname `localhost`.This special addressing convention allows the host to address itself the same way it addresses a remote host. The loopback address simplifies software by allowing common code to be used for communicating with local or remote processes. This addressing convention also reduces network traffic because the localhost address is associated with a loopback device that loops data back to the host before it is written out to the net- work.
+Although the host table system has been superseded by DNS, it is still widely used for the following reasons:
+* Most systems have a small host table containing name and address information about the important hosts on the local network. This small table is used when DNS is not running, such as during the initial system startup.
+* Sites that use NIS use the host table as input to the NIS host database. You can  use NIS in conjunction with DNS, but even when they are used together, most NIS sites create host tables that have an entry for every host on the local network.
+* Very small sites that are not connected to the Internet sometimes use the host table.The old host table system is inadequate for the global Internet for two reasons: inability to scale and lack of an automated update process. Prior to the development of DNS, an organization called the Network Information Center (NIC) maintained a large table of Internet hosts called the NIC host table. Hosts included in the table were called registered hosts, and the NIC placed hostnames and addresses into this file for all sites on the Internet.
+The table got way too big, so DNS stepped in.
+## DNS
+DNS overcomes both major weaknesses of the host table:* DNS scales well. It doesn’t rely on a single large table; it is a distributed database system that doesn’t bog down as the database grows. DNS currently provides information on approximately 100,000,000 hosts, while fewer than 10,000 were listed in the host table.* DNS guarantees that new host information will be disseminated to the rest of the network as it is needed. 
+Information is automatically disseminated, and only to those who are interested.
+### How DNS works 
+If a DNS server receives a request for information about a host for which it has no information, it passes on the request to an authoritative server. An authoritative server is any server responsible for maintaining accurate information about the domain being queried. When the authoritative server answers, the local server saves, or caches, the answer for future use. The next time the local server receives a request for this information, it answers the request itself.
+## The Domain Hierarchy
+Under DNS, there is no central database with all of the Internet host information. The information is distributed among thousands of name servers organized into a hierarchy similar to the hierarchy of the Unix file system. DNS has a root domain at the top of the domain hierarchy that is served by a group of name servers called the root servers.
+

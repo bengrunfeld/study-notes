@@ -21,8 +21,8 @@
 * **Internet Control Message Protocol (ICMP)** – is part of the Internet Layer and uses the IP datagram delivery facility to send its messages.
 * **Segment** – The unit of data exchanged between cooperating TCP modules.
 * **Telnet** – The Network Terminal Protocol, which provides remote login over the network.* **FTP** – The File Transfer Protocol, which is used for interactive file transfer.* **SMTP** – The Simple Mail Transfer Protocol, which delivers electronic mail.* **HTTP** – The Hypertext Transfer Protocol, which delivers web pages over the network.
-* **Domain Name System (DNS)** – Also called name service, this application maps IP addresses to the names assigned to network devices.* **Open Shortest Path First (OSPF)** – Routing is central to the way TCP/IP works. OSPF is used by network devices to exchange routing information. * **Network File System (NFS)** – This protocol allows files to be shared by various hosts on the network.
-* **Addressing** – IP addresses, which uniquely identify every host on the network, deliver data to the correct host.* **Routing** – Gateways deliver data to the correct network.* **Multiplexing** – Protocol and port numbers deliver data to the correct software module within the host.
+* **Domain Name System (DNS)** – Also called *name service*, this application maps IP addresses to the names assigned to network devices.* **Open Shortest Path First (OSPF)** – Routing is central to the way TCP/IP works. OSPF is used by network devices to exchange routing information. * **Network File System (NFS)** – This protocol allows files to be shared by various hosts on the network.
+* **Addressing** – IP addresses, which uniquely identify every host on the network, deliver data to the correct host.* **Routing** – Gateways deliver data to the correct network.* **Multiplexing** – is combining many sources of data into a single data stream. Protocol and port numbers deliver data to the correct software module within the host. 
 * **IP Address** – An IP address is a 32-bit value that uniquely identifies every device attached to a TCP/IP network. Each of the four numbers in the IP address is in the range 0–255 (the decimal values possible in a single byte). 
 * **host addresses** – Another name for IP Addresses
 * **CIDR** – The use of an address mask instead of the old address classes to determine the destination network is called Classless Inter-Domain Routing (CIDR).
@@ -31,11 +31,16 @@
 * **Routing Domains** – The new routing model is based on co-equal collections of autonomous systems called routing domains. Routing domains exchange routing information with other domains using **Border Gateway Protocol (BGP)**.
 * **Routing Table** – aka forwarding table. The routing table maps destinations to the router and network interface that IP must use to reach that destination.
 * **Address Resolution Protocol (ARP)** – translates IP addresses to Ethernet addresses.
-* 
+* **Remote Procedure Call (RPC)** – ?
+* **Port Number** – A Port Number is the identification number used by the transport protocol to identify an application process.
+* **Socket** – is the combination of an IP address and a port number. A socket uniquely identifies a single network process within the entire Internet.
 
 
+## Names and Addresses
+The Internet Protocol document defines names, addresses, and routes as follows:
+> A name indicates what we seek.<br> > An address indicates where it is.<br> > A route indicates how to get there.
 
-
+A name (called a hostname) can be assigned to any device that has an IP address.
 
 ##Differences in Terminology
 

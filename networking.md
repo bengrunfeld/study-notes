@@ -331,5 +331,94 @@ The host address `127.0.0.1` is a special address used to designate the loopback
 ### How DNS works 
 If a DNS server receives a request for information about a host for which it has no information, it passes on the request to an authoritative server. An authoritative server is any server responsible for maintaining accurate information about the domain being queried. When the authoritative server answers, the local server saves, or caches, the answer for future use. The next time the local server receives a request for this information, it answers the request itself.
 ## The Domain Hierarchy
-Under DNS, there is no central database with all of the Internet host information. The information is distributed among thousands of name servers organized into a hierarchy similar to the hierarchy of the Unix file system. DNS has a root domain at the top of the domain hierarchy that is served by a group of name servers called the root servers.
-
+Under DNS, there is no central database with all of the Internet host information. The information is distributed among thousands of name servers organized into a hierarchy similar to the hierarchy of the Unix file system. DNS has a root domain at the top of the domain hierarchy that is served by a group of name servers called the **root servers**.
+Just as directories in the Unix filesystem are found by following a path from the root directory through subordinate directories to the target directory, information about a domain is found by tracing pointers from the root domain through subordinate domains to the target domain.
+Directly under the root domain are the top-level domains. There are two basic types of top-level domains—geographic and organizational. Geographic domains have been set aside for each country in the world and are identified by a two-letter country code. Thus, this type of domain is called a country code top-level domain (ccTLD). For example, the ccTLD for the United Kingdom is .uk, for Japan it is .jp, and for the United States it is .us. When .us is used as the top-level domain, the second-level domain is usually a state’s two-letter postal abbreviation (e.g., .wy.us for Wyoming). U.S. geographic domains are usually used by state governments and K-12 schools but are not widely used for other hosts.
+Within the United States, the most popular top-level domains are organizational — that is, membership in a domain is based on the type of organization (commercial, military, etc.) to which the system belongs. These domains are called **generic top-level domains** or **general-purpose top-level domains (gTLDs)**.
+No servers, not even the root servers, have complete information about all domains, but the root servers have pointers to the servers for the second-level domains.* So while the root servers may not know the answer to a query, they know who to ask.
+## Creating Domains and Subdomains
+Several domain name registrars have been authorized by the **Internet Corporation for Assigned Names and Numbers (ICANN)**.
+A new subdomain becomes accessible when pointers to the servers for the new domain are placed in the domain above it. Remote servers cannot locate the `example.com` domain until a pointer to its server is placed in the com domain. Likewise, the subdomains like `events.example.com` and `articles.example.com` cannot be accessed until pointers to them are placed in `example.com`.
+The DNS database record that points to the name servers for a domain is the NS (name server) record. This record contains the name of the domain and the name of the host that is a server for that domain.When a local server receives a request for a hostname that it does not have stored in its cache, it queries a root server and receives the name of the server housing the queried hostname. After receiving the IP address from the server housing the hostname, the local server caches the **A (address) record** and each of the NS records.In a recursive search, the server follows the pointers and returns the final answer for the query. The root servers generally per- form only nonrecursive searches. Most other servers perform recursive searches.## Domain Names
+Domain names reflect the domain hierarchy. They are written from most specific (a hostname) to least specific (a top-level domain), with each part of the domain name separated by a dot. A **fully qualified domain name (FQDN)** starts with a specific host and ends with a top-level domain. `rodent.example.com` is the **FQDN** of workstation rodent, in the example domain, of the com domain.
+## BIND, Resolvers, and named
+The implementation of DNS used on Unix systems is the Berkeley Internet Name Domain (BIND) software.
+DNS software is conceptually divided into two components — a **resolver** and a **name server**. The resolver is the software that forms the query; it asks the questions. The name server is the process that responds to the query; it answers the questions.
+The resolver does not exist as a distinct process running on the computer. Rather, the resolver is a library of software routines (called the resolver code) that is linked into any program that needs to look up addresses. This library knows how to ask the name server for host information.
+Under BIND, all computers use resolver code, but not all computers run the name server process. A computer that does not run a local name server process and relies on other systems for all name service answers is called a resolver-only system. Resolver-only configurations are common on single-user systems. Larger Unix sys- tems usually run a local name server process.
+The BIND name server runs as a distinct process called **named** (pronounced “name” “d”). 
+Name servers are classified differently depending on how they are configured. The three main categories of name servers are:
+### MasterThe master server (also called the primary server) is the server from which all data about a domain is derived. The master server loads the domain’s information directly from a disk file created by the domain administrator. Master servers are authoritative, meaning they have complete information about their domain and their responses are always accurate. There should be only one master server for a domain.### SlaveSlave servers (also known as secondary servers) transfer the entire domain database from the master server. A particular domain’s database file is called a zone file; copying this file to a slave server is called a zone file transfer. A slave server assures that it has current information about a domain by periodically transferring the domain’s zone file. Slave servers are also authoritative for their domain.### Caching-onlyCaching-only servers get the answers to all name service queries from other name servers. Once a caching server has received an answer to a query, it caches the information and will use it in the future to answer queries itself. Most name servers cache answers and use them in this way. What makes the caching-only server unique is that this is the only technique it uses to build its domain database. Caching servers are non-authoritative, meaning that their information is second-hand and incomplete, though usually accurate.
+Under DNS, there should be only one primary name server for each domain.## Network Information Service
+The **Network Information Service (NIS)** is an administrative database system developed by Sun Microsystems. It provides central control and automatic dissemination of important administrative files. NIS can be used in conjunction with DNS or as an alternative to it.
+Unlike DNS, NIS only provides service for local area networks. NIS is not intended as a service for the Internet as a whole. 
+NIS provides access to a wider range of information than DNS—much more than name-to-address conversions. It converts several standard Unix files into databases that can be queried over the network. These databases are called **NIS maps**.
+NIS converts files such as `/etc/hosts` and `/etc/networks` into maps. The maps can be stored on a central server where they can be centrally maintained while still being fully accessible to the NIS clients.
+But NIS is not an alternative to DNS for Internet hosts because the host table, and therefore NIS, contains only a fraction of the information available to DNS. For this reason DNS and NIS are usually used together.
+## Mail Services
+TCP/IP provides a reliable, flexible email system built on a few basic protocols. These protocols are **Simple Mail Transfer Protocol (SMTP)**, **Post Office Protocol (POP)**, **Internet Message Access Protocol (IMAP)**, and **Multipurpose Internet Mail Extensions (MIME)**.
+### Simple Mail Transfer Protocol (SMTP)
+SMTP is the TCP/IP mail delivery protocol. It moves mail across the Internet and across your local network and it uses well-known port number 25.
+SMTP provides direct end-to-end mail delivery. Other mail systems, like UUCP and X.400, use store and forward protocols that move mail toward its destination one hop at a time, storing the complete message at each hop and then forwarding it on to the next system. The message proceeds in this manner until final delivery is made.
+Direct delivery allows SMTP to deliver mail without relying on intermediate hosts. If the delivery fails, the local system knows it right away. The disadvantage of direct delivery is that it requires both systems to be fully capable of handling mail.
+Some systems cannot handle mail, particularly small systems such as PCs or mobile systems such as laptops. These systems are usually shut down at the end of the day and are frequently offline. Mail directed from a remote host fails with a “cannot connect” error when the local system is turned off or is offline. To handle these cases, features in the DNS system are used to route the message to a mail server in lieu of direct delivery. The mail is then moved from the server to the client system when the client is back online. One of the protocols TCP/IP networks use for this task is **POP**.
+
+### Post Office Protocol (POP)There are two versions of Post Office Protocol: POP2 and POP3. POP2, defined in RFC 937, uses `port 109`, and POP3, defined in RFC 1725, uses `port 110`. These are **incompatible protocols** that use different commands, although they perform the same basic functions.
+The POP protocols verify the user’s login name and password and move the user’s mail from the server to the user’s local mail reader. POP2 is rarely used anymore.
+
+On an average POP server, the entire contents of the mailbox are moved to the client and either deleted from the server or retained as if never read. Email clients that want to remotely maintain a mailbox on the server are more likely to use IMAP.
+
+### Internet Message Access Protocol (IMAP)
+
+**Internet Message Access Protocol (IMAP)** is an alternative to POP. It provides the same basic service as POP and adds features to support mailbox synchronization, which is the ability to read individual mail messages on a client or directly on the server while keeping the mailboxes on both systems completely up to date. IMAP provides the ability to manipulate individual messages on the client or the server and to have those changes reflected in the mailboxes of both systems.
+
+IMAP uses TCP for reliable, sequenced data delivery. The IMAP port is TCP port 143. Like the POP protocol, IMAP is also a request/response protocol with a small set of commands. The IMAP command set is somewhat more complex than the one used by POP because IMAP does more, yet there are still fewer than 25 IMAP com- mands.## Multipurpose Internet Mail Extensions (MIME)
+MIME is an extension of the existing TCP/IP mail system, not a replacement for it.
+MIME is more concerned with what the mail system delivers than with the mechanics of delivery. It doesn’t attempt to replace SMTP or TCP; it extends the definition of what constitutes “mail.”
+MIME extends the RFC for traditional main into two areas not covered by the original RFC:
+* Support for various data types besides plain vanilla ASCII
+* Support for complex message bodies.
+MIME addresses these two weaknesses by defining encoding techniques for carrying various forms of data and by defining a structure for the message body that allows multiple objects to be carried in a single message.
+MIME defines two headers: the **Content-Type** header and the **Content-Transfer-Encoding** header.
+The original 7 content-types (which have been expanded on since) are:
+* text
+* application (binary data)
+* image
+* video
+* audio
+* multipart
+* message
+
+The Content-Transfer-Encoding header identifies the type of encoding used on the data.
+
+MIME defines data types that SMTP was not designed to carry.
+
+One response of the `EHLO` command is for the receiving system to return a list of the SMTP extensions it supports. This response allows the sending system to know what extended services can be used, and to avoid those that are not implemented on the remote system. SMTP implementations that support the `EHLO` command are called **Extended SMTP (ESMTP)**.
+
+**ESMTP** and **MIME** are important because they provide a standard way to transfer non-ASCII data through email.
+
+## File and Print Servers
+
+### File Sharing
+
+File sharing is not the same as file transfer; it is not simply the ability to move a file from one system to another. A true file-sharing system does not require you to move files across the network. It allows files to be accessed at the record level so that it is possible for a client to read a record from a file located on a remote server, update that record, and write it back to the server—without moving the entire file from the server to the client.
+
+File sharing is transparent to the user and to the application software running on the user’s system.
+
+Through file sharing, users and programs access files located on remote systems as if they were local files. In a perfect file-sharing environment, the user neither knows nor cares where files are actually stored.
+
+File sharing didn’t exist in the original TCP/IP protocol suite. It was added to support diskless workstations. Several TCP/IP protocols for file sharing have been defined, but two hold the lion’s share of the file sharing market:
+
+1. **NetBIOS/Server Message Block (SMB)**NetBIOS was originally defined by IBM. It is the basic networking used on Microsoft Windows systems. Unix systems can act as file and print servers for Windows clients by running the Samba software package that implements NetBIOS and Server Message Block (SMB) protocols.
+2. **Network File System (NFS)**NFS was defined by Sun Microsystems to support their diskless workstations. NFS is designed primarily for LAN applications and is implemented for all Unix systems and many other operating systems.
+For file sharing between Unix systems, you will probably use NFS. If you need to support Windows clients using Unix servers, you will probably use Samba.
+### Print Services
+A print server allows printers to be shared by everyone on the network.
+There are two techniques commonly used for sharing printers on a corporate network. One technique is to use the sharing services provided by Samba. This is the technique preferred by Windows clients. The other approach is to use the traditional Unix `lpr` command and an `lpd` server.## Configuration Servers
+The powerful features that add to the utility and flexibility of TCP/IP also add to its complexity. TCP/IP is not as easy to configure as some other networking systems. TCP/IP requires that the configuration provide hardware, addressing, and routing information. It is designed to be independent of any specific underlying network hardware, so configuration information that can be built into the hardware in some network systems cannot be built in for TCP/IP. The information must be provided by the person responsible for the configuration.
+Configuration servers make it possible for the network administrator to control TCP/IP configuration from a central point. This relieves the end user of some of the burden of configuration and improves the quality of the information used to config- ure systems.
+TCP/IP has used three protocols to simplify the task of configuration: `RARP`, `BOOTP`, and `DHCP`. We begin with `RARP`, the oldest and most basic of these con- figuration tools.
+### Reverse Address Resolution Protocol (RARP)**RARP** is a protocol that converts a physical network address into an IP address, which is the reverse of what **Address Resolution Protocol (ARP)** does.
+
+A **Reverse Address Resolution Protocol** server maps a physical address to an IP address for a client that doesn’t know its own IP address. The client sends out a broadcast using the broadcast services of the physical network. The broadcast packet contains the client’s physical network address and asks if any system on the network knows what IP address is associated with the address. The RARP server responds with a packet that contains the client’s IP address.
+

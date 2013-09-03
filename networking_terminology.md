@@ -34,6 +34,32 @@
 * **Remote Procedure Call (RPC)** – ?
 * **Port Number** – A Port Number is the identification number used by the transport protocol to identify an application process.
 * **Socket** – is the combination of an IP address and a port number. A socket uniquely identifies a single network process within the entire Internet.
+* **(ccTLD)** – country code top-level domain. Geographic domains have been set aside for each country in the world and are identified by a two-letter country code. (e.g. .il, .uk, .jp)
+* **(gTLDs)** – generic top-level domains or general-purpose top-level domains. These are organizational gTLD's, and differ from geographical TLD's.
+* **(ICANN)** – Internet Corporation for Assigned Names and Numbers, a nonprofit organization that was formed to take over the responsibility for allocating domain names and IP addresses.
+* **Name Server (NS) Record** – is the DNS database record that points to the name servers for a domain.
+* **A (address) record** – ??? a record of the IP address of a specific hostname (aka domain name).
+*  **fully qualified domain name (FQDN)** – starts with a specific host and ends with a top-level domain. `rodent.example.com` is the **FQDN** of workstation `rodent`, in the `example` domain, of the `com` domain.
+* **Master Server** – The master server (also called the primary server) is the server from which all data about a domain is derived. Master servers are authoritative, meaning they have complete information about their domain and their responses are always accurate.
+* **Slave Server** – Slave servers (also known as secondary servers) transfer the entire domain database from the master server.
+* **Caching-Only Server** – Caching-only servers get the answers to all name service queries from other name servers. Once a caching server has received an answer to a query, it caches the information and will use it in the future to answer queries itself. Caching servers are non-authoritative, meaning that their information is second-hand and incomplete, though usually accurate.
+* **Zone File** – A particular domain’s database file is called a zone file. 
+* **zone file transfer** – the action of copying a zone file to a slave server is called a zone file transfer.
+* **Network Information System (NIS)** – is an administrative database system that provides central control and automatic dissemination of important administrative files. NIS can be used in conjunction with DNS or as an alternative to it.
+* **NIS Maps** – NIS converts several standard Unix files into databases that can be queried over the network. These are called NIS Maps.
+* **Simple Mail Transfer Protocol (SMTP)** – SMTP is the TCP/IP mail delivery protocol. It moves mail across the Internet and across your local network. 
+* **Post Office Protocol (POP)** – The POP protocols verify the user’s login name and password and move the user’s mail from the server to the user’s local mail reader.
+* **Internet Message Access Protocol (IMAP)** – provides the same basic service as POP and adds features to support the ability to read individual mail messages on a client or directly on the server while keeping the mailboxes on both systems completely up to date.
+* **Multipurpose Internet Mail Extensions (MIME)** – MIME addresses two weaknesses of traditional SMTP by defining encoding techniques for carrying various forms of data and by defining a structure for the message body that allows multiple objects to be carried in a single message.
+* **Extended SMTP (ESMTP)** – SMTP implementations that support the `EHLO` command are called Extended SMTP (ESMTP).
+* **File Sharing** – Through file sharing, users and programs access files located on remote systems as if they were local files. This does not mean transfering the files to your local computer.
+* **NetBIOS/Server Message Block (SMB)** – is a TCP/IP protocol for file sharing for Windows systems. A variant of this, **Samba**, allows Unix systems to run as file and print servers for Windows systems.
+* **Network File System (NFS)** – For file sharing between Unix systems, you will probably use NFS, though it is designed primarily for LAN applications.
+* **Configuration Servers** – Configuration servers make it possible for the network administrator to control TCP/IP configuration from a central point.
+* **ARP** – Address Resolution Protocol. ARP translates IP addresses to Ethernet addresses.
+* **RARP** – is a protocol that converts a physical network address into an IP address, which is the reverse of what **Address Resolution Protocol (ARP)** does.
+* 
+
 
 
 ## Names and Addresses

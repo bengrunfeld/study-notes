@@ -445,4 +445,8 @@ The following hosts file entries could be used with the ethers file shown above:
 4. **Dynamic allocation:** The server assigns an address to a DHCP client for a limited period of time. The limited life of the address is called a lease. The client can return the address to the server at any time but must request an extension from the server to retain the address longer than the time permitted. The server automatically reclaims the address after the lease expires if the client has not requested an extension. Dynamic allocation uses the full power of DHCP, whereas the others don't.
 
 Unused addresses are returned to the pool of addresses without relying on users or system administrators to deliberately return them. Addresses are used only when and where they’re needed. Dynamic allocation allows a network to make the maximum use of a limited set of addresses.
-Dynamic address allocation does not work for every system.
+Dynamic address allocation does not work for every system. Name servers, email servers, login hosts, and other shared systems are always online, and they are not mobile. These systems are accessed by name, so a shared system’s domain name must resolve to the correct address. Shared systems are manually allocated perma- nent, fixed addresses.
+Dynamic address assignment has major repercussions for DNS. DNS is required to map hostnames to IP addresses. It cannot perform this job if IP addresses are con- stantlychangingandDNSisnotinformedofthechanges.Tomakedynamicaddress assignmentworkforalltypesofsystems,weneedaDNSthatcanbedynamically updated by the DHCP server. Dynamic DNS (DDNS) is available, but it is not yet widely used.
+Given the nature of dynamic addressing, most sites assign permanent fixed addresses to shared servers.
+
+

@@ -58,6 +58,8 @@
 * **Configuration Servers** – Configuration servers make it possible for the network administrator to control TCP/IP configuration from a central point.
 * **ARP** – Address Resolution Protocol. ARP translates IP addresses to Ethernet addresses.
 * **RARP** – is a protocol that converts a physical network address into an IP address, which is the reverse of what **Address Resolution Protocol (ARP)** does.
+* **Bootstrap Protocol (BOOTP)** – BOOTP is an alternative to RARP; when BOOTP is used, RARP is not needed. BOOTP, however, is a more comprehensive configuration protocol than RARP. BOOTP and its extensions formed the basis of **DHCP**.
+* **Dynamic Host Configuration Protocol (DHCP)** – DHCP provides a client with a complete set of TCP/IP configuration values, and automatically allocates IP addresses on a network.
 * 
 
 

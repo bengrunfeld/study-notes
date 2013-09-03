@@ -421,4 +421,28 @@ File sharing didn’t exist in the original TCP/IP protocol suite. It was added 
 ### Reverse Address Resolution Protocol (RARP)**RARP** is a protocol that converts a physical network address into an IP address, which is the reverse of what **Address Resolution Protocol (ARP)** does.
 
 A **Reverse Address Resolution Protocol** server maps a physical address to an IP address for a client that doesn’t know its own IP address. The client sends out a broadcast using the broadcast services of the physical network. The broadcast packet contains the client’s physical network address and asks if any system on the network knows what IP address is associated with the address. The RARP server responds with a packet that contains the client’s IP address.
-
+The RARP server looks up the IP address that it uses in its response to the client in the `/etc/ethers` file. The `/etc/ethers` file contains the client’s Ethernet address followed by the client’s hostname. E.g.
+
+	2:60:8c:48:84:49	clock	0:0:c0:a1:5e:10		ring
+ 
+To respond to a RARP request, the server must also resolve the hostname found in the `/etc/ethers` file into an IP address. DNS or the hosts file is used for this task.
+
+The following hosts file entries could be used with the ethers file shown above:
+    clock           172.16.3.10    ring            172.16.3.16RARP is a useful tool, but it provides only the IP address. There are still several other values that need to be manually configured. **Bootstrap Protocol (BOOTP)** is a more flexible configuration tool that provides more values than just the IP address and can deliver those values via the network.BOOTP is an alternative to RARP; when BOOTP is used, RARP is not needed. BOOTP, however, is a more comprehensive configuration protocol than RARP. It provides much more configuration information.
+BOOTP and its extensions became the basis for the **Dynamic Host Configuration Protocol (DHCP)**. DHCP has superseded BOOTP, so DHCP is the configuration protocol that you will use on your network.
+### Dynamic Host Configuration Protocol (DHCP)
+DHCP is the correct configuration protocol for your network because DHCP exceeds the capabilities of BOOTP while maintaining support for existing BOOTP clients.DHCP uses the same UDP ports as BOOTP (`67` and `68`) and the same basic packet format. But DHCP is more than just an update of BOOTP. The new protocol expands the function of BOOTP in two areas:* The configuration parameters provided by a DHCP server include everything defined in the Requirements for Internet Hosts RFC. DHCP provides a client with a complete set of TCP/IP configuration values.* DHCP permits automated allocation of IP addresses.DHCP expands the original BOOTP packet in order to indicate the DHCP packet type and to carry a complete set of configuration information. DHCP calls the values in this part of the packet `options`.
+Default values are provided in most TCP/IP implementations, and the defaults need to be changed only in special circumstances.
+For most network administrators, *automatic allocation of IP addresses* is a more interesting feature of DHCP. 
+DHCP allows addresses to be assigned in four ways:
+
+1. **Permanent fixed addresses:** The Administrator assigns the address manually without using the DHCP system. While this happens completely outside of DHCP, DHCP makes allowances for it by permitting addresses to be excluded from the range of addresses under the control of the DHCP server.
+
+2. **Manual allocation:** The network administrator keeps complete control over addresses by specifi- cally assigning them to clients in the DHCP configuration. This is exactly the same way that addresses are handled under BOOTP.
+
+3. **Automatic allocation:** The DHCP server permanently assigns an address from a pool of addresses. The administrator is not involved in the details of assigning a client an address.
+
+4. **Dynamic allocation:** The server assigns an address to a DHCP client for a limited period of time. The limited life of the address is called a lease. The client can return the address to the server at any time but must request an extension from the server to retain the address longer than the time permitted. The server automatically reclaims the address after the lease expires if the client has not requested an extension. Dynamic allocation uses the full power of DHCP, whereas the others don't.
+
+Unused addresses are returned to the pool of addresses without relying on users or system administrators to deliberately return them. Addresses are used only when and where they’re needed. Dynamic allocation allows a network to make the maximum use of a limited set of addresses.
+Dynamic address allocation does not work for every system.

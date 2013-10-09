@@ -25,7 +25,7 @@ For other applications, you may need to explicitly declare what can be executed 
 ##Deploying to Heroku
 Deploying code is just the familiar git push, but to the heroku remote instead:
 
-	git push heroku master
+	$ git push heroku master
 
 ##Building Applications
 When the Heroku platform receives a git push, it initiates a build of the source application, and assembles a **Slug**
@@ -48,21 +48,21 @@ You have control over how many dynos are running at any given time.
 
 The number of Dynos running can be configured in the Procfile, or you can change the number manually via the command line. E.g.
 
-	heroku ps:scale web=3 queuty=2
+	$ heroku ps:scale web=3 queuty=2
 	
 ##What is a Dyno Formation
 A Dyno Formation is is the total number of currently executing dynos, divided between the various process types you have scaled for your application.
 
 ##How to check what dynos are running which process types:
 
-	heroku ps
+	$ heroku ps
 
 ##Config Vars
 An application’s configuration is everything that is likely to vary between environments (staging, production, developer environments, etc.). This includes backing services such as databases, credentials, or environment variables that provide some specific information to your application.
 
 **Config vars** are created and edited via the command line. E.g.
 
-	heroku config:add ENCRYPTION_KEY= my_secret_launch_codes
+	$ heroku config:add ENCRYPTION_KEY= my_secret_launch_codes
 
 **Config vars** contain customizable configuration data that can be changed independently of your source code. The configuration is exposed to a running application via environment variables.
 
@@ -70,7 +70,7 @@ At runtime, all of the config vars are exposed as environment variables - so the
 
 An application can access a config var by calling it. E.g.
 
-	ENV["ENCRYPTION_KEY"]
+	$ ENV["ENCRYPTION_KEY"]
 
 ##Releases
 To run your application, the Heroku platform loads a dyno (or set of dynos) with your most recent slug and any config variables you have assigned to the application. The combination of slug and configuration is called a **Release**.
@@ -79,7 +79,7 @@ Releases are an append-only ledger of slugs and config vars.
 
 To see the audit trail of release deploys:
 
-	heroku releases
+	$ heroku releases
 	== demoapp Releases
 	v103 Deploy 582fc95  jon@heroku.com   2013/01/31 12:15:35
 	v102 Deploy 990d916  jon@heroku.com   2013/01/31 12:01:12
@@ -88,7 +88,24 @@ The number next to the deploy message, for example `582fc95`, corresponds to the
 
 Every time you deploy a new version of an application, a new slug is created and release is generated.
 
+As Heroku contains a store of the previous releases of your application, it’s very easy to rollback and deploy a previous release:
 
+	$ heroku releases:rollback v102
+	Rolling back demoapp... done, v102
+	$ heroku releases
+	== demoapp Releases
+	v104 Rollback to v102 jon@heroku.com   2013/01/31 14:11:33 (~15s ago)
+	v103 Deploy 582fc95   jon@heroku.com   2013/01/31 12:15:35
+	v102 Deploy 990d916   jon@heroku.com   2013/01/31 12:01:12
+
+Making a material change to your application, whether it’s changing the source or configuration, results in a new release being created.
+
+##The Dyno Manager
+The dyno manager of the Heroku platform is responsible for managing dynos across all applications running on Heroku.
+
+This dyno cycling happens transparently and automatically on a regular basis, and is logged.
+
+Applications with only a single web dyno sleep after one hour of inactivity. When a sleeping application receives HTTP traffic, it will be awakened - causing a delay of a few seconds. Scaling the web dynos will avoid sleeping.
 
 
 

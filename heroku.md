@@ -1,5 +1,10 @@
 #Heroku
 
+##URLS of Pages Studied
+https://devcenter.heroku.com/articles/quickstart
+https://devcenter.heroku.com/articles/getting-started-with-ruby
+https://devcenter.heroku.com/articles/how-heroku-works
+
 ##Overview
 Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure and Scala.
 
@@ -66,4 +71,27 @@ At runtime, all of the config vars are exposed as environment variables - so the
 An application can access a config var by calling it. E.g.
 
 	ENV["ENCRYPTION_KEY"]
+
+##Releases
+To run your application, the Heroku platform loads a dyno (or set of dynos) with your most recent slug and any config variables you have assigned to the application. The combination of slug and configuration is called a **Release**.
+
+Releases are an append-only ledger of slugs and config vars.
+
+To see the audit trail of release deploys:
+
+	heroku releases
+	== demoapp Releases
+	v103 Deploy 582fc95  jon@heroku.com   2013/01/31 12:15:35
+	v102 Deploy 990d916  jon@heroku.com   2013/01/31 12:01:12
+
+The number next to the deploy message, for example `582fc95`, corresponds to the commit hash of the repository you deployed to Heroku.
+
+Every time you deploy a new version of an application, a new slug is created and release is generated.
+
+
+
+
+
+
+
 

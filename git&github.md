@@ -1078,7 +1078,7 @@ So….
 
 To merge changes made to another branch
 
-1. Checkout the branch that we want to merge the changes into (the receiver)
+1. Checkout the branch that we want to merge the changes into (the receiv
 2. Then use:
 
 .

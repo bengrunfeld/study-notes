@@ -1,9 +1,9 @@
 #Heroku
 
 ##URLS of Pages Studied
-https://devcenter.heroku.com/articles/quickstart
-https://devcenter.heroku.com/articles/getting-started-with-ruby
-https://devcenter.heroku.com/articles/how-heroku-works
+* https://devcenter.heroku.com/articles/quickstart
+* https://devcenter.heroku.com/articles/getting-started-with-ruby
+* https://devcenter.heroku.com/articles/how-heroku-works
 
 ##Overview
 Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure and Scala.

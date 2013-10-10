@@ -75,7 +75,7 @@ An application can access a config var by calling it. E.g.
 ##Releases
 To run your application, the Heroku platform loads a dyno (or set of dynos) with your most recent slug and any config variables you have assigned to the application. The combination of slug and configuration is called a **Release**.
 
-Releases are an append-only ledger of slugs and config vars.
+Releases are an append-only ledger of slugs, config vars, and any add-ons you may have incorporated.
 
 To see the audit trail of release deploys:
 
@@ -120,4 +120,37 @@ Here’s the simplest way to create and attach to a one-off dyno:
 
 This will spin up a new dyno, loaded with your release, and then run the bash command - which will provide you with a unix shell. Once you’ve terminated your session, or after a period of inactivty, the dyno will be removed.
 
+Changes to the filesystem on one dyno are not propagated to other dynos and are not persisted across deploys and dyno restarts.
+
+Each dyno gets its own ephemeral filesystem - with a fresh copy of the most recent release. It can be used as temporary scratchpad, but changes to the filesystem are not reflected to other dynos.
+
+All dynos, even those in the same application, are isolated - and after the session is terminated the dyno will be killed. New dynos are always created from a slug, not from the state of other dynos.
+
+##Add Ons
+Applications typically make use of add-ons to provide backing services such as databases, queueing & caching systems, storage, email services and more. E.g.
+
+	$ heroku addons:add redistogo:nano
+
+The add-on service provider is responsible for the service - and the interface to your application is often provided through a config var.
+
+Add-ons are also included in the technical description of a **Release**.
+
+Much like config vars, whenever you add, remove or change an add-on, a new release is created.
+
+##Logging and monitoring
+Heroku treats logs as streams of time-ordered events, and collates the stream of logs produced from all of the processes running in all dynos, and the Heroku platform components, into the **Logplex** - a high-performance, real-time system for log delivery. E.g.
+
+	$ heroku logs
+	2013-02-11T15:19:10+00:00 heroku[router]: at=info method=GET path=/articles/custom-domains host=mydemoapp.heroku.com fwd=74.58.173.188 dyno=web.1 queue=0 wait=0ms connect=0ms service=1452ms status=200 bytes=5783
+	2013-02-11T15:19:10+00:00 app[web.2]: Started GET "/" for 1.169.38.175 at 2013-02-11 15:19:10 +0000
+	2013-02-11T15:19:10+00:00 app[web.1]: Started GET "/" for 2.161.132.15 at 2013-02-11 15:20:10 +0000
+
+Here you see 3 timestamped log entries, the first from Heroku’s router, the last two from two dynos running the web process type.
+
+**Logplex** automatically collates log entries from all the running dynos of your app, as well as other components such as the routers, providing a single source of activity.
+
+You can also dive into the logs from just a single dyno, and keep the channel open, listening for further events: E.g.
+
+	$ heroku logs --ps web.1 --tail
+	2013-02-11T15:19:10+00:00 app[web.2]: Started GET "/" for 1.169.38.175 at 2013-02-11 15:19:10 +0000
 

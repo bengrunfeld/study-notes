@@ -107,8 +107,17 @@ This dyno cycling happens transparently and automatically on a regular basis, an
 
 Applications with only a single web dyno sleep after one hour of inactivity. When a sleeping application receives HTTP traffic, it will be awakened - causing a delay of a few seconds. Scaling the web dynos will avoid sleeping.
 
+Because Heroku manages and runs applications, there’s no need to manage operating systems or other internal system configuration.
 
+##One-off Dynos
+One-off Dynos are temporary dynos that can run with their input/output attached to your local terminal, allowing you to perform tasks like changing configurations, shared resources, etc. They’re loaded with your latest release.
 
+Here’s the simplest way to create and attach to a one-off dyno:
 
+	$ heroku run bash
+	Running `bash` attached to terminal... up, run.8963
+	~ $ ls
+
+This will spin up a new dyno, loaded with your release, and then run the bash command - which will provide you with a unix shell. Once you’ve terminated your session, or after a period of inactivty, the dyno will be removed.
 
 

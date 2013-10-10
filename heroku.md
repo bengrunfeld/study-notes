@@ -165,3 +165,9 @@ So scaling an app’s capacity to handle web traffic involves scaling the number
 
 A random selection algorithm is used for HTTP request load balancing across web dynos - and this routing handles both HTTP and HTTPS traffic.
 
+#The Procfile
+A Procfile is a mechanism for declaring what commands are run by your application’s dynos on the Heroku platform.
+
+You can use a Procfile to declare various process types, such as multiple types of workers, a singleton process like a clock, or a consumer of the Twitter streaming API.
+
+

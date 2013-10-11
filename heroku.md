@@ -5,12 +5,13 @@
 * https://devcenter.heroku.com/articles/getting-started-with-ruby
 * https://devcenter.heroku.com/articles/how-heroku-works
 * https://devcenter.heroku.com/articles/procfile
+* https://devcenter.heroku.com/articles/config-vars
 * 
 
 ##Overview
 Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure and Scala.
 
-You need to employ a buildpack if you want to use another lanauges.
+You need to employ a buildpack if you want to use other lanauges.
 
 ##Applications
 Applications consist of your source code, a description of any dependencies, and a Procfile.
@@ -212,3 +213,27 @@ Config vars saved in the `.env` file of a project directory will be added to the
 Do not commit the .env file to source control–it should only be used for local configuration.
 
 ##Deploying to Heroku
+A Procfile is not necessary to deploy apps written in most languages supported by Heroku. The platform automatically detects the language, and creates a default web process type to boot the application server.
+
+Creating an explicit Procfile is recommended for greater control and flexibility over your app.
+For Heroku to use your Procfile, add the Procfile to the root of your application, then push to Heroku:
+
+##Scaling a process type
+
+Heroku runs one web dyno for you automatically, but other process types don’t start by default. To launch a worker, you need to scale it up to one dyno:
+
+	$ heroku ps:scale worker=1
+	Scaling worker processes... done, now running 1
+
+You can also scale the size of a dyno:
+
+	$ heroku ps:resize worker=2X
+	Resizing dynos and restarting specified processes... done
+	worker dynos now 2X ($0.10/dyno-hour)
+	
+Use `heroku ps` to see if the new process is running.
+
+Use `heroku logs --ps worker` to view just the messages from the worker process type.
+
+#Configuration and Config Vars
+

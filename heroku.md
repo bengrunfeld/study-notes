@@ -4,6 +4,8 @@
 * https://devcenter.heroku.com/articles/quickstart
 * https://devcenter.heroku.com/articles/getting-started-with-ruby
 * https://devcenter.heroku.com/articles/how-heroku-works
+* https://devcenter.heroku.com/articles/procfile
+* 
 
 ##Overview
 Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure and Scala.
@@ -170,4 +172,43 @@ A Procfile is a mechanism for declaring what commands are run by your applicatio
 
 You can use a Procfile to declare various process types, such as multiple types of workers, a singleton process like a clock, or a consumer of the Twitter streaming API.
 
+A Procfile is a text file named Procfile placed in the root of your application, that lists the process types in an application. Each process type is a declaration of a command that is executed when a dyno of that process type is started. E.g.
 
+	web: lein run -m demo.web $PORT
+
+You can reference other environment variables populated by Heroku, most usefully the $PORT variable, in the command.
+
+##Declaring process types
+Process types are declared via a file named Procfile placed in the root of your app. Its format is one process type per line, with each line containing:
+
+	<process type>: <command>
+
+The syntax is defined as:
+
+`<process type>` – an alphanumeric string, is a name for your command, such as web, worker, urgentworker, clock, etc.
+
+`<command>` – a command line to launch the process, such as `rake jobs:work`.
+
+##Developing locally with Foreman
+Foreman is a command-line tool for running Procfile-backed apps. It’s installed automatically by the Heroku Toolbelt.
+
+If you had a Procfile with both web and worker process types, Foreman will start one of each process type, with the output interleaved on your terminal:
+Run your app locally with Foreman:
+
+	$ foreman start
+	18:06:23 web.1     | started with pid 47219
+	18:06:23 worker.1  | started with pid 47220
+
+Your web process loads on port 5000 because this is what Foreman provides as a default in the $PORT env var. It’s important that your web process respect this value, since it’s used by the Heroku platform when you deploy.
+
+##Setting local environment variables
+Config vars saved in the `.env` file of a project directory will be added to the environment when run by Foreman. For example we can set the `RACK_ENV` to development in your environment.
+
+	echo "RACK_ENV=development" >>.env
+	$ foreman run irb
+	> puts ENV["RACK_ENV"]
+	> development
+
+Do not commit the .env file to source control–it should only be used for local configuration.
+
+##Deploying to Heroku

@@ -35,6 +35,10 @@ To rollback and deploy a previous release:
 Here’s the simplest way to create and attach to a one-off dyno:
 
 	$ heroku run bash
+	
+But you can also create a one-off dyno with just:
+
+	$ heroku run
 
 To add an add-on:
 

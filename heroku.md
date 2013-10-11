@@ -8,6 +8,8 @@
 * https://devcenter.heroku.com/articles/config-vars
 * https://devcenter.heroku.com/articles/architecting-apps
 * https://devcenter.heroku.com/articles/slug-compiler
+* https://devcenter.heroku.com/categories/command-line
+* https://devcenter.heroku.com/articles/one-off-dynos
 * 
 
 ##Overview
@@ -313,4 +315,78 @@ The `.slugignore` file causes files to be removed after you push code to Heroku 
 Your slug size is displayed at the end of a successful compile. The maximum allowed slug size (after compression) is 300MB.
 
 You can inspect the extracted contents of your slug with `heroku run bash` and by using commands such as `ls` and `du`.
+
+#One-off Dyno's – In Depth
+One-off dynos can make full use of anything deployed in the application.
+
+There are four differences between one-off dynos (run with `heroku run`) and formation dynos (run with `heroku ps:scale`):
+
+* One-off dynos run attached to your terminal, with a character-by-character TCP connection for `STDIN` and `STDOUT`. This allows you to use interactive processes like a console. Since `STDOUT` is going to your terminal, the only thing recorded in the app’s logs is the startup and shutdown of the dyno.
+* One-off dynos terminate as soon as you press Ctrl-C or otherwise disconnect in your local terminal. One-off dynos never automatically restart, whether the process ends on its own or whether you manually disconnect.
+* One-off dynos are named in the scheme `run.N` rather than the scheme `<process-type>.N`.
+* One-off dynos can never receive HTTP traffic, since the routers only routes traffic to dynos named `web.N`.
+
+Other than these differences, the dyno manager makes no distinction between one-off dynos and formation dynos.
+
+Because each dyno is populated with its own copy of the slug-archive, files you delete in the one-off dyno won’t change your running application.
+
+##Types of one-off dynos
+Some types of one-off dynos include:
+
+* Initialising databases or running database migrations. (e.g. `rake db:migrate` or `node migrate.js migrate`)
+* Running a console (also known as a REPL shell) to run arbitrary code or inspect the app’s models against the live database. (e.g. `rails console`, `irb`, or `node`)
+* One-time scripts committed into the app’s repo (e.g. `ruby scripts/fix_bad_records.rb` or `node tally_results.js`).
+
+##Running tasks in background
+You can run a dyno in the background using `heroku run:detached`. Unlike `heroku run`, these dynos will send their output to your logs instead of your console window. You can use `heroku logs` to view the output from these commands: E.g.
+
+	$ heroku run:detached rake db:migrate
+
+#More About Dynos
+
+##Stopping running Dynos
+You can check your current running dynos using `heroku ps`:
+
+If you wish to stop a running dyno, use `heroku ps:stop` with its name. E.g.
+
+	$ heroku ps:stop run.1
+
+##SSH access
+Since your app is spread across many dynos by the dyno manager, there is no single place to SSH into. You deploy and manage apps, not servers. You need to use the Heroku CLI. You can't use SSH.
+
+##Watching changes in real-time
+The dyno manager restarts all your app’s dynos whenever you create a new release by deploying new code, changing your config vars, changing your add-ons, or when you run `heroku restart`.
+
+You can watch Dyno restarts happen in realtime using the Unix watch command: run `watch heroku ps` in one terminal while pushing code or changing a config var in another.
+
+Dynos are also restarted if the processes running in the dyno exit. 
+
+##Dyno crash restart policy
+If a dyno crashes during boot, Heroku will immediately attempt to restart it again. If a dyno crashes during subsequent attempts, Heroku will continue to attempt to restart it again, but the attempts will be spaced apart by increasing intervals.
+
+##Dyno Startup
+During startup, the container starts a bash shell that runs any code in `$HOME/.profile` before executing the dyno’s command. You can put bash code in this file to manipulate the initial environment, at runtime, for all dyno types in your app.
+
+##Local environment variables
+The Dyno Manager sets up a number of default environment variables that you can access in your application.
+
+If the dyno is a web dyno, the `$PORT` variable will be set. The dyno must bind to this port number to receive incoming requests.
+
+The `$DYNO` variable is experimental and subject to change or removal.
+
+The `$DYNO` variable will be set to the dyno identifier. e.g. `web.1`, `worker.2`, `run.9157`.
+
+##Processes
+After the `.profile` script is executed, the dyno executes the command associated with the process type of the dyno. For example, if the dyno is a `web` dyno, then the command in the Procfile associated with the web process type will be executed.
+
+No more than 256 created processes/threads can exist at any one time in a dyno - whether they’re executing, sleeping or in any other state.
+
+##Web dynos
+A web dyno must bind to its assigned $PORT within 60 seconds of startup. Processes can bind to other ports before and after binding to `$PORT`.
+
+##Graceful shutdown with SIGTERM
+When the dyno manager restarts a dyno, the dyno manager will request that your processes shut down gracefully by sending them `SIGTERM`. This signal is sent to all processes in the dyno, not just the process type.
+
+##Redundancy
+Applications with multiple running dynos will be more redundant against failure. If some dynos are lost, the application can continue to process requests while the missing dynos are replaced. Typically, lost dynos restart promptly, but in the case of a catastrophic failure, it can take more time. Multiple dynos are also more likely to run on different physical infrastructure (for example, separate AWS Availability Zones), further increasing redundancy.
 

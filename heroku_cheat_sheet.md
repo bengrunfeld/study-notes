@@ -1,5 +1,11 @@
 #Heroku Cheat Sheet
 
+Start by loggin into Heroku:
+
+	$ heroku login
+	
+
+
 Deploying to Heroku:
 
 	$ git push heroku master

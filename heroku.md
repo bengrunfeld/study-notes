@@ -160,7 +160,7 @@ You can also dive into the logs from just a single dyno, and keep the channel op
 ##HTTP Routing
 Some of your dynos will be running the command associated with the `web` process type, and some will be running other commands associated with other process types.
 
-The dynos that run process types named web are different in one way from all other dynos - they will receive HTTP traffic. Heroku’s HTTP routers distributes incoming requests for your application across your running web dynos.
+The dynos that run process types named `web` are different in one way from all other dynos - they will receive HTTP traffic. Heroku’s HTTP routers distributes incoming requests for your application across your running web dynos.
 
 So scaling an app’s capacity to handle web traffic involves scaling the number of web dynos:
 

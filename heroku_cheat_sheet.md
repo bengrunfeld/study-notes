@@ -8,6 +8,10 @@ Deploying to Heroku:
 
 	$ git push heroku master
 	
+To check what version of the Heroku CLI you're using (should be 2.1.0 or higher)
+
+	$ heroku --version
+	
 Scaling Dynos:
 
 	$ heroku ps:scale web=3 queuty=2
@@ -51,6 +55,10 @@ To view your logs:
 To view the logs from a specific Dyno:
 
 	$ heroku logs --ps web.1 --tail
+
+To keep your log stream open so new entries are automatically displayed:
+
+	$ heroku logs -t
 
 ##Using Config Vars
 	$ heroku config:set GITHUB_USERNAME=joesmith

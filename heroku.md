@@ -10,7 +10,8 @@
 * https://devcenter.heroku.com/articles/slug-compiler
 * https://devcenter.heroku.com/categories/command-line
 * https://devcenter.heroku.com/articles/one-off-dynos
-* 
+* https://devcenter.heroku.com/articles/dynos
+* https://devcenter.heroku.com/articles/getting-started-with-django
 
 ##Overview
 Heroku lets you deploy, run and manage applications written in Ruby, Node.js, Java, Python, Clojure and Scala.
@@ -390,3 +391,22 @@ When the dyno manager restarts a dyno, the dyno manager will request that your p
 ##Redundancy
 Applications with multiple running dynos will be more redundant against failure. If some dynos are lost, the application can continue to process requests while the missing dynos are replaced. Typically, lost dynos restart promptly, but in the case of a catastrophic failure, it can take more time. Multiple dynos are also more likely to run on different physical infrastructure (for example, separate AWS Availability Zones), further increasing redundancy.
 
+##Isolation and security
+Dynos execute in complete isolation from one another, even when on the same physical infrastructure. This includes both dynos in the dyno formation and dynos run as one-off dynos with heroku run. This provides protection from other application processes and system-level processes consuming all available resources.
+
+##Ephemeral filesystem
+Each dyno gets its own ephemeral filesystem, with a fresh copy of the most recently deployed code. During the dyno’s lifetime its running processes can use the filesystem as a temporary scratchpad, but no files that are written are visible to processes in any other dyno and any files written will be discarded the moment the dyno is stopped or restarted.
+
+##IP addresses
+When running multiple dynos, apps are distributed across several nodes by the dyno manager. Access to your app always goes through the routers. As a result, **dynos don’t have static IP addresses**.
+
+##Network interfaces
+The dyno manager allocates each dyno a separate network interface. Dynos are only reachable from outside Heroku via the routers at their assigned $PORT. Individual processes within a dyno can bind to any address or port they want and communicate among them using e.g. standard TCP.
+
+##Connecting to external services
+Applications running on dynos can connect to external services. 
+
+#The Celadon Cedar Stack
+Celadon Cedar is Heroku’s default runtime stack and is a flexible, polyglot environment with robust introspection and erosion-resistance capabilities. It embodies modern principles of building, deploying and managing web applications and is recommended for all apps.
+
+To create an app on the Cedar stack use the `heroku create` command from the Heroku command line:

@@ -3,8 +3,6 @@
 Start by loggin into Heroku:
 
 	$ heroku login
-	
-
 
 Deploying to Heroku:
 
@@ -50,3 +48,17 @@ To view the logs from a specific Dyno:
 
 	$ heroku logs --ps web.1 --tail
 
+##Using Config Vars
+	$ heroku config:set GITHUB_USERNAME=joesmith
+	Adding config vars and restarting myapp... done, v12
+	GITHUB_USERNAME: joesmith
+	
+	$ heroku config
+	GITHUB_USERNAME: joesmith
+	OTHER_VAR:       production
+	
+	$ heroku config:get GITHUB_USERNAME
+	joesmith
+	
+	$ heroku config:unset GITHUB_USERNAME
+	Unsetting GITHUB_USERNAME and restarting myapp... done, v13

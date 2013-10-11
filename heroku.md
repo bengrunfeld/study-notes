@@ -6,6 +6,8 @@
 * https://devcenter.heroku.com/articles/how-heroku-works
 * https://devcenter.heroku.com/articles/procfile
 * https://devcenter.heroku.com/articles/config-vars
+* https://devcenter.heroku.com/articles/architecting-apps
+* https://devcenter.heroku.com/articles/slug-compiler
 * 
 
 ##Overview
@@ -236,4 +238,79 @@ Use `heroku ps` to see if the new process is running.
 Use `heroku logs --ps worker` to view just the messages from the worker process type.
 
 #Configuration and Config Vars
+On a traditional host or working locally you can set environment vars in your `bashrc`. On Heroku, you use config vars.
+
+##Setting up config vars for a deployed application
+Use the Heroku CLI’s `config`, `config:set`, `config:get` and `config:unset` to manage your config vars:
+
+	$ heroku config:set GITHUB_USERNAME=joesmith
+	Adding config vars and restarting myapp... done, v12
+	GITHUB_USERNAME: joesmith
+	
+	$ heroku config
+	GITHUB_USERNAME: joesmith
+	OTHER_VAR:       production
+	
+	$ heroku config:get GITHUB_USERNAME
+	joesmith
+	
+	$ heroku config:unset GITHUB_USERNAME
+	Unsetting GITHUB_USERNAME and restarting myapp... done, v13
+
+Heroku manifests these config vars as environment variables to the application. These environment variables are persistent – they will remain in place across deploys and app restarts.
+
+Whenever you set or remove a config var, your app will be restarted. Config var data (the collection of all keys and values) is limited to 16kb for each app.
+
+##Using Foreman and heroku-config
+`heroku-config` is a plugin for the Heroku CLI that makes it easy to grab your application’s config vars, and place them in your local .env, and vice versa.
+
+Learn more about it at: 
+[https://devcenter.heroku.com/articles/config-vars#using-foreman-and-heroku-config](https://devcenter.heroku.com/articles/config-vars#using-foreman-and-heroku-config)
+
+##Other local options
+A less useful alternative to using Foreman’s .env file is to set these values in the ~/.bashrc for the user:
+
+	export S3_KEY=mykey
+	export S3_SECRET=mysecret
+
+Or, specify them when running the application (or any other command) by prepending the shell command:
+
+	$ S3_KEY=mykey S3_SECRET=mysecret application
+
+##Production and development modes
+Many languages and frameworks support a development mode. This typically enables more debugging, as well as dynamic reloading or recompilation of changed source files.
+
+For example, in a Ruby environment you could set a `RACK_ENV` config var to `development` to enable such a mode. Etc with other languages.
+
+##Architecting Applications for Heroku
+The [Twelve Factor](12factor.net) app, written by Heroku co-founder Adam Wiggins, is a methodology for building software-as-a-service apps in modern deployment environments.
+
+#Slugs - In Depth
+Slugs are compressed and pre-packaged copies of your application optimized for distribution to the dyno manager. When you git push to Heroku, your code is received by the slug compiler which transforms your repository into a slug. Scaling an application then downloads and expands the slug to a dyno for execution.
+
+Slug compilation is currently limited to 15 minutes.
+
+Very large applications which time out should usually have independent components spun off into separate libraries.
+
+##Ignoring files with .slugignore
+If your repository contains files not necessary to run your app, you may wish to add these to a .slugignore file in the root of your repository. Examples of files you may wish to exclude from the slug:
+
+* Unit tests or specs
+* Art sources (like .psd files)
+* Design documents (like .pdf files)
+* Test data
+
+E.g.
+
+	*.psd
+	*.pdf
+	/test
+	/spec
+
+The `.slugignore` file causes files to be removed after you push code to Heroku and before the buildpack runs. Unlike .gitignore, `.slugignore` does not support negated `!` patterns.
+
+##Slug size
+Your slug size is displayed at the end of a successful compile. The maximum allowed slug size (after compression) is 300MB.
+
+You can inspect the extracted contents of your slug with `heroku run bash` and by using commands such as `ls` and `du`.
 

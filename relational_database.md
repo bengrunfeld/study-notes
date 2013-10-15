@@ -56,10 +56,16 @@ The **primary keys** purpose is to ensure the uniqueness of every field in this 
 
 But **foreign keys** do NOT need to be unique in a `child` table, because any one `parent` could have multiple related records in a `child` table.
 
+If a table is a `child` to 2 `parent` tables (i.e. a join table), it will need to **foreign keys**, one for each `parent` table.
 
+##Naming Conventions
+1. To ensure that primary keys appear above other fields when sorted, prefix with 2 underscores `__`. 2 underscores makes PK come before FK.
+2. To ensure that foreign keys appear above other fields (but not PK's) when sorted, use a single underscore `_`
+3. Suffix primary keys with `_PK`
+4. Suffix foreign keys with `_FK`
 
-
-
+##Data Sharing
+Child tables can borrow information from parent tables. If a borrowed field is changed in the child table, it will be automatically changed in the parent table. Visa versa applies.
 
 
 

@@ -40,6 +40,10 @@ Steps to creating an `ERD`.
 
 Seek out **nouns** in a description of a database you need to build. Those will probably be your entities.
 
+In an `ERD`, you have `table occurances`, which is an instance of a database table. So each box you see in an ERD builder references ONLY one table in your database.
+
+Although, you are able to create more than one `table occurance` for each table in your database. But you can't have 2 `table occurances` with the same name, even if they are of the same table.
+
 ##Primary and Foreign Keys
 You need something that can link each table together. `Keys` act as links between tables.
 

@@ -44,6 +44,12 @@ In an `ERD`, you have `table occurances`, which is an instance of a database tab
 
 Although, you are able to create more than one `table occurance` for each table in your database. But you can't have 2 `table occurances` with the same name, even if they are of the same table.
 
+Make sure you give the `table occurance` a contextual name. e.g. `customers_ORDERS_shipped`.
+
+The reason to make a second `table occurance` of an existing table is if you want to have special match fields, e.g. **order status**, which will only return certain results for that `table occurance` which wouldn't only be returned in the original `table occurance`.
+
+
+
 ##Primary and Foreign Keys
 You need something that can link each table together. `Keys` act as links between tables.
 
@@ -79,6 +85,9 @@ Child tables can borrow information from parent tables. If a borrowed field is c
 **Relational Modelling** – is planning the construction of your database, aka creating a blueprint for the database.
 **Data Modelling** – Describes business rules as data inputs and outputs
 **ERD** – Entity Relationship Diagram. A method of diagraming relationships in a database.
+**Self-Join Table** – When one table is the parent to itself (e.g. managers who are employees are still managers of other employees)
+**Global Fields** – not a type of field, but rather are a field that have the option to be globally stored. By choosing a field with Global Storage, the field value will be shared by every record in the table (globally). These will be specific to each users session.
+
 
 
 

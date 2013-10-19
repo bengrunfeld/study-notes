@@ -81,4 +81,35 @@ Because SQL ignores whitespace and new line characters, we can use that to our a
 	
 Semicolons `;` separate or terminate SQL statements. When it's only a single SQL statement, you generally won't see it, but when there are multiple SQL statements, it will probably be used.
 
+##Creating Databases, Tables, and Columns
+The syntax for creating a database is usually not used, because databases differ so widely in this, but this will give you the general idea.
+
+	CREATE DATABASE wishlist
+
+Will create a database called `wishlist`.
+
+	CREATE TABLE customer (
+		id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(255),
+		address VARCHAR(255),
+		city VARCHAR(255),
+		state CHAR(2),
+		zip CHAR(10) 
+	);
+	
+Will create a table with the attributes involved. This is an area where many databases are very different.
+
+##Creating Rows in Tables
+
+The `INSERT` statement is used to create a new **row** in a table, that is to insert data into a table.
+
+	INSERT INTO customer
+		( name, address, city, state, zip )
+		VALUES (
+			'John Doe',
+			'32 main st',
+			'Michigan',
+			'CO',
+			'90210'
+		)
 

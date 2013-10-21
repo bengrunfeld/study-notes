@@ -252,6 +252,240 @@ Sometimes, you will have duplicate rows returned in the first result column. You
 
 This query will return a list of heads of state with the letter `be` somewhere in their name but with **NO DUPLICATES**.
 	
+## Using the ORDER BY Clause
+
+Results returned by a query are not guaranteed to be in any particular order, unless you use an `ORDER BY` clause. 
+
+	SELECT CityName, State
+		FROM City
+		ORDER BY CityName
+	
+This will return a list of city names and their respective states from the `City` table ordered alphabetically by the `CityName` column.
+
+The `ORDER BY` clause is capable of sorting by more than one column. E.g, if you want your output to be ordered by `State`, and THEN `CityName`, you could accomplish this with the following `ORDER BY` clause.
+
+	SELECT CityName, State
+		FROM City
+		ORDER BY State, CityName
+	
+The `ORDER BY` clause can use an expression as well.
+
+	SELECT Region, AVG(LifeExpectancy) AS AvgLe
+		FROM Country
+		WHERE LifeExpectancy
+		GROUP BY Region
+		ORDER BY AvgLe
+	
+This will return regions and their life expectancies from the country table, where there is a non-NULL value in the `LifeExpectancy` column. It will be grouped by region, and ordered by average life expectancy.
+
+Note: we've used `ORDER BY AvgLe` instead of `ORDER BY AVG(LifeExpectancy)` because if we change the first expression of `AVG(LifeExpectancy)`, then we only have to make the change in one place. The variable used in `ORDER BY` will automatically update.
+
+## Using the UPDATE Clause
+
+When updating a row, it is imperative that you test your `WHERE` clause with a `SELECT` statement before you go ahead and `UPDATE` it with that `WHERE` clause. E.g.
+
+	SELECT * 
+		FROM Shoes 
+		WHERE id = 27
+
+This `SELECT` statement will isolate a single row using the `id` field.
+	
+Now you can use that `WHERE` clause to perform the `UPDATE`.
+
+	UPDATE Shoes
+		SET ShoeName = 'Nike'
+		WHERE id = 27
+
+Now you can check the change with the previous `SELECT` statement.
+
+
+## Using the DELETE Clause
+
+When updating a row, it is imperative that you test your `WHERE` clause with a `SELECT` statement before you go ahead and `DELETE` it with that `WHERE` clause. E.g.
+
+	SELECT * 
+		FROM Shoes 
+		WHERE id = 27
+
+This `SELECT` statement will isolate a single row using the `id` field.
+	
+Now you can use that `WHERE` clause to perform the `DELETE`.
+
+	DELETE FROM Shoes
+		WHERE id = 27
+
+Now you can check the deletion with the previous `SELECT` statement, which will return an error because the record isn't there.
+
+NOTE: If you omit the `WHERE` clause from the `DELETE` statement, you will delete every record in the table, so be careful.
+
+## Creating Relationships Between Tables
+
+**Indexes** are one tool to use when creating relationships between tables. **Indexes** are special data structures called **B-trees** that are designed to be small and facilitate fast searches.
+
+Indexes are essentially a quick lookup table for things you need to search for and find frequently. 
+
+* Useful for searching large tables
+* Useful for connecting relational tables
+
+When you create a table with a `CREATE` statement and specify something as a PRIMARY KEY, the database automatically creates an Index of those primary keys for fast lookup.
+
+You can also manually add columns to the index by using the `INDEX` keyword in the `CREATE` statement. E.g.
+
+	CREATE TABLE shoes (
+		id		integer NOT NULL AUTO_INCREMENT PRIMARY KEY
+		name	varchar(255)
+		desc	varchar(255)
+		zip	char(10)
+		INDEX(name)
+		INDEX(zip)
+	);
+	
+## SQL String Functions
+
+To include a single quote `'` in a string literal, type 2 single quotes next to each other `''`. That will do the trick. E.g.
+
+	SELECT 'Ben''s Lessons' AS String
+
+String handling tends to be platform specific in SQL, so you'll need to research EACH string function for each different database before you use it.
+
+### The LENGTH Function
+
+The `LENGTH` function reports the number of characters in a string.
+
+	SELECT LENGTH('Rick and Roll') AS LENGTH
+
+You can also use it in a query:
+
+	SELECT title, LENGTH(title) AS 'Title Length'
+		FROM album
+	
+### The SUBSTRING Function
+
+The `SUBSTRING` function extracts a portion of a string and returns it as a new string.
+
+	SELECT SUBSTR('Hello, World', 1, 5) AS SubString
+
+Or you could use a column name instead of `Hello, World`.
+
+### The RIGHT Function
+
+The `RIGHT` function takes the right-most characters of a string and makes a new string.
+
+	SELECT RIGHT('Hello, World', 5) AS SubString
+
+### The LEFT Function
+
+The `LEFT` function takes the left-most characters of a string and makes a new string.
+
+	SELECT LEFT('Hello, World', 5) AS SubString
+
+### Removing Spaces with TRIM
+
+When users input data, they can sometimes add spaces at the beginning or end of a string that causes problems if entered into the database as is. 
+
+The `TRIM` function deletes any whitespace from the beginning and end of a string.
+
+So here is a problematic entry
+
+	SELECT '   unnecessary white space    ' AS String
+
+And here is how we use `TRIM` to alleviate this issue:
+
+	SELECT TRIM('   unnecessary white space    ') AS String
+
+### The UPPER and LOWER Functions
+
+`UPPER` changes a string to all upper case.
+`LOWER` changes a string to all lower case. E.g.
+
+	SELECT UPPER('hello') AS Greeting
+	
+	SELECT LOWER('HELLO') AS Greeting
+
+## Working with Numeric Functions
+
+The numeric functions are designed to work with data of a numeric type. They may work with strings with numeric content, they may not work with strings with non-numeric content.
+
+So essentially, only use numeric data with numeric functions.
+
+Usually, it is faster to perform arithmetic operations in the database engine than in interpreted languages like PERL or PHP.
+
+### The ABS Function
+
+The `ABS` (absolute) function returns the abosulte value of a number, and is useful if you need to make sure the value you're working on is positive or if you need to work on it as an absolute value.
+
+	SELECT ABS(-12) AS Number
+
+This will return `12`.
+
+### The ROUND Function
+
+This `ROUND` function rounds anything below `0.5` to `0` and anything above `0.5` to `1`.
+
+	SELECT ROUND(5.5, 0)
+
+Will return `6`
+
+### Showing Hours, Minutes and Seconds
+
+In MySQL, use `SEC_TO_TIME(value)` to display Hours, Minutes and Seconds.
+
+To show JUST minutes and seconds.
+
+### Integer Arithmetic
+
+Use `DIV` to perform integer division WITHOUT any floating point.
+
+Look at `LPAD` and `MOD` for performing other integer arithmetic.
+
+##Date and Times in SQL
+
+Dates and Times are a distinct type of data in SQL.
+
+### MYSQL Date and Time Data Types
+
+* **DATE** – Date only
+* **TIME** – Time only
+* **DATETIME** – Date and Time
+* **TIMESTAMP** – Unix timestamp. GMT is usually at time of the server the DB is running on.
+
+### Date and Time related function
+
+* `CURDATE` gives the current date
+* `CURTIME` gives the current date
+* `NOW` gives the current date AND time
+* `DATE_ADD` will add an interval to a date and time.
+* `DATE_SUB` will subtract an interval from a date and time
+
+.
+
+	SELECT NOW(), DATE_ADD(NOW(), INTERVAL 2 WEEK) AS Later
+
+
+## How Aggregates Work
+
+Aggregates are called aggregates because they provide a result based on data accumulated from a set of rows rather than just one row of a table. 
+
+If you're using a `JOIN` with a `GROUP BY` and an `AGGREGATE FUNCTION`, you should know it works in that order. First the `JOIN`, then the `GROUP BY`, then the aggregate (e.g. `COUNT`).
+
+### The HAVING Clause
+
+`HAVING` is to `GROUP BY` as is `WHERE` to `SELECT`.
+
+### The DISTINCT Clause with Aggregate Functions
+
+	SELECT COUNT( DISTINCT HeadOfState) AS NumHeads FROM COUNTRY
+
+It counts the number of distinct values in the HeadOfState column.
+
+### Different Aggregate Functions
+
+Gives you the sum
+
+	SELECT SUM(someColumn)
+	
+`MAX`, `AVG`, basically just go and check the documentation to see what's available.
+
 
 
 

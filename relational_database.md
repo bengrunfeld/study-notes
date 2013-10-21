@@ -66,7 +66,7 @@ The **primary keys** purpose is to ensure the uniqueness of every field in this 
 
 But **foreign keys** do NOT need to be unique in a `child` table, because any one `parent` could have multiple related records in a `child` table.
 
-If a table is a `child` to 2 `parent` tables (i.e. a join table), it will need to **foreign keys**, one for each `parent` table.
+If a table is a `child` to 2 `parent` tables (i.e. a join table), it will need 2 **foreign keys**, one for each `parent` table.
 
 ##Naming Conventions
 1. To ensure that primary keys appear above other fields when sorted, prefix with 2 underscores `__`. 2 underscores makes PK come before FK.
@@ -80,13 +80,13 @@ Child tables can borrow information from parent tables. If a borrowed field is c
 
 
 ##Terminology
-**Entities** – Data is broken down into small pieces, known as entities. Entities contain attributes.
-**Attributes** – are pieces of data that describe an entity. Attributes will become fields inside the database.
-**Relational Modelling** – is planning the construction of your database, aka creating a blueprint for the database.
-**Data Modelling** – Describes business rules as data inputs and outputs
-**ERD** – Entity Relationship Diagram. A method of diagraming relationships in a database.
-**Self-Join Table** – When one table is the parent to itself (e.g. managers who are employees are still managers of other employees)
-**Global Fields** – not a type of field, but rather are a field that have the option to be globally stored. By choosing a field with Global Storage, the field value will be shared by every record in the table (globally). These will be specific to each users session.
+* **Entities** – Data is broken down into small pieces, known as entities. Entities contain attributes.
+* **Attributes** – are pieces of data that describe an entity. Attributes will become fields inside the database.
+* **Relational Modelling** – is planning the construction of your database, aka creating a blueprint for the database.
+* **Data Modelling** – Describes business rules as data inputs and outputs
+* **ERD** – Entity Relationship Diagram. A method of diagraming relationships in a database.
+* **Self-Join Table** – When one table is the parent to itself (e.g. managers who are employees are still managers of other employees)
+* **Global Fields** – not a type of field, but rather are a field that have the option to be globally stored. By choosing a field with Global Storage, the field value will be shared by every record in the table (globally). These will be specific to each users session.
 
 
 

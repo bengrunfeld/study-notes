@@ -8,7 +8,7 @@
 4. Do a `git fetch`
 5. Go to your master branch and do `git merge origin/master`
 6. Add some code and make an initial `commit`
-7. Do `git push -u <alias> <branch-name>` (afterwards, just use `git push`)
+7. Do `git push <alias> <branch-name>`
 
 
 

@@ -497,7 +497,7 @@ is equivilent to
 		echo file filename does not exist
 	fi
 
-The command to the left of `||` is executed. If its exit status is `0` (success), the command to the right of `||` is ignored. The the left side returns non-zero (failure), the right side is executed and the value of the entire expression is the exit status of the right side.
+The command to the left of `||` is executed. If its exit status is `0` (success), the command to the right of `||` is ignored. If the the left side returns non-zero (failure), the right side is executed and the value of the entire expression is the exit status of the right side.
 
 The `&&` statement executes its right hand command only if the left one succeeds.
 

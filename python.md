@@ -318,8 +318,8 @@ There can be zero or more `elif` parts, and the `else` part is optional.
 
 ##`FOR` Statements
 
-The for statement in Python differs a bit from what you may be used to in `C`
-Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. E.g:
+The `for` statement in Python differs a bit from what you may be used to in `C`
+Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s `for` statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. E.g:
 
 	>>> # Measure some strings:
 	... words = ['cat', 'window', 'defenestrate']
@@ -347,7 +347,7 @@ If you do need to iterate over a sequence of numbers, the built-in function `ran
 	>>> range(10)
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-The given end point is never part of the generated list; range(10) generates a list of 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the ‘step’):
+The given end point is never part of the generated list; `range(10)` generates a list of 10 values, the legal indices for items of a sequence of length 10. It is possible to let the range start at another number, or to specify a different increment (even negative; sometimes this is called the ‘step’):
 
 	>>> range(5, 10)
 	[5, 6, 7, 8, 9]
@@ -356,7 +356,7 @@ The given end point is never part of the generated list; range(10) generates a l
 	>>> range(-10, -100, -30)
 	[-10, -40, -70]
 
-To iterate over the indices of a sequence, you can combine range() and len() as follows:
+To iterate over the indices of a sequence, you can combine `range()` and `len()` as follows:
 
 	>>> a = ['Mary', 'had', 'a', 'little', 'lamb']
 	>>> for i in range(len(a)):
@@ -408,11 +408,11 @@ To define a function:
 
 	def speakLoud(input):
 
-The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
+The keyword `def` introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
 
-The first statement of the function body can optionally be a string literal; this string literal is the function’s documentation string, or docstring.
+The first statement of the function body can optionally be a string literal; this string literal is the function’s **documentation string**, or **docstring**.
 
-There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write
+There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write.
 
 It is also possible to define functions with a variable number of arguments. There are three forms, which can be combined.
 
@@ -494,7 +494,7 @@ With the `lambda` keyword, small anonymous functions can be created. Lambda form
 
 ##Lists
 
-	list.append(x)Add an item to the end of the list; equivalent to `a[len(a):] = [x]`.	list.extend(L)Extend the list by appending all the items in the given list; equivalent to `a[len(a):] = L`.	list.insert(i, x)Insert an item at a given position. The first argument is the index of the element before which to insert, so `a.insert(0, x)` inserts at the front of the list, and `a.insert(len(a), x)` is equivalent to `a.append(x)`.	list.remove(x)Remove the first item from the list whose value is x. It is an error if there is no such item.
+	list.append(x)Add an item to the end of the list; equivalent to `a[len(a):] = [x]`.	list.extend(L)Extend the list by appending all the items in the given list; equivalent to `a[len(a):] = L`.	list.insert(i, x)Insert an item at a given position. The first argument is the index of the element before which to insert, so `a.insert(0, x)` inserts at the front of the list, and `a.insert(len(a), x)` is equivalent to `a.append(x)`.	list.remove(x)Remove the **first** item from the list whose value is `x`. It is an error if there is no such item.
 	list.pop([i])Remove the item at the given position in the list, and return it. If no index is specified, `a.pop()` removes and returns the last item in the list. (The square brackets around the `i` in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)	list.index(x)Return the index in the list of the first item whose value is x. It is an error if there is no such item.	list.count(x)Return the number of times x appears in the list.	list.sort()Sort the items of the list, in place.	list.reverse()Reverse the elements of the list, in place.
 ##Using Lists as Stacks
 The list methods make it very easy to use a list as a stack, where the last element added is the first element retrieved (“last-in, first-out”). To add an item to the top of the stack, use `append()`. To retrieve an item from the top of the stack, use `pop()` without an explicit index.
@@ -533,7 +533,7 @@ A third argument can be passed to indicate the starting value. In this case the 
 
 Apparently, the `**` operator means "to the power of", so `3**2` means 3 to the power of 2 (or 3 squared), and will equal 9.
 
-##List ComprehensionsA list comprehension consists of brackets containing an expression followed by a for clause, then zero or more for or if clauses. The result will be a new list resulting from evaluating the expression in the context of the for and if clauses which follow it.
+##List ComprehensionsA **list comprehension** consists of brackets containing an expression followed by a `for` clause, then zero or more `for` or `if` clauses. The result will be a new list resulting from evaluating the expression in the context of the `for` and `if` clauses which follow it.
 	>>> squares = []
 	>>> for x in range(10):
 	... squares.append(x**2)
@@ -560,7 +560,7 @@ List comprehensions can contain complex expressions and nested functions. E.g.
 The initial expression in a list comprehension can be any expression, including another list comprehension. E.g.
 	>>> [[row[i] for row in matrix] for i in range(4)]
 ##The `del` statement
-The `del` statement removes an item from a list given its index instead of its value. This differs from the pop() method which returns a value. The del statement can also be used to remove slices from a list or clear the entire list.
+The `del` statement removes an item from a list given its index instead of its value. This differs from the `pop()` method which returns a value. The `del` statement can also be used to remove slices from a list or clear the entire list.
 	>>> l
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	>>> del l[3]
@@ -708,7 +708,7 @@ When looping through a sequence, the position index and corresponding value can 
 	1 fritz
 	2 nichze
 
-To loop over two or more sequences at the same time, the entries can be paired with the zip() function.
+To loop over two or more sequences at the same time, the entries can be paired with the `zip()` function.
 
 	>>> questions = ['name', 'quest', 'favorite color']
 	>>> answers = ['lancelot', 'the holy grail', 'blue']
@@ -726,12 +726,13 @@ To loop over a sequence in reverse, first specify the sequence in a forward dire
 
 To loop over a sequence in sorted order, use the `sorted()` function which returns a new sorted list while leaving the source unaltered.
 
-	>>> basket = [’apple’, ’orange’, ’apple’, ’pear’, ’orange’, ’banana’] >>> for f 	in sorted(set(basket)):	... print f	...
+	>>> basket = [’apple’, ’orange’, ’apple’, ’pear’, ’orange’, ’banana’] 
+	>>> for f 	in sorted(set(basket)):	... print f	...
 When looping through dictionaries, the key and corresponding value can be retrieved at the same time using the `iteritems()` method.
 	>>> knights = {’gallahad’: ’the pure’, ’robin’: ’the brave’} 	>>> for k, v in knights.iteritems():	... print k, v
 To change a sequence you are iterating over while inside the loop (for example to duplicate certain items), it is recommended that you first make a copy. Looping over a sequence does not implicitly make a copy. The slice notation makes this especially convenient:	>>> words = [’cat’, ’window’, ’defenestrate’]	>>> for w in words[:]: 			# Loop over a slice copy of the entire list. 	... 	if len(w) > 6:
 	...			words.insert(0, w)		...	>>> words	[’defenestrate’, ’cat’, ’window’, ’defenestrate’]
-##More on ConditionsThe conditions used in while and if statements can contain any operators, not just comparisons.
+##More on ConditionsThe conditions used in `while` and `if` statements can contain any operators, not just comparisons.
 Permitted Statements:
 	in					
 	not in				#for sequences
@@ -753,7 +754,7 @@ Note that in Python, unlike C, assignment cannot occur inside expressions. C pro
 A module is a file containing Python definitions and statements suffixed with `.py`.
 Within a module, the module’s name (as a string) is available as the value of the global variable `__name__`.
 If you write and save a module as `file.py`, you import it with the `import` command, minus the suffix.
-	import fileThis does not enter the names of the functions defined in fibo directly in the current symbol table; it only enters the module name 'file' there. Using the module name you can access the functions. E.g.
+	import fileThis does not enter the names of the functions defined in `file` directly in the current symbol table; it only enters the module name `file` there. Using the module name you can access the functions. E.g.
 	file.add_nums(10)
 
 To get the name of the file:
@@ -796,9 +797,9 @@ Without arguments, `dir()` lists the names you have defined currently:
 
 `dir()` does not list the names of built-in functions and variables. If you want a list of those, they are defined in thestandard module `__builtin__`:	>>> import __builtin__	>>> dir(__builtin__)
 ##Packages
-Packages are a way of structuring Python’s module namespace by using “dotted module names”. For example, the module name A.B designates a submodule named B in a package named A. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like NumPy or the Python Imaging Library from having to worry about each other’s module names.
+Packages are a way of structuring Python’s module namespace by using “dotted module names”. For example, the module name `A.B` designates a submodule named B in a package named A. Just like the use of modules saves the authors of different modules from having to worry about each other’s global variable names, the use of dotted module names saves the authors of multi-module packages like `NumPy` or the Python Imaging Library from having to worry about each other’s module names.
 Suppose you want to design a collection of modules (a “package”) called `sound`.
-	sound/                		#Top-level package
+	sound/                	#Top-level package
     	__init__.py         	#Initialize the sound package
 		formats/          		#Subpackage for file format conversions	  		__init__.py
        		wavread.py
@@ -816,15 +817,15 @@ Without arguments, `dir()` lists the names you have defined currently:
 	        reverse.py
 	        ...
 
-The `__init__.py` files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as string, from unintentionally hiding valid modules that occur later on the module search path. In the simplest case, `__init__.py` can just be an empty file, but it can also execute initialization code for the package or set the `__all__` variable, described later.	
+The `__init__.py` files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name, such as `string`, from unintentionally hiding valid modules that occur later on the module search path. In the simplest case, `__init__.py` can just be an empty file, but it can also execute initialization code for the package or set the `__all__` variable, described later.	
 Users of the package can import individual modules from the package, for example:	import sound.effects.echo
-This loads the submodule sound.effects.echo. It must be referenced with its full name. 
+This loads the submodule `sound.effects.echo`. It must be referenced with its full name. 
 	sound.effects.echo.echofilter(input, output, delay=0.7, atten=4) 
 An alternative way of importing the submodule is:
 	from sound.effects import echoThis also loads the submodule echo, and makes it available without its package prefix, so it can be used as follows: 
 	echo.echofilter(input, output, delay=0.7, atten=4)Yet another variation is to import the desired function or variable directly:	from sound.effects.echo import echofilterAgain, this loads the submodule echo, but this makes its function `echofilter()` directly available: 
 	echofilter(input, output, delay=0.7, atten=4)
-Note that when using `from package import item` , the item can be either a submodule (or subpackage) of the package, or some other name defined in the package, like a function, class or variable.
+Note that when using `from package import item` , the `item` can be either a submodule (or subpackage) of the package, or some other name defined in the package, like a function, class or variable.
 
 ##Importing * From a Package
 The import statement uses the following convention: if a package’s `__init__.py` code defines a list named `__all__`, it is taken to be the list of module names that should be imported when `from package import *` is encountered.
@@ -838,7 +839,7 @@ The `str.rjust()` method of string objects right-justifies a string in a field o
 
 These methods do not write anything, they just return a new string.
 
-	>>> for x in range(1, 11):	... print repr(x).rjust(2), repr(x*x).rjust(3),	... # Note trailing comma on previous line	... print repr(x*x*x).rjust(4)There is another method, str.zfill(), which pads a numeric string on the left with zeros. It understands about plus and minus signs. E.g.	>>> ’12’.zfill(5)
+	>>> for x in range(1, 11):	... print repr(x).rjust(2), repr(x*x).rjust(3),	... # Note trailing comma on previous line	... print repr(x*x*x).rjust(4)There is another method, `str.zfill()`, which pads a numeric string on the left with zeros. It understands about plus and minus signs. E.g.	>>> ’12’.zfill(5)
 	’00012’	>>> ’-3.14’.zfill(7) 	’-003.14’
 Basic usage of the `str.format()` method looks like this:	>>> print ’We are the {} who say "{}!"’.format(’knights’, ’Ni’)	We are the knights who say "Ni!"
 The brackets and characters within them (called format fields) are replaced with the objects passed into the `str.format()` method. A number in the brackets refers to the position of the object passed into the `str.format()` method.	>>> print ’{0} and {1}’.format(’spam’, ’eggs’) 	spam and eggs	>>> print ’{1} and {0}’.format(’spam’, ’eggs’) 	eggs and spam
@@ -848,7 +849,7 @@ These methods do not write anything, they just return a new string.
 	>>> print ’The value of PI is approximately {!r}.’.format(math.pi) 	The value of PI is approximately 3.141592653589793.
 An optional `:` and format specifier can follow the field name. This allows greater control over how the value is formatted. The following example rounds Pi to three places after the decimal.	>>> import math	>>> print 'The value of PI is approximately {0:.3f}.'.format(math.pi)
 Passing an integer after the `:` will cause that field to be a minimum number of characters wide. This is useful for making tables pretty.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 7678} 	>>> for name, phone in table.items():	... print ’{0:10} ==> {1:10d}’.format(name, phone)
-If you have a really long format string that you don’t want to split up, it would be nice if you could reference the variables to be formatted by name instead of by position. This can be done by simply passing the dict and using square brackets `[]` to access the keys
+If you have a really long format string that you don’t want to split up, it would be nice if you could reference the variables to be formatted by name instead of by position. This can be done by simply passing the `dict` and using square brackets `[]` to access the keys
 	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678} 	>>> print (’Jack: {0[Jack]:d}; Sjoerd: {0[Sjoerd]:d}; ’	... ’Dcab: {0[Dcab]:d}’.format(table))	Jack: 4098; Sjoerd: 4127; Dcab: 8637678This could also be done by passing the table as keyword arguments with the `**` notation.	>>> table = {’Sjoerd’: 4127, ’Jack’: 4098, ’Dcab’: 8637678}	>>> print ’Jack: {Jack:d}; Sjoerd: {Sjoerd:d}; 	... Dcab: {Dcab:d}’.format(**table) 		Jack: 4098; Sjoerd: 4127; Dcab: 8637678
 ##The `vars()` Method
 `vars()` returns a dictionary containing all local variables.
@@ -888,7 +889,7 @@ Assume that a file object called `f` has already been created.
 Pickle is the standard way to make Python objects which can be stored and reused by other programs or by a future invocation of the same program.
 #Errors and Exceptions
 There are (at least) two distinguishable kinds of errors: **syntax errors** and **exceptions**.
-Errors detected during execution are called **exceptions** and are not unconditionally fatal
+Errors detected during execution are called **exceptions** and are not unconditionally fatal.
 
 The string printed as the exception type is the name of the built-in exception that occurred.`bltin-exceptions` lists the built-in exceptions and their meanings.
 ##Exception Handling
@@ -911,7 +912,8 @@ The string printed as the exception type is the name of the built-in exception t
 The `try ... except` statement has an optional `else` clause, which, when present, must follow all except clauses. It is useful for code that must be executed if the try clause does not raise an exception. For example:
 	for arg in sys.argv[1:]: 		try:			f = open(arg, ’r’) 		except IOError:			print ’cannot open’, arg 		else:			print arg, ’has’, len(f.readlines()), ’lines’ 			f.close()
 The use of the else clause is better than adding additional code to the try clause because it avoids accidentally catching an exception that wasn’t raised by the code being protected by the `try ... except` statement.
-When an exception occurs, it may have an associated value, also known as the exception’s argument. The presence and type of the argument depend on the exception type.The except clause may specify a variable after the exception name (or tuple). The variable is bound to an exception instance with the arguments stored in `instance.args`. For convenience, the exception instance defines `__str__()` so the arguments can be printed directly without having to reference `.args`.One may also instantiate an exception first before raising it and add any attributes to it as desired.	>>> try:	... 	raise Exception(’spam’, ’eggs’) 	... except Exception as inst:	... 	print type(inst)			# the exception instance	... 	print inst.args				# arguments stored in .args	... 	print inst					# __str__ allows args to printed directly	... 	x, y = inst.args	... 	print ’x =’, x	... 	print ’y =’, y 	...	<type ’exceptions.Exception’>	(’spam’, ’eggs’)	(’spam’, ’eggs’)	x = spam	y = eggs
+When an exception occurs, it may have an associated value, also known as the exception’s argument. The presence and type of the argument depend on the exception type.
+The except clause may specify a variable after the exception name (or tuple). The variable is bound to an exception instance with the arguments stored in `instance.args`. For convenience, the exception instance defines `__str__()` so the arguments can be printed directly without having to reference `.args`.One may also instantiate an exception first before raising it and add any attributes to it as desired.	>>> try:	... 	raise Exception(’spam’, ’eggs’) 	... except Exception as inst:	... 	print type(inst)			# the exception instance	... 	print inst.args				# arguments stored in .args	... 	print inst						# __str__ allows args to printed directly	... 	x, y = inst.args	... 	print ’x =’, x	... 	print ’y =’, y 	...	<type ’exceptions.Exception’>	(’spam’, ’eggs’)	(’spam’, ’eggs’)	x = spam	y = eggs
 If an exception has an argument, it is printed as the last part (‘detail’) of the message for unhandled exceptions.
 Exception handlers also handle exceptions from functions called inside the `try` block.
 ###Raising Exceptions
@@ -965,14 +967,14 @@ Programs may name their own exceptions by creating a new exception class.  Excep
 All variables found outside of the innermost scope are read-only (an attempt to write to such a variable will simply create a new local variable in the innermost scope, leaving the identically named outer variable unchanged).
 ##Intro to Classes
 The simplest form of class definition looks like this:	class ClassName:	    <statement-1>	    .	    <statement-N>
-Class definitions, like function definitions (def statements) must be executed before they have any effect.
+Class definitions, like function definitions (`def` statements) must be executed before they have any effect.
 
 ##Class Objects
 
-When a class definition is left normally (via the end), a class object is created. This is basically a wrapper around the contents of the namespace created by the class definition
+When a class definition is left normally (via the end), a class object is created. This is basically a wrapper around the contents of the namespace created by the class definition.
 Class objects support two kinds of operations: attribute references and instantiation.
 Attribute references use the standard syntax used for all attribute references in Python: `obj.name`.So with:
-	class MyClass:	"""A simple example class""" 	i = 12345	def f(self):		return ’hello world’`MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object.
+	class MyClass:		"""A simple example class""" 		i = 12345		def f(self):			return ’hello world’`MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object.
 Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment.
 `__doc__` is also a valid attribute, returning the docstring belonging to the class: "A simple example class".
 Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. E.g.
@@ -1003,7 +1005,7 @@ When a class definition is left normally (via the end), a class object is create
 
 “Private” instance variables that cannot be accessed except from inside an object don’t exist in Python. 
 
-However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. _spam) should be treated as a non-public part of the API (whether it is a function, a method or a data member).
+However, there is a convention that is followed by most Python code: a name prefixed with an underscore (e.g. `_spam`) should be treated as a non-public part of the API (whether it is a function, a method or a data member).
 
 Python believes that the main use case for class-private members is to avoid name clashes with subclasses. So Python has a mechanism called **name mangling**. Any identifier of the form `__spam` (at least two leading underscores, at most one trailing underscore) is textually replaced with `_classname__spam`, where `classname` is the current class name with leading underscore(s) stripped.
 Name mangling is helpful for letting subclasses override methods without breaking intraclass method calls.

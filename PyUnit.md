@@ -10,7 +10,7 @@ To achieve this, unittest supports some important concepts:
 A test fixture represents the preparation needed to perform one or more tests, and any associate cleanup actions. This may involve, for example, creating temporary or proxy databases, directories, or starting a server process.
 
 ### Test Case
-A test case is the smallest unit of testing. It checks for a specific response to a particular set of inputs. unittest provides a base class, TestCase, which may be used to create new test cases.
+A test case is the smallest unit of testing. It checks for a specific response to a particular set of inputs. unittest provides a base class, `TestCase`, which may be used to create new test cases.
 
 ### Test Suite
 A test suite is a collection of test cases, test suites, or both. It is used to aggregate tests that should be executed together.
@@ -19,9 +19,9 @@ A test suite is a collection of test cases, test suites, or both. It is used to 
 A test runner is a component which orchestrates the execution of tests and provides the outcome to the user. The runner may use a graphical interface, a textual interface, or return a special value to indicate the results of executing the tests.
 
 
-The test case and test fixture concepts are supported through the `TestCase` and `FunctionTestCase` classes; the former should be used when creating new tests, and the latter can be used when integrating existing test code with a unittest-driven framework.
+The **test case** and **test fixture** concepts are supported through the `TestCase` and `FunctionTestCase` classes; the former should be used when creating new tests, and the latter can be used when integrating existing test code with a unittest-driven framework.
 
-When building test fixtures using TestCase, the `setUp()` and `tearDown()` methods can be overridden to provide initialization and cleanup for the fixture. With FunctionTestCase, existing functions can be passed to the constructor for these purposes
+When building test fixtures using `TestCase`, the `setUp()` and `tearDown()` methods can be overridden to provide initialization and cleanup for the fixture. With `FunctionTestCase`, existing functions can be passed to the constructor for these purposes
 
 When the test is run, the fixture initialization is run first; if it succeeds, the cleanup method is run after the test has been executed, regardless of the outcome of the test.
 
@@ -141,23 +141,23 @@ The TestCase class provides a number of methods to check for and report failures
 
 Method	|	Checks that	|	New in
 --------|--------------|--------
-assertEqual(a, b)	|	a == b	 |
-assertNotEqual(a, b) |	a != b	 |
-assertTrue(x)	| bool(x) is True |
-assertFalse(x)	| bool(x) is False |
-assertIs(a, b)	| a is b |	2.7 
-assertIsNot(a, b)	| a is not b | 2.7 
-assertIsNone(x)	| x is None	| 2.7
-assertIsNotNone(x)	 | x is not None | 2.7
-assertIn(a, b) |	a in b |	2.7 
-assertNotIn(a, b)	| a not in b	| 2.7
-assertIsInstance(a, b)	| isinstance(a, b) | 2.7
-assertNotIsInstance(a, b)	| not isinstance(a, b) | 2.7
+`assertEqual(a, b)`	|	a == b	 |
+`assertNotEqual(a, b)` |	a != b	 |
+`assertTrue(x)`	| bool(x) is True |
+`assertFalse(x)`	| bool(x) is False |
+`assertIs(a, b)`	| a is b |	2.7 
+`assertIsNot(a, b)`	| a is not b | 2.7 
+`assertIsNone(x)`	| x is None	| 2.7
+`assertIsNotNone(x)`	 | x is not None | 2.7
+`assertIn(a, b)` |	a in b |	2.7 
+`assertNotIn(a, b)`	| a not in b	| 2.7
+`assertIsInstance(a, b)`	| isinstance(a, b) | 2.7
+`assertNotIsInstance(a, b)`	| not isinstance(a, b) | 2.7
 
 It is also possible to check that exceptions and warnings are raised using the following methods:
 
 Method	| Checks that |	New in
 --------|-------------|-------
-`assertRaises(exc, fun, *args, **kwds)` | `fun(*args, **kwds)` raises exc |	 
-`assertRaisesRegexp(exc, r, fun, *args, **kwds)` |`fun(*args, **kwds)`  raises exc and the message matches regex r | 	2.7
+`assertRaises(exc, func, *args, **kwds)` | `fun(*args, **kwds)` raises exc |	 
+`assertRaisesRegexp(exc, r, func, *args, **kwds)` |`fun(*args, **kwds)`  raises exc and the message matches regex r | 	2.7
 

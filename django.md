@@ -158,4 +158,113 @@ Access the Django API from the command line with:
 
 We’re using this instead of simply typing `python`, because `manage.py` sets the `DJANGO_SETTINGS_MODULE` environment variable, which gives Django the Python import path to your `mysite/settings.py` file.
 
+If you’d rather not use `manage.py`, no problem. Just set the `DJANGO_SETTINGS_MODULE` environment variable to `mysite.settings` and run `python` from the same directory `manage.py` is in (or ensure that directory is on the Python path, so that import mysite works).
+
+Once you're in the shell, you can use the `Django API`.
+
+	> from polls.models import Poll, Choice 
+	> Poll.objects.all()
+	# []
+	> from django.utils import timezone
+	> p = Poll(question="What's new?", pub_date=timezone.now())
+	> p.save()
+	> p.id
+	# 1
+	> p.question
+	# What's new?
+	> p.pub_date
+	# datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=<UTC>)
+	> p.question = "What's up?"
+	> p.save()
+	> p.question
+	# What's up?
+	> Poll.objects.all()
+	# [<Poll: Poll object>]
+
+To make the `Poll.objects.all()` command print out something useful, add `__unicode__` methods to the `Poll` and `Choice` classes.
+
+## Adding Classes to the Admin
+
+1. To access the admin panel, run `$ python manage.py runserver`
+2. In a web browser: ` http://127.0.0.1:8000/admin/`
+3. Sign in with the super-user account your created
+4. Open `appName/admin.py` and add the following code to add a class to the admin site
+
+.
+
+	from django.contrib import admin
+	from polls.models import Poll
+	
+	admin.site.register(Poll)
+
+
+## MVC Architecture
+
+* The `model` consists of application data, business rules, logic, and functions (database). 
+
+* A `view` can be any output representation of data, such as a chart or a diagram. Multiple views of the same data are possible. 
+
+* The `controller` mediates input, converting it to commands for the model or view.
+
+## Views in Django
+
+In Django, web pages and other content are delivered by `views`. Each view is represented by a simple Python function (or method, in the case of class-based views). Django will choose a view by examining the URL that’s requested (to be precise, the part of the URL after the domain name).
+
+### To create a view
+
+Go to `polls/view.py` and enter in the following code:
+
+	from django.http import HttpResponse
+	
+	def index(request):
+	    return HttpResponse("Hello, world. You're at the poll index.")
+
+
+To call the view, we need to map it to a URL - and for this we need a `URLconf`.
+
+To create a `URLconf` in the `polls` directory, create a file called `urls.py`. Paste in:
+
+	from django.conf.urls import patterns, url
+	
+	from polls import views
+	
+	urlpatterns = patterns('',
+	    url(r'^$', views.index, name='index')
+	)
+
+The next step is to point the root `URLconf` at the `polls.urls` module. In `mysite/urls.py` insert an `include()`, leaving you with:
+
+	from django.conf.urls import patterns, include, url
+	
+	from django.contrib import admin
+	admin.autodiscover()
+	
+	urlpatterns = patterns('',
+	    url(r'^polls/', include('polls.urls')),
+	    url(r'^admin/', include(admin.site.urls)),
+	)
+
+You have now wired an `index view` into the `URLconf`. Go to `http://localhost:8000/polls/` to see the `view`.
+
+The `url()` function is passed four arguments, two required: `regex` and `view`, and two optional: `kwargs`, and `name`.
+
+When somebody requests a page from your Web site – say, `/polls/34/`, Django will load the `mysite.urls` Python module because it’s pointed to by the `ROOT_URLCONF` setting. It finds the variable named `urlpatterns` and traverses the regular expressions in order. The `include()` functions we are using simply reference other `URLconfs`. Note that the regular expressions for the `include()` functions don’t have a `$` (end-of-string match character) but rather a trailing slash. Whenever Django encounters `include()`, it chops off whatever part of the URL matched up to that point and sends the remaining string to the included `URLconf` for further processing.
+
+The idea behind `include()` is to make it easy to plug-and-play URLs. Since `polls` are in their own `URLconf` `(polls/urls.py)`, they can be placed under `/polls/`, or under `/fun_polls/`, or under `/content/polls/`, or any other path root, and the app will still work.
+
+### The role of views
+
+Each view is responsible for doing one of two things: returning an `HttpResponse` object containing the content for the requested page, or raising an exception such as `Http404`. 
+
+The `HttpResponse` can contain data from a database, a template, PDF's or XML data. It's up to you.
+
+All Django wants is that `HttpResponse`. Or an `exception`.
+
+## Creating Templates in Django
+
+First, create a directory called `templates` in your `polls` directory. Django will look for templates in there.
+
+## Adding Stylesheets and Javascript
+
+Create a directory called `static` in your `polls` directory. Django will look for `static files` there, similarly to how Django finds templates inside `polls/templates/`.
 

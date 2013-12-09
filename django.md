@@ -268,3 +268,5 @@ First, create a directory called `templates` in your `polls` directory. Django w
 
 Create a directory called `static` in your `polls` directory. Django will look for `static files` there, similarly to how Django finds templates inside `polls/templates/`.
 
+Within the static directory you have just created, create another directory called `polls` and within that create a file called `style.css`. In other words, your stylesheet should be at `polls/static/polls/style.css`. Because of how the `AppDirectoriesFinder staticfile` finder works, you can refer to this static file in Django simply as `polls/style.css`, similar to how you reference the path for templates.
+

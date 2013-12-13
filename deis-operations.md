@@ -46,7 +46,22 @@ That's it!
 ##Terminal
 1. Run `deis formations:update dev --domain=bensapp.com` to enable multiple apps on one formation.
 
+##Updating Your Proxy IP When You Scale Nodes
+When you scale nodes, your Proxy IP changes.
+To update it, get the new IP by running the following command:
 
+	deis nodes <formation name>
+
+That will return something like:
+
+	=== dev2 Nodes
+	dev2-runtime-1 i-c3c0a4f5 ec2-54-201-96-105.us-west-2.compute.amazonaws.com
+
+Grab the IP in there and change dashes to dots `54-201-96-105`.
+
+Go to `AWS Console` -> `Route 53` and click on the number link next to `Record Set Count`.
+
+Then click `proxy.bensapp.com` and go to `value` in the Right Hand Menu, and enter the new IP address there. Hit `Save Record Set` and then it will take 60 seconds until it all refreshes.
 
 
 

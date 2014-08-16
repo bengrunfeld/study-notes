@@ -26,5 +26,18 @@
 
 `off`, `no` - `false`
 
+`unless` - inverse of `if`
+
+`@property` - `this.property`
+
+`in` - test for array presence
+
+`of` - test for object-key presence
+
+`**`, `//`, `%%` - Math: exponent, integer division, modulo
+
+`?` - returns false if a variable is null or undefinded
+
+`?=` - if var is null, perform an assignement
 
 

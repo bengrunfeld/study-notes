@@ -145,3 +145,4 @@ Select text area moving vertically, and with `I` prepend to the selected area. `
 * `Ctl-R` – Redo
 * `:help` – access help menu
 
+Addons can also be found for working with languages like Javascript, CSS others.

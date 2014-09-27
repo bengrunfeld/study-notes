@@ -170,7 +170,7 @@ To transfer those values to a HTML page, place the following in your HTML:
 		<span class="orange-info">Color: <%= color %></span>
 	</script>
 	
-The `id` acts as a hook for the template settings that you define in the View object. It will tell the view how ot structure the model data. The type can be anything, but:
+The `id` acts as a hook for the template settings that you define in the View object. It will tell the view how to structure the model data. The type can be anything, but:
 
 * it must be defined
 * and it must NOT be `text/javascript` ??

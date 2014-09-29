@@ -18,7 +18,7 @@ Allows you to specify routes - connected to a controller
 
 #### Behavior
 
-Behaviors allow you to set events and functions that are specifically intended to be used for user interaction with the app in a decoupled way - so they can be used across any module.
+A Behavior allows you to set events and functions that are specifically intended to be used for user interaction with the app in a decoupled way - so they can be used across any module.
 
 ##### Event Proxy
 
@@ -50,7 +50,7 @@ In **Behaviors**, the `view` is a reference to the view instance that the behavi
 
 (different from **Behavior**)
 
-**Behaviors** attach your behavior instances to their given **View**
+**Behaviors** attach your Behavior instances to a given **View**, especially if your Behavior instances are in their own file in a different folder.
 
 NOTE: you MUST override the class level `behaviorsLookup` method or set the option `behaviorClass` for things to work properly.
 
@@ -116,6 +116,11 @@ E.G. you may want to render a collection view with a model and template so that 
 `template` - When a CompositeView is rendered, the model will be rendered with the template that the view is configured with. You can override the template by passing it in as a constructor option
 
 `childView` - Each childView will be rendered using the childView's template.
+
+Links to other explanations of CompositeView: 
+
+* [http://lostechies.com/derickbailey/2012/04/05/composite-views-tree-structures-tables-and-more/](http://lostechies.com/derickbailey/2012/04/05/composite-views-tree-structures-tables-and-more/)
+* [http://stackoverflow.com/questions/22583429/backbone-marionette-composite-view](http://stackoverflow.com/questions/22583429/backbone-marionette-composite-view)
 
 #### Controller
 

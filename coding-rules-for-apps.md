@@ -2,7 +2,7 @@
 
 ### Separation of Concerns in Backbone-Marionette
 
-#### MODEL
+#### MODELS
 
 **Should:**
 
@@ -15,11 +15,10 @@
 * Create/Instantiate **Collections** - *collections should instantiate Models*
 * Create/Instantiate **Views** - *controller should do this*
 
-#### VIEW
+#### VIEWS
 
 **Should:**
 
-* Build URLs
 * Manipulate the DOM
 * Handle user interactions
 
@@ -27,7 +26,7 @@
 
 * Create/Instantiate views - *controller should do this*
 
-#### CONTROLLER
+#### CONTROLLERS
 
 **Should:**
 
@@ -76,9 +75,9 @@
 
 Let this help you decide which is more appropriate to use:
 
-* A CollectionView is for rendering a repeating list of models, each of which has the same representation/template.
+* A `CollectionView` is for rendering a repeating list of models, each of which has the same representation/template.
 
-* A CompositeView is for rendering a repeating list of models as well, but also to render some view/template which wraps the list.
+* A `CompositeView` is for rendering a repeating list of models as well, but also to render some view/template which wraps the list.
 
 Links to other explanations of CompositeView: 
 

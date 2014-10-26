@@ -48,5 +48,11 @@ There are a couple of types of crystals that can occur in cheese, and are known 
 
 The second type of crystal is formed when calcium combines with `residual lactate` to form `calcium lactate crystals` - which are considered a **defect**, and are commonly found on the surface of cheeses like cheddar.
 
+##### Milk Fat - Filling Out The Flavor
+
+The role of Milk fat is to provide an appealing texture, well-rounded flavor, and wonderful aromas. The amount, composition, and quality of milk fat in cheese are all important factors to the cheesemaking process, and can be somewhat manipulated by the cheesemaker.
+
+##### Anatomy of Milk Fat Globules
+
 
 

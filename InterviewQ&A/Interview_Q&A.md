@@ -18,7 +18,7 @@
     * What access does the user have to your data
     * links: [1](http://docs.oracle.com/cd/A97335_02/apps.102/a86202/chap10.htm#1002937), [2](https://www.watsonhall.com/resources/downloads/top10-website-security-issues.pdf)
 * Performance
-    * Nubmer/size of external resources
+    * Number/size of external resources
     * Optimize images
     * Optimize code
     * Placement of script blocks
@@ -52,7 +52,7 @@ HTTPS is HTTP-within-SSL/TLS.
 
 #### If you have 5 different stylesheets, how would you best integrate them into the site?
 
-* Use LESS and `@import` other modularzied stylesheets
+* Use LESS/SASS and `@import` other modularzied stylesheets
 * Concatenate them into a smaller number of files
 * Remove duplicates/unused selectors
 * Compress/minify the CSS
@@ -62,9 +62,9 @@ HTTPS is HTTP-within-SSL/TLS.
 
 **Degrading Gracefully** means looking back whereas **Enhancing Progressively** means looking forward.
 
-* **Graceful Degradation** is the practice of building your web functionality so that it provides a certain level of user experience in more modern browsers, but it will also degrade gracefully to a lower level of user in experience in older browsers.
+* **Graceful Degradation** is the practice of building your web functionality so that it provides a certain level of user experience in more modern browsers, but it will also degrade gracefully to a lower level of user in experience in older browsers. USE CASE: Sites targeted at older versions of IE, used by big companies that are locked in to older tech.
 
-* **Progressive Enhancement** is similar, but it does things the other way round. You start by establishing a basic level of user experience that all browsers will be able to provide when rendering your web site, but you also build in more advanced functionality that will automatically be available to browsers that can use it.
+* **Progressive Enhancement** is similar, but it does things the other way round. You start by establishing a basic level of user experience that all browsers will be able to provide when rendering your web site, but you also build in more advanced functionality that will automatically be available to browsers that can use it. USE CASE: Sites targeted to developers, who are constantly updating their browsers and trying the latest tech.
 
 In either case, you test for a feature that doesn't have complete support across all browsers/versions, and then apply it or an alternative.
 
@@ -74,21 +74,28 @@ Graceful Degradation starts from the status quo of complexity and tries to fix f
 
 1. Reduce the number of requests
 2. Reduce the overall size of the content
-3. Promote parallelization (i.e. simultaneous download of assets)
+3. Promote parallelization (i.e. simultaneous download of assets - if IE, use domain sharding.)
 4. Lazy load images - use blank png as base image, then use JS to swap image when other image is fully loaded
-5. Use a framework that employs a virtual-dom (Elm, Mecury)
+5. Prefetch resources
+6. Use a framework that employs a virtual-dom (React/Flux, Tw. Flight, Elm, Mecury)
+
+You want to concatenate and minify your JS/CSS, so there is only one file to fetch from the server.
+
+You also want to re-consider heavily using a client-side MV* (e.g. Backbone), because you can end up downloading lots of data, thus slowing down the site.
 
 **Code techniques:**
 
+* Compress/minify code
 * Concatenate files into a smaller group of files
 * Remove duplicates and unused selectors/code
-* Compress/minify code
+* Prefetch resources using `rel="prefetch"` OR have a hidden div containing the resource (img), as browser will only download a resource if it hits it in the HTML.
+* Consider downloading files in parallel (for IE only) [link](http://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/)
+* Use CSS sprites
 
 **Infrastructure Techniques**
 
 * Consider using a CDN
-* Download files in parallel [link](http://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/)
-* Leverage browser caching
+* Leverage browser caching (use `.htaccess`)
 * Leverage proxy caching
 
 **Tech Specific**
@@ -134,7 +141,28 @@ SPDY supports concurrent requests (send all the request headers early) as well a
 
 #### What tools do you use to test your code's performance
 
-* Profiler, JSPerf, Dromaeo, Jasmine, Karma
+* I've used Jasmine
+
+**Test Framework:** Responsible for defining syntax for test spec structuring BDD/TDD
+
+* Mocha, Jasmine
+
+**Test Runner:** Responsible for running and displaying results of unit test framework in either CLI or Browser.
+
+* Karma, Mocha CLI, Jasmine CLI/Browser
+
+**Assertion Library:** Responsible for validating input/output in boolean fashion. Typically used to make tests more human readable.
+
+* Chai
+
+**Test Doubles**
+
+* SinonJS
+
+**Acceptance Tests**
+
+* CucumberJS
+* NightwatchJS
 
 **What are the differences between Long-Polling, Websockets and SSE**
 
@@ -158,6 +186,8 @@ The goal of creating web standards, such as the HTML standard, was to eliminate 
 A **Flash Of Unstyled Content (FOUC)** is an instance where a web page appears briefly with the browser's default styles prior to loading an external CSS stylesheet, due to the web browser engine rendering the page before all information is retrieved. The page corrects itself as soon as the style rules are loaded and applied.
 
 To avoid FOUC, place all scripts at the bottom of the page. Possibly hide all content on the page until the styles have loaded.
+
+A graceful way to do this is to use a loading spinner (e.g. Audi)
 
 #### Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen
 
@@ -192,7 +222,7 @@ Assuming the simplest possible HTTP request, no proxies and IPv4:
 9. Use feature detection with Modernizr
 10. Perform regular testing and QA for performance as well as visual issues
 
-#### Cross-Browswer Automated Testing Tools
+#### Cross-Browser Automated Testing Tools
 
 * Functionality: Selenium
 * Appearance: Browsera
@@ -200,9 +230,13 @@ Assuming the simplest possible HTTP request, no proxies and IPv4:
 
 ## HTML5
 
-#### What is the Doctype and what does it do
+#### What is the DOCTYPE and what does it do
 
-A Doctype triggers standards mode (or Quirks Mode) in the browser. The HTML5 doctype is very streamlined.
+The `DOCTYPE` tag is an instruction to the web browser about what version of HTML the page is written in. It can trigger Quirks mode, or Strict mode.
+
+#### What is Quirks Mode
+
+Quirks Mode forces the browser to adhere to older rules of CSS. Normally, Strict mode is used.
 
 #### Explain what "Semantic HTML" means
 
@@ -229,6 +263,19 @@ There is also **WebSQL** and **IndexedDB** - local browser databases. WebSQL is 
 
 #### Explain an HTML5 tag you've used
 
+`<time>`.
+
+#### What are HTML5 Web Workers
+
+When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
+
+A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.
+
+#### Explain HTML5 Geolocation
+
+The HTML Geolocation API is used to get the geographical position of a user.
+
+Since this can compromise user privacy, the position is not available unless the user approves it.
 
 ## CSS
 
@@ -252,15 +299,24 @@ A CSS preprocessor allows you to use more complex logic like variables, extends,
 Make content appear side by side, LTR or RTL.
 
 * Parents of floated elements may collapse
-* Need to apply special css with `:after`
-* Problematic with email
+* Need to apply special css with `:after`. i.e. `clear:both`
+* Problematic with coding email templates
+
+#### What does the `box-sizing` CSS property do
+
+The box-sizing property is used to tell the browser what the sizing properties (width and height) should include. e.g. Should they include the border-box or just the content-box?
+
 
 
 ## JAVASCRIPT
 
-#### What is event bubbling
+#### What is the difference betwen Event Bubbling and Event Capturing
 
-* When the event of a child element is triggered even though only the parent is clicked/activated
+* **Bubbling** - When the event of a child element is triggered even though only the parent is clicked/activated. Hence the event *bubbles* up to the surface.
+* **Capturing** - older, not used.
+
+Only the bubbling model is supported by all major browsers.
+
 
 #### diff between properties and attributes
 
@@ -268,33 +324,75 @@ Make content appear side by side, LTR or RTL.
 
 #### diff between == and ===
 
-`==` compares equality but `===` compares types as well as equality.
+`==` compares equality but `===` compares `type` as well as equality.
 
     "abc" == new String('abc');     // true
     "abc" === new String('abc');    //false
 
-#### Explain the dom
+#### Explain the DOM
+
+DOM stands for Document Object Model. It is the document that defines the structure, styling, and functionality of your web page.
 
 #### Explain the css box model
 
+The CSS box model is essentially a box that wraps around HTML elements, and it consists of: margins, borders, padding, and the actual content.
+
 #### Explain ajax
+
+AJAX stands for Asynchronous Javascript And XML, and it allows you to update parts of a web page without reloading the whole page. 
 
 #### What types of data does ajax transfer
 
+A `XMLHttpRequest` can transfer anything, but because there is no byte array in Javascript, you can only use strings, numbers, etc. So everything you get/receive is text - which can then be parsed as JSON, XML, etc.
+
 #### what is chaining in jQuery
 
-#### Explain the event process in JS
+Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
 
-#### Explain clojures
+#### Explain the Event Loop/Event Process in JS
 
-#### Explain inheritance in JS (prototypes)
+The browser has inner loop, called the **Event Loop**, which checks the queue and processes events, executes functions etc.
 
-#### Why is it important to use the var keyword in JS - if you don't, it assumes a global scope, even if used inside of functions)
+E.g. If the browser is busy processing your `onclick`, and another event happened in the background (like script onload), it appends to the queue. When the `onclick` handler is complete, the queue is checked and the script is executed.
+
+#### Explain JS Closures
+
+A closure is a function having access to the parent scope, even after the parent function has closed.
+
+Clojures make it possible for Javascript function to have **private variables**.
+
+#### Explain Javascript Prototypes
+
+Every JavaScript object has a prototype. The prototype is also an object. All JavaScript objects inherit their properties and methods from their prototype.
+
+The `Object.prototype` is on the top of the prototype chain. All JavaScript objects (`Date`, `Array`, `RegExp`, `Function`, ....) inherit from the `Object.prototype`.
+
+#### Why is it important to use the var keyword in JS 
+
+If you don't use the `var` keyword, a variable assumes a global scope if it is used inside of a function, which we don't want.
 
 #### What aggregation tools have you used before
 
+?
+
 #### What are the concerns with using Global variables and when should you use them
 
-#### What is the difference between Require.JS and AMD
+The main issue with **globals** is that they can cause variable naming conflicts. Therefore, it is best to avoid globals when they are not actually needed.
 
+More issues with globals: [1](http://stackoverflow.com/questions/6989903/why-shouldnt-i-use-global-variables-in-javascript-for-something-thats-constant)
+
+
+#### Explain Require.JS and AMD
+
+RequireJS is a JavaScript file and module loader. RequireJS uses the `require` function to load any other scripts you define.
+
+## Coding Tests
+
+These are tests I've been given in interviews. You should really know how to do all of these backwards.
+
+1. Write a Palindrome checker - [link](http://jsfiddle.net/bengrunfeld/NH4M4/)
+2. Write a Bubble Sort program - [link](http://jsfiddle.net/bengrunfeld/h8zma0o2/)
+3. Write a FizzBuzz program - [link](http://rosettacode.org/wiki/FizzBuzz)
+4. Code a center-aligned floating Navigation Bar
+5. Select a DOM element using raw Javascript (no jQuery allowed) and then attach an event to it
 

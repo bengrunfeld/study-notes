@@ -1,5 +1,7 @@
 # Cheesemaking Notes
 
+This work consists of my notes from reading **Mastering Artisan Cheesemaking** by **Gianaclis Caldwell**.
+
 ### Milk
 
 All milk is made up of sugars, fat, protein, minerals, vitamins and enzymes.
@@ -53,6 +55,78 @@ The second type of crystal is formed when calcium combines with `residual lactat
 The role of Milk fat is to provide an appealing texture, well-rounded flavor, and wonderful aromas. The amount, composition, and quality of milk fat in cheese are all important factors to the cheesemaking process, and can be somewhat manipulated by the cheesemaker.
 
 ##### Anatomy of Milk Fat Globules
+
+Milk fat globules are surrounded by the `milk fat globule membrane` (aka `MFGM`), which contains most of the enzymes that occur naturally in milk, besides `lipase` which breaks down fats/lipids and does not exist in `MFGM`. Of course, if `lipase` existed in the `MFGM`, it would destroy the globule.
+
+The inside of the membrane contains the fats, mostly `triglycerides` (aka `tryaglycerols`). A glyceride is a glycerol molecule, which is the basic model for all fats, bonded to one, two or three fatty acids. Triclycerides (3 bonded fats) are teh fats that make up most of th food oils and fats that we consume. 
+
+##### Creaming
+
+Milk fat globules are less dense than the surrounding milk fluid, which causes them to float to the top of the milk and form a layer of cream. This process is called `creaming`.
+
+##### Homogenization
+
+`Homogenization` is a mechanical process that aims to stop fat globules from `creaming`. I involves sending the milk under high pressure through a screen with openings smaller that the fat globules. Goat, sheep and buffalo milk are NOT naturally homogenized. They just don't have cryoglobulins, so `creaming` occurs **much** slower. Homogenized milk tends to not drain and lose whey during the draining process, making it a bad choice for some types of cheeses.
+
+##### Cold Storage of Milk 
+
+Cold storage of milk causes a loss of protein from inside the micelles into the liquid portion of the milk, where it is referred to as soluble protein. Mastitic milk from infected udders and colostrum (first milk excreted by a new mother) have higher levels of soluble protein making them bad for cheesemaking.
+
+##### Damaged Fats in Milk
+
+The fat in milk can be easily damaged before and during the cheesemaking process, leading to rancid flavors. Problematic bacteria can enter the milk during the milking process, though this can be prevented or limited by proper sanitation during milking and processing, and rapid chilling to limit the growth of these bacteria. Too much mechanical agitation from rough milk pumps or excessive stirring can also cause premature fat breakdown. Milk that is mastitic (from an udder with some level of infection) will have a lower fat content than normal.
+
+##### Relationship between Fat and Protein in Cheese
+
+During cheesemaking, you are attempting to trap fat globules in a protein network. The correct amount and type of protein is required to catch the butterfat.
+
+##### Importance of Protein in Cheese
+
+Cheese needs protein to create its structure. It's a network of protein that will trap the fat and transform the liquid milk into curd. The protein supplies much of the valuable nutrition that cheeses provide. 
+
+##### Types of Protein in Cheese
+
+Milk protein is classified into two main types: Cheese proteins (aka **Caseins**) and **Whey** proteins. Caseins can be captured during the coagulation process while the whey proteins remain in the fluid by-product of cheesemaking, whey.
+
+##### Digestibility
+
+Aged cheeses tend to be more easily digested than fresh cheeses and milk, due to the lack of lactose adn the breakdown of protein into its samller components. 
+
+##### Anatomy of Cheese Proteins
+
+A cluster of proteins in milk is called the Casein Micelle, and they float suspended in the milk. There are two main groups of `caseins` - `Alpha Caseins` and `Beta Caseins`. Toward the outside of the clusters exists another milk protein called `Kappa Casein`.
+
+##### Milk allergies
+
+People allergic to milk are usually allergic to Alpha Casein, which is usually more prevalent in cows milk. 
+
+##### Coagulating Milk Proteins Using Rennet
+
+Rennet contains an enzyme (e.g. chymosin) that splits/cleaves the chain of amino acids in `Kappa Casein` from the outside of the `micelle` (like a haircut). Next, the rennet exposes water-hating (hydrophobic behavior), causing the `micelles` to repel water and start attracting each other and bonding together with the help of calcium phosphate in the liquid portion of the milk. A thickened curd mass (aka **Coagulum**) can now form, and the cheese becomes possible.
+
+##### Coagulating Milk Proteins Using Acid
+
+Coagulation can also be achieved using acid, which can be an added (e.g. Vinegar or Lemon Juice). or by the production of `lactic acid` by a starter culture. As the pH of milk drops close to `4.6`, Caseins their ability to repel each other. Calcium Phosphate which was formerly bonded within the micelle, becomes soluble in the acidic environment. All this produces a condition in which a Coagulum is formed, but it is different in texture and structure from a rennet-produced coagulum. 
+
+##### The Development of Flavor in Cheese
+
+The process of breaking amino acid chains causes the development of flavor and texture in cheese.
+
+##### Minerals in Milk
+
+Minerals in milk are often called `Salts` or `Ash`. `Salts` is a chemistry term for minerals, and `Ash` is used because the salts can be separated from the fluid milk by burning off the liquid portion, leaving an `ash`.
+
+`Calcium` and `Phosphate` are the two minerals in milk of primary importance to cheesemaking. About 2/3 of `calcium` in milk resudes inside `protein micelles` (aka `Colloidal Calcium`). Anything that limits the amount of colloidal calcium in the milk will limit the potential for a good curd to set. E.g. When milk is stored at cold temperatures, some of the `colloidal calcium` leaves the `micelles`, and is unable to help with coagulation.
+
+##### Calcium and Cheese
+
+`Calcium`'s role in cheesemaking is to assist in forming a firm curd the traps fat and will hold up to stirring, pressing and stretching of the curd. 
+
+The cheesemaker can manipulate the `calcium` content and type in cheeses to assist the cheesemaking process to be more successful, or to create different types of cheeses.
+
+Calcium and other minerals will dissolve in the presence of acid of the right strength. 
+
+This mineral balance is directly linked to the cheese's texture - a mineralized cheese is pliable and long in texture, while a demineralized cheese has a short crumbly texture, aka `friable`
 
 
 

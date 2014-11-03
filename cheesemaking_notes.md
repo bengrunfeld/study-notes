@@ -128,5 +128,13 @@ Calcium and other minerals will dissolve in the presence of acid of the right st
 
 This mineral balance is directly linked to the cheese's texture - a mineralized cheese is pliable and long in texture, while a demineralized cheese has a short crumbly texture, aka `friable`
 
+The cheesemaker has the ability to control the final calcium content of the cheese, which is critical for texture.
+
+##### Vitamins in Cheese
+
+Vitamins play a minimal role in cheesemaking. `Carotene` gives cow's milk cheese a yellow color. Goat, sheep and buffalo milk don't contain carotene, so cheese made from these milks are whiter by comparison. 
+
+Artificially orange cheddars use the natural pigment `Annatto` to achieve their color. `Riboflavin` - a B Vitamin - gives the greenish tint to `Whey`. 
+
 
 

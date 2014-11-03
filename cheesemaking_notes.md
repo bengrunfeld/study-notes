@@ -136,5 +136,27 @@ Vitamins play a minimal role in cheesemaking. `Carotene` gives cow's milk cheese
 
 Artificially orange cheddars use the natural pigment `Annatto` to achieve their color. `Riboflavin` - a B Vitamin - gives the greenish tint to `Whey`. 
 
+##### Enzymes - The Heroes of Cheesemaking
 
+Enzymes are named after the substance they acto on and usually end with the suffix `ase`. `Lipases` are enzymes that break down `lipids`, aka fats. `Proteases` (aka prteinases) break down proteins. These two enzyme groups are the most important to cheesemakers. 
+
+`Lipase` is present in milk, and is called `native` or `milk lipase`. `Native milk lipase` is mostly destroyed by pasteurization, while `lipase` produced by microorganisms usually survives the heat treatment.
+
+The breakdown of the fat molecules in milk is something that the cheesemaker wants to happen at the appropriate time, which is usually during aging. If the breakdown of fats happens at the wrong time, rancid/off flavors can enter the cheese.
+
+`Proteases` also occur naturally in milk, like `Lipase`. These are mostly destroyed by pasteurization, but additional proteases are provided by the use of rennet and starter culture bacteria. This process helps develop flavor and texture of the cheese, and can only occur in the vat and on the aging shelf.
+
+##### Culture
+
+Milk is a nutritious environment attractive to many different types of microorganisms, some which we want, and others that we don't. When using raw milk for cheesemaking, there will already be some bacteria in the milk, but added culture is still important. If using pasteurized milk, choosing and using cultures becomes even more critical. 
+
+The role of `culture` is to help transform milk into cheese. Cultures are usually bacteria, but they can also be yeasts and molds. When they enter the story, they rapidly begin to consume the milk sugar (lactose) and turn it into lactic acid. It is this acid that will preserve the cheese during aging or stage, as well as create flavor. 
+
+The second role of cultures is to die, as when this happens, their cell walls leave behind enzymes that will further break down proteins and fats into tasty elements.
+
+Finally, cultures help create surfaces that textures that make cheeses unique. 
+
+The term `Cheese Culture` covers three main types of organisms - bacteria, yeasts and molds. 
+
+Some of these are added to the milk (starter culture), some exist in the milk or enter it accidentally (native culture), and others are aded at varying stages of the process (ripening cultures). 
 

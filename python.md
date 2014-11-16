@@ -1,4 +1,4 @@
-#Python
+# Python
 
 To start Python from the shell, simply type `python`
 
@@ -8,7 +8,7 @@ Python modules can be invoked with `python -m module [arg] ...`
 
 To run a script file and then go into the interactive mode, use the `-i` option
 
-##Quitting 
+## Quitting 
 
 To quit Python, use `quit()` or `Ctl-d`.
 
@@ -22,7 +22,7 @@ When you type `python` into the terminal, you go into interactive mode, where yo
 
 A secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.
 
-##Executable Scripts
+## Executable Scripts
 On BSD’ish Unix systems, Python scripts can be made directly executable, like shell scripts, by putting the line
 
 	#! /usr/bin/env python
@@ -33,11 +33,11 @@ The script can be given an executable mode, or permission, using the chmod comma
 
 	chmod +x myscript.py
 
-##Comments
+## Comments
 
 The hash, or pound, character, `#`, is used to start a comment in Python.
 
-##Special Encoding
+## Special Encoding
 
 Place `# -*- coding: encoding -*-`after the `#!` line (above) to instruct Python to use special encoding.
 
@@ -52,7 +52,7 @@ E.g.
 
 By using `UTF-8` (either through the signature or an encoding declaration), characters of most languages in the world can be used simultaneously in string literals and comments.
 
-##Customizing Python
+## Customizing Python
 
 By setting an environment variable named `PYTHONSTARTUP` to the name of a file containing your start-up commands, you can customize the interactive mode of Python. This is similar to the `.profile` feature of the Unix shells.
 
@@ -60,7 +60,7 @@ To customize every invocation of Python, there are two hooks that you can use to
 
 Read up about it in `2.2.5` for more information. 
 
-##Using Python as a Calculator
+## Using Python as a Calculator
 
 The interpreter acts as a simple calculator: you can type an expression at it and it will write the value.
 
@@ -68,7 +68,7 @@ The interpreter acts as a simple calculator: you can type an expression at it an
 	>>>2 + 2
 	4
 
-##Initializing Variables
+## Initializing Variables
 
 The equal sign `=` is used to assign a value to a variable.
 
@@ -90,7 +90,7 @@ To print out the value of a variable, simply type its name
 	>>>ben
 	33
 
-##Converting a number to a float, int, or long
+## Converting a number to a float, int, or long
 
 	>>> a = 1
 	>>> b = 2
@@ -102,7 +102,7 @@ To print out the value of a variable, simply type its name
 	>>> long(c)
 	3L
 
-##The `_` Variable
+## The `_` Variable
 
 In interactive mode, the last printed expression is assigned to the variable `_`. Especially useful when using Python as a calculator.
 
@@ -111,7 +111,7 @@ In interactive mode, the last printed expression is assigned to the variable `_`
 
 This variable should be treated as read-only by the user. Don’t explicitly assign a value to it.
 
-##Strings
+## Strings
 
 Strings can be enclosed in single or double quotes. You must escape any special characters.
 
@@ -154,6 +154,8 @@ To make a string where special characters are printed as is (i.e. a `raw` string
 	Hello there you\n\
 	interesting person.
 
+##### String Concatenation
+
 Strings can be concatenated (glued together) with the `+` operator, and repeated with `*`:
 
 	>>> bad = 'Hep' + 'A'
@@ -165,6 +167,8 @@ Strings can be concatenated (glued together) with the `+` operator, and repeated
 Two string literals next to each other are automatically concatenated; the first line above could also have been written `bad = 'Hep' 'A';`
 
 Strings can be subscripted (indexed); like in C, the first character of a string has subscript (index) `0`.
+
+##### Slicing
 
 Substrings can be specified with the slice notation: two indices separated by a colon.
 
@@ -209,7 +213,7 @@ The built-in function `len()` returns the length of a string:
 
 String methods - `http://docs.python.org/2/library/stdtypes.html#string-methods`
 
-##The Unicode Object
+## The Unicode Object
 
 Starting with Python 2.0 a new data type for storing text data is available to the programmer: the Unicode object. It can be used to store and manipulate Unicode data.
 
@@ -239,7 +243,7 @@ To convert a Unicode string into an 8-bit string using a specific encoding, Unic
 	>>> u"äöü".encode('utf-8')
 	'\xc3\xa4\xc3\xb6\xc3\xbc'
 
-##Lists
+## Lists
 
 Lists are a data type that is used to group together other values. Lists can be written as a list of comma-separated values (items) between square brackets. List items need not all have the same type.
 

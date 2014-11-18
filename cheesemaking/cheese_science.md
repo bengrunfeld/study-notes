@@ -138,7 +138,7 @@ Artificially orange cheddars use the natural pigment `Annatto` to achieve their 
 
 ##### Enzymes - The Heroes of Cheesemaking
 
-Enzymes are named after the substance they acto on and usually end with the suffix `ase`. `Lipases` are enzymes that break down `lipids`, aka fats. `Proteases` (aka prteinases) break down proteins. These two enzyme groups are the most important to cheesemakers. 
+Enzymes are named after the substance they acto on and usually end with the suffix `ase`. `Lipases` are enzymes that break down `lipids`, aka fats. `Proteases` (aka proteinases) break down proteins. These two enzyme groups are the most important to cheesemakers. 
 
 `Lipase` is present in milk, and is called `native` or `milk lipase`. `Native milk lipase` is mostly destroyed by pasteurization, while `lipase` produced by microorganisms usually survives the heat treatment.
 
@@ -159,4 +159,34 @@ Finally, cultures help create surfaces that textures that make cheeses unique.
 The term `Cheese Culture` covers three main types of organisms - bacteria, yeasts and molds. 
 
 Some of these are added to the milk (starter culture), some exist in the milk or enter it accidentally (native culture), and others are aded at varying stages of the process (ripening cultures). 
+
+##### Start Culture
+
+There are four main ways to add starter culture to milk:
+
+1. Freeze-dried `Direct Vat Set` (DVS), aka `Direct Vat Inoculation` (DVI), aka `Direct Set` (DS). 
+2. `Mother Culture` - oldest method. time consuming and unpredictable
+3. `Bulk Starter` - essentially `mother culture` that someone else has prepared and sells as frozen pellets
+4. `Whey Culture` - whey from the previous day's cheese making used to start the next batch
+
+The most popular form re starter culture is **freeze-dried, powdered `direct vat set` culture**.
+
+`DVS` cultures have several benefits over other starter cultures. They are easy to store (regular freezer), reliable (calculations have been done for you), less labor intensive (it is ready to use).
+
+You must check the temperature that the culture likes staying at (warm, hot, or even cold). Cold-loving bacteria are not desired and should never be added to milk.
+
+Most culture companies provide advice on the label, although there is no perfect bacteria or blend of bacteria for any single cheese, so you will see overlap.
+
+##### Raw Milk Cheeses
+
+Raw milk will always contain bacteria, mold spores and yeasts. These "native" organisms enter the milk during and after milk collection from the udder.
+
+Milk in the udder itself is believed to be sterile. Microorganisms grown on the outside, though. 
+
+The major harmful bacteria in raw milk are `Clostridia`, `Campylobacter`, `Staphylococcus aureus`, `Listeria monocytogenes` and `Salmonella`. These can cause paralysis and even death.
+
+##### Beneficial Bacteria
+
+Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSLAB). NSLAB do not produce large amounts of acid, so they are not helpful as starter cultures, but they are considered highly beneficial and help raw milk cheeses develop unique flavor and ripen faster. Currently they are being developed commercially to be added back into milk.
+
 

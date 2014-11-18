@@ -190,3 +190,53 @@ The major harmful bacteria in raw milk are `Clostridia`, `Campylobacter`, `Staph
 Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSLAB). NSLAB do not produce large amounts of acid, so they are not helpful as starter cultures, but they are considered highly beneficial and help raw milk cheeses develop unique flavor and ripen faster. Currently they are being developed commercially to be added back into milk.
 
 
+##### Ripening Culture
+
+`Ripening cultures` are also known as `secondary` or `adjunct` cultures.
+
+`Starter culture` gets the process going, but `ripening culture` are the bacteria, molds and tests that add to the process during aging and ripening. 
+
+An example of ripening culture is the white mold that produces Camembert and Brie.
+
+NSLAB also serve as secondary ripening cultures, especially in raw-milk cheeses. 
+
+##### Classifying Cultures
+
+Starter bacteria are grouped by several methods. 
+
+The most common is their ability to grow at certain temperatures.
+Another is their ability to break lactose down into one or more varieties of lactic acid. 
+
+Those that can break lactose into more than one by-product are further divided by their ability to metabolize another milk component - `citrate` - at the same time into desirable by-products. 
+
+##### Phage - The Bane of Cheesemakers
+
+`Phage`, short for `bacteriophage`, are virus particles that infect starter lactic acid bacteria. 
+
+They use the bacteria as a host to replicate themselves, attach to receptor sites on the surface of the soon-to-be-host cells, then inject their own DNA into the cell. 
+
+The cell immediately begins replicating the invader's DNA and grows a bunch of new "baby" phage. Once the cell can no longer hold its new crop, the `phage` release an enzyme that blows the cell open and sets the now greatly increased number of attackers loose on more unsuspecting bacteria. 
+
+In the best case, this will lead to slow acid development in the vat, but in the worst case, it causes a `dead vat`, in which no acid production occurs and the entire batch is lost. 
+
+Worse still, the entire cheese making process must be stopped until the `phage` can be destroyed, or a new resistant starter culture can be found.
+
+There is another form of attack that is not so aggressive and can actually "immunize" the host cell. Instead of replicating, the `phage` joins its DNA with the chromosome of the host and remains part of the host. Now that the DNA are combined, the cell is immune from the former, cell-bursting form of `phage`.
+
+`Phage` are very hardy, and can survive for many years even though frozen. They are difficult to kill, and prefer raw milk. They are present more in whey than other milk components. 
+
+#### Phage - Prevention
+
+1. Remove whey from the cheese making area as soon as possible. This is the first and best strategy towards phage prevention.
+
+2. Don't return whey to the farm where the milk was made, as it could contaminate the milk at the farm.
+
+3. `Chlorine` is a highly affective phagicid, when used to sanitize equipment and floors that had contact with the whey. This should only be done *after* cheese making. Special attention should be paid to cracks, nooks and crevices where whey could sit and develop a phage population. 
+
+##### Lipase - Extra Falvor
+
+
+
+
+
+

@@ -209,7 +209,7 @@ Another is their ability to break lactose down into one or more varieties of lac
 
 Those that can break lactose into more than one by-product are further divided by their ability to metabolize another milk component - `citrate` - at the same time into desirable by-products. 
 
-##### Phage - The Bane of Cheesemakers
+#### Phage - The Bane of Cheesemakers
 
 `Phage`, short for `bacteriophage`, are virus particles that infect starter lactic acid bacteria. 
 
@@ -225,7 +225,7 @@ There is another form of attack that is not so aggressive and can actually "immu
 
 `Phage` are very hardy, and can survive for many years even though frozen. They are difficult to kill, and prefer raw milk. They are present more in whey than other milk components. 
 
-#### Phage - Prevention
+##### Phage - Prevention
 
 1. Remove whey from the cheese making area as soon as possible. This is the first and best strategy towards phage prevention.
 
@@ -233,10 +233,65 @@ There is another form of attack that is not so aggressive and can actually "immu
 
 3. `Chlorine` is a highly affective phagicid, when used to sanitize equipment and floors that had contact with the whey. This should only be done *after* cheese making. Special attention should be paid to cracks, nooks and crevices where whey could sit and develop a phage population. 
 
-##### Lipase - Extra Falvor
+##### Lipase - Extra Flavor
+
+Lipase is an enzyme that breaks down fats into short-chain fatty acids and helps create flavor and aroma.
+
+Rennet used to be made from an actual piece of the stomach lining of an animal. This type of rennet also contains lipase. 
+
+The lipase in stomach lining is much stronger than native milk lipase. 
+
+Calf lipase is the mildest, kid is intermediate, lamb is the strongest. You can also buy blends.
+
+Adding extra lipase in the fashion is *always* options, but it is the only way to truly duplicate traditional cheeses.
+
+Vegetarian-based lipase is not really available for artisan home-made cheese. It exists for larger industrial processed cheeses, though.
+
+#### Calcium Chloride - keeping things in balance
+
+Every cheesemaker should have a supply of `calcium chloride`. 
+
+`Calcium Chloride` (CaCl2) is a clear, bitter, weakly acidic mineral salt usually sold in a properly diluted solution that is ready to use. 
+
+Calcium chloride is added to the milk before rennet, never after. 
+
+It helps reduce the coagulation time and create a firmer curd. 
+
+Some cheesemakers use it when working with goat's milk, but it should definitely be used whenever working with store-bought milk of any kind. 
+
+It can also assist when working with milk from animals late into their milking cycle, e.g. in the fall or winter.
+
+Too much can lead to a hard curd with a bitter taste.
+
+Because calcium plays such a big role in the formation of the coagulum as well as the final texture of cheese, anything that upsets the balance and volume of calcium will affect every stage of the cheesemaking process.
+
+Using `calcium chloride` correctly can ensure this balance is kept, and the cheese comes out as it's supposed to.
+
+Here are some situations when you'd want to use calcium chloride:
+
+##### Cold Storage
+
+Cold storage of milk can cause the `casein micelle` to lose some of its `colloidal calcium`.  This can cause a weak curd during coagulation.
+
+##### Low Protein Level
+
+Some milk is naturally lower in total protein. As a result, the `casein` content and the calcium content can be lower. Goat's milk typically has a lower ratio of casein to whey protein and the least of the best cheesemaking protein Alpha SI. Again, this may cause a weak coagulum.
+
+##### High Somatic Cell Count
+
+Somatic cells are white blood cells that migrate into the udder to fight off infection.
+
+High somatic cell counts that correlate with mastitis (udder infection) can lead to a high starting PH of the milk, which can cause longer coagulation time. Somatic cells also introduce enzymes that will damage the protein micelles, causing a loss of colloidal calcium.
+
+##### High Enzymatic Activity
+
+Enzymes in the milk can increase in volume toward the end of lactation and during winter. Goats seem more prone to this than cows. This increase can damage the protein micelle and cause a loss of calcium, a longer coagulation time and a softer curd. 
 
 
+#### Rennet - Animal, Vegetable & Microbial
 
+Rennet is made from the stomach lining of a calf, kid or lamb that has not yet eaten solid food. It contains two enzymes, `chymosin` and `pepsin`, that both coagulate milk in the baby's stomach, stopping it from passing through too quickly and allowing the baby to absorb the nutrients. 
 
+`Pepsin` is the main ingredient in junket rennet tablets that you can find in most grocery stores, but junket rennet is a poor choice for cheesemaking as it adds bitterness and contains chemicals that have no business being in cheese.
 
-
+The gold standard of coagulants is `calf rennet`. Kid and lamb are superior in quality, but are generally not available for purchase. 

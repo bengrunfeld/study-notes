@@ -317,3 +317,44 @@ As opposed to microbial rennet, vegetable rennet is made from plants. The most w
 
 Plant rennets do not have the coagulating power of animal and microbial rennets, but can be interesting.
 
+#### The Process of Coagulation
+
+The first job of rennet is to coagulate the milk. 
+
+Enzymes in the rennet interact with the protein clusters in milk. Other factors play an important role, such as `pH`, temperature, amount of calcium in the milk, and the type and quality of Casein (milk protein).
+
+Rennet is also important for aging cheese and helping it develop flavor, texture and aroma.
+
+(If you really need more info on this, go to Chapter 1 Page 26).
+
+#### Salt - The Final Key Ingredient
+
+Salt, aka `sodium chloride` is very important in the creation of superior cheese.
+
+The first job of salt is to slow down, then bring to a halt, the production of acid in cheese. It does this by stopping the starter culture bacteria., which are sensitive to salt, from growing. When they stop growing, they also stop producing lactic acid. 
+
+By stopping the `pH` at the right spot, you help ensure the right finished flavor and texture in cheese. 
+
+Salt helps draw whey out of the cheese. This aids in finishing the draining of the curds. When properly drained, just the right amount of moisture remains, helping to limit the growth of microorganisms. This helps flavor and texture.
+
+Salt also helps protect the outside of the cheese (salted or brined cheeses) by preventing mold and bacterial growth on the surface of the cheese. It also hardens the surface by dehydration, so that the cheese maintains its form, and is less delicate during turning.
+
+Salt can also encourage salt-tolerant molds, such as white molds, to grow where their presence is desired.
+
+Salt also helps bring out flavor.
+
+##### Factors influencing the rate of salting
+
+The temperature of the curd, especially in milled curds such as cheddar, will affect how salt is absorbed. 
+
+The first application of salt will flush whey out of the curd and can rinse away the salt. So when dry-salting curds and wheels, recipes often call for two or more applications instead of using the total amount of salt all at one times. 
+
+A cheese that has a higher fat content will impede salt uptake, not just at the surface of cheese, but throughout the interior. The large fat globules act as a physical barrier to the movement of `sodium chloride` in the cheese.
+
+High fat cheeses are often salted many times for this reason, or kept longer in brine. 
+
+##### Salt-Tolerant and Salt-Sensitive Microorganisms
+
+Some bad bacteria are not inhibited by the addition of 2-5% salt that is normal for cheeses.
+
+Chief among these bacteria are the `coliforms`, a large family of bacteria, some of which are responsive for `early blowing` in cheese. 

@@ -1,4 +1,4 @@
-# Cheesemaking Notes
+# Cheesemaking Science
 
 This work consists of my notes from reading **Mastering Artisan Cheesemaking** by **Gianaclis Caldwell**, which can be purchased on [Amazon.com](http://amazon.com)
 

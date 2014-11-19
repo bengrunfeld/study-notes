@@ -290,8 +290,30 @@ Enzymes in the milk can increase in volume toward the end of lactation and durin
 
 #### Rennet - Animal, Vegetable & Microbial
 
+
+##### Animal
+
 Rennet is made from the stomach lining of a calf, kid or lamb that has not yet eaten solid food. It contains two enzymes, `chymosin` and `pepsin`, that both coagulate milk in the baby's stomach, stopping it from passing through too quickly and allowing the baby to absorb the nutrients. 
 
 `Pepsin` is the main ingredient in junket rennet tablets that you can find in most grocery stores, but junket rennet is a poor choice for cheesemaking as it adds bitterness and contains chemicals that have no business being in cheese.
 
 The gold standard of coagulants is `calf rennet`. Kid and lamb are superior in quality, but are generally not available for purchase. 
+
+##### Microbial
+
+Perfect for making vegetarian or kosher cheese.
+
+Most microbial rennet is produced by the microbe `Rhizomucor miehei`, aka `Mucor miehei`. 
+
+Microbial rennet has an undeserved reputation for causing bitterness in cheese. 
+
+##### Fermented Chymosin
+
+This coagulant is produced using genetically modified microbes into which the animal gene for producing `chymosin` has been inserted. It behaves very similarly to animal rennet in its ability to coagulate milk, but differs slightly regarding aging.
+
+##### Vegetable Rennets
+
+As opposed to microbial rennet, vegetable rennet is made from plants. The most well known are from the thistle family. This type of coagulant works best with high-fat, high-protein milk. It can cause bitterness. Other plants able to produce rennet are: fig trees, nettles, burdock, hogweed and Lady's Bedstraw.
+
+Plant rennets do not have the coagulating power of animal and microbial rennets, but can be interesting.
+

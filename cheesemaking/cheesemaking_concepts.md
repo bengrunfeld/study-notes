@@ -157,20 +157,5 @@ Some acid-coagulated cheeses are ripened at lower temps, such as yoghurt.
 
 When working with raw milk, add direct-set starter culture at 80F (27C), then continue to raise the milk temp to the goal ripening temp. This will allow the freeze-dried culture time to rehydrate before activating.
 
-### The Cheese Making Process
 
-#### The Process of Ripening
 
-During ripening, the bacteria in the starter culture begins to populate the milk, consume the milk sugar (lactose), and produce lactic acid. Depending on what else occurs during the process, the ripening time must be of a length that helps, not hinders the desired acid production during the rest of the make, and the goal pH or titratable acidity (TA) at draining.
-
-After ripening and just before coagulation, you may want to add additional ingredients like coloring (Annatto), calcium chloride, lipase, or flavored liquid from herbs, seeds, smoke or hot peppers.
-
-#### The process of Coagulation
-
-Once the ripening goal has been reached (time passed or acid-level change), we add the coagulant. 
-
-Rennet (animal or microbial) comes as either liquid or a tablet. Liquid rennet is much easier to measure accurately. Liquid rennet is easier to use especially in larger cooks.
-
-Make sure to check if the rennet (especially microbial) is single strength or double strength. Use half the requested dose if it is double strength.
-
- 

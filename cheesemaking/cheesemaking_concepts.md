@@ -86,4 +86,43 @@ As a commercial cheese producer, you may sometimes need to adhere to certain res
 	Ratio = 0.76:1
 	
 
+##### Formula	for estimating cheese yield
+
+	# Semihard to hard cheese formula:
+	1.63 * (Fat % + Protein %) = Yield
+	
+	# Example
+	1.63 * (4.5 + 2.8)
+	= 11.899
+	= 11% yield
+
+Soft cheese yield will usually be 20 to 40 percent, depending on moisture content of the final product.
+
+##### Where to buy cultures
+
+* New England Cheese Supply
+* Dairy Connection - Wisconsin
+* Glengarry Cheese Supply - Canada
+* Fromagex - Canada
+* Ch. Hansen
+* Danisco (Choozit)
+
+Tips for buying cultures:
+
+* Ignore all the frozen cultures (these are for larger producers)
+* Ignore all cultures that are in sizes too big for your use (>20-50 units)
+* Sort through recipes and match them with the cultures they need and then purchase those.
+
+#### Must-Own Culture Blends
+
+These three core culture blends are used to make almost every cheese in the G's book.
+
+* **Fresh, feta, and surface-ripened cheeses:** - Flora Danica by Ch. Hansen
+* **Semi-hard to hard aged cheeses whose curd is cooked to only 102F (39C):** MA 4000 by Choozit
+* **Italian style and any cheese whose curd is cooked over 102F (39C):** Thermo B by Abiasa
+
+
+
+
+
 	

@@ -82,6 +82,10 @@ There are several techniques for checking for flocculation.
 
 By watching for flocculation, you can judge the total cut time better than by just watching for a "clean break"
 
+Once you see flocculation, the time is noted, then multiplied by a specific factor (see Table 2-2, p. 47).
+
+**The resulting number is the time from adding the coagulant to cutting.** 
+
 #### Testing milk for coagulation before making cheese
 
 (this is so cool!!)
@@ -96,3 +100,7 @@ Here is a test using flocculation which checks if the milk is suitable for chees
 If it takes more than 20 seconds to flocculate, there is an issue with the milk. 
 
 Repeat the test, but this time add 1/8 teaspoon calcium chloride to the milk. If flocculation time improves, then add calcium chloride to the cheese milk at the recommended rate.
+
+**Table 2-2. Comparison of coagulation and cutting factors** - p. 47
+cheese type, single strength rennet rate, flocculation factor, goal coagulation time, clean break time, curd size.
+

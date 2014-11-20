@@ -113,7 +113,7 @@ Tips for buying cultures:
 * Ignore all cultures that are in sizes too big for your use (>20-50 units)
 * Sort through recipes and match them with the cultures they need and then purchase those.
 
-#### Must-Own Culture Blends
+##### Must-Own Culture Blends
 
 These three core culture blends are used to make almost every cheese in the G's book.
 
@@ -121,8 +121,56 @@ These three core culture blends are used to make almost every cheese in the G's 
 * **Semi-hard to hard aged cheeses whose curd is cooked to only 102F (39C):** MA 4000 by Choozit
 * **Italian style and any cheese whose curd is cooked over 102F (39C):** Thermo B by Abiasa
 
+This will be a very good start.
+
+Purchase ten-unit package and then repackage them into smaller doses. This will save on costs.
 
 
+##### Equipment for weighing and repackaging culture
+
+* Gram scale reading to the tenths (should read to 0.00, preferably 0.000)
+* Small, sealable ziplock bags (from lab supply or food service supply store)
+* Sanitized dry measuring spoon
+
+##### Multiple-Dose Culture Packets
+
+Multiple-dose culture packets are almost always measured by the number of units (aka doses) that the packet contains. Packets usually come in ten and twenty unit sizes. 
+
+Culture is sold by the number of units because when the culture is manufactured it frequently varies in strength and in its ability to acidify the milk. So each packed is filled with the same amount based on strength instead of weight.
+
+A general rule of thumb is that 1 unit cultures 50 pounds (22 L) of milk, but this doesn't apply across the board.
 
 
-	
+##### Other Factors Influencing Dosage
+
+If you are using raw milk, you only need to use about half the amount of starter culture that you'd use with pasteurized milk, because of the adventitious bacteria that already exist in raw milk that product acid.
+
+Milk with higher than average protein, or milk with high somatic cell counts (SCC), and milk with lower than average lactose content will negatively affect avid development, so you may need to use a bit more culture. 
+
+This is why it's important to know your milk AND monitor acid development through the ripening process. 
+
+#### When and how to add the culture
+
+The usual temp at which culture is added and milk is held during ripening is between 86F - 90F (30C - 32C).
+
+Some acid-coagulated cheeses are ripened at lower temps, such as yoghurt.
+
+When working with raw milk, add direct-set starter culture at 80F (27C), then continue to raise the milk temp to the goal ripening temp. This will allow the freeze-dried culture time to rehydrate before activating.
+
+### The Cheese Making Process
+
+#### The Process of Ripening
+
+During ripening, the bacteria in the starter culture begins to populate the milk, consume the milk sugar (lactose), and produce lactic acid. Depending on what else occurs during the process, the ripening time must be of a length that helps, not hinders the desired acid production during the rest of the make, and the goal pH or titratable acidity (TA) at draining.
+
+After ripening and just before coagulation, you may want to add additional ingredients like coloring (Annatto), calcium chloride, lipase, or flavored liquid from herbs, seeds, smoke or hot peppers.
+
+#### The process of Coagulation
+
+Once the ripening goal has been reached (time passed or acid-level change), we add the coagulant. 
+
+Rennet (animal or microbial) comes as either liquid or a tablet. Liquid rennet is much easier to measure accurately. Liquid rennet is easier to use especially in larger cooks.
+
+Make sure to check if the rennet (especially microbial) is single strength or double strength. Use half the requested dose if it is double strength.
+
+ 

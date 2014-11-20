@@ -27,3 +27,72 @@ Liquid rennet must be diluted in **cool, non chlorinated water** before use. If 
 Don't mix the rennet with the water until just before use - because light exposure, contaminants, etc.
 
 ##### Adding the Coagulant
+
+The style of stirring and the length of time stirring the coagulant into the milk are vital. As soon as the rennet touches the milk, it starts working. The more evenly and effectively that the rennet is incorporated into the milk, the better. 
+
+Once mixed, it is critical that the milk stop moving in the vat and remain as still as possible until coagulation is complete.
+
+For these reasons, rennet solution should be dispersed over the milk by pouring it over a perforated ladle or using a "garden" sprinkle can (when adding to large vats).
+
+The stirring motion should be "up and down" instead of circular. You don't want to create a whirlpool effect, because the milk will keep moving, causing problems with coagulation.
+
+Once you stop stirring, you can use a flat ladle to help the milk stop moving. 
+
+You should also log the time when you added the coagulant and how long you stirred it for in a logbook. This is essential for the next step.
+
+##### Cutting the curd
+
+The firmness of the coagulated milk when you cut it "fixes" the type of curd you will end up with later on in the make. So if you know the goal, you will know at what firmness to cut and what size to cut the curd. 
+
+As the coagulum sits for longer, the protein structure will become more firm and granular, so when you attempt to cut an extra-firm mass into small pieces, it will create curds with rough, granular sides with more surface area.
+
+If the curds have a rough surface, they will lose more butterfat into the whey through the jagged parts that stick out from the main part of each curd. 
+
+So the goal is a **smoothly cut curd of the desired size**.
+
+##### Size of the curd
+
+The goal of cutting the coagulated milk into evenly sized pieces (curds) is to expose an equal amount of surface area so the curds can shrink by losing whey. The more even in size you can cut the curds, the better.
+
+The size at which curds are cut also influences fat retention. The smaller the curds, the more fat is lost, no matter the original fat content of the milk.
+
+When you cut the curds, areas of the protein network are exposed, and the fat trapped within leaks out into the whey.
+
+##### Determining when to cut
+
+Here are two methods to determine when to cut the curd.
+
+1. Observe the milk for the point at which the enzymatic phase ends and the coagulation phase begins. I.e. observe the flocculation point, using that time to determine the total coagulation time. 
+
+2. Watch for the ideal texture for cutting, or the "clean break".
+
+##### What is Flocculation
+
+A `floc` is a clumped particle. 
+
+The enzymatic phase is when enzymes knock off the outside water-loving kappa-casein projections. Flocculation occurs when this enzymatic phase is 75 to 80 percent complete and clumping becomes noticeable.
+
+There are several techniques for checking for flocculation.
+
+1. You can dip a dry knife or curd blade into the milk, draw itv back out, and observe the surface for little flecks (those are flocks).
+
+2. Float a jelly-jar lid on the surface of the milk and note when in no longer spins freely. 
+
+3. Remove a small sample of milk in a clear container, swirl it, and see if flocks form on the sides of the container. 
+
+By watching for flocculation, you can judge the total cut time better than by just watching for a "clean break"
+
+#### Testing milk for coagulation before making cheese
+
+(this is so cool!!)
+
+Here is a test using flocculation which checks if the milk is suitable for cheese making. 
+
+1. Mix 24 milliliters cool water with 1.25 milliliters double-strength rennet.
+2. Warm 1/4 cup milk to 92F (33C) in a clear measuring cup
+3. Add 10 milliliters of rennet mixture to warm milk wile swirling milk. 
+4. Time the seconds it takes for small flocs to form on sides of measuring cup.
+
+If it takes more than 20 seconds to flocculate, there is an issue with the milk. 
+
+Repeat the test, but this time add 1/8 teaspoon calcium chloride to the milk. If flocculation time improves, then add calcium chloride to the cheese milk at the recommended rate.

@@ -72,3 +72,18 @@ With any method of pasteurization, if cheese making is to take place immediately
 
 Homogenization is a process that sends whole milk or cream under high pressure through a series of screens with restricted openings to reduce the size of the fat molecules, and change some of the proteins that help milk fat rise to the top. Homogenized milk is a poor choice for cheese making.
 
+
+##### Standardization and The Balance of Protein and Fat
+
+As a commercial cheese producer, you may sometimes need to adhere to certain restrictions re protein-to-fat ration if you call your cheese a certain name.
+
+	# Formula for determining protein-to-fat ratio
+	# Divide protein percentage by fat percentage. E.g.
+	
+	Milk fat = 4.25
+	Protein = 3.25
+	3.25 / 4.25 = 0.76
+	Ratio = 0.76:1
+	
+
+	

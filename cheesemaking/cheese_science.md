@@ -358,3 +358,14 @@ High fat cheeses are often salted many times for this reason, or kept longer in 
 Some bad bacteria are not inhibited by the addition of 2-5% salt that is normal for cheeses.
 
 Chief among these bacteria are the `coliforms`, a large family of bacteria, some of which are responsive for `early blowing` in cheese. 
+
+##### The Effect Of Calcium
+
+Much of the cheese's final texture is due to minerals, especially calcium (mostly calcium phosphate). Low calcium content equals crumbly, and high calcium equals pliable - e.g. feta vs cheddar. Calcium is the "glue" that holds the protein matrix together. As calcium leaves the curd, the protein networks collapse, creating a fractured texture.
+
+So what causes the curd to lose or retain calcium? Acid! As the pH of the curd decreases, the calcium will because more soluble and leave the curd along with the whey. If the acid level drops too low, too much calcium is lost. 
+
+This loss can occur in the vat or during aging. 
+
+
+

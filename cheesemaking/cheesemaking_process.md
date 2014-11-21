@@ -104,3 +104,39 @@ Repeat the test, but this time add 1/8 teaspoon calcium chloride to the milk. If
 **Table 2-2. Comparison of coagulation and cutting factors** - p. 47
 cheese type, single strength rennet rate, flocculation factor, goal coagulation time, clean break time, curd size.
 
+
+##### How to Check for a Clean Break
+
+A clean break is a good test to use in addition to Flocculation testing.
+
+A clean break is not a singular moment in the vat.
+
+Remember, the proteins are knitting together to form a network which strengthens as it grows. If you cut too soon, the structure will mush instead of cut and you will lose the fat into the whey. Alternatively, if you wait too long, it will become so firm that it will resist the knife and tear rather than cut cleanly. So the optimal cutting time is a range, not a moment.
+
+**Methods for checking for a clean break**
+
+1. Crook your index or middle finger, insert it into the curd up to the second knuckle and lift slowly
+2. **(Preferred)** - Use a knife, cut a slit, insert the knife - flat side up- at an angle just behind the slit and under the uncut portion of the front of the cut. Then lift slowly and see if the cut seam expands forward. As the curd mass gives way to the pressure below, it will part. As it parts, observe the sides of the tear and the liquid that escapes. Are the sides smooth or jagged? Is the whey white or yellow/green? If the sides are smooth and the liquid is more yellow/green than white, the curd is ready to cut. 
+
+If the cut time is off from its goal, adjust the amount of rennet for the next batch.
+
+##### Cooking
+
+Some cheeses (soft fresh cheeses and bloomy rinds) are made *without* the curd going through a phase of heating and stirring. For most of these types, the cur is held at the ripening temperature until the mass has achieved the goal acid development and textures, at which point it is ladled, scooped, or drained right into the forms. 
+
+Almost all other hard cheeses will go through a phase where the curd is heated and stirred. This is sometimes called `scalding` instead of `cooking`. 
+
+Increasing the temperature of the whey will cause the curds to shrink and lose more whey. If this happens too quickly, it will cause the curd surface to dry prematurely, thereby trapping whey inside the curd. As such, temp increases are usually done in slow increments, with the initial increases being done the slowest to give the inside of the curd a chance to lose the whey at the same rate as the surface.
+
+As the temp increases, the bacteria will respond by producing more or less acid, depending on the type of the starter bacteria. 
+
+Meaning, **you can adjust the rate of acid development by adjusting the temperature in the vat.**
+
+##### Stirring
+
+You generally stir the curd gently, meaning you stir the curd as gently as is needed to prevent the curds from "shattering", or breaking into tiny pieces. 
+
+Sometimes you can stir the curd with a cheese ladle, but sometimes you'll need to shake the pot first to agitate the curds.
+
+##### Washing the Curds
+

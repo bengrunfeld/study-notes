@@ -12,7 +12,7 @@ To run a script file and then go into the interactive mode, use the `-i` option
 
 To quit Python, use `quit()` or `Ctl-d`.
 
-##Interactive Mode
+## Interactive Mode
 
 When you type `python` into the terminal, you go into interactive mode, where you can type in code and have it execute in front of you.
 
@@ -279,7 +279,7 @@ Assignment to slices is also possible, and this can even change the size of the 
 	... a[0:2] = []
 	[123, 1234]
 
-The built-in function len() also applies to lists:
+The built-in function `len()` also applies to lists:
 	
 	len(a)
 

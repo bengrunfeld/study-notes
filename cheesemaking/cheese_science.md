@@ -14,7 +14,9 @@ Learning to regulate this acid production is key to making great cheese.
 
 The sugar in milk is called `lactose`. Lactose is made up of `glucose` and `galactose`. 
 
-It is the breakdown and consumption of `lactose` that produces acid - `lactic acid`. Without the presence of acid, the production of cheese does not occur.
+It is the breakdown and consumption of `lactose` that produces acid - `lactic acid`. Without the presence of acid, the production of cheese cannot occur.
+
+**Enzymes**
 
 Enzymes act upon other substances to break a bond. The enzyme `lactase` is required to break the `lactose` into digestible sugars.
 
@@ -58,7 +60,7 @@ The role of Milk fat is to provide an appealing texture, well-rounded flavor, an
 
 Milk fat globules are surrounded by the `milk fat globule membrane` (aka `MFGM`), which contains most of the enzymes that occur naturally in milk, besides `lipase` which breaks down fats/lipids and does not exist in `MFGM`. Of course, if `lipase` existed in the `MFGM`, it would destroy the globule.
 
-The inside of the membrane contains the fats, mostly `triglycerides` (aka `tryaglycerols`). A glyceride is a glycerol molecule, which is the basic model for all fats, bonded to one, two or three fatty acids. Triclycerides (3 bonded fats) are teh fats that make up most of th food oils and fats that we consume. 
+The inside of the membrane contains the fats, mostly `triglycerides` (aka `tryaglycerols`). A glyceride is a glycerol molecule, which is the basic model for all fats, bonded to one, two or three fatty acids. Triclycerides (3 bonded fats) are the fats that make up most of the food oils and fats that we consume. 
 
 ##### Creaming
 
@@ -66,7 +68,7 @@ Milk fat globules are less dense than the surrounding milk fluid, which causes t
 
 ##### Homogenization
 
-`Homogenization` is a mechanical process that aims to stop fat globules from `creaming`. I involves sending the milk under high pressure through a screen with openings smaller that the fat globules. Goat, sheep and buffalo milk are NOT naturally homogenized. They just don't have cryoglobulins, so `creaming` occurs **much** slower. Homogenized milk tends to not drain and lose whey during the draining process, making it a bad choice for some types of cheeses.
+`Homogenization` is a mechanical process that aims to stop fat globules from `creaming`. It involves sending the milk under high pressure through a screen with openings smaller that the fat globules. Goat, sheep and buffalo milk are NOT naturally homogenized. They just don't have cryoglobulins, so `creaming` occurs **much** slower. Homogenized milk tends to not drain and lose whey during the draining process, making it a bad choice for some types of cheeses.
 
 ##### Cold Storage of Milk 
 
@@ -90,11 +92,11 @@ Milk protein is classified into two main types: Cheese proteins (aka **Caseins**
 
 ##### Digestibility
 
-Aged cheeses tend to be more easily digested than fresh cheeses and milk, due to the lack of lactose adn the breakdown of protein into its samller components. 
+Aged cheeses tend to be more easily digested than fresh cheeses and milk, due to the lack of lactose and the breakdown of protein into its smaller components. 
 
 ##### Anatomy of Cheese Proteins
 
-A cluster of proteins in milk is called the Casein Micelle, and they float suspended in the milk. There are two main groups of `caseins` - `Alpha Caseins` and `Beta Caseins`. Toward the outside of the clusters exists another milk protein called `Kappa Casein`.
+A cluster of proteins in milk is called the `Casein Micelle`, and they float suspended in the milk. There are two main groups of `caseins` - `Alpha Caseins` and `Beta Caseins`. Toward the outside of the clusters exists another milk protein called `Kappa Casein`.
 
 ##### Milk allergies
 
@@ -102,11 +104,11 @@ People allergic to milk are usually allergic to Alpha Casein, which is usually m
 
 ##### Coagulating Milk Proteins Using Rennet
 
-Rennet contains an enzyme (e.g. chymosin) that splits/cleaves the chain of amino acids in `Kappa Casein` from the outside of the `micelle` (like a haircut). Next, the rennet exposes water-hating (hydrophobic behavior), causing the `micelles` to repel water and start attracting each other and bonding together with the help of calcium phosphate in the liquid portion of the milk. A thickened curd mass (aka **Coagulum**) can now form, and the cheese becomes possible.
+Rennet contains an enzyme (e.g. chymosin) that splits/cleaves the chain of amino acids in `Kappa Casein` (? Might be alpha, not kappa) from the outside of the `micelle` (like a haircut). Next, the rennet exposes water-hating (hydrophobic behavior), causing the `micelles` to repel water and start attracting each other and bonding together with the help of calcium phosphate in the liquid portion of the milk. A thickened curd mass (aka **Coagulum**) can now form, and the cheese becomes possible.
 
 ##### Coagulating Milk Proteins Using Acid
 
-Coagulation can also be achieved using acid, which can be an added (e.g. Vinegar or Lemon Juice). or by the production of `lactic acid` by a starter culture. As the pH of milk drops close to `4.6`, Caseins their ability to repel each other. Calcium Phosphate which was formerly bonded within the micelle, becomes soluble in the acidic environment. All this produces a condition in which a Coagulum is formed, but it is different in texture and structure from a rennet-produced coagulum. 
+Coagulation can also be achieved using acid, which can be an added (e.g. Vinegar or Lemon Juice) or by the production of `lactic acid` by a starter culture. As the pH of milk drops close to `4.6`, Caseins lose their ability to repel each other. Calcium Phosphate which was formerly bonded within the micelle, becomes soluble in the acidic environment. All this produces a condition in which a Coagulum is formed, but it is different in texture and structure from a rennet-produced coagulum. 
 
 ##### The Development of Flavor in Cheese
 
@@ -116,11 +118,11 @@ The process of breaking amino acid chains causes the development of flavor and t
 
 Minerals in milk are often called `Salts` or `Ash`. `Salts` is a chemistry term for minerals, and `Ash` is used because the salts can be separated from the fluid milk by burning off the liquid portion, leaving an `ash`.
 
-`Calcium` and `Phosphate` are the two minerals in milk of primary importance to cheesemaking. About 2/3 of `calcium` in milk resudes inside `protein micelles` (aka `Colloidal Calcium`). Anything that limits the amount of colloidal calcium in the milk will limit the potential for a good curd to set. E.g. When milk is stored at cold temperatures, some of the `colloidal calcium` leaves the `micelles`, and is unable to help with coagulation.
+`Calcium` and `Phosphate` are the two minerals in milk of primary importance to cheesemaking. About 2/3 of `calcium` in milk resides inside `protein micelles` (aka `Colloidal Calcium`). Anything that limits the amount of colloidal calcium in the milk will limit the potential for a good curd to set. E.g. When milk is stored at cold temperatures, some of the `colloidal calcium` leaves the `micelles`, and is unable to help with coagulation.
 
 ##### Calcium and Cheese
 
-`Calcium`'s role in cheesemaking is to assist in forming a firm curd the traps fat and will hold up to stirring, pressing and stretching of the curd. 
+`Calcium`'s role in cheesemaking is to assist in forming a firm curd that traps fat and will hold up to stirring, pressing and stretching of the curd. It acts like a glue.
 
 The cheesemaker can manipulate the `calcium` content and type in cheeses to assist the cheesemaking process to be more successful, or to create different types of cheeses.
 
@@ -150,17 +152,17 @@ The breakdown of the fat molecules in milk is something that the cheesemaker wan
 
 Milk is a nutritious environment attractive to many different types of microorganisms, some which we want, and others that we don't. When using raw milk for cheesemaking, there will already be some bacteria in the milk, but added culture is still important. If using pasteurized milk, choosing and using cultures becomes even more critical. 
 
-The role of `culture` is to help transform milk into cheese. Cultures are usually bacteria, but they can also be yeasts and molds. When they enter the story, they rapidly begin to consume the milk sugar (lactose) and turn it into lactic acid. It is this acid that will preserve the cheese during aging or stage, as well as create flavor. 
+The role of `culture` is to help transform milk into cheese. Cultures are usually bacteria, but they can also be yeasts and molds. When they enter the story, they rapidly begin to consume the milk sugar `lactose` and turn it into `lactic acid`. It is this acid that will preserve the cheese during aging or stage, as well as create flavor. 
 
 The second role of cultures is to die, as when this happens, their cell walls leave behind enzymes that will further break down proteins and fats into tasty elements.
 
-Finally, cultures help create surfaces that textures that make cheeses unique. 
+Finally, cultures help create surfaces and textures that make cheeses unique. 
 
 The term `Cheese Culture` covers three main types of organisms - bacteria, yeasts and molds. 
 
-Some of these are added to the milk (starter culture), some exist in the milk or enter it accidentally (native culture), and others are aded at varying stages of the process (ripening cultures). 
+Some of these are added to the milk (starter culture), some exist in the milk or enter it accidentally (native culture), and others are added at varying stages of the process (ripening cultures). 
 
-##### Start Culture
+##### Starter Culture
 
 There are four main ways to add starter culture to milk:
 
@@ -194,7 +196,7 @@ Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSL
 
 `Ripening cultures` are also known as `secondary` or `adjunct` cultures.
 
-`Starter culture` gets the process going, but `ripening culture` are the bacteria, molds and tests that add to the process during aging and ripening. 
+`Starter culture` gets the process going, but `ripening culture` are the bacteria, molds and yeasts that are added during aging and ripening. 
 
 An example of ripening culture is the white mold that produces Camembert and Brie.
 
@@ -231,7 +233,7 @@ There is another form of attack that is not so aggressive and can actually "immu
 
 2. Don't return whey to the farm where the milk was made, as it could contaminate the milk at the farm.
 
-3. `Chlorine` is a highly affective phagicid, when used to sanitize equipment and floors that had contact with the whey. This should only be done *after* cheese making. Special attention should be paid to cracks, nooks and crevices where whey could sit and develop a phage population. 
+3. `Chlorine` is a highly affective phagicide, when used to sanitize equipment and floors that had contact with the whey. This should only be done *after* cheese making. Special attention should be paid to cracks, nooks and crevices where whey could sit and develop a phage population. 
 
 ##### Lipase - Extra Flavor
 
@@ -243,7 +245,7 @@ The lipase in stomach lining is much stronger than native milk lipase.
 
 Calf lipase is the mildest, kid is intermediate, lamb is the strongest. You can also buy blends.
 
-Adding extra lipase in the fashion is *always* options, but it is the only way to truly duplicate traditional cheeses.
+Adding extra lipase in the fashion is *always* optional, but it is the only way to truly duplicate traditional cheeses.
 
 Vegetarian-based lipase is not really available for artisan home-made cheese. It exists for larger industrial processed cheeses, though.
 
@@ -331,7 +333,7 @@ Rennet is also important for aging cheese and helping it develop flavor, texture
 
 Salt, aka `sodium chloride` is very important in the creation of superior cheese.
 
-The first job of salt is to slow down, then bring to a halt, the production of acid in cheese. It does this by stopping the starter culture bacteria., which are sensitive to salt, from growing. When they stop growing, they also stop producing lactic acid. 
+The first job of salt is to slow down, then bring to a halt, the production of acid in cheese. It does this by stopping the starter culture bacteria, which are sensitive to salt, from growing. When they stop growing, they also stop producing lactic acid. 
 
 By stopping the `pH` at the right spot, you help ensure the right finished flavor and texture in cheese. 
 
@@ -347,7 +349,7 @@ Salt also helps bring out flavor.
 
 The temperature of the curd, especially in milled curds such as cheddar, will affect how salt is absorbed. 
 
-The first application of salt will flush whey out of the curd and can rinse away the salt. So when dry-salting curds and wheels, recipes often call for two or more applications instead of using the total amount of salt all at one times. 
+The first application of salt will flush whey out of the curd and can rinse away the salt. So when dry-salting curds and wheels, recipes often call for two or more applications instead of using the total amount of salt all at one time. 
 
 A cheese that has a higher fat content will impede salt uptake, not just at the surface of cheese, but throughout the interior. The large fat globules act as a physical barrier to the movement of `sodium chloride` in the cheese.
 
@@ -361,9 +363,9 @@ Chief among these bacteria are the `coliforms`, a large family of bacteria, some
 
 ##### The Effect Of Calcium
 
-Much of the cheese's final texture is due to minerals, especially calcium (mostly calcium phosphate). Low calcium content equals crumbly, and high calcium equals pliable - e.g. feta vs cheddar. Calcium is the "glue" that holds the protein matrix together. As calcium leaves the curd, the protein networks collapse, creating a fractured texture.
+Much of the cheese's final texture is due to minerals, especially calcium (mostly `calcium phosphate`). Low calcium content equals crumbly, and high calcium equals pliable - e.g. feta vs cheddar. Calcium is the "glue" that holds the protein matrix together. As calcium leaves the curd, the protein networks collapse, creating a fractured texture.
 
-So what causes the curd to lose or retain calcium? Acid! As the pH of the curd decreases, the calcium will because more soluble and leave the curd along with the whey. If the acid level drops too low, too much calcium is lost. 
+So what causes the curd to lose or retain `calcium`? Acid! As the `pH` of the curd decreases, the calcium will because more soluble and leave the curd along with the whey. If the acid level drops too low, too much calcium is lost. 
 
 This loss can occur in the vat or during aging. 
 

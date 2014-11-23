@@ -62,7 +62,7 @@ Pasteurization is meant to kill bacteria and pathogens, but may also harm advant
 
 The two most important side effects are the destruction of the enzyme lipase and the possible denaturing of whey proteins. 
 
-Regular temperature pasteurization has little effect on the whey proteins, but at high temps, these proteins are altered in a manner that causes them to interact with the face of the casein micelle in a bad way, leading to a weak curd.
+Regular temperature pasteurization has little effect on the whey proteins, but at high temps, these proteins are altered in a manner that causes them to interact with the face of the `casein micelle` in a bad way, leading to a weak curd.
 
 Since pasteurization destroys most of the milk enzyme `lipase`, it is usually added back into the milk during the cheese making process later on.
 
@@ -88,7 +88,7 @@ As a commercial cheese producer, you may sometimes need to adhere to certain res
 
 ##### Formula	for estimating cheese yield
 
-	# Semihard to hard cheese formula:
+	# Semi-hard to hard cheese formula:
 	1.63 * (Fat % + Protein %) = Yield
 	
 	# Example

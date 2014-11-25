@@ -154,7 +154,7 @@ Many recipes call for the curd to be pitched, then pressed under the whey. This 
 
 You can use perforated stainless steel sheets upon which weights are set, or you can just use your hands, pressing the curd under the liquid whey.
 
-#### Draining the Pressing
+### Draining and Pressing
 
 The main goal of pressing is to achieve the right shape, a closed rind, and a proper whey drainage from the interior of the cheese. Each cheese is different re pressure, time, etc.
 
@@ -176,4 +176,39 @@ If you have a curd that is meant to be pressed, you will be removing a large amo
 
 ##### Choosing Forms
 
-Make sure you choose a form that is appropriate for the cheese you are making. Many cheeses have an ideal diameter-to-height ratio, so you must choose a form that duplicates these proportions. 
+Make sure you choose a form that is appropriate for the cheese you are making. Many cheeses have an ideal diameter-to-height ratio, so you must choose a form that duplicates these proportions. About the only cheeses that can be taller than they are wide are bandaged cheddars and blues. 
+
+#### Draining and Pressing in Forms
+
+Soft, high-moisture curds will not need more than their own weight and the right room temp to drain and shape up, but the drier curds will need more pressure. 
+
+If the curd temp is over 75F (24C), the butterfat is less stable and mostly liquid, so you have to be careful not to squeeze the fat right out of it. If you see white greasy whey, you know you are using too much pressure. Alternatively, if the curds cool too much, they will repel each other and not knit well into a wheel - unless you apply the right amount of pressure. 
+
+Room temp also influences drainage. Generally a 72F (22C) room is ideal for draining most cheeses - it's just below the butterfat melting temp. 
+
+The room temp can be dropped later in pressing, once the goal shape and moisture level have been achieved, to slow acid development if needed. 
+
+##### The Role of Cheesecloth
+
+The job of cheesecloth is not only to hold loose curds in the form, but to assist whey move to drainage holes in the mold. The fewer the holes, the more important this job becomes. If the cloth weave is too open for the texture of the curd, curd bits will plug the holes. It is important to prepare the cloth before placing the curd in the form. This is best done by rinsing the sanitized cloths with some warm whey from the vat. Doing this rinses chemicals away and puts the cloth at roughly the same `pH` as the curd. 
+
+Toward the very end of pressing, the cloths may be removed from some type sod cheeses so that any pattern from the form (e.g. basket weave form) can be embossed on the surface. 
+
+##### How much pressure to use
+
+As much as it takes. You need only apply as much pressure as it takes to attain the goal moisture, acidity and shape of your ideal cheese.
+
+##### Time and Temperature
+
+The time it takes to press a cheese is closely ties to the temperature of the cheese during pressing. The `pH` at the beginning of draining, compared to the goal `pH` at the end of draining, will influence how warm you will want the cheese to stay. The cooler the room, the slower the draining and the `pH` development. If you need to delay the time when the cheese needs to be moved to the brine (or otherwise salted), you can cool the room or move the cheese to a cooler location. 
+
+Re texture, if the cheese cools too rapidly, the curd will not knit as well and mechanical openings in the cheese will be more likely.
+
+As a rule of thumb, 72F (22C) is an ideal room temperature during this phase 
+
+### The Essentials of Salting
+
+Salt (`sodium chloride`, aka table salt) slows and halts acidification, assists with drainage, controls bacteria and mold growth, influences texture, and contributes to flavor. 
+
+
+

@@ -41,3 +41,17 @@ cheese type, single strength rennet rate, flocculation factor, goal coagulation 
 #### Using Washing The Curds as an Emergency Measure
 
 You can wash the curds as an emergency measure to slow `pH` development or to increase the moisture content and mineral retention of the finished curd in almost any cheese. 
+
+##### Brine Maintenance Tips
+
+1. Do you see salt at the bottom? If not add more slat (at `55F - 13C`).
+
+2. Does it smell nice or like strong cheese? If its too strong, its time to make some fresh
+
+3. Are there little chances of cheese floating on a white sludge at the bottom of the tank? If so, filter through a cheesecloth
+
+4. Have you added calcium chloride lately? If you use the brine frequently, you will need to refresh the calcium level periodically.
+
+5. How is the pH? If it is too low, you can make a partial new batch or add a bit of baking soda. If you haven't added calcium chloride lately, try that first, as it will have a slight buffering affect.
+
+6. How long has this brine been in use? If its over 6 months and still smells nice, consider putting it in a pot on the stove and pasteurizing it. If it doesn't smell so good, you should have caught that is question 2!! ;)

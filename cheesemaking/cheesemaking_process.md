@@ -1,4 +1,4 @@
-### The Cheese Making Process
+# The Cheese Making Process
 
 #### When and how to add the culture
 
@@ -238,6 +238,67 @@ The higher the fat content of the cheese, the slower the uptake of salt will be.
 
 **Table 2-5: Average Brining Times Based on Cheese Type** - p.60
 
-##### Making and Maintaining Brine
+##### Making Brine
 
+A well made and maintained brine can last almost indefinitely. It is difficult to get rid of brine, because most regulatory bodies consider it a pollutant.
+
+Fresh brine is made using water, salt (`sodium chloride`), `calcium chloride` and vinegar.
+
+Calcium chloride is added to mimic the mineral balance in the cheese. 
+
+The goal is to maintain the brine `pH` so that it matches that of the cheeses (see `Appendix C` for common brine concentrations).
+
+In general, for each `gallon (4L)` of **water**, add `1 tablespoon (15 ml)` of **calcium chloride** (of a 32% premixed solution) and `1 teaspoon (5 ml)` **white vinegar**.
+
+Some cheesemakers use whey instead of water as a brine, since whey has a calcium content and is similar to pH in cheeses, but it is not recommended.
+
+If you aren't sure if your available water contains too much calcium, see if you get any sliming on the surface of the cheeses. If the cheese starts to slime, you can usually save them by scraping off the slime and adding more calcium chloride to the brine before placing the cheese back in the solution. Remember to check the `pH` of the brine at the same time.
+
+##### Maintaining Brine
+
+A well-maintained brine should keep its mineral and pH balance. Each cheese that is brined will lose whey and calcium into the solution. If you are consistently brining similar types of cheese, your brine is more likely to be stable. If you brine cheeses over a range of finished `pH` levels (e.g. feta - low pH, gouda - high pH) your brine will fluctuate.
+
+Routinely check the salt concentration and the pH.
+
+The brine volume will increase by the loss of whey from the cheeses. If you need to remove brine from your tank to keep it from overflowing, be sure to stir the brine well first, so you are leaving a balanced solution.
+
+If your brine becomes too acidic, you can neutralize it a bit by adding some baking soda.
+
+For initial salting of cheeses, the usual level of salt to brine is about `23%` - fully saturated brine is closer to `26%` salt.
+
+Brine concentration is almost always measured at `60F (16C)`, but since most brine is stored at a lower temp, this must be taking into account.
+
+Brine must be maintained to prevent bacterial growth, keep proper salt/calcium balance as well as proper pH and to prevent off-flavors. 
+
+In commercial-scale manufacturing plants, brine is continuously passed through a filter and ultraviolet (UV) purification system to ensure the brine remains free from bacteria, yeasts and molds.. The water passes through strong UV, which kills microorganisms. 
+
+At home, you can filter the brine through finely woven cheesecloth to remove particles and "sludge" that accumulate at the bottom of the tank.
+
+##### Measuring Salt in Brine
+
+Salt should be monitored using a `salometer` (also spelled `salinometer`), aka a `brine hydrometer` to determine the salt content of a sample of whey. You can get digital, but floating bubble types work just fine and are less expensive.
+
+There's an issue with how to read the `salometer`. If you want, read up on it on `p. 62`. 
+
+To avoid this issue, buy a salometer with a scale calibrated based on saturation by weight, instead of the percentage of salt, so that when you add `23%` salt, the salometer will read `23%`. Otherwise it will read `90%`.
+
+Make sure you buy plastic, NOT glass, so you don't have to worry about shattered glass in your brine. 
+
+##### Problems with Brine
+
+Slimy ropey brine is not too common. If it occurs, it is usually not a food safety issue, but it is gross. Usually good brine maintenance techniques will keep you in the clear. Read up on it on `p. 63`
+
+##### Brine Maintenance Tips
+
+1. Do you see salt at the bottom? If not add more slat (at `55F - 13C`).
+
+2. Does it smell nice or like strong cheese? If its too strong, its time to make some fresh
+
+3. Are there little chances of cheese floating on a white sludge at the bottom of the tank? If so, filter through a cheesecloth
+
+4. Have you added calcium chloride lately? If you use the brine frequently, you will need to refresh the calcium level periodically.
+
+5. How is the pH? If it is too low, you can make a partial new batch or add a bit of baking soda. If you haven't added calcium chloride lately, try that first, as it will have a slight buffering affect.
+
+6. How long has this brine been in use? If its over 6 months and still smells nice, consider putting it in a pot on the stove and pasteurizing it. If it doesn't smell so good, you should have caught that is question 2!! ;)
 

@@ -210,5 +210,27 @@ As a rule of thumb, 72F (22C) is an ideal room temperature during this phase
 
 Salt (`sodium chloride`, aka table salt) slows and halts acidification, assists with drainage, controls bacteria and mold growth, influences texture, and contributes to flavor. 
 
+The goal amounts of salt listed in the recipes are for pure sodium chloride. Sea and mined salts (i.e. regular table salts) often contain visible elements that are not desirable in your cheese. The texture of salts matter too. Rock and large crystal salts will not dissolve evenly. Extra fine ground slat is too fine for most cheeses and will dissolve and run off the cheese along with the whey.
 
+The best texture for cheesemaking is flaked slat, such as you find in kosher salt. Some kosher salt contains an anti-caking agent that is not ideal for cheesemaking. The best brand of kosher salt to use is `Diamond Crystal` kosher salt, because it is completely free of additives. `Sonoma Kosher` is also good, and can be purchased through SaltWorks. If the recipe calls for fine slat, use canning salt (free of additives) or just grind kosher salt to be the desired texture. 
+
+#### Methods of Salting
+
+There are two main methods of adding salt to cheese - `dry salting` and `brine salting`. Often the method used is the personal preference of the cheesemaker, but sometimes its is best to use one method over the other.
+
+##### How to Dry Salt the Cheese
+
+Dry salting is done by sprinkling or rubbing salt onto the curd or formed cheese. When salt is added to the curd, it must be given a period of time to melt and begin to be absorbed. This is called `mellowing`. If mellowing is not carried out properly, there can be problems with the curd.
+
+##### How to Brine Salt the Cheese
+
+Ideally, cheeses are put into the brine at the same temperature as the brine - usually 46F to 59F (8C-15C). This helps prevent shocking the exterior of the cheeses, and reduces permeability of the rind to the brine (like splashing ice water on your face). Temperature also affect the uptake of salt into the cheese. 
+
+Just before placing wheels in the brine, it is a good idea to first agitate the solution to help ensure an equal distribution of minerals and contents. 
+
+Make sure there is enough room in the brine for the cheeses to float freely. Also, sprinkle dry salt on top of each cheese after it is floating in the brine. Otherwise, you should totally submerge the cease in the brine using a rack that presses them down into the brine - though this method can leave marks.
+
+It is preferable to agitate the solution during brining, but this hasn't been seen to give a marked benefit.
+
+The higher the fat content of the cheese, the slower the uptake of salt will be. 
 

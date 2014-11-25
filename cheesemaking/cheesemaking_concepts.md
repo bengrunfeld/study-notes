@@ -149,13 +149,7 @@ Milk with higher than average protein, or milk with high somatic cell counts (SC
 
 This is why it's important to know your milk AND monitor acid development through the ripening process. 
 
-#### When and how to add the culture
 
-The usual temp at which culture is added and milk is held during ripening is between 86F - 90F (30C - 32C).
-
-Some acid-coagulated cheeses are ripened at lower temps, such as yoghurt.
-
-When working with raw milk, add direct-set starter culture at 80F (27C), then continue to raise the milk temp to the goal ripening temp. This will allow the freeze-dried culture time to rehydrate before activating.
 
 
 

@@ -1,8 +1,20 @@
 ### The Cheese Making Process
 
+#### When and how to add the culture
+
+The usual temp at which culture is added and milk is held during ripening is between 86F - 90F (30C - 32C).
+
+Some acid-coagulated cheeses are ripened at lower temps, such as yoghurt.
+
+When working with raw milk, add direct-set starter culture at 80F (27C), then continue to raise the milk temp to the goal ripening temp. This will allow the freeze-dried culture time to rehydrate before activating.
+
+We are working with `DVS` - Direct Vat Set cultures. They are added by sprinkling them on top of the warm milk, letting them set for a few minutes, then stirring them thoroughly into the milk. 
+
+Letting the powder sit on top of the milk allows it time to absorb some moisture and begin to rehydrate. If it is stirred in immediately, sometimes the powder will form a clump in the milk that won't dissolve.
+
 #### The Process of Ripening
 
-During ripening, the bacteria in the starter culture begins to populate the milk, consume the milk sugar (lactose), and produce lactic acid. Depending on what else occurs during the process, the ripening time must be of a length that helps, not hinders the desired acid production during the rest of the make, and the goal pH or titratable acidity (TA) at draining.
+During ripening, the bacteria in the starter culture begins to populate the milk, consume the milk sugar (lactose), and produce lactic acid. Depending on what else occurs during the process, the ripening time must be of a length that helps, not hinders the desired acid production during the rest of the make, and the goal `pH` or `titratable acidity` (TA) at draining.
 
 After ripening and just before coagulation, you may want to add additional ingredients like coloring (Annatto), calcium chloride, lipase, or flavored liquid from herbs, seeds, smoke or hot peppers.
 
@@ -64,7 +76,7 @@ Here are two methods to determine when to cut the curd.
 
 1. Observe the milk for the point at which the enzymatic phase ends and the coagulation phase begins. I.e. observe the flocculation point, using that time to determine the total coagulation time. 
 
-2. Watch for the ideal texture for cutting, or the "clean break".
+2. Watch for the ideal texture for cutting, or the `clean break`.
 
 ##### What is Flocculation
 
@@ -80,29 +92,11 @@ There are several techniques for checking for flocculation.
 
 3. Remove a small sample of milk in a clear container, swirl it, and see if flocks form on the sides of the container. 
 
-By watching for flocculation, you can judge the total cut time better than by just watching for a "clean break"
+By watching for flocculation, you can judge the total cut time better than by just watching for a `clean break`
 
 Once you see flocculation, the time is noted, then multiplied by a specific factor (see Table 2-2, p. 47).
 
 **The resulting number is the time from adding the coagulant to cutting.** 
-
-#### Testing milk for coagulation before making cheese
-
-(this is so cool!!)
-
-Here is a test using flocculation which checks if the milk is suitable for cheese making. 
-
-1. Mix 24 milliliters cool water with 1.25 milliliters double-strength rennet.
-2. Warm 1/4 cup milk to 92F (33C) in a clear measuring cup
-3. Add 10 milliliters of rennet mixture to warm milk wile swirling milk. 
-4. Time the seconds it takes for small flocs to form on sides of measuring cup.
-
-If it takes more than 20 seconds to flocculate, there is an issue with the milk. 
-
-Repeat the test, but this time add 1/8 teaspoon calcium chloride to the milk. If flocculation time improves, then add calcium chloride to the cheese milk at the recommended rate.
-
-**Table 2-2. Comparison of coagulation and cutting factors** - p. 47
-cheese type, single strength rennet rate, flocculation factor, goal coagulation time, clean break time, curd size.
 
 
 ##### How to Check for a Clean Break
@@ -122,7 +116,7 @@ If the cut time is off from its goal, adjust the amount of rennet for the next b
 
 ##### Cooking
 
-Some cheeses (soft fresh cheeses and bloomy rinds) are made *without* the curd going through a phase of heating and stirring. For most of these types, the cur is held at the ripening temperature until the mass has achieved the goal acid development and textures, at which point it is ladled, scooped, or drained right into the forms. 
+Some cheeses (soft fresh cheeses and bloomy rinds) are made *without* the curd going through a phase of heating and stirring. For most of these types, the curd is held at the ripening temperature until the mass has achieved the goal acid development and textures, at which point it is ladled, scooped, or drained right into the forms. 
 
 Almost all other hard cheeses will go through a phase where the curd is heated and stirred. This is sometimes called `scalding` instead of `cooking`. 
 
@@ -140,3 +134,46 @@ Sometimes you can stir the curd with a cheese ladle, but sometimes you'll need t
 
 ##### Washing the Curds
 
+Washed curd cheese has a portion of the whey removed during the cook phase. The same, or a lesser, volume of water is then added back into the vat. When whey is removed, a good portion of milk sugar is also removed, giving the starter bacteria a little less nourishment, thus slowing their growth and acid production. This lowered acid production helps the curd retain calcium, which will lead to a more pliable texture in the finished cheese.
+
+When water is added back into the vat, it keeps the volume of liquid the same so the curds can still move freely during stirring. It also allows more water to be absorbed into the crds (especially cool water added to warm curds), leading to higher moisture cheese. It can also help moderate the cooking of the curd. 
+
+In general only 25% to 30% of the whey should ever be removed. 
+
+##### Checking Curd for Readiness
+
+You check the readiness before going to the next step - `pitching` or `draining`.
+
+Here's a great method for checking semi-hard to hard cheese types: Scoop a small handful of curds from the vat, flatten your hands and make a patty of curds in your hand. Drain the curd with some light squeezing, then see if the curd sticks to one hand, holding it upside down. If it sticks, it is ready.
+
+##### Pitching the curd
+
+`Pitching` refers letting the curds settle in the vat, sometimes just before draining but often as a technique for allowing a bit more acid development in the vat without continuing to shrink the curds through stirring. 
+
+Many recipes call for the curd to be pitched, then pressed under the whey. This helps consolidate the curd into a mass that will assume its final shape and texture in the mold with more ease.
+
+You can use perforated stainless steel sheets upon which weights are set, or you can just use your hands, pressing the curd under the liquid whey.
+
+#### Draining the Pressing
+
+The main goal of pressing is to achieve the right shape, a closed rind, and a proper whey drainage from the interior of the cheese. Each cheese is different re pressure, time, etc.
+
+##### Draining in bags
+
+This technique is mostly used for soft, spreadable cheeses such as chèvre, fromage blanc and cream cheese. They whey collecting below the bags should be relatively transparent and a yellow-green color, not white. It it's whitish, you know you are losing some butterfat and product through the cloth. Use bags that are specifically designed for draining soft cheeses. 
+
+##### Dipping and Ladling Curds
+
+If making a soft high-moisture curd such as for Camembert, the curd is often cut into columns, not cubes, to help drainage. Once you start ladling, you must try to get all of the curds out of the vat and into the forms as soon as possible. It should take at most 20-30 minutes. 
+
+##### Whey Off
+
+If you have a curd that is meant to be pressed, you will be removing a large amount of the whey from the vat before removing the curd. This process is referred to as `Whey Off`. Usually, `whey off` occurs after the curd has been `pitched`, either via a tap with a mesh filter on it, or by just tipping the whole pot.
+
+##### Texturing
+
+`Texturing` usually refers to an internal change of structure that alters the final texture of the cheese. E.g. kneading the curd during heating with Mozzarella.
+
+##### Choosing Forms
+
+Make sure you choose a form that is appropriate for the cheese you are making. Many cheeses have an ideal diameter-to-height ratio, so you must choose a form that duplicates these proportions. 

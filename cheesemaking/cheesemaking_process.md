@@ -234,3 +234,10 @@ It is preferable to agitate the solution during brining, but this hasn't been se
 
 The higher the fat content of the cheese, the slower the uptake of salt will be. 
 
+**Table 2-4: Average Ideal Salt Levels in Cheese** - p.58
+
+**Table 2-5: Average Brining Times Based on Cheese Type** - p.60
+
+##### Making and Maintaining Brine
+
+

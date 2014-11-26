@@ -55,3 +55,7 @@ You can wash the curds as an emergency measure to slow `pH` development or to in
 5. How is the pH? If it is too low, you can make a partial new batch or add a bit of baking soda. If you haven't added calcium chloride lately, try that first, as it will have a slight buffering affect.
 
 6. How long has this brine been in use? If its over 6 months and still smells nice, consider putting it in a pot on the stove and pasteurizing it. If it doesn't smell so good, you should have caught that is question 2!! ;)
+
+##### Milk that is alkaline
+
+Milk that is alkaline is comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly alkaline. You can check for a high SCC count with an inexpensive test, such as the California Mastitis Test or PortaCheck.

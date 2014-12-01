@@ -47,9 +47,37 @@ As with the wine cooler, you can simply increase humidity by hanging a moistened
 
 With wine coolers or fridges, if hanging a towel doesn't maintain humidity well enough, you can use a small electric ultrasonic humidifier. Be sure to watch for moisture buildup on the walls and any dripping. 
 
-Even though a fridge has more air than a wine cooler, you still need to open the door daily to give the cheeses fresh air. 
+If you are waxing or otherwise coating your cheeses (or vacuum sealing them), humidity is not important for their proper aging - you don't need to create a waterproof space.
+
+Even though a fridge has more air than a wine cooler, you still need to open the door daily to give the cheeses fresh air. Cheeses "breath" and need oxygen for optimal aging to occur. Part of breathing is exhaling unwanted gases, and with cheeses, this is usually ammonia. 
+
+A musty moldy-smelling cellar is not a good place for young cheeses to grow up.
 
 If air movement is required (in addition to air exchange), a small fan can be placed on one of the shelves. Prevent the fan from blowing directly on any cheeses by providing a baffle of thin cloth or creating an air sock.
 
 ### Relative Humidity
+
+The total amount of water vapor in the air - if you could measure its mass - is called `absolute humidity`.
+
+The amount of absolute humidity relative to the maximum amount that same air could hold is called `relative humidity (RH)`.
+
+The vapor occupies empty space between air molecules.
+
+The amount of water vapor carried by the air at any given time is very dependent upon the atmospheric pressure and the temp.
+
+The amount of water vapor needed to saturate the air increases at the temp increases - when all other factors, such as atmospheric pressure are equal. It also decreases as the temp decreases. 
+
+`dew point` is when the `absolute humidity` is the same as the `relative humidity` - meaning that the air is fully saturated with water vapor and condensation begins to occur.
+
+#### Small-Closet Conversion
+
+This is the holy grail for serious hobby cheese makers - their own real cheese cave/cellar/closet. It isn't hard to do.
+
+The first thing to think about is insulation and waterproofing.
+
+Choose a space that naturally mains a steady temp, or one that does not fluctuate in temp too much, and you will be ahead of the game. Best of all is a basement or real cellar.
+
+Provide as much insulation as possible. Waterproof the room so that if it was used as a shower, it would be ok, since the surfaces will need to be wiped and kept clean. 
+
+For commercial-scale information, check out G's book: **The Farmstead Creamery Advisor**.
 

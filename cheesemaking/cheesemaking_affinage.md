@@ -81,3 +81,30 @@ Provide as much insulation as possible. Waterproof the room so that if it was us
 
 For commercial-scale information, check out G's book: **The Farmstead Creamery Advisor**.
 
+
+#### Monitoring Humidity
+
+Many cheesemakers fail to properly monitor humidity.
+
+When cheesemakers talk about and monitor humidity, they are really talking about is `relative humidity (RH)`, but for simplicity's sake, we just call it `humidity`.
+
+Gauges for reading `relative humidity` are called `hygrometers`. 
+
+You can buy simple dial versions, digital varieties, or a wet-dry bulb type also called a `psychrometer`. 
+
+Dial `hygrometers` are usually the cheapest, but don't work well over time. Digital `hygrometers` start at $20 - $30. If you go with digital, make sure you have 2 in the same space, so you can tell if one has a problem if the 2 units have very different readings. They will also allow you to monitor different humidity rates in different parts of your aging space.
+
+G's favorite type of `hygrometer` is a `psychrometer`. 
+
+There is a chart is Appendix C that gives you a table of bulb temps vs RH. Copy the table and keep it handy next to your `psychrometer`.
+
+The goal temp in an aging room, according to G, is 50F - 55F (10C - 13C), so she watches for a 2.5F difference between the bulbs.
+
+The `psychrometer` does not need recalibrating, but needs the wick to be cleaned once in a while and the reservoir of water to be refilled.
+
+She also thinks they look cool.
+
+#### Cheeses with Special Needs
+
+
+

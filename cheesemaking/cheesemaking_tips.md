@@ -55,3 +55,9 @@ You can wash the curds as an emergency measure to slow `pH` development or to in
 5. How is the pH? If it is too low, you can make a partial new batch or add a bit of baking soda. If you haven't added calcium chloride lately, try that first, as it will have a slight buffering affect.
 
 6. How long has this brine been in use? If its over 6 months and still smells nice, consider putting it in a pot on the stove and pasteurizing it. If it doesn't smell so good, you should have caught that is question 2!! ;)
+
+#### Questions when purchasing a wine cooler
+
+1. Does it have a fan? You don't want a fan.
+2. Can you remove the wine shelves and replace them with bakers racks?
+3. 

@@ -18,7 +18,7 @@ Since ions have an electrical charge - acidic solutions contain positively charg
 
 `Buffers` are substances that have the ability to absorb acid and resist `pH` change.
 
-Solutions said to have a good `buggering capacity` contain a lot of these substances, and will *attempt* to prevent `pH` changes when acid is added or created. 
+Solutions said to have a good `buffering capacity` contain a lot of these substances, and will *attempt* to prevent `pH` changes when acid is added or created. 
 
 The buffers in milk include `casein`, `calcium phosphate` and others.
 
@@ -34,7 +34,7 @@ This is important because the entire process of cheesemaking is one of manipulat
 
 ##### Milk that is alkaline
 
-Milk that is alkaline is comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly alkaline. You can check for a high SCC count with an inexpensive test, such as the California Mastitis Test or PortaCheck.
+Milk that is alkaline is comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly alkaline. You can check for a high SCC count with an inexpensive test, such as the `California Mastitis Test` or `PortaCheck`.
 
 ##### Temperature Compensation
 
@@ -93,4 +93,41 @@ When checking milk or whey pH, it is a good idea to pull a small sample and test
 
 ##### pH Strips
 
+`pH` strips are inexpensive and useful, mostly in the following situations:
 
+* if you can't afford a pH meter
+* if your meter is broken or not working properly
+* if you are only making soft fresh cheeses where the whey can be checked
+* if you are making quick mozzarella and want to see if you have added enough citric acid
+
+`pH` strips can measure from single point (4.0, 5.0) to a quarter point (5.25, 5.50)
+
+##### Good Maintenance Techniques for your pH Meter
+
+1. Never allow the electrode to dry out
+2. Always store electrode in proper storage solution (never leave in milk or whey)
+3. Calibrate (using 7.00 and 4.01 buffers)
+4. Rinse tip in distilled or deionized water and blot dry between calibrations and before use
+5. Use only `Kimwipes` or other lint and static-free cloth to dry electrode
+6. Use dish soap such as Dawn to clean electrode
+7. Monitor and refill electrode (if refillable)
+8. Use small amounts of buffer and storage solution and change regularly
+9. Always take the milk, whey or curd sample out of the vat, test, then discard
+10. If meter has a separate temperature probe, be sure it is in the sample
+11. Depending on use, expect to replace electrodes every year or two, and sometimes more often
+
+#### Using the pH Meter in production
+
+When we first come into the make room, we take the `pH` probe out of the storage solution vial, rinse it with clean distilled or deionized water, wrap a clean microfiber cloth or Kimwipe around the tip to dry it (never rub the electrode with a cloth because you can disrupt the charge inside by creating static electricity), and set the tip in a vial filled with 7.0 buffer solution. Then we go about getting everything else ready - sanitizing the vat, pouring the milk, preparing a make sheet, etc. 
+
+After about 15 minutes we turn the meter on and get a reading in the 7.00 solution. If the meter reads in the 7.00 to 7.02 range, we are happy to proceed to rinse and dry the tip, then check it in the 4.01 solution.
+
+If either reading does not stabilize within a very close range, we follow the instructions for calibrating.
+
+If the meter still will not take an accurate reading, we clean the tip using Dawn dish soap (or another gentle but slightly alkaline dish soap) and warm water, rinse, dry as above, and recalibrate. If the meter is still not behaving the way we like, we soak it for about 30 minutes in the 7.00 solution and start all over. 
+
+Success with a meter requires patience and persistence.
+
+During cheese making, we rinse the tip after each reading, dry it, and leave it setting in the 7.00 solution. 
+
+At least once or twice, we clean the tip with dish soap. 

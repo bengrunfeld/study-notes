@@ -318,3 +318,17 @@ The goal is to prevent the molds from growing so rampantly that they form a thic
 
 Once done, the brush should be thoroughly washed, sanitized, and placed in a clean area to dry. You should have 2 pairs, just in case one is still drying. Never use these brushes on anything besides cheese.
 
+#### Oiled rinds
+
+Oiling is another old technique. Grana-type cheeses, such as Parmigiano Reggiano, have an oiled rind that darkens somewhat and creates a lovely patina by the end of aging.
+
+The oil discourages most molds, as does the act of rubbing the oil onto the cheese. Cheese mites are also impeded by the oil simply because it is hard for their legs to move on the sticky surface.
+
+You can use any food-quality oil on an aging cheese, but olive oil and olive oil blends are favorites. (Maybe use almond oil?)
+
+When the cheese rind has dried off, usually 1-2 weeks into aging, you can apply the first coat of oil. If molds are present, brush or wipe them off first with a soft dry brush or dry cloth.
+
+New coats can be applied as needed when the cheese appears to be drying, when molds are present, or even if you simply feel like it. There are no set rules. After a few coats, you won't need to apply more oil as often and the rind should start developing some depth of color.
+
+
+

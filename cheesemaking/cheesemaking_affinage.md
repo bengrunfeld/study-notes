@@ -198,7 +198,7 @@ Using the iron use to tap a cheese can help determine when eye development is ad
 
 ## Finishing a Cheese
 
-The right choice for rind care is a matter of your individual goals.
+The right choice for rind care is a matter of your individual goals. Unwaxed cheese rinds are completely edible, but not always so tasty. Some people consider them a delicacy, animals love them, and they can be used to flavor soup.
 
 #### Vacuum Sealing, Clear Coating, and Waxing
 
@@ -227,4 +227,94 @@ Not all clear coats come with a mold inhibitor, and some come with coloring, so 
 The scientific name of the mold inhibitor is `natamycin` (brand name Natamax, aka pimaricin). It is an anti fungal (or antimycotic) that is non-harmful to humans (only harmful to yeasts and molds) and is authorized for use in organic certified products.
 
 #### When to wax, Coat, or Seal
+
+`Timing` is the most important issue with coating cheeses.
+
+If the cheese was not first properly pressed or air-dried, it will weep whey after being sealed, create loose pockets and possibly rot.
+
+The cheese is ready to seal when the surface of the cheese is sufficiently dry, usually after a week to 10 days of aging at 50F - 55F (10C - 13C) at 85% RH. Larger wheels will take a bit longer to dry properly than small wheels. 
+
+Many recipes call for air-drying at room temp, which G doesn't recommend, as bad bacteria can grow at those temps.
+
+During the drying period, be vigilant about mold growth on the surface.
+
+At the first signs of mold, take a cloth moistened in a light brine (solution of 1 tablespoon salt and 1 tablespoon vinegar [optional] to 1 cup of water) and gently rub the surface of the cheese. Be sure not to leave the surface of the cheese wet.
+
+#### How to wax and coat
+
+In general, the hotter the wax, the colder the cheese should be. If the wax is low temp, a cold cheese will thicken the wax very quickly. If the wax is high temp, a chilled cheese will help prevent the hot wax from bringing fat out of the cheese.
+
+A blue cheese should use a medium heat wax (p. 87)
+
+The cheese must also be prepared for waxing. The surface should look firm and smooth and be free from mold. If mold is present, even a faint white bloom, follow the procedure above. 
+
+For cooler wax temps, allow the cheese to come to room temp before waxing.
+
+If it is a hot day and the room temp is above 70F (21C), wait until the room cools.
+
+For hotter wax applications, clean the cheese as above, then chill thoroughly to refrigeration temps.
+
+If you are clear coating before waxing, the cheese can go back to agin g for another week or two before applying the hard wax. 
+
+Waxing can be done over a large temp range, from low 120F (49C) to the more dangerous high temp of 220F (104C). The high temp method can scald the skin easily and is a fire risk, but it will kill mold spores on the surface of the cheese. 
+
+You can use a double boiler to melt wax or a recyclable aluminum foil tray and set on a very low direct heat.
+
+The best is a slow cooker, or crock-pot. This eliminates open flames, hot birders or the possibility of water splashing in.
+
+Once you are done, you can turn the unit off and let the wax harden inside.
+
+#### Steps for waxing a cheese
+
+1. Prepare the cheese as mentioned above
+2. Dip half of the cheese into the hot wax
+3. Hold wheel above wax, and juggle gently to remove excess wax
+4. Place wheel above wax, unwaxed side down, on a mat or board
+5. When wax is dry, dip second side as before. Make sure that the 2 coats touch evenly around the cheese
+6. Allow to dry
+7. Repeat steps 2 through 6 - make sure the 1st wax seam is at 90 deg to the second.
+8. If you have any pinholes, drop wax onto them to seal them up
+
+Use a wax thermometer to check wax temp.
+
+A curved drying rack can be very helpful for success in waxing.
+
+Some people prefer to brush the wax on, as it is simpler, but this leaves brush-strokes in the wax. Use a natural brush, not a synthetic. Also there are contraptions to whole dip the cheese in wax.
+
+#### Precautions to take with waxing
+
+1. Be sure to work in a well-ventilated area. Wax fumes are not healthy and can ignite
+2. Wear protective clothing that will not stick to you if hot wax spills on it.
+3. Wear goggles when working with temps over 120F (t49C)
+4. Wear gloves
+
+#### Bandaged rinds
+
+Bandaging, an old technique, is seeing a resurgence in recent years.
+
+The resulting cheese is called `clothbound` or `bandaged`. 
+
+You can bandage any semi hard to hard cheese, but typically cheeses aging less than 6 months won't need the extra protection of a bandage wrap. Extra-hard (grana) cheeses are never bandaged, but you have a different goal: the driest of textures.
+
+The bandage and lard (or butter) wrap is embedded in the cheese's surface during an extra step of pressing. During aging the wrapping is gently brushed to limit mold growth but is never scrubbed or washed with brine. During very long aging, bandage wrapped cheeses are very susceptible to cheese-mite damage.
+
+Usually, the bandage wrapping is removed prior to cutting, unless it is desired for aesthetic reasons.
+
+More on bandaging on `p. 89`.
+
+#### Brushed rinds
+
+One of the simplest ways to create a beautiful natural rind is to brush the rind periodically during aging. As with a bandaged rind, brushing does not eliminate the molds but instead limits their growth and "damage" to the rind.
+
+In the beginning, use a very soft brush to prevent damaging the still soft cheese. It is a good idea to have a minimum of two textures of brushes, one soft and one medium, to maintain brushed rinds.
+
+There are no hard and fast guidelines for when to brush a cheese. G tries to brush them before it is obvious they need it. If the first brush swipes release a cloud of mold spores into the air, you probably waited too long.
+
+When brushing, take your clean, sanitized, bone-dry brush and gently which it across the surface of the cheese. Doing this over a sink or moist surface can help trap much of the mold spores and stop them being airborne.
+
+Continue to brush until the rind looks smooth. Never use a scrubbing or circular motion, but rather brush the mold off the cheese. 
+
+The goal is to prevent the molds from growing so rampantly that they form a thick rind and attract cheese mites.
+
+Once done, the brush should be thoroughly washed, sanitized, and placed in a clean area to dry. You should have 2 pairs, just in case one is still drying. Never use these brushes on anything besides cheese.
 

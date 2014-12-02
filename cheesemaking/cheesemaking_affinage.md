@@ -4,7 +4,7 @@
 
 A person who specializes in `affinage` is called an `affineur`.
 
-### The Home Cheese Cellar
+## The Home Cheese Cellar
 
 #### Using a Wine Cooler
 
@@ -157,4 +157,74 @@ Aging rooms are humid and appealing to pests and rodents, and previous cheeses w
 To prevent mildew and molds from growing on the walls of your aging space, wipe down using a chlorine solution or other sanitizer that is adequate (Table 6-1: Guide to Sanitizers and proper dilutions).
 
 If there is evidence of molds or debris, first use a damp cloth or a mild detergent to remove any visible buildup. Make sure not to use excess sanitizer as this could import unfavorable odors and flavors to your aging space, and of course your cheese. 
+
+Remember, by the time you see mildew or mold, it has been there for a while. This is especially true for delicate cheeses such as camembert, which can get infected by mold/mildew.
+
+Some cheeses want a variety of molds, so you have to be careful not to remove the helpful molds, but you must clean more often if you want to keep the surface of the cheese very white.
+
+If the space is tightly sealed, you won't have problems with mice or rats, but you might get flies. Watch out for fly egg cases (they look like black, brown  or white grains of long-grain rice) being laid in nooks and crevices.
+
+In a large space, use fly strips or black light fly traps to help with pest control. 
+
+Cheese mites, though, can get into any place where cheese is being aged with a rind. More on that later.
+
+### Using a cheese trier/iron
+
+A `cheese trier`, or `cheese iron` is a tool for removing a core sample from a whole cheese, and for tapping the outside of a cheese to listen for air pockets.
+
+This tool allows you to check the progress of cheese without cutting into it.
+
+You can help make notes on flavor and texture changes that will greatly help you determine when a cheese is ready.
+
+As cheeses age, they might be bitter. Make notes on bitter phases as they occur and when they end, and this will help you decide on ideal aging lengths for each type of cheese.
+
+A core sample will also help determine when a blue cheese is ready to be wrapped or moved to a colder storage.
+
+Using the iron use to tap a cheese can help determine when eye development is adequate or when a cheese is suffering from early or late blowing (see Affinage Troubleshooting). And it's fun to turn cheese into a percussion instrument.
+
+#### How to core sample a cheese
+
+1. If the cheese is semisoft, pre-chill it to refrigeration temps
+2. Sanitize the trier and dry well. You may want to use a warm to hot sanitizing solution to help the trier more easily penetrate the cheese.
+3. Insert the trier about 2/3 of its length (if the cheese is large enough) or halfway through the diameter of the cheese.
+4. Rotate the trier in several complete rotations
+5. Tilt the handle back slightly, and slide the sample out of the cheese.
+6. Observer the sample for eyes, flaws, texture and aroma
+7. With a  sanitizing knife, cut a small portion from the tip of the sample
+8. Slide the trier with the cheese sample on it back into the hole and push from the rind side to seat the sample back into the cheese.
+9. Use a tiny bit of the cut sample to smear over the seams
+10. Return the cheese to aging, and note on the make sheet the date and results of the sampling.
+11. Analyze the sample for texture and flavor.
+
+## Finishing a Cheese
+
+The right choice for rind care is a matter of your individual goals.
+
+#### Vacuum Sealing, Clear Coating, and Waxing
+
+Cheeses aged with a  coating that prevents air from contacting the surface of the cheese are considered "rindless". 
+
+You should consider sealing your cheese with wax or by vacuum sealing if you cannot guarantee that the humidity in the aging environment will be ideal through the cheese's affinage.
+
+Some cheese snobs frown on sealing, but they are stupidheads, as this technique still makes great cheese.
+
+Cheese wax is made of a `paraffin` base (a by-product of petroleum production) with other additives to prevent cracking. Some cheesemakers use beeswax as a substitute. Beeswax works, but is more expensive and softer than cheese wax, and it imparts a lovely honey flavor to the cheese. 
+
+Vacuum sealing, while less traditional and less visually appealing, can be done as an alternative to waxing, which van be messy and painstaking.
+
+Vacuum sealers come in two varieties: smaller household units that will only handle smaller bags and pull the air form them, and large "chambered" units that create a vacuum within the chamber that seals the product between two layers of plastic.
+
+This larger units (Cryovac is the most well-known brand name) are much more effective and versatile, but of course more expensive. They are also excellent for packaging for sale later on.
+
+`Clear coating`, aka `cream wax` or `plastic coating` (brand name Paracoat) is another option and creates a more natural-rind look.
+
+`Clear coating` is a plastic polymer product that smells like glue, and is semipermeable, meaning the cheese will be able to breathe a little bit.
+
+Firstly it inhibits mold (if it has a mold inhibitor), and secondly serves as a primer that will help create a surface to which the wax will better adhere. Many commercial cheesemakers use the clear coat as the primary treatment of their rinds.
+
+Not all clear coats come with a mold inhibitor, and some come with coloring, so choose wisely.
+
+The scientific name of the mold inhibitor is `natamycin` (brand name Natamax, aka pimaricin). It is an anti fungal (or antimycotic) that is non-harmful to humans (only harmful to yeasts and molds) and is authorized for use in organic certified products.
+
+#### When to wax, Coat, or Seal
 

@@ -56,6 +56,14 @@ You can wash the curds as an emergency measure to slow `pH` development or to in
 
 6. How long has this brine been in use? If its over 6 months and still smells nice, consider putting it in a pot on the stove and pasteurizing it. If it doesn't smell so good, you should have caught that is question 2!! ;)
 
+<<<<<<< HEAD
 ##### Milk that is alkaline
 
 Milk that is alkaline is comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly alkaline. You can check for a high SCC count with an inexpensive test, such as the California Mastitis Test or PortaCheck.
+=======
+#### Questions when purchasing a wine cooler
+
+1. Does it have a fan? You don't want a fan.
+2. Can you remove the wine shelves and replace them with bakers racks?
+3. 
+>>>>>>> e0c2f853bdd1337dd4bc3fa8825db1ce0fd47c20

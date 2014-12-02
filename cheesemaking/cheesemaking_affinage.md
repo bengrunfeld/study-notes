@@ -104,7 +104,57 @@ The `psychrometer` does not need recalibrating, but needs the wick to be cleaned
 
 She also thinks they look cool.
 
-#### Cheeses with Special Needs
+### Cheeses with Special Needs
 
+All these needs will be discussed in the recipes section as well.
 
+#### High Humidity Needs
+
+Washed rind stinky cheeses and bloomy rinds need extra moisture during aging. Use plastic tubs or a shower-curtain to separate them from other cheeses, and give each space its own `hygrometer`.
+
+#### High Temp Needs
+
+Swiss mountain-type cheese (e.g. Emmental) with large eye formation need a warmer space (60F - 68F [16C - 20C]) for a 2-4 week period. You will need a separate space for this, i.e. its own wine cooler, chest, etc with its own thermostat.
+
+#### Aggressive mold issues
+
+Blue cheeses need to be made and stored completely separately from other cheeses, since their mold is so aggressive, even when another wheel has a rind. Remember, spores can inoculate the milk and bloom later, so total separation is needed.
+
+#### Lower temperature needs
+
+Emmental and blue cheese need a lower temp, so they may need to be stored separately.
+
+### Shelving
+
+Keep in mind the goals of shelving when selecting them: air circulation, the right amount of moisture, and a neutral surface that will not impart any off flavors, toxins, or other undesired elements. 
+
+#### Wood
+
+Wood is the historical ideal cheese-aging shelf for several reasons: 
+
+* it was all that was available for centuries
+* it helps maintain humidity without condensation
+* it can import its unique stamp of locality - *terroir* (French)
+
+If you are choosing wood, look for thick planks (2 inches is perfect) of tight-grained, pitch-free types of wood. This usually means hardwood without a lot of knots, aka 'clear'. 
+
+More on wood on `p. 83`, if you're interested.
+
+#### Plastic-coated wire shelving
+
+You can set cheeses directly on the plastic-coated wire racks of a refrigerator or on baking racks.
+
+It's a good idea to put down a mat of plastic mesh to help even out the pressure and reduce the chance of creating impressions from the shelving on your cheeses.
+
+#### Cheese closet or cellar
+
+If you have a walk-in aging room (closet or cellar), use freestanding shelving units made of epoxy-coated wire. You can use either mesh mats or wood laid on top of coated shelves. G's favorite is `MetroMax` shelving, which consists of a high-quality epoxy coated framework with snap-on plastic shelving for ease of cleaning.
+
+### Aging-space Cleaning and Housekeeping
+
+Aging rooms are humid and appealing to pests and rodents, and previous cheeses will leave residue behind that can be infected by bad bacteria.
+
+To prevent mildew and molds from growing on the walls of your aging space, wipe down using a chlorine solution or other sanitizer that is adequate (Table 6-1: Guide to Sanitizers and proper dilutions).
+
+If there is evidence of molds or debris, first use a damp cloth or a mild detergent to remove any visible buildup. Make sure not to use excess sanitizer as this could import unfavorable odors and flavors to your aging space, and of course your cheese. 
 

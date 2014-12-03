@@ -411,9 +411,134 @@ G uses an ozone machine for mildew prevention, air freshening and general sanita
 
 G' says it rid her aging room of mites. 
 
-#### Blowing
+#### Blowing 
 
+The term `blowing` refers to a cheese's developing gas in a manner that causes the cheese to swell or blow. (`p.96`)
 
+You can have `early` or `late` blowing, and they're both easy to correlate with the symptoms.
 
+##### Early Blowing
+
+`Early blowing` is most often caused by the presence of `coliform bacteria` or yeasts in the cheese milk. 
+
+In a soft, lactic acid-set cheese, the blowing manifests as a frothy, gassy curd.
+
+In a pressed or drained cheese, early blowing is seen as uncountable numbers of tiny round holes in the cheese or yeast eyes that are two to three times larger than the tiny eyes that appear within a day or so after pressing.
+
+You may only discover these at cutting.
+
+`Coliform eyes` are tiny and elliptical and will be shiny.  
+
+The most common cause of this type of contamination is **poor milk collection** and **poor production cleanliness**.
+
+Slow chilling of milk and poor acid development in the vat are also likely causes.
+
+Cheese with this defect should be **thrown out**. 
+
+##### Late Blowing
+
+`Late blowing` is most often caused by one or more bacteria from the `Clostridiaceae` family. Tetnus and botulism are also part of this family. `Clostridia` blowing creates a very easy-to-identify look in mature cheese. Besides swelling and doming, the cut cheese will reveal a spongelike look often accompanied by cracks and fissures.
+
+Cheese with this defect should also be **thrown out**. 
+
+There are 3 main subspecies of `clostridia` that cause `blowing`, each at different stages: 
+
+* one early in ripening (but later than `coliform` blowing) - `C. butyricum`
+* one at about a year - `C. tyrobutyricum`
+* and one after a year - `C. sporongenes`
+
+The prevention of each is the same. The feeding of poor-quality silage (fermented forages such as hay, corn, soybeans, and other feeds) to animals is linked to the presence of `clostridia` as these spore formers grow well when silage does not ferment properly. 
+
+For this reason, the feeding of silage is forbidden for the production of `Parmigiano Reggiano` and several other `Protected Designation of Origin (PDO)` cheeses.
+
+Teat sanitation at milking has recently been stuied as another prime time for preventing `clostridia` from contaminating the milk. 
+
+Cheeses whose curd is salted prior to pressing (e.g. cheddar) are less at risk for developing closing from `clostridium`.
+
+At the industrial scale, `nitrate` or `lysozym` can be added to inhibit growth of spore-forming bacteria.
+
+Another `late-blowing` bacteria can be `propionic acid bacteria (PAB)`. `PAB` is purposely added to Emmental to form eyes, but in other cheeses it is a problem.
+
+For home cheese making, prevention is usually a matter of pasteurizing (or for raw milk production the prevention of cross-contamination of `PAB` cultures with other cultures, equipment and milk).
+
+Another primary prevention method is maintaining temps at which `PAB` will not growL 55F (13C) and under.
+
+#### Cracks and Crevices
+
+Cracks in cheese can be on the surface of the rind, run throughout the cheese, or located only within the paste. 
+
+Superficial cracks in a pressed cheese are most often caused by low humidity in the aging room. If these develop early, it doesn't mean the entire cheese will be lost, but can mean a significant portion will have intrusion of mold.
+
+How much of the wheel is lost depends on how many mechanical eyes (openings) are in the cheese.
+
+If there are many, the mold and other contaminants will likely work their way through the entire wheel. 
+
+Don't confuse a crease from a cheesecloth with a try crack. Creases may become filled with molds but will remain superficial in nature.
+
+Cracks in non-pressed cheeses, such as mold-ripened varieties, can occur in places where curd does not knit properly during draining, or form a late-draining pocket of whey.
+
+To prevent these, make sure curd size, or layers, is even in the form and that temp during draining is optimal.
+
+You can briefly pierce the center of draining cheeses with a knife to help assis draining of any trapped whey.
+
+Crevices that run throughout a wheel usually occur when large hunks of curd are put tighter in a  form and do not knit properly. This can be from too-low temp at darning, too much initial pressure, or pressure that is too low during the last stages of pressing.
+
+#### Holes and Soft Spots
+
+Rinds can have a variety of issues with soft spots and holes. Brine or slating issues are common causes for softening ad so-called `rind rot` problems later in aging.
+
+If the salt content of the brine is inadequate or dry saluting is not thorough and even, that portion of the rind is susceptible to early invasion by molds and other organisms that will erode the rind. 
+
+The rind is also vulnerable to moisture from condensation, touching another cheese, or inadequate air circulation. Even some spilled salt on a rind will cause moisture to be drawn to the salt and cause a `soft spot`.
+
+#### Uninvited Fungi and Bacteria
+
+There is almost no limit to the number of fungi (mods and yeasts) and airborne or moisture borne bacteria that can inhabit an aging room. Fortunately, most are aesthetic issues, not food safety concerns. Here are several...
+
+##### Mildew
+
+A flat (non-fuzzy) black fungus, mildew is usually only a problem when the humidity in the environment is too high and the air exchange and movement too low. When this appears, check these above causes and use a light brine or vinegar moistened cloth to help kill the mold. The cheese will remain stained, but the mold should cease to grow.
+
+##### Furry Black/Brown Mold
+
+Furry black or brown mold (`mucor`) is probably one of the most common `problem` molds for cheeses. It is part of the `Mucoraceae` family and is also known as `poil de chat` (cat's fur). `Mucor` isn't a big problem for rinded aged cheeses, and can be controlled with brushing or brine wiping. It's a much bigger problem on white surface-ripened cheeses. 
+
+Make sure the cheese have dried sufficiently and that the conditions are correct.
+
+If you see a haze of tan, use a gloved sanitized hand to press it down before mold spores are spread. 
+
+Use a chlorine-dampened cloth (50 - 100 parts per million) and lightly touch the mold. Instead of chlorine, you can try using hydrogen peroxide at 3%-8%.
+
+Either way, you can rescue the cheese.
+
+##### White Flaking / Tan Pitting
+
+Initially you will see a white flaky growth and later a beige/tan growth that leaves craters and pits. The most likely culprit is `Scopulariopis brevicaulis`. At an early stage, it can be vigorously brushed and limited. Once it begins pitting, you cannot remove it. It isn't harmful, but you will lose quite a bit of rind. Mites will take advantage of this.
+
+##### Fuzzy Blue Mold
+
+Bloe molds are very aggressive. They need oxygen, so aren't usually a problem inside cheeses with well-closed rinds and a tight paste. Surface growing blues can be limited early by brushing or washing. In general, blues like a certain amount of salt and are find with vinegar, so brushing or wiping might work better than vinegar or brine washing.
+
+##### Red, Oragne, Pink, and White Smooth to Slimy
+
+Any number of surface bacteria can change the color, texture and aroma of a cheese. These are usually in the `corneyform bacteria`.
+
+##### Miscellaneous and Unusual
+
+Cheeses that are allowed to develop surface molds can show splotches of yellow, scarlet and purple. None of these colors is any indicator of `bad` molds or contamination, but if your cheese glows in the dark, or in the presence of a black light, `Pseudomnas fluorescns` is the culprit. It is a cold-loving bacteria that contaminates milk and can live in brine. 
+
+They usually only appear on the outside of cheeses, and are a bigger problem for soft cheese. Good sanitation, rapid chilling of milk and good brine maintenance are usually the best preventative measure.
+
+##### Botulism Concerns
+
+Botulism is sometimes fatal and is caused by the bacterium `Clostridium botulinum`. Botulism is rarely a concern in cheese production and consumption, but becomes a concern whenever plant matter is added.
+
+Fortunately, cheese is usually quite inhospitable environment for `C. Botulinum`. The acid, salt level, moisture level and storage temp all help prevent spores from germinating.
+
+The higher the moisture of the cheese, the greater the risk that spores will germinate.
+
+When adding herbs and spices, keep `C. botunlinum` in mind. This especially comes into play when marinating cheeses in oil or other anaerobic solutions as botulinum spores germinate only in an oxygen-free environment.
+
+For this reasons, such combinations should usually be stored at refrigeration temps - 38F (3C).
 
 

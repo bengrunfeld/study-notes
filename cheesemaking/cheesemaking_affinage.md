@@ -330,5 +330,90 @@ When the cheese rind has dried off, usually 1-2 weeks into aging, you can apply 
 
 New coats can be applied as needed when the cheese appears to be drying, when molds are present, or even if you simply feel like it. There are no set rules. After a few coats, you won't need to apply more oil as often and the rind should start developing some depth of color.
 
+Oiling can be combined with the application of other herbs, species or ingredients such as ash or cocoa. 
+
+#### Washed rinds
+
+`washed rinds` can really be divided into 2 categories of cheese: 
+
+* those that develop a sticky, reddish, smelly rind from the activity of surface bacteria 
+* those that are wiped or washed with other liquids to create a unique but firm and ultimately dry rind. 
+
+The red stinky variety is sometimes called `washed rind` cheese, which can cause some confusion.
+
+### Affinage Troubleshooting
+
+#### Problems with Waxed and Sealed Cheeses
+
+When you wax a cheese, everything is trapped under the wax, including mold spores and gas-producing bacteria.
+
+If mold grows under the wax and is minimal, you don't need to do anything. If mold growth is extensive, remove the wax, clean and dry the cheese and reapply the wax. A pre-coat of liquid clear coat with mold inhibitor might be helpful if the problem keeps reoccurring. 
+
+Be sure to alway clean the surface of the cheese before waxing with a vinegar solution.
+
+Make sure that the curd is sufficiently dry before waxing, otherwise the whey will be trapped under the wax, leading to blistering or a moist surface.
+
+Be careful when using gas-producing bacteria, as this can fill the cheese and the wax. 
+
+#### Cheese Mites
+
+For some cheesemakers, mites are a normal, expected and sometimes even desired part of the aging process, while for others, they are persona non grata.
+
+You know you have cheese mites in your aging room if you start seeing a dry, fine powder on the floor or surface of the cheeses. This `cheese dust` is composed of living and dead mites, bits of cheese, cheese rind, and mite excrement.
+
+If you start seeing plugs of loose rind and craters on the surface of your cheese, you know that you have a large, very successfully population of cheese mites.
+
+Cheese mites dig in an tunnel through the rind of unwaxed and otherwise unprotected aging cheeses, including bandage-wrapped cheddars.
+
+It is believed they may not be after the cheeses, but instead are eating the fungi (molds) on the cheeses, digging under the surface for the parts of the fungus that grow there. 
+
+It is even thought that the fungi and the mites have a symbiotic relationship - by eroding the surface, the mites help the molds find more area to grow.
+
+Generally, they only start work on cheese that is a couple of months old. 
+
+Cheeses that are being brine washed, rubbed with oil, or regularly brushed usually don't see evidence of mites until much later in their aging. 
+
+If rind treatment continues throughout aging, their activity is limited through the controlling of mold growth, as well as inhospitable surface that such treatments create for the mites.
+
+Early intervention is the key factor in getting them out of your aging room.
+
+Once the mites burrow under the surface of the cheese, it is almost impossible to get them out. They are protected.
+
+Brushing and vacuuming are mechanical means of limiting mites. If you are brushing, remove the cheeses from the aging room and brush them onto a damp floor or into a sink, so the dust sticks to the moist surface.
+
+Vacuuming can be done with a small vacuum that you keep just for this purpose. 
+
+Both brushing and vacuuming will need to be done very regularly to have much effect. 
+
+Mites seem to prefer a flat surface and darkness, so you will see more activity on the underside of the wheel that is aged on flat surfaces, vs the curved sides. Wheels that are aged on their curved sides seem to suffer a bit less damage. 
+
+Wood keeps mites dark and protected, and they can't fall off the wheel as easily.
+
+Chilling and freezing don't seem to have any effect on them.
+
+Waxing, clear coating and vacuum sealing will of course prevent infestation, but bandaging will not.
+
+Bandage-wrapped cheddars seem to have the biggest problem here.
+
+Fumigation of the aging room is no longer acceptable or allowed.
+
+jMany cheesemakers find the best remedy is to use food-grade `diatomaceous earth (DE)`. When dusted using a fine meshed sieve on the surface of the cheese, the `DE` dehydrates the mites, but this technique must be used early in the process, before the mites have burrowed underneath the surface.
+
+Use a mask when using `DE`. While not toxic, the powder is not good for your lungs.
+
+`Hydrogen Peroxide` can be used when mixed to a 10% wash, following vacuuming or before infestation occurs. This does not sound appetizing if your rinds are typically consumed by customers.
+
+Larger facilities are using ozone machines. Ozone (`o3`) attacks organic compounds, such as mold, yeast, phage and bacteria. Mites don't like the ozone, as it can kill them. 
+
+Since mold growth is also limited by ozone, the cheese surface becomes less appealing. 
+
+G uses an ozone machine for mildew prevention, air freshening and general sanitation in the cheese make room.
+
+G' says it rid her aging room of mites. 
+
+#### Blowing
+
+
+
 
 

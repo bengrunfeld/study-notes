@@ -105,5 +105,53 @@ Acid, at the right strength, plays two roles in the cheese make room:
 
 For the home cheese maker, it only needs to be used periodically to prevent the buildup of what is commonly called `milkstone`.
 
-`Milkstone` build up slowly as the minerals in milk are steadily deposited on surfaces. 
+`Milkstone` build up slowly as the minerals in milk are steadily deposited on surfaces. While most are rinsed away during cleaning, they are not all dissolved by the alkaline detergents and will eventually forma  residue on all surfaces, including plastic and stainless steel.
 
+The goal is to remove the minerals before you see the buildup by rinsing regularly with a strong acid solution.
+
+Initially, try using white vinegar for your rinse. If this is not sufficient, you will want to use an acid cleaner. If it works depends on how hard the water is. Hard water has higher levels of minerals.
+
+#### Brushes and Scrubbers
+
+You can use any type of scrub brush or scrubber, but don't use sponges, as they don't dry out between uses, and therefore are great habitats for bacteria.
+
+If you're using the green scrub pads, watch out that they don't leave green hairs in your equipment.
+
+### The Six Steps to Cleaning
+
+A good cleaning regimen consists of at least four steps: 
+
+* rinse
+* wash
+* acid rinse
+* pre-sanitize
+
+But lets go into more depth with the whole six steps.
+
+##### Step 1: Pre-rinse
+
+Immediately after using, rinse all equipment with luke warm water, about 100F (38C) to remove all visible milk and curd residues. This step is important to do before washing so the heat of the wash doesn't "cook" proteins onto the surfaces
+
+##### Step 2: Wash
+
+Fill the sink with very hot water and use detergent and a clean bristle brush and scrub pad to manually scour the surfaces of all equipment
+
+##### Step 3: Rinse
+
+Rinse with clean water. Some people like to use a sanitizing acid rinse at this stage.
+
+##### Step 4: Air-dry
+
+Allow all equipment to air dry between uses
+
+##### Step 5: Sanitize
+
+Just prior to use, sanitize all equipment by dipping in a food-surface-approved sanitizer. Most chemical sanitizers need 30 seconds of exposure to ensure proper killing of any residual germs. Alternatively, you can use hot water at 170F (77C) and immerse equipment for 5 minutes.
+
+##### Step 6: Acid Wash/Rinse
+
+An `acid wash` is done on a periodic basis to remove mineral deposits that are not completely removed during the daily cleaning process.
+
+An `acid rinse` (without cleaners) can be done daily instead of the stronger periodic `acid wash`. If you choose to do a daily rinse (G' prefers this), you can perform it either just following or in place of `Step 3: Rinse`.
+
+When doing periodic acid washes, the frequency will greatly depend on the amount of calcium and minerals in your water, as well as the frequency of cheesemaking. 

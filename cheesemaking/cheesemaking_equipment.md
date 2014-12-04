@@ -72,9 +72,38 @@ Keep rennet away from light, so wrap the bottle in foil if you need to.
 
 Use a hand-held vacuum sealer to remove air from culture storage containers, otherwise air and moisture might deactivate it.
 
+### Dealing with Rust on Stainless Steel
+
+Scrub the rusty area with steel wool as smoothly as possible, then treat the area with lemon juice, or another form of acid.
+
 ### Cleaning Chemicals
 
 Detergents are for cleaning, sanitizers are for sanitizing, and acids are for removing calcium deposits and sanitizing. 
 
+##### Detergents
 
+You will need hot water and physical exertion to do the job. Unscented is best. Use Dawn brand. 
+
+##### Sanitizers
+
+Sanitizers are used to eliminate any bacteria that scrubbing and washing might not have removed. They are meant to follow thorough cleaning 
+
+> You can't sanitize something that isn't clean
+
+Sanitizing can be done with heat or with chemicals.
+
+The most readily available sanitizer to use at home and in small creameries is often `chlorine`. It is available in the form of grocery store bleach. Quite often, too munch is used, leading to residue on equipment that can then lead to personal and equipment harm.
+
+If you're going to use `bleach`, buy some cheap `chlorine` dilution test strips. This ensures the proper amount of sanitizer is being used. Use them regularly.
+
+##### Acid Rinses
+
+Acid, at the right strength, plays two roles in the cheese make room:
+
+* a solvent of mineral deposits
+* a residual sanitizer
+
+For the home cheese maker, it only needs to be used periodically to prevent the buildup of what is commonly called `milkstone`.
+
+`Milkstone` build up slowly as the minerals in milk are steadily deposited on surfaces. 
 

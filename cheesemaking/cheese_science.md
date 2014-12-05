@@ -30,7 +30,7 @@ Fermentation is the process through which carbohydrates and sugars are broken do
 
 ##### Lactic Acid a.k.a. Lactate
 
-The term `lactate` is used interchangeably with `lactic acid` (i.e. `lactate` == `lactic acid`). It is not to be confused with the verb `lactate.`
+The term `lactate` is used interchangeably with `lactic acid` (i.e. `lactate` == `lactic acid`). It is not to be confused with the verb `lactate`.
 
 There are two variations of `lactic acid`, and it is the **starter culture** that can produce one or both of these types.
 
@@ -60,7 +60,7 @@ The role of Milk fat is to provide an appealing texture, well-rounded flavor, an
 
 Milk fat globules are surrounded by the `milk fat globule membrane` (aka `MFGM`), which contains most of the enzymes that occur naturally in milk, besides `lipase` which breaks down fats/lipids and does not exist in `MFGM`. Of course, if `lipase` existed in the `MFGM`, it would destroy the globule.
 
-The inside of the membrane contains the fats, mostly `triglycerides` (aka `tryaglycerols`). A glyceride is a glycerol molecule, which is the basic model for all fats, bonded to one, two or three fatty acids. Triclycerides (3 bonded fats) are the fats that make up most of the food oils and fats that we consume. 
+The inside of the membrane contains the fats, mostly `triglycerides` (aka `triglycerols`). A `glyceride` is a `glycerol` molecule, which is the basic model for all fats, bonded to one, two or three fatty acids. `Triglycerides` (3 bonded fats) are the fats that make up most of the food oils and fats that we consume. 
 
 ##### Creaming
 
@@ -68,11 +68,11 @@ Milk fat globules are less dense than the surrounding milk fluid, which causes t
 
 ##### Homogenization
 
-`Homogenization` is a mechanical process that aims to stop fat globules from `creaming`. It involves sending the milk under high pressure through a screen with openings smaller that the fat globules. Goat, sheep and buffalo milk are NOT naturally homogenized. They just don't have cryoglobulins, so `creaming` occurs **much** slower. Homogenized milk tends to not drain and lose whey during the draining process, making it a bad choice for some types of cheeses.
+`Homogenization` is a mechanical process that aims to stop fat globules from `creaming`. It involves sending the milk under high pressure through a screen with openings smaller that the fat globules. Goat, sheep and buffalo milk are NOT naturally homogenized. They just don't have `cryoglobulins`, so `creaming` occurs **much** slower. Homogenized milk tends to not drain and lose whey during the draining process, making it a bad choice for some types of cheeses.
 
 ##### Cold Storage of Milk 
 
-Cold storage of milk causes a loss of protein from inside the micelles into the liquid portion of the milk, where it is referred to as soluble protein. Mastitic milk from infected udders and colostrum (first milk excreted by a new mother) have higher levels of soluble protein making them bad for cheesemaking.
+Cold storage of milk causes a loss of protein from inside the `micelles` into the liquid portion of the milk, where it is referred to as soluble protein. Mastitic milk from infected udders and `colostrum` (first milk excreted by a new mother) have higher levels of soluble protein making them bad for cheesemaking.
 
 ##### Damaged Fats in Milk
 
@@ -108,11 +108,11 @@ Rennet contains an enzyme (e.g. chymosin) that splits/cleaves the chain of amino
 
 ##### Coagulating Milk Proteins Using Acid
 
-Coagulation can also be achieved using acid, which can be an added (e.g. Vinegar or Lemon Juice) or by the production of `lactic acid` by a starter culture. As the pH of milk drops close to `4.6`, Caseins lose their ability to repel each other. Calcium Phosphate which was formerly bonded within the micelle, becomes soluble in the acidic environment. All this produces a condition in which a Coagulum is formed, but it is different in texture and structure from a rennet-produced coagulum. 
+Coagulation can also be achieved using acid, which can be an added (e.g. Vinegar or Lemon Juice) or by the production of `lactic acid` by a starter culture. As the pH of milk drops close to `4.6`, Caseins lose their ability to repel each other. `Calcium Phosphate` which was formerly bonded within the micelle, becomes soluble in the acidic environment. All this produces a condition in which a Coagulum is formed, but it is different in texture and structure from a `rennet`-produced coagulum. 
 
 ##### The Development of Flavor in Cheese
 
-The process of breaking amino acid chains causes the development of flavor and texture in cheese.
+The process of breaking `amino acid chains` causes the development of flavor and texture in cheese.
 
 ##### Minerals in Milk
 

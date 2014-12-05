@@ -136,7 +136,7 @@ Sometimes you can stir the curd with a cheese ladle, but sometimes you'll need t
 
 Washed curd cheese has a portion of the whey removed during the cook phase. The same, or a lesser, volume of water is then added back into the vat. When whey is removed, a good portion of milk sugar is also removed, giving the starter bacteria a little less nourishment, thus slowing their growth and acid production. This lowered acid production helps the curd retain calcium, which will lead to a more pliable texture in the finished cheese.
 
-When water is added back into the vat, it keeps the volume of liquid the same so the curds can still move freely during stirring. It also allows more water to be absorbed into the crds (especially cool water added to warm curds), leading to higher moisture cheese. It can also help moderate the cooking of the curd. 
+When water is added back into the vat, it keeps the volume of liquid the same so the curds can still move freely during stirring. It also allows more water to be absorbed into the curds (especially cool water added to warm curds), leading to higher moisture cheese. It can also help moderate the cooking of the curd. 
 
 In general only 25% to 30% of the whey should ever be removed. 
 
@@ -182,9 +182,9 @@ Make sure you choose a form that is appropriate for the cheese you are making. M
 
 Soft, high-moisture curds will not need more than their own weight and the right room temp to drain and shape up, but the drier curds will need more pressure. 
 
-If the curd temp is over 75F (24C), the butterfat is less stable and mostly liquid, so you have to be careful not to squeeze the fat right out of it. If you see white greasy whey, you know you are using too much pressure. Alternatively, if the curds cool too much, they will repel each other and not knit well into a wheel - unless you apply the right amount of pressure. 
+If the curd temp is over `75F` (`24C`), the butterfat is less stable and mostly liquid, so you have to be careful not to squeeze the fat right out of it. If you see white greasy whey, you know you are using too much pressure. Alternatively, if the curds cool too much, they will repel each other and not knit well into a wheel - unless you apply the right amount of pressure. 
 
-Room temp also influences drainage. Generally a 72F (22C) room is ideal for draining most cheeses - it's just below the butterfat melting temp. 
+Room temp also influences drainage. Generally a `72F` (`22C`) room is ideal for draining most cheeses - it's just below the butterfat melting temp. 
 
 The room temp can be dropped later in pressing, once the goal shape and moisture level have been achieved, to slow acid development if needed. 
 
@@ -192,7 +192,7 @@ The room temp can be dropped later in pressing, once the goal shape and moisture
 
 The job of cheesecloth is not only to hold loose curds in the form, but to assist whey move to drainage holes in the mold. The fewer the holes, the more important this job becomes. If the cloth weave is too open for the texture of the curd, curd bits will plug the holes. It is important to prepare the cloth before placing the curd in the form. This is best done by rinsing the sanitized cloths with some warm whey from the vat. Doing this rinses chemicals away and puts the cloth at roughly the same `pH` as the curd. 
 
-Toward the very end of pressing, the cloths may be removed from some type sod cheeses so that any pattern from the form (e.g. basket weave form) can be embossed on the surface. 
+Toward the very end of pressing, the cloths may be removed from some `type sod?!?` cheeses so that any pattern from the form (e.g. basket weave form) can be embossed on the surface. 
 
 ##### How much pressure to use
 
@@ -200,7 +200,7 @@ As much as it takes. You need only apply as much pressure as it takes to attain 
 
 ##### Time and Temperature
 
-The time it takes to press a cheese is closely ties to the temperature of the cheese during pressing. The `pH` at the beginning of draining, compared to the goal `pH` at the end of draining, will influence how warm you will want the cheese to stay. The cooler the room, the slower the draining and the `pH` development. If you need to delay the time when the cheese needs to be moved to the brine (or otherwise salted), you can cool the room or move the cheese to a cooler location. 
+The time it takes to press a cheese is closely tied to the temperature of the cheese during pressing. The `pH` at the beginning of draining, compared to the goal `pH` at the end of draining, will influence how warm you will want the cheese to stay. The cooler the room, the slower the draining and the `pH` development. If you need to delay the time when the cheese needs to be moved to the brine (or otherwise salted), you can cool the room or move the cheese to a cooler location. 
 
 Re texture, if the cheese cools too rapidly, the curd will not knit as well and mechanical openings in the cheese will be more likely.
 
@@ -210,9 +210,9 @@ As a rule of thumb, 72F (22C) is an ideal room temperature during this phase
 
 Salt (`sodium chloride`, aka table salt) slows and halts acidification, assists with drainage, controls bacteria and mold growth, influences texture, and contributes to flavor. 
 
-The goal amounts of salt listed in the recipes are for pure sodium chloride. Sea and mined salts (i.e. regular table salts) often contain visible elements that are not desirable in your cheese. The texture of salts matter too. Rock and large crystal salts will not dissolve evenly. Extra fine ground slat is too fine for most cheeses and will dissolve and run off the cheese along with the whey.
+The goal amounts of salt listed in the recipes are for pure sodium chloride. Sea and mined salts (i.e. regular table salts) often contain visible elements that are not desirable in your cheese. The texture of salts matter too. Rock and large crystal salts will not dissolve evenly. Extra fine ground salt is too fine for most cheeses and will dissolve and run off the cheese along with the whey.
 
-The best texture for cheesemaking is flaked slat, such as you find in kosher salt. Some kosher salt contains an anti-caking agent that is not ideal for cheesemaking. The best brand of kosher salt to use is `Diamond Crystal` kosher salt, because it is completely free of additives. `Sonoma Kosher` is also good, and can be purchased through SaltWorks. If the recipe calls for fine slat, use canning salt (free of additives) or just grind kosher salt to be the desired texture. 
+The best texture for cheesemaking is flaked salt, such as you find in kosher salt. Some kosher salt contains an anti-caking agent that is not ideal for cheesemaking. The best brand of kosher salt to use is `Diamond Crystal` kosher salt, because it is completely free of additives. `Sonoma Kosher` is also good, and can be purchased through SaltWorks. If the recipe calls for fine salt, use canning salt (free of additives) or just grind kosher salt to be the desired texture. 
 
 #### Methods of Salting
 
@@ -228,7 +228,7 @@ Ideally, cheeses are put into the brine at the same temperature as the brine - u
 
 Just before placing wheels in the brine, it is a good idea to first agitate the solution to help ensure an equal distribution of minerals and contents. 
 
-Make sure there is enough room in the brine for the cheeses to float freely. Also, sprinkle dry salt on top of each cheese after it is floating in the brine. Otherwise, you should totally submerge the cease in the brine using a rack that presses them down into the brine - though this method can leave marks.
+Make sure there is enough room in the brine for the cheeses to float freely. Also, sprinkle dry salt on top of each cheese after it is floating in the brine. Otherwise, you should totally submerge the cheese in the brine using a rack that presses them down into the brine - though this method can leave marks.
 
 It is preferable to agitate the solution during brining, but this hasn't been seen to give a marked benefit.
 
@@ -256,7 +256,7 @@ If you aren't sure if your available water contains too much calcium, see if you
 
 ##### Maintaining Brine
 
-A well-maintained brine should keep its mineral and pH balance. Each cheese that is brined will lose whey and calcium into the solution. If you are consistently brining similar types of cheese, your brine is more likely to be stable. If you brine cheeses over a range of finished `pH` levels (e.g. feta - low pH, gouda - high pH) your brine will fluctuate.
+A well-maintained brine should keep its mineral and `pH` balance. Each cheese that is brined will lose whey and calcium into the solution. If you are consistently brining similar types of cheese, your brine is more likely to be stable. If you brine cheeses over a range of finished `pH` levels (e.g. feta - low pH, gouda - high pH) your brine will fluctuate.
 
 Routinely check the salt concentration and the pH.
 
@@ -290,7 +290,7 @@ Slimy ropey brine is not too common. If it occurs, it is usually not a food safe
 
 ##### Brine Maintenance Tips
 
-1. Do you see salt at the bottom? If not add more slat (at `55F - 13C`).
+1. Do you see salt at the bottom? If not add more salt (at `55F - 13C`).
 
 2. Does it smell nice or like strong cheese? If its too strong, its time to make some fresh
 

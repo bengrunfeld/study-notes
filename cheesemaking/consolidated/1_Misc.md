@@ -1,4 +1,4 @@
-# Consolidated: Tips
+# Consolidated: Misc Knowledge
 
 
 ### Calcium 
@@ -29,3 +29,12 @@ Most microbial rennet is produced by the microbe `Rhizomucor miehei`, aka `Mucor
 ### Salt 
 
 Salt (`sodium chloride`) slows down, then brings to a halt, the production of acid in cheese. Salt also helps draw whey out of the cheese. Salt also helps protect the outside of the cheese (salted or brined cheeses) by preventing mold and bacterial growth on the surface of the cheese. It also hardens the surface by dehydration, so that the cheese maintains its form.
+
+### How much culture do you need?
+
+A general rule of thumb is that 1 unit cultures 50 pounds (22 L) of milk, but this doesn't apply across the board.
+
+### Raw milk and starter culture
+
+If you are using raw milk, you only need to use about half the amount of starter culture that you'd use with pasteurized milk, because of the adventitious bacteria that already exist in raw milk that product acid.
+

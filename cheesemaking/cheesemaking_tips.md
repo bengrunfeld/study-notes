@@ -65,3 +65,28 @@ Milk that is `alkaline` comes from an animal that has mastitis - an udder infect
 1. Does it have a fan? You don't want a fan.
 2. Can you remove the wine shelves and replace them with bakers racks?
 3. 
+
+#### Standardization and The Balance of Protein and Fat
+
+As a commercial cheese producer, you may sometimes need to adhere to certain restrictions re protein-to-fat ration if you call your cheese a certain name.
+
+	# Formula for determining protein-to-fat ratio
+	# Divide protein percentage by fat percentage. E.g.
+	
+	Milk fat = 4.25
+	Protein = 3.25
+	3.25 / 4.25 = 0.76
+	Ratio = 0.76:1
+	
+
+#### Formula	for estimating cheese yield
+
+	# Semi-hard to hard cheese formula:
+	1.63 * (Fat % + Protein %) = Yield
+	
+	# Example
+	1.63 * (4.5 + 2.8)
+	= 11.899
+	= 11% yield
+
+Soft cheese yield will usually be 20 to 40 percent, depending on moisture content of the final product.

@@ -94,3 +94,10 @@ Soft cheese yield will usually be 20 to 40 percent, depending on moisture conten
 #### Brine Recipe
 
 In general, for each `gallon (4L)` of **water**, add `1 tablespoon (15 ml)` of **calcium chloride** (of a 32% premixed solution) and `1 teaspoon (5 ml)` **white vinegar**.
+
+#### Tips on pH standards
+
+You should attempt to measure and record pH under the same conditions. otherwise the numbers will not give you meaningful information.
+
+When you are developing goal pH readings, it is a good idea to record the curd temperature at the same time. Consistency is the key!
+

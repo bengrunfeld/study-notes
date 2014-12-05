@@ -140,7 +140,7 @@ Artificially orange cheddars use the natural pigment `Annatto` to achieve their 
 
 ##### Enzymes - The Heroes of Cheesemaking
 
-Enzymes are named after the substance they acto on and usually end with the suffix `ase`. `Lipases` are enzymes that break down `lipids`, aka fats. `Proteases` (aka proteinases) break down proteins. These two enzyme groups are the most important to cheesemakers. 
+Enzymes are named after the substance they act on and usually end with the suffix `ase`. `Lipases` are enzymes that break down `lipids`, aka fats. `Proteases` (aka proteinases) break down proteins. These two enzyme groups are the most important to cheesemakers. 
 
 `Lipase` is present in milk, and is called `native` or `milk lipase`. `Native milk lipase` is mostly destroyed by pasteurization, while `lipase` produced by microorganisms usually survives the heat treatment.
 
@@ -158,9 +158,9 @@ The second role of cultures is to die, as when this happens, their cell walls le
 
 Finally, cultures help create surfaces and textures that make cheeses unique. 
 
-The term `Cheese Culture` covers three main types of organisms - bacteria, yeasts and molds. 
+The term `Cheese Culture` covers three main types of organisms - `bacteria`, `yeasts` and `molds`. 
 
-Some of these are added to the milk (starter culture), some exist in the milk or enter it accidentally (native culture), and others are added at varying stages of the process (ripening cultures). 
+Some of these are added to the milk (`starter culture`), some exist in the milk or enter it accidentally (`native culture`), and others are added at varying stages of the process (`ripening cultures`). 
 
 ##### Starter Culture
 
@@ -189,7 +189,7 @@ The major harmful bacteria in raw milk are `Clostridia`, `Campylobacter`, `Staph
 
 ##### Beneficial Bacteria
 
-Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSLAB). NSLAB do not produce large amounts of acid, so they are not helpful as starter cultures, but they are considered highly beneficial and help raw milk cheeses develop unique flavor and ripen faster. Currently they are being developed commercially to be added back into milk.
+Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSLAB). `NSLAB` do not produce large amounts of acid, so they are not helpful as starter cultures, but they are considered highly beneficial and help raw milk cheeses develop unique flavor and ripen faster. Currently they are being developed commercially to be added back into milk.
 
 
 ##### Ripening Culture
@@ -198,7 +198,7 @@ Many native bacteria in milk are known as `nonstarter lactic acid bacteria` (NSL
 
 `Starter culture` gets the process going, but `ripening culture` are the bacteria, molds and yeasts that are added during aging and ripening. 
 
-An example of ripening culture is the white mold that produces Camembert and Brie.
+An example of ripening culture is the white mold that produces `Camembert` and `Brie`.
 
 NSLAB also serve as secondary ripening cultures, especially in raw-milk cheeses. 
 
@@ -207,9 +207,9 @@ NSLAB also serve as secondary ripening cultures, especially in raw-milk cheeses.
 Starter bacteria are grouped by several methods. 
 
 The most common is their ability to grow at certain temperatures.
-Another is their ability to break lactose down into one or more varieties of lactic acid. 
+Another is their ability to break `lactose` down into one or more varieties of `lactic acid`. 
 
-Those that can break lactose into more than one by-product are further divided by their ability to metabolize another milk component - `citrate` - at the same time into desirable by-products. 
+Those that can break `lactose` into more than one by-product are further divided by their ability to metabolize another milk component - `citrate` - at the same time into desirable by-products. 
 
 #### Phage - The Bane of Cheesemakers
 
@@ -253,7 +253,7 @@ Vegetarian-based lipase is not really available for artisan home-made cheese. It
 
 Every cheesemaker should have a supply of `calcium chloride`. 
 
-`Calcium Chloride` (CaCl2) is a clear, bitter, weakly acidic mineral salt usually sold in a properly diluted solution that is ready to use. 
+`Calcium Chloride` (`CaCl2`) is a clear, bitter, weakly acidic mineral salt usually sold in a properly diluted solution that is ready to use. 
 
 Calcium chloride is added to the milk before rennet, never after. 
 

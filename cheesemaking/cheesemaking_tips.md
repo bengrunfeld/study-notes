@@ -21,7 +21,7 @@ Here is a test using flocculation which checks if the milk is suitable for chees
 
 1. Mix 24 milliliters cool water with 1.25 milliliters double-strength rennet.
 2. Warm 1/4 cup milk to 92F (33C) in a clear measuring cup
-3. Add 10 milliliters of rennet mixture to warm milk wile swirling milk. 
+3. Add 10 milliliters of rennet mixture to warm milk while swirling milk. 
 4. Time the seconds it takes for small flocs to form on sides of measuring cup.
 
 If it takes more than 20 seconds to flocculate, there is an issue with the milk. 
@@ -44,11 +44,11 @@ You can wash the curds as an emergency measure to slow `pH` development or to in
 
 ##### Brine Maintenance Tips
 
-1. Do you see salt at the bottom? If not add more slat (at `55F - 13C`).
+1. Do you see salt at the bottom? If not add more salt. `55F` (`13C`).
 
 2. Does it smell nice or like strong cheese? If its too strong, its time to make some fresh
 
-3. Are there little chances of cheese floating on a white sludge at the bottom of the tank? If so, filter through a cheesecloth
+3. Are there little chunks of cheese floating on a white sludge at the bottom of the tank? If so, filter through a cheesecloth
 
 4. Have you added calcium chloride lately? If you use the brine frequently, you will need to refresh the calcium level periodically.
 
@@ -58,7 +58,7 @@ You can wash the curds as an emergency measure to slow `pH` development or to in
 
 ##### Milk that is alkaline
 
-Milk that is alkaline is comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly alkaline. You can check for a high SCC count with an inexpensive test, such as the California Mastitis Test or PortaCheck.
+Milk that is `alkaline` comes from an animal that has mastitis - an udder infection. Blood cells are forced into the milk, which are slightly `alkaline`. You can check for a high SCC count with an inexpensive test, such as the California Mastitis Test or PortaCheck.
 
 #### Questions when purchasing a wine cooler
 

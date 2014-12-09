@@ -1,8 +1,9 @@
 # Consolidated: Cheese Making Process
 
-### Room temp
 
+#### Room temperature
 
+The usual ideal temp during cheesemaking and draining is 70F - 72F (21C - 22C). Ideally, your cheesemaking space will be climate controlled.
 
 ### Starter Culture
 
@@ -135,3 +136,101 @@ Salt should be monitored using a `salometer` (also spelled `salinometer`), aka a
 There's an issue with how to read the `salometer`. If you want, read up on it on `p. 62`. 
 
 **Review Brine Maintenance Tips!**
+
+## Affinage
+
+### Temperature in the Aging Room
+
+The goal temp in an aging room, according to G, is `50F - 55F` (`10C - 13C`)
+
+### Humidity in the Aging Room
+
+There is a chart is Appendix C that gives you a table of bulb temps vs `RH`. Copy the table and keep it handy next to your `psychrometer`.
+
+The goal temp in an aging room, according to G, is `50F - 55F` (`10C - 13C`), so she watches for a `2.5F` difference between the bulbs.
+
+The `psychrometer` does not need recalibrating, but needs the wick to be cleaned once in a while and the reservoir of water to be refilled.
+
+### Keeping the aging space free from mold and pests
+
+To prevent mildew and molds from growing on the walls of your aging space, wipe down using a chlorine solution or other sanitizer that is adequate (Table 6-1: Guide to Sanitizers and proper dilutions).
+
+If there is evidence of molds or debris, first use a damp cloth or a mild detergent to remove any visible buildup. Make sure not to use excess sanitizer as this could import unfavorable odors and flavors to your aging space, and of course your cheese.
+
+Watch out for fly egg cases (they look like black, brown or white grains of long-grain rice) being laid in nooks and crevices.
+
+### Using a cheese trier/iron
+
+A `cheese trier`, or `cheese iron` is a tool for removing a core sample from a whole cheese, and for tapping the outside of a cheese to listen for air pockets.
+
+This tool allows you to check the progress of cheese without cutting into it.
+
+You can help make notes on flavor and texture changes that will greatly help you determine when a cheese is ready.
+
+As cheeses age, they might be bitter. Make notes on bitter phases as they occur and when they end, and this will help you decide on ideal aging lengths for each type of cheese.
+
+A core sample will also help determine when a blue cheese is ready to be wrapped or moved to a colder storage.
+
+Using the iron use to tap a cheese can help determine when eye development is adequate or when a cheese is suffering from early or late blowing (see `Affinage` Troubleshooting). And it's fun to turn cheese into a percussion instrument.
+
+#### How to core sample a cheese
+
+1. If the cheese is semisoft, pre-chill it to refrigeration temps
+2. Sanitize the trier and dry well. You may want to use a warm to hot sanitizing solution to help the trier more easily penetrate the cheese.
+3. Insert the trier about `2/3` of its length (if the cheese is large enough) or halfway through the diameter of the cheese.
+4. Rotate the trier in several complete rotations
+5. Tilt the handle back slightly, and slide the sample out of the cheese.
+6. Observer the sample for eyes, flaws, texture and aroma
+7. With a  sanitizing knife, cut a small portion from the tip of the sample
+8. Slide the trier with the cheese sample on it back into the hole and push from the rind side to seat the sample back into the cheese.
+9. Use a tiny bit of the cut sample to smear over the seams
+10. Return the cheese to aging, and note on the make sheet the date and results of the sampling.
+11. Analyze the sample for texture and flavor.
+
+### Dealing with Bad Mold on Cheese
+
+At the first signs of mold, take a cloth moistened in a light brine (solution of 1 tablespoon salt and 1 tablespoon vinegar [optional] to 1 cup of water) and gently rub the surface of the cheese. Be sure not to leave the surface of the cheese wet.
+
+### Brushing rinds
+
+One of the simplest ways to create a beautiful natural rind is to brush the rind periodically during aging. As with a bandaged rind, brushing does not eliminate the molds but instead limits their growth and "damage" to the rind.
+
+In the beginning, use a very soft brush to prevent damaging the still soft cheese. It is a good idea to have a minimum of two textures of brushes, one soft and one medium, to maintain brushed rinds.
+
+When brushing, take your clean, sanitized, bone-dry brush and gently which it across the surface of the cheese. Doing this over a sink or moist surface can help trap much of the mold spores and stop them being airborne.
+
+Continue to brush until the rind looks smooth. Never use a scrubbing or circular motion, but rather brush the mold off the cheese.
+
+The goal is to prevent the molds from growing so rampantly that they form a thick rind and attract cheese mites.
+
+Once done, the brush should be thoroughly washed, sanitized, and placed in a clean area to dry. You should have 2 pairs, just in case one is still drying. Never use these brushes on anything besides cheese.
+
+### The Six Steps to Cleaning
+
+##### Step 1: Pre-rinse
+
+Immediately after using, rinse all equipment with luke warm water, about `100F` (`38C`) to remove all visible milk and curd residues. This step is important to do before washing so the heat of the wash doesn't "cook" proteins onto the surfaces
+
+##### Step 2: Wash
+
+Fill the sink with very hot water and use detergent and a clean bristle brush and scrub pad to manually scour the surfaces of all equipment
+
+##### Step 3: Rinse
+
+Rinse with clean water. Some people like to use a sanitizing acid rinse at this stage.
+
+##### Step 4: Air-dry
+
+Allow all equipment to air dry between uses
+
+##### Step 5: Sanitize
+
+Just prior to use, sanitize all equipment by dipping in a food-surface-approved sanitizer. Most chemical sanitizers need 30 seconds of exposure to ensure proper killing of any residual germs. Alternatively, you can use hot water at 170F (77C) and immerse equipment for 5 minutes.
+
+##### Step 6: Acid Wash/Rinse
+
+An `acid wash` is done on a periodic basis to remove mineral deposits that are not completely removed during the daily cleaning process.
+
+An `acid rinse` (without cleaners) can be done daily instead of the stronger periodic `acid wash`. If you choose to do a daily rinse (G' prefers this), you can perform it either just following or in place of `Step 3: Rinse`.
+
+When doing periodic acid washes, the frequency will greatly depend on the amount of calcium and minerals in your water, as well as the frequency of cheesemaking. 

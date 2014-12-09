@@ -1,6 +1,6 @@
 # Affinage
 
-`affinage` is a French word the means ***the art of making cheese***.
+`affinage` is a French word the means ***the art of aging cheese***.
 
 A person who specializes in `affinage` is called an `affineur`.
 
@@ -10,7 +10,7 @@ A person who specializes in `affinage` is called an `affineur`.
 
 G started with a wine cooler for very small amounts of cheese. Then she upgraded to a modified refrigerator.
 
-Wine coolers are excellent for aging cheese - they keep the temperature at 50F - 57f (10C - 14C), which is perfect for cheese. Unlike most fridges, they don't have fans, so they also tend to keep more moisture in the air, which is also perfect for cheese.
+Wine coolers are excellent for aging cheese - they keep the temperature at `50F` - `57F` (`10C` - `14C`), which is perfect for cheese. Unlike most fridges, they don't have fans, so they also tend to keep more moisture in the air, which is also perfect for cheese.
 
 Get a wine cooler that stores 20 - 50 bottles. You can take the wine shelves out of the wine cooler and replace them with bakers racks.
 
@@ -98,7 +98,7 @@ G's favorite type of `hygrometer` is a `psychrometer`.
 
 There is a chart is Appendix C that gives you a table of bulb temps vs RH. Copy the table and keep it handy next to your `psychrometer`.
 
-The goal temp in an aging room, according to G, is 50F - 55F (10C - 13C), so she watches for a 2.5F difference between the bulbs.
+The goal temp in an aging room, according to G, is `50F - 55F` (`10C - 13C`), so she watches for a `2.5F` difference between the bulbs.
 
 The `psychrometer` does not need recalibrating, but needs the wick to be cleaned once in a while and the reservoir of water to be refilled.
 
@@ -114,7 +114,7 @@ Washed rind stinky cheeses and bloomy rinds need extra moisture during aging. Us
 
 #### High Temp Needs
 
-Swiss mountain-type cheese (e.g. Emmental) with large eye formation need a warmer space (60F - 68F [16C - 20C]) for a 2-4 week period. You will need a separate space for this, i.e. its own wine cooler, chest, etc with its own thermostat.
+Swiss mountain-type cheese (e.g. Emmental) with large eye formation need a warmer space (`60F - 68F` [`16C - 20C`]) for a 2-4 week period. You will need a separate space for this, i.e. its own wine cooler, chest, etc with its own thermostat.
 
 #### Aggressive mold issues
 
@@ -186,7 +186,7 @@ Using the iron use to tap a cheese can help determine when eye development is ad
 
 1. If the cheese is semisoft, pre-chill it to refrigeration temps
 2. Sanitize the trier and dry well. You may want to use a warm to hot sanitizing solution to help the trier more easily penetrate the cheese.
-3. Insert the trier about 2/3 of its length (if the cheese is large enough) or halfway through the diameter of the cheese.
+3. Insert the trier about `2/3` of its length (if the cheese is large enough) or halfway through the diameter of the cheese.
 4. Rotate the trier in several complete rotations
 5. Tilt the handle back slightly, and slide the sample out of the cheese.
 6. Observer the sample for eyes, flaws, texture and aroma
@@ -254,13 +254,13 @@ If it is a hot day and the room temp is above 70F (21C), wait until the room coo
 
 For hotter wax applications, clean the cheese as above, then chill thoroughly to refrigeration temps.
 
-If you are clear coating before waxing, the cheese can go back to agin g for another week or two before applying the hard wax. 
+If you are clear coating before waxing, the cheese can go back to aging for another week or two before applying the hard wax. 
 
 Waxing can be done over a large temp range, from low 120F (49C) to the more dangerous high temp of 220F (104C). The high temp method can scald the skin easily and is a fire risk, but it will kill mold spores on the surface of the cheese. 
 
 You can use a double boiler to melt wax or a recyclable aluminum foil tray and set on a very low direct heat.
 
-The best is a slow cooker, or crock-pot. This eliminates open flames, hot birders or the possibility of water splashing in.
+The best is a slow cooker, or crock-pot. This eliminates open flames, hot burners or the possibility of water splashing in.
 
 Once you are done, you can turn the unit off and let the wax harden inside.
 
@@ -473,19 +473,19 @@ How much of the wheel is lost depends on how many mechanical eyes (openings) are
 
 If there are many, the mold and other contaminants will likely work their way through the entire wheel. 
 
-Don't confuse a crease from a cheesecloth with a try crack. Creases may become filled with molds but will remain superficial in nature.
+Don't confuse a crease from a cheesecloth with a true crack. Creases may become filled with molds but will remain superficial in nature.
 
 Cracks in non-pressed cheeses, such as mold-ripened varieties, can occur in places where curd does not knit properly during draining, or form a late-draining pocket of whey.
 
 To prevent these, make sure curd size, or layers, is even in the form and that temp during draining is optimal.
 
-You can briefly pierce the center of draining cheeses with a knife to help assis draining of any trapped whey.
+You can briefly pierce the center of draining cheeses with a knife to help assist draining of any trapped whey.
 
-Crevices that run throughout a wheel usually occur when large hunks of curd are put tighter in a  form and do not knit properly. This can be from too-low temp at darning, too much initial pressure, or pressure that is too low during the last stages of pressing.
+Crevices that run throughout a wheel usually occur when large hunks of curd are put tighter in a  form and do not knit properly. This can be from too-low temp at draining, too much initial pressure, or pressure that is too low during the last stages of pressing.
 
 #### Holes and Soft Spots
 
-Rinds can have a variety of issues with soft spots and holes. Brine or slating issues are common causes for softening ad so-called `rind rot` problems later in aging.
+Rinds can have a variety of issues with soft spots and holes. Brine or salting issues are common causes for softening and so-called `rind rot` problems later in aging.
 
 If the salt content of the brine is inadequate or dry saluting is not thorough and even, that portion of the rind is susceptible to early invasion by molds and other organisms that will erode the rind. 
 

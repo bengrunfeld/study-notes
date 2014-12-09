@@ -37,13 +37,13 @@ Both these types are notoriously difficult to clean, especially the micro perfor
 
 Cheesecloth serves two purposes during draining.
 
-* it helps to keep the loose curd in a shape while it kings back together
+* it helps to keep the loose curd in a shape while it knits back together
 * it helps wick whey away tom the cheese toward drainage holes in the form
 
 It is important to choose the right fabric to properly drain the type of cheese 
 you are making.
 
-Follow this policy: The finer and softer the curd, the tighter the wave of the cloth should be.
+Follow this policy: The finer and softer the curd, the tighter the weave of the cloth should be.
 
 Don't buy from a supermarket, but from a proper cheesemaking supply company.
 
@@ -105,7 +105,7 @@ Acid, at the right strength, plays two roles in the cheese make room:
 
 For the home cheese maker, it only needs to be used periodically to prevent the buildup of what is commonly called `milkstone`.
 
-`Milkstone` build up slowly as the minerals in milk are steadily deposited on surfaces. While most are rinsed away during cleaning, they are not all dissolved by the alkaline detergents and will eventually forma  residue on all surfaces, including plastic and stainless steel.
+`Milkstone` build up slowly as the minerals in milk are steadily deposited on surfaces. While most are rinsed away during cleaning, they are not all dissolved by the alkaline detergents and will eventually form a residue on all surfaces, including plastic and stainless steel.
 
 The goal is to remove the minerals before you see the buildup by rinsing regularly with a strong acid solution.
 

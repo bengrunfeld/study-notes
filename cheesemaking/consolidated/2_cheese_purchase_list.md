@@ -60,3 +60,5 @@ G's favorite pH meter is the Oakton Acorn portable.
 * Unscented Dawn Dish soap (detergent) - $4
 * Hydrogen Peroxide (check!) - $
 * White Vinegar (acid rinse) - $4
+
+

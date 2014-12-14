@@ -4,8 +4,7 @@
 
 * [Calcium Chloride (`CaCl2`)](http://www.cheesemaking.com/calciumchloride.html) - $4.95
 * [Kosher Microbial Rennet](http://www.thecheesemaker.com/categories/Ingredients/Rennet/) - $11
-
-* Flora Danica by Chr. Hansen - 
+* Flora Danica by Chr. Hansen
 * MA 4000 by Choozit
 * Thermo B by Abiasa
 

@@ -2,11 +2,12 @@
 
 ### Ingredients
 
+* [Kosher Salt](http://www.amazon.com/Diamond-Crystal-Pure-Natural-Kosher/dp/B00I8V8PPK)
 * [Calcium Chloride (`CaCl2`)](http://www.cheesemaking.com/calciumchloride.html) - $4.95
 * [Kosher Microbial Rennet](http://www.thecheesemaker.com/categories/Ingredients/Rennet/) - $11
 
 * Flora Danica by Chr. Hansen - 
-* MA 4000 by Choozit
+* MA 4000 by Choozit`
 * Thermo B by Abiasa
 
 Purchase ten-unit package and then repackage them into smaller doses. This will save on costs.

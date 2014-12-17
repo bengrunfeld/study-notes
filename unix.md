@@ -167,10 +167,7 @@ Like in regular programming, you can break up commands, even if they are on the 
 
 ##Kernel and Shells
 
-**The Kernel** is the core of the Operating System in Unix. 
-It's what takes care of allocating time and memory to programs 
-It manages how programs do their thing
-Mac OS X uses the Mach Kernal inside Darwin to do that
+**The Kernel** is the core of the Operating System in Unix. It's what takes care of allocating time and memory to programs. It manages how programs do their thing. Mac OS X uses the Mach Kernel inside Darwin to do that.
 
 **The Shell** is the outer layer of the Operating System. That's what we see when we open up a terminal window. We're working in the shell. It interacts with the user and we can think of it as our working environment. The Shell will send requests to the Kernel, and results will then be returned to the shell.
 

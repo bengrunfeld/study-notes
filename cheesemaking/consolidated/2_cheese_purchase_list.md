@@ -5,9 +5,8 @@
 * [Kosher Salt](http://www.amazon.com/Diamond-Crystal-Pure-Natural-Kosher/dp/B00I8V8PPK)
 * [Calcium Chloride (`CaCl2`)](http://www.cheesemaking.com/calciumchloride.html) - $4.95
 * [Kosher Microbial Rennet](http://www.thecheesemaker.com/categories/Ingredients/Rennet/) - $11
-
-* Flora Danica by Chr. Hansen - 
-* MA 4000 by Choozit`
+* Flora Danica by Chr. Hansen
+* MA 4000 by Choozit
 * Thermo B by Abiasa
 
 Purchase ten-unit package and then repackage them into smaller doses. This will save on costs.
@@ -61,3 +60,5 @@ G's favorite pH meter is the Oakton Acorn portable.
 * Unscented Dawn Dish soap (detergent) - $4
 * Hydrogen Peroxide (check!) - $
 * White Vinegar (acid rinse) - $4
+
+

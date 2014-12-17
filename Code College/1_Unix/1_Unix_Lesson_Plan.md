@@ -6,7 +6,7 @@ Lesson 1 - Basics of Unix
 
 Unix is an operating system, created during 1969 - 1971 by AT&T employees at Bell Labs.
 
-C was developed for the Unix OS, and Unix was then rewritten in C.
+`C` was developed for the Unix OS, and Unix was then rewritten in `C`.
 
 Because of a court case, AT&T was forbidden from entering the software market, so while they weren't allowed to sell software, they were allowed to give it away for free.
 
@@ -76,8 +76,52 @@ These options are all available in Mac OS X, and date back to the 1970's, and in
 * bash: Bourne-Again Shell - 1987
 * zsh: Z Shell - 1990
 
-To check which Shell will be used to log you in
+**Useful commands:**
 
-	echo $SHELL
-
+	echo $SHELL  #tells you which shell will be used to log you in
+	echo $0	#tells you which shell you are currently in
 	
+## Directories and Files
+
+###File System Organization
+
+In a typical Unix organization, you have the following directories and folders:
+
+* `/` - Root of the Hard Drive
+
+Inside the Root, there is typically the following:
+
+* `/bin` - where binaries and programs are stored. These are Unix programs, not applications like Dreamweaver.
+* `/sbin` - are for system binaries and system programs
+* `/dev` - are where there are references and files for different devices like Keyboard, hard drives, mouse, etc
+* `/etc` - where system configurations go
+* `/home` - where user home directories go
+
+On most Unix systems when you log in, you'll be placed into a directory somewhere inside of `/home`. Not on Mac, but on most Unix systems.
+
+* `/lib` - is a place for storing Libraries of code that are referred to by various programs. 
+* `/tmp` - is for temporary files. Temp files are files that you won't really mind if someone comes in and deletes them
+* `/var` - is for various files that the system uses. 
+* `/usr` - where the user would put programs, tools and libraries. Not their files and documents; those live in the `/home` directory. These are programs that are for the user.
+
+* `/usr/bin`
+* `/usr/etc`
+* `/usr/lib`
+* `/usr/local` - these adhere to the same concepts above, just in the `use` directory.
+
+Most versions of Unix will adhere to this structure. They may add a folder or take away a folder, but it they'll mostly be the same. 
+
+The **working directory** is the directory where we are right now. When you issue commands, it's important to know what directory you're in, because that's where they'll happen.
+
+Dot files `.DS_Store` are called **hidden files** and are config files that are usually invisible in the File Finder
+
+When listing directories using `ls -lah`, the `d` at the beginning of the permissions means that it is a directory. The dash `-` means that it is a file. Also, you can sometimes have an `l` there, which means link, or shortcut.
+
+### Creating Files in Unix
+
+There are 3 main ways to create files in Unix.
+
+1. Unix text editors
+2. Direct output to file
+3. Touch 
+

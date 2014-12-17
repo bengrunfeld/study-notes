@@ -11,7 +11,7 @@ C was developed for the Unix OS.
 
 Because of a court case, AT&T was forbidden from entering the software market, so while they weren't allowed to sell software, they were allowed to give it away for free.
 
-That was very attractive to government, universities and corporations, because if they wrote to AT&T, they'd get a licence and the source code of the OS for free.
+That was very attractive to government, universities and corporations, because if they wrote to AT&T, they'd get a license and the source code of the OS for free.
 
 The most important of these were universities, because programming really began to take off in 1975, and when new students came to study computer science, the first thing they learned was Unix, so when the went on the found software companies in the 80's and 90's, they based a lot of what they made in Unix.
 
@@ -155,11 +155,11 @@ We can also have multiple arguments, such as
 
 Cat will print out what's in the file, and the `-n` option will print out line numbers.
 
-##Single Quotes or Double Quotes
+## Single Quotes or Double Quotes
 
 You can use single or double quotes. It doesn't matter to Unix.
 
-##Using Semi-Colons to Break Up Commands
+## Using Semi-Colons to Break Up Commands
 
 Like in regular programming, you can break up commands, even if they are on the same line, with a semi-colon `;`, and they will run one after another. E.g.
 
@@ -233,7 +233,7 @@ We can also use
 And it will print out the same thing. The only difference is that `whatis` doesn't do keyword searching, so if you do `whatis ban`, it will return nothing.
 
 
-##Directories & Files
+## Directories & Files
 
 The working is the directory where we are right now. When you issue commands, it's important to know what directory you're in, because that's where they'll happen.
 
@@ -280,44 +280,37 @@ The `d` at the beginning of the permissions means that it is a directory. The da
 
 `cd -` - takes you to the previous directory that you were in.
 
-###File System Orgranization
+### File System Organization
 
 In a typical Unix organization, you have the following directories and folders:
 
-**/** - Root of the Hard Drive
+* `/` - Root of the Hard Drive
 
 Inside the Root, there is typically the following:
 
-**/bin** - where binaries and programs are stored. These are Unix programs, not applications like Dreamweaver.
+* `/bin` - where binaries and programs are stored. These are Unix programs, not applications like Dreamweaver.
+* `/sbin` - are for system binaries and system programs
+* `/dev` - are where there are references and files for different devices like Keyboard, hard drives, mouse, etc
+* `/etc` - where system configurations go
+* `/home` - where user home directories go
 
-**/sbin** - are for system binaries and system programs
+On most Unix systems when you log in, you'll be placed into a directory somewhere inside of `/home`. Not on Mac, but on most Unix systems.
 
-**/dev** - are where there are references and files for different devices like Keyboard, hard drives, mouse, etc
+* `/lib` - is a place for storing Libraries of code that are referred to by various programs. 
+* `/tmp` - is for temporary files. Temp files are files that you won't really mind if someone comes in and deletes them
+* `/var` - is for various files that the system uses. 
+* `/usr` - where the user would put programs, tools and libraries. Not their files and documents; those live in the `/home` directory. These are programs that are for the user.
 
-**/etc** - where system configurations go
-
-**/home** - where user home directories go
-
-On most Unix systems when you log in, you'll be placed into a directory somewhere inside of **/home**. Not on Mac, but on most Unix systems.
-
-**/lib** - is a place for storing Libraries of code that are referred to by various programs. 
-
-**/tmp** - is for temporary files. Temp files are files that you won't really mind if someone comes in and deletes them
-
-**/var** - is for various files that the system uses. 
-
-**/usr** - where the user would put programs, tools and libraries. Not their files, the User's files live in their **/home** directory. These are programs that are for the user.
-
-**/usr/bin**
-**/usr/etc**
-**/usr/lib**
-**/usr/local** - as above
+* `/usr/bin`
+* `/usr/etc`
+* `/usr/lib`
+* `/usr/local` - these adhere to the same concepts above, just in the `use` directory.
 
 Most versions of Unix will adhere to this structure. They may add a folder or take away a folder, but it they'll mostly be the same. 
 
 Mac is different though.
 
-###Naming Files
+### Naming Files
 
 Rules of Unix File Naming:
 
@@ -331,7 +324,7 @@ Rules of Unix File Naming:
 8. File extensions (.txt, .php, .html) are not necessary but are very helpful
 9. Can't name a file `.` or `..` and shouldn't name any file a Unix command, e.g. `echo.txt`
 
-###Creating Files in Unix
+### Creating Files in Unix
 
 There are 3 main ways to create files in Unix.
 
@@ -339,16 +332,13 @@ There are 3 main ways to create files in Unix.
 2. Direct output to file
 3. Touch  
 
-.
+#### Touch
  
 	touch filename.txt
 
 What `touch` does is that it reaches out to a file, and if it exists, it touches it and updates its access time. If it doesn't exist, it creates it for us. 
 
-But if you `touch` a file or directory that exists, it will update the time at which it was accessed last.
-
-
-##Using Text Editors
+#### Using Text Editors
 
 In the beginning, developers working on Unix used to use a text editor called "ed", which is short for editor, and is not user-friendly.
 
@@ -364,7 +354,7 @@ A better editor for beginners was pico (pine composer), which lager became nano 
 If you type pico into your mac, it will put you into nano.
 
 
-##Reading Files
+##	Reading Files
 
 Yes, you can nano to read file, but there are other tools in Unix that are JUST for reading files. 
 
@@ -384,7 +374,7 @@ Here are some tools to read files:
 
 `less -N filename.txt` - shows you line numbers
 
-###Reading portions of files
+### Reading portions of files
 
 `head` - displays lines from beginning of a file (default: first 10 lines)
 
@@ -408,7 +398,7 @@ Or to see the error log, use:
 
 	tail -f /var/log/apache2/error_log
 	
-##Creating Directories
+## Creating Directories
 
 To create directories, use:
 
@@ -424,7 +414,7 @@ But if you create a directory 2 levels deep, it will create 2 directories. So in
 
 You can also pass in the `-v` option, which stands for **verbose**. Using this will print to the screen a report of which directories were created.
 
-###Copying Files and Directories
+### Copying Files and Directories
 
 To copy a file, use:
 
@@ -444,7 +434,7 @@ Copying directories works the same way, except with one difference. You need to 
 
 Sometimes `-r` will work as well, but you should really use `-R`.
 
-###Moving and Renaming Files and Directories
+### Moving and Renaming Files and Directories
 
 To move a file, use:
 
@@ -549,13 +539,13 @@ The hard link doesn't even have to have a file extension.
 
 ###Symbolic Links
 
-Also know as **sym links**. To create a symbolic link, use:
+Also know as `symlinks`. To create a symbolic link, use:
 
 	ln -s filetolink symlink
 	
 The difference between hard links and symbolic links is that symbolic links reference the path to the file. Not the file itself.
 
-So sym links are more interested in the directory the file is in.
+So `symlinks` are more interested in the directory the file is in.
 
 Will break if moved. Will break if deleted.
 
@@ -597,7 +587,7 @@ And there are many other options you can feed in. If you don't want something th
 	find ~/Documents -name 'git_notes.*' -and -not -path *notes*
 
 
-##File Ownership and Priveledges
+##File Ownership and Privileges
 
 Because Unix is designed to be a multi user system, it would not make sense if all users has all permissions to everyone elses files.
 

@@ -5,7 +5,7 @@ Completed: 18/6/2012
 Sources: Nearly all the content in this tutorial was learned from the Lynda tutorial series “HTML5: Structure, Syntax, and Semantics with James Williamson”, with many excerpts coming from the W3.org HTML5 Spec Author view.
 
 
-Introduction
+## Introduction
 
 HTML5 is the latest revision of HTML, and is designed to allow the creation of richer, more semantic code. It also addresses how modern web applications are created.
 
@@ -22,12 +22,12 @@ So it is very hard to create a system around this, as there is very little meani
 
 
 
-HTML5 Spec Author View - Edition for Web Authors
+## HTML5 Spec Author View - Edition for Web Authors
 
 http://dev.w3.org/html5/spec-author-view/
 
 
-Backwards Compatibility
+## Backwards Compatibility
 
 You can still use classes and ID's with HTML5 tags.
 
@@ -37,8 +37,8 @@ End users won't see the difference between HTML4 and HTML5 - but browsers do!
 That's the whole point of HTML5 - making your code more accessible to browsers and readers.
 
 
-Document Type Declaration:
---------------------------
+## Document Type Declaration:
+
 Tells browser agents which set of parsing rules to use based on the document type.
 
 HTML5 is considered a living standard, which is why we don't need a version number. We also don't need a document type declaration URL.
@@ -49,15 +49,15 @@ In fact, we don't even really need the doctype, but for backwards compatability 
 	<!doctype html>
 
 	
-Language:
----------
+## Language:
+
 <html lang="en">
 
 We've authoring this in English, so we've passed along English as the authoring language (lang="en"). It's optional to pass this to the browser, but it's a good idea, so that any user agent knows which language you're using.
 
 
-Character Encoding:
--------------------
+## Character Encoding:
+
 Typically when an HTTP header is sent, the character encoding is sent along with it, but sometimes this doesn't happen, so it's always helpful to do that in the head of your HTML file.
 
 In XHTML, this was done in the meta tag. 
@@ -69,13 +69,13 @@ In XHTML, this was done in the meta tag.
 That's it!
 
 
-HTML5 Syntax Rules:
--------------------
+## HTML5 Syntax Rules:
+
 
 In XHTML, the following rules applied:
 	-tags all needed to be in lower case
 	-attributes must be in quotation marks
-	-tags that don't contain content need to be self-closing e.g. <br />
+	-tags that don't contain content need to be self-closing e.g. `<br />`
 
 This was driven by XML syntax.
 
@@ -91,39 +91,38 @@ Remember, HTML5 and HTML is just a mark-up language, not an authoring language. 
 
 If you pass multiple values as an attribute, you need quotation marks. 
 
-Booleans:
----------
+## Booleans:
+
 You can now use booleans in HTML5, and the presence of the attribute name indicates that it is TRUE.
 
 e.g.1 
-<div id="bar" hidden="hidden">
+`<div id="bar" hidden="hidden">`
 uses the new hidden attribute in HTML5
 
 
 e.g.2
-<div id="bar" hidden>
+`<div id="bar" hidden>`
 just the presence of the attribute confirms that the attribute is TRUE
 
 
-Links and Mime Types:
----------------------
-In <link>, we don't need to use type="text/css"
+## Links and Mime Types:
 
-In <script>, javascript is assumed, so we don't need to use type="text/javascript". Although, if you're using any other type of scripting language, you need to pass the type value.
+In `<link>`, we don't need to use type="text/css"
 
-Void Tags:
-----------
+In `<script>`, javascript is assumed, so we don't need to use `type="text/javascript"`. Although, if you're using any other type of scripting language, you need to pass the type value.
+
+## Void Tags
+
 Some tags in HTML are considered void - meaning they can never contain any content.
-e.g. <meta />, <link />, <br />
+e.g. `<meta />`, `<link />`, `<br />`
 
 In HTML5, you don't need to self-close a tag.
-e.g. <meta>, <link>, <br>
+e.g. `<meta>`, `<link>`, `<br>`
 
-e.g. 
-<link rel="stylesheet" href="theme.css">
+e.g. `<link rel="stylesheet" href="theme.css">`
 
-HTML5 STRUCTURAL ELEMENTS:
-==========================
+
+## HTML5 STRUCTURAL ELEMENTS
 
 HTML5 has a whole new set of Content Models
 
@@ -134,8 +133,8 @@ In http://dev.w3.org/html5/spec-author-view/, if you go into a particular elemen
 	Note: tells you what the element is intended to be used for
 	
 
-The Header Element:
--------------------
+#### The Header Element
+
 Headers can't contain headers or footers
 
 Note: A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), but this is not required. The header element can also be used to wrap a section's table of contents, a search form, or any relevant logos.
@@ -144,10 +143,8 @@ Note: The Header element is not Sectioning Content
 
 You can use the Header element as many times as you need in your document. It's not just a single use tag.
 
+#### The Nav Element
 
-
-The Nav Element:
-----------------
 The nav element allows you to group and identify site navigation.
 
 The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links.
@@ -158,19 +155,16 @@ User agents (such as screen readers) that are targeted at users who can benefit 
 
 A nav element can contain more than just links. Can contain <h1-5> tags, <ul>, <li> and others.
 
+#### The Section Element
 
-
-
-The Section Element:
---------------------
 Categories: Flow content.
 			Sectioning content.
 			Palpable content.
 
 Contexts in which this element can be used: Where flow content is expected.
 Content model: Flow content.
-Content attributes: Global attributes
-----
+
+##### Content attributes: Global attributes
 
 Main Explanation: The Section Element represents a THEMANTIC GROUPING OF CONTENT.
 
@@ -184,17 +178,16 @@ The section element is not a generic container element. When an element is neede
 
 You can have articles inside of sections, sections inside of articles, sections inside of sections.
 
+#### The Article Element:
 
-The Article Element:
---------------------
 Categories: Flow content.
 			Sectioning content.
 			Palpable content.
 			
 Contexts in which this element can be used: Where flow content is expected.
 Content model:Flow content.
-Content attributes: Global attributes
-----
+
+##### Content attributes: Global attributes
 
 The article element represents a self-contained composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
 
@@ -205,16 +198,16 @@ Author information associated with an article element (q.v. the address element)
 When used specifically with content to be redistributed in syndication, the article element is similar in purpose to the entry element in Atom. [ATOM]
 
 
-The Aside Element:
-------------------
+#### The Aside Element:
+
 Categories: Flow content.
 			Sectioning content.
 			Palpable content.
 			
 Contexts in which this element can be used: Where flow content is expected.
 Content model: Flow content.
-Content attributes: Global attributes
-----
+
+##### Content attributes: Global attributes
 
 The aside element represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Such sections are often represented as sidebars in printed typography.
 
@@ -225,15 +218,15 @@ It's not appropriate to use the aside element just for parentheticals, since tho
 IMPORTANT: The placement of the <aside> element dramatically affects it's meaning, so if you use it directly on the <body> element, then it's content should related directly to the entire page. It's designed to contain content that's directly related to the content surrounding it.
 
 
-The Footer Element:
--------------------
+#### The Footer Element:
+
 Categories: Flow content.
 			Palpable content.
 
 Contexts in which this element can be used: Where flow content is expected.
 Content model: Flow content, but with no header or footer element descendants.
-Content attributes: Global attributes
-----
+
+##### Content attributes: Global attributes
 
 The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.
 
@@ -248,13 +241,12 @@ When the nearest ancestor sectioning content or sectioning root element is the b
 The footer element is not sectioning content; it doesn't introduce a new section.
 
 
-CONTENT MODELS:
-===============
+## CONTENT MODELS
 
 Each element in HTML falls into zero or more categories that group elements with similar characteristics together. The following broad categories are used in this specification:
 
 Metadata content: is content that sets up the presentation or behavior of the rest of the content, or that sets up the relationship of the document with other documents, or that conveys other "out of band" information.
-e.g. <link>, <meta>, <title>, <script>
+e.g. `<link>`, `<meta>`, `<title>`, `<script>`
 
 Flow content: Most elements that are used in the body of documents and applications are categorized as flow content.
 
@@ -297,19 +289,19 @@ Interactive content: is content that is specifically intended for user interacti
 a, audio (if the controls attribute is present) button, details, embed, iframe, img (if the usemap attribute is present), input (if the type attribute is not in the hidden state), keygen, label, menu (if the type attribute is in the toolbar state) object (if the usemap attribute is present), select, textarea, video (if the controls attribute is present)
 
 
-The Hidden Attribute:
----------------------
+## The Hidden Attribute:
+
 The hidden attribute is a new attribute in HTML5, and hides the content of the page until you establish it later with scripting.
 
 e.g. <div hidden>
 
 
-HTML5 DOCUMENT STRUCTURE:
-=========================
-It's important to create a document that has correct structure, because that makes it easier to syndicate and makes it more accessable. 
+## HTML5 DOCUMENT STRUCTURE:
 
-Outline Algorithm as a Table of Contents:
------------------------------------------
+It's important to create a document that has correct structure, because that makes it easier to syndicate and makes it more accessible. 
+
+#### Outline Algorithm as a Table of Contents:
+
 One way to picture the outline alogrithm that HTML5 uses is to imagine your page as a table of contents. 
 
 In a typical table of contents, you'd list the most important sections as individual items, and then list interior sections nested within them.
@@ -325,32 +317,32 @@ Chemistry............10
 		Hydrogen.....14
 		
 
-Outline Algorithm Parsing:
---------------------------
+#### Outline Algorithm Parsing
+
 	-Section and Heading content is used to define the outline
 	-Body is established as the outline root
 	-Items are added to the outline as sectioning content is found
 	-If the section contains a heading, the heading is used to name a section
 	-Since sections are treated as containers, any new sections created within an existing one are nested in the outline
 	
-What elements create a new section:
------------------------------------
+#### What elements create a new section
+
 	<article>, <aside>, <section>, <nav>, <h1-6>
 	
 Their use should be restricted to when you intend to create a new section in your document.
 
 
-Parsing Headings:
------------------
+#### Parsing Headings
+
 The first heading content element in a section is used to define a heading for that section. After that, any additional headings will create new nested headings based on their ranks.
 
 
-HTML5 Outlines:
----------------
+#### HTML5 Outlines
+
 There are 2 things that can create sections within your document - sectioning content (section, article, aside, nav) and headings. 
 
 A GREAT free tool to use for this is the HTML5 Outliner Tool:
-http://gsnedders.html5.org/outliner/
+[http://gsnedders.html5.org/outliner/](http://gsnedders.html5.org/outliner/)
 
 You may ask, why do I have to pay so much attention to the fact that the HTML5 Outline is correct, even when it looks fine in a browser.
 
@@ -359,19 +351,19 @@ Because not only humans read your site. Automatic outline generation is very imp
 Remember, the body tag counts as an initial section.
 
 
-Using Headings With Sectioning Content:
----------------------------------------
+#### Using Headings With Sectioning Content:
+
 In HTML5, we have a lot more flexibility with the use of headings. With older versions of HTML, we only wanted one h1 tag per page. Now, each section can have it's own internal hirarchy of headings. So you can use an h1 in each section. 
 
 Remember: Div tags don't create sections, but heading tags do.
 
-e.g. 1 <div><h3>New section</h3></div>
+e.g. 1 `<div><h3>`New section`</h3></div>`
 will create a new section
 
-e.g. 2 <div><p>Doesn't Create New Section</p></div>
+e.g. 2 `<div><p>`Doesn't Create New Section`</p></div>`
 will NOT create a new section
 
-If you have 3 <h1>'s at the root level, they will appear as 
+If you have three `<h1>`'s at the root level, they will appear as 
 
 1. Title1
 2. Title2
@@ -379,9 +371,9 @@ If you have 3 <h1>'s at the root level, they will appear as
 
 But if you have 
 
-<h1>Title1</h1>
-<section><h1>Title2</h1></section>
-<section><h1>Title2</h1></section>
+	<h1>Title1</h1>
+	<section><h1>Title2</h1></section>
+	<section><h1>Title2</h1></section>
 
 Then that will render as 
 
@@ -392,9 +384,9 @@ Then that will render as
 
 Although, if you have 
 
-<h1>Title1<h1>
-<h2>Title2</h2>
-<h2>Title3</h2>
+	<h1>Title1<h1>
+	<h2>Title2</h2>
+	<h2>Title3</h2>
 
 Then that will render in exactly the same way - as so:
 
@@ -404,24 +396,23 @@ Then that will render in exactly the same way - as so:
 	
 So it's up to you how to structure the document.
 
-In HTML, you could only use one <h1> tag.
+In HTML, you could only use one `<h1>` tag.
 
-In HTML5, we have a whole new set of rules, and these individual sections have their own distinct heirarchy apart from the page. This means that it's possible/desireable to use more than one <h1> on a page.
+In HTML5, we have a whole new set of rules, and these individual sections have their own distinct heirarchy apart from the page. This means that it's possible/desireable to use more than one `<h1>` on a page.
 
-
- <h1>Explore Cali</h1>
-<section>
- <h1>Our Tours</h1>
-  <h2>Backpack Cali</h2>
-  <h2>Cycle Cali</h2>
-</section>
-<section>
- <h1>Tour Reviews</h1>
-  <h2>Firebreak Trail</h2>
-  <h3>Bonzai Trail</h3>
-  <h3>Lower Loop</h3>
-</section>
-<h2>Monthly Sections</h2>
+	<h1>Explore Cali</h1>
+	<section>
+	<h1>Our Tours</h1>
+	<h2>Backpack Cali</h2>
+	<h2>Cycle Cali</h2>
+	</section>
+	<section>
+	<h1>Tour Reviews</h1>
+	<h2>Firebreak Trail</h2>
+	<h3>Bonzai Trail</h3>
+	<h3>Lower Loop</h3>
+	</section>
+	<h2>Monthly Sections</h2>
 
 The above code will create the following structure:
 
@@ -435,17 +426,17 @@ The above code will create the following structure:
 			2. Lower Loop
 	3. Monthly Sections
 
-Notice how the <h2> at the bottom enjoys the exact status of the <h1>'s nested inside the sections. This means you have a lot of lee-way on how you want to structure your document, as you can either use a lower <h> tag by itself, or a higher <h> tag nested inside a sectioning element.
+Notice how the `<h2>` at the bottom enjoys the exact status of the `<h1>`'s nested inside the sections. This means you have a lot of lee-way on how you want to structure your document, as you can either use a lower `<h>` tag by itself, or a higher `<h>` tag nested inside a sectioning element.
 
-Because <header> and <footer> are not sectioning content, if you use these tags but  want them to appear in the document outline, you need to use a heading tag <h1-6>. But you have to be careful which <h> tag you use, because that will determine how close to the document root it appears in the outline.
+Because `<header>` and `<footer>` are not sectioning content, if you use these tags but  want them to appear in the document outline, you need to use a heading tag `<h1-6>`. But you have to be careful which `<h>` tag you use, because that will determine how close to the document root it appears in the outline.
 
 EXERPT: Sections may contain headings of any rank, but authors are strongly encouraged to either use only h1 elements, or to use elements of the appropriate rank for the sections nesting level.
 
 What that means is you've got to come up with 
 
 
-The <hgroup> Element:
----------------------
+#### The <hgroup> Element
+
 The <hgroup> element allows us to group related heading content together overriding the normal sectioning rules.
 
 It belongs to Heading Content, and can only contain h1, h2, h3, h4, h5, h6
@@ -456,32 +447,32 @@ For the purposes of document summaries, outlines, and the like, the text of hgro
 
 So if you have 
 
-<h1>Our page</h1>
-<h2>Salesy Tagline</h2>
+	<h1>Our page</h1>
+	<h2>Salesy Tagline</h2>
 
 The salesy tagline will appear in the document outline - which we don't want
 
 To solve this, we use the hgroup tag, as follows
 
-<hgroup>
-<h1>Our page</h1>
-<h2>Salesy Tagline</h2>
-</hgroup>
+	<hgroup>
+		<h1>Our page</h1>
+		<h2>Salesy Tagline</h2>
+	</hgroup>
 
 Now all that will appear in the document outline will be the <h1>
 
 It doesn't matter which order the <h> tags are in inside the <hgroup> tag, so the <h1> can be the 3rd tag, and it doesn't matter. It will still appear as the heading of the section, since it is the highest heading.
 
-Remember, hgroup can ONLY handle headings.
+Remember, `<hgroup>` can ONLY handle headings.
 
 
-Correctly Nesting Inside the Outline Structure:
------------------------------------------------
+#### Correctly Nesting Inside the Outline Structure:
+
 If you're having trouble creating a the structure you intended by only using <h> tags, you need to use sectioning content (section, article, nav, aside) to group your content and headings. This allows you the flexibility of interupting the outline, where just using <h> tags wouldn't.
 
 
-Sectioning Roots:
------------------
+#### Sectioning Roots
+
 Sectioning roots contain their own internal outline but that outline is not added to any ancestor or parent elements outline.
 
 Essentially, the contents of sectioning roots are hidden from the rest of its parent elements outline.
@@ -489,8 +480,8 @@ Essentially, the contents of sectioning roots are hidden from the rest of its pa
 Sectioning Roots are: blockquote, details, fieldset, figure, td, body
 
 
-STRUCTURING A PAGE IN HTML5:
-============================
+## STRUCTURING A PAGE IN HTML5
+
 
 1. Start with Content - the reason being that you have to think about how devices will access your content, now and in the future when the content changes.
 
@@ -526,8 +517,8 @@ e.g.
 	
 
 
-Deciding What Structural Element To Use:
-----------------------------------------
+#### Deciding What Structural Element To Use
+
 
 It's sometimes hard to decide which structural element to use, because their roles can overlap or be slightly similar, insomuch as it is confusing to a web author.
 
@@ -570,24 +561,24 @@ NOTE: Different developers will use different tags according to their opinion of
 IMPORTANT: A good guideline is to ensure that your content is described in the most accurate, semantic terms and that you're using the elements consistently across your site or application. 
 
 
-Reducing Class and ID Identifiers:
-----------------------------------
+## Reducing Class and ID Identifiers
+
 One of the benefits of using semantic elements in HTML5 is reducing the need for ID and CLASS attributes to convey meaning. While some developers understand this to mean that you shouldn't be using CLASSES and ID's at all, or just in specific instances, their definition hasn't changed in the official specification, meaning that in fact there's little change.
 
 
-The CLASS Attribute:
---------------------
+#### The CLASS Attribute
+
 There are no additional restrictions on the tokens authors can use in the class attribute, but authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content.
 
-The ID Attribute:
---------------------
+#### The ID Attribute:
+
 The value must be unique amongst all the IDs in the element's home subtree and must contain at least one character. The value must not contain any space characters.
 
 An element's unique identifier can be used for a variety of purposes, most notably as a way to link to specific parts of a document using fragment identifiers, as a way to target an element when scripting, and as a way to style a specific element from CSS.
 
 
-Telephone Numbers:
-------------------
+#### Telephone Numbers
+
 This makes the link clickable in mobile devices:
 If you have a telephone number: 9555-2222
 
@@ -595,8 +586,8 @@ use:
 <a href="tel://9555-2222" title="give us a call">9555-2222</a>
 
 
-The Figure Element:
--------------------
+#### The Figure Element
+
 Categories: Flow content.
 			Sectioning root.
 			Palpable content.
@@ -619,29 +610,29 @@ The element can thus be used to annotate illustrations, diagrams, photos, code l
 The figcaption element child of the element, if any, represents the caption of the figure element's contents. If there is no child figcaption element, then there is no caption.
 
 
-The Div Tag:
-------------
+#### The Div Tag
+
 The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.
 
 Authors are strongly encouraged to view the div element as an element of last resort, for when no other element is suitable. Use of more appropriate elements instead of the div element leads to better accessibility for readers and easier maintainability for authors.
 
 
 
-Lists in HTML5:
----------------
+#### Lists in HTML5
+
 For the most part, lists remain unchanged from HTML4 to HTML5.
 
 The <ol> and the definition list have changed a little bit
 
 
-The <ol> Element:
------------------
+#### The `<ol>` Element:
+
 That start attribute which was deprecated in XHTML is back. The start attribute allows you to change the value of where the list begins it's count.
 
 The reversed attribute is a boolean value, which creates a list that counts backwards. Most browsers still don't support it.
 
-The <dl> Element:
------------------
+#### The `<dl>` Element:
+
 Previously in HTML4, a definition list was defined as a "list containing a term and one or more definitions for that term". Most authors used it for random stuff.
 
 FROM SPEC: The dl element represents an association list consisting of zero or more name-value groups (a description list). Each group must consist of one or more names (dt elements) followed by one or more values (dd elements). Within a single dl element, there should not be more than one dt element for each name.
@@ -661,13 +652,13 @@ You can have as many definitions within a term as you like. The inside of the na
 		<dd><img src="images/orderly.jpg" alt="orderly"></dd>
 </dl>
 
-Bold and Italic:
-----------------
+#### Bold and Italic:
+
 In XHTML 1.0, <b> and <i> were discouraged, as they were purely stylistic, and instead authors were encouraged to use <em> and <strong> to convey importance. That has changed with HTML5
 
 
-The <b> and <i> Elements:
--------------------------
+#### The `<b>` and `<i>` Elements:
+
 The <b> element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood, such as key words in a document abstract, product names in a review, actionable words in interactive text-driven software, or an article lede.
 
 The <i> element represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, a thought, or a ship name in Western texts.
@@ -675,8 +666,8 @@ The <i> element represents a span of text in an alternate voice or mood, or othe
 Terms in languages different from the main text should be annotated with lang attributes (or, in XML, lang attributes in the XML namespace).
 
 
-The <strong> and <em> Elements:
--------------------------------
+#### The `<strong>` and `<em>` Elements:
+
 The em element represents stress emphasis of its contents.
 
 So the difference between the <i> and <em> elements is that the <i> element represents an alternate voice or mood being used, whereas the <em> element stresses the emphasis of it's contents.
@@ -684,22 +675,22 @@ So the difference between the <i> and <em> elements is that the <i> element repr
 The <strong> element represents strong importance for its contents.
 
 
-The <cite> Element:
--------------------
+#### The <cite> Element:
+
 FROM SPEC: The cite element represents the title of a work (e.g. a book, a paper, an essay, a poem, a score, a song, a script, a film, a TV show, a game, a sculpture, a painting, a theatre production, a play, an opera, a musical, an exhibition, a legal case report, etc). This can be a work that is being quoted or referenced in detail (i.e. a citation), or it can just be a work that is mentioned in passing.
 
 A person's name is not the title of a work — even if people call that person a piece of work — and the element must therefore not be used to mark up people's names. (In some cases, the b element might be appropriate for names; e.g. in a gossip article where the names of famous people are keywords rendered with a different style to draw attention to them. In other cases, if an element is really needed, the span element can be used.)
 e.g.	<p>I just read <cite>Lord of the Rings</cite></p>
 
 
-The <q> Element:
-----------------
+#### The <q> Element:
+
 Designed specifically for quotes. Identifies its contents as being a quote from somebody. Most browsers will add quotation marks around the text.
 e.g.	<q>These pretzels are making me thirsty</q>
 
 
-The <blockquote> Element:
--------------------------
+#### The <blockquote> Element:
+
 FROM SPEC:The blockquote element represents a section that is quoted from another source.
 
 Content inside a blockquote must be quoted from another source, whose address, if it has one, may be cited in the cite attribute.
@@ -708,22 +699,24 @@ If the cite attribute is present, it must be a valid URL potentially surrounded 
 
 The content of a blockquote may be abbreviated or may have context added in the conventional manner for the text's language.
 
-e.g. 
-<blockquote>
- <p>[Fred] then said he liked [...] fish.</p>
-</blockquote>
+e.g.
+ 
+	<blockquote>
+	 <p>[Fred] then said he liked [...] fish.</p>
+	</blockquote>
 
 e.g. with <blockquote> using <cite>
-<p>His next piece was the aptly named <cite>Sonnet 130</cite>:</p>
-<blockquote cite="http://quotes.example.org/s/sonnet130.html">
-  <p>My mistress' eyes are nothing like the sun,<br>
-  Coral is far more red, than her lips red,<br>
-  </p>
- </blockquote>
+
+	<p>His next piece was the aptly named <cite>Sonnet 130</cite>:</p>
+	<blockquote cite="http://quotes.example.org/s/sonnet130.html">
+	<p>My mistress' eyes are nothing like the sun,<br>
+	Coral is far more red, than her lips red,<br>
+	</p>
+	</blockquote>
 
 
-The <address> Element:
-----------------------
+#### The `<address>` Element
+
 In HTML4, it was defined as an element that may be used by authors to supply contact information for a document or major part of the document, like a form. 
 
 In HTML5:
@@ -736,22 +729,23 @@ The address element represents the contact information for its nearest article o
 
 For example, a page at the W3C Web site related to HTML might include the following contact information:
 
-<ADDRESS>
- <A href="../People/Raggett/">Dave Raggett</A>,
- <A href="../People/Arnaud/">Arnaud Le Hors</A>,
- contact persons for the <A href="Activity">W3C HTML Activity</A>
-</ADDRESS>
+	<ADDRESS>
+	 <A href="../People/Raggett/">Dave Raggett</A>,
+	 <A href="../People/Arnaud/">Arnaud Le Hors</A>,
+	 contact persons for the <A href="Activity">W3C HTML Activity</A>
+	</ADDRESS>
+
 The address element must not be used to represent arbitrary addresses (e.g. postal addresses), unless those addresses are in fact the relevant contact information. (The p element is the appropriate element for marking up postal addresses in general.)
 
 The address element must not contain information other than contact information
 
 Typically, the address element would be included along with other information in a footer element.
 
-You can use as many as you need on a page, but you can only have one per <section> or per <article>.\
+You can use as many as you need on a page, but you can only have one per <section> or per `<article>`.
 
 
-The <small> Element:
---------------------
+#### The `<small>` Element
+
 In HTML4, the <small> element was defined as text that should be displayed in a small font.
 
 In HTML5:
@@ -766,16 +760,16 @@ The small element should not be used for extended spans of text, such as multipl
 
 Good for "fine print" or legal text.
 
-The <mark> Element:
--------------------
+#### The `<mark>` Element
+
 The <mark> element is a brand new element in HTML and is designed to help authors highlight page content usually for reference purposes. 
 
 FROM SPEC: The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context. When used in a quotation or other block of text referred to from the prose, it indicates a highlight that was not originally present but which has been added to bring the reader's attention to a part of the text that might not have been considered important by the original author when the block was originally written, but which is now under previously unexpected scrutiny. When used in the main prose of a document, it indicates a part of the document that has been highlighted due to its likely relevance to the user's current activity.
 
 Another example of the mark element is highlighting parts of a document that are matching some search string. 
 
-The <time> Element:
--------------------
+#### The `<time>` Element
+
 In the past, there wasn't a consistent way of marking up times and dates. Usually, authors would use classes to indicate time and dates.
 
 FROM SPEC: The time element represents its contents, along with a machine-readable form of those contents in the datetime attribute. The kind of content is limited to various kinds of dates, times, time-zone offsets, and durations, as described below.
@@ -795,13 +789,15 @@ e.g. 2	If you want the final content to look like this:
 April 25th, 2011 at 12:52
 
 code:
-<time datetime="2011-04-25T12:52:04-08:00">April 25th, 2011 at 12:52</time>
+
+	<time datetime="2011-04-25T12:52:04-08:00">April 25th, 2011 at 12:52</time>
+
 T = time
 -08:00 = offset from GMT
 
 
-How to Check What You Offset From GMT Is:
------------------------------------------
+#### How to Check What You Offset From GMT Is
+
 1. Go to http://en.wikipedia.org/wiki/Time_zone#Offsets_from_UTC
 
 2. Scroll down and you get to a table, and in the Example Time column (ISO 8601 notation), you have the time written in machine-readable format, so you can just copy and paste it from there.
@@ -809,8 +805,8 @@ How to Check What You Offset From GMT Is:
 IMPORTANT: You only need to use the <time> element if you want search engines, aggregators, and applications, and other content readers to be able to understand it.
 
 
-Creating Block Level Links:
----------------------------
+#### Creating Block Level Links
+
 The <a> element may be wrapped around entire paragraphs, lists, tables, and so forth, even entire sections, so long as there is no interactive content within (e.g. buttons or other links).
 
 So links can wrap around multiple elements - creating block level links.
@@ -818,17 +814,18 @@ So links can wrap around multiple elements - creating block level links.
 Most browsers treat the <a> tag as an inline element, so you may need to change its display to block
 
 e.g.
-a {
-	display:block;
-}
+
+	a {
+		display:block;
+	}
 
 
 If you wrap the <a> tag around an entire section (e.g. <section>,<article>,<nav>,<aside>) elements tend to get jumbled up in the DOM. One work-around is to wrap the section in a <div> tag and then apply the <a> around that. Sometimes this works, so test thoroughly.
 
 
 
-The <link> Element:
--------------------
+#### The `<link>` Element
+
 The <link> element helps user agents and applications find and use certain link types as well as locating external resources that the pages need. It also helps you describe the nature of links throughout the site, describing how those pages relate to each other. And that is extremely helpful for search engines. 
 
 List of Allowed Keywords And Their Meanings:
@@ -851,16 +848,16 @@ There are many more rel keywords and values that you can use, apart from what is
 Resource 1:
 http://microformats.org/wiki/existing-rel-values#HTML5_link_type_extensions
 
-Examples of Rel Attributes:
----------------------------
+## Examples of Rel Attributes
+
 <a href="mailto:jeff@bridges.com.au" rel="author">jeff@bridges.com.au</a>
 rel="start"
 rel="external"
 rel="license"
 
 
-Dealing with Older Broswers and IE:
------------------------------------
+## Dealing with Older Browsers and IE:
+
 
 Most browsers deal with unknown elements as inline elements. 
 
@@ -876,13 +873,13 @@ When dealing with ANY version of IE previous to IE9, the browser would insert th
 
 Inside <head> tag, add the following:
 
-<!--[if lt IE 9]>
-<script src="dist/html5shiv.js"></script>
-<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="dist/html5shiv.js"></script>
+	<![endif]-->
 
 
-Extra Resources:
-----------------
+## Extra Resources:
+
 https://developer.mozilla.org/en/html/html5
 Webkit.org
 dev.opera.com

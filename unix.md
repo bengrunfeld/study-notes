@@ -235,17 +235,13 @@ And it will print out the same thing. The only difference is that `whatis` doesn
 
 ## Directories & Files
 
-The working is the directory where we are right now. When you issue commands, it's important to know what directory you're in, because that's where they'll happen.
+The working directory is the directory where we are right now. When you issue commands, it's important to know what directory you're in, because that's where they'll happen.
 
 To find your current working directory, use 
 
-	pwd
+	pwd    #Which stands for present working directory.
 
-Which stands for present working directory.
-
-	ls 
-
-Will list the files and directories in our present working directory. 
+	ls     #Will list the files and directories in our present working directory. 
 
 	ls -l -a -h
 
@@ -279,6 +275,8 @@ The `d` at the beginning of the permissions means that it is a directory. The da
 `cd ~` - takes you to your user directory. 
 
 `cd -` - takes you to the previous directory that you were in.
+
+`cd ..` - takes you up a directory
 
 ### File System Organization
 

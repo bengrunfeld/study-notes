@@ -3,7 +3,7 @@
 ### General Commands
 
 * `man` - goes to the Manual Page for the following command
-* `Cmd k` - clears everything on the screen, including scroll back
+* `cmd k` - clears everything on the screen, including scroll back
 * `clear` - clears everything on the screen
 * `echo` - echoes something back to you
 * `exit` - log out of your session

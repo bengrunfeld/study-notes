@@ -4,13 +4,9 @@ JSX is a statically-typed, object-oriented programming language compiling to sta
 
 ## Links
 
-**Operator Reference**
+**Language Reference**
 
-https://jsx.github.io/doc/operatorref.html
-
-**JSX Statements**
-
-https://jsx.github.io/doc/statementref.html
+https://jsx.github.io/doc.html
 
 
 ## Why JSX

@@ -101,3 +101,40 @@ Allows you to:
 * search for Nodes with Roles
 * find topology of your infrastructure
 
+
+## Setting up the Workstation
+
+Go to [https://downloads.chef.io/chef-dk](https://downloads.chef.io/chef-dk)
+
+Choose your Operating System (OS) type and download the appropriate file. 
+
+The website will give you the installation command. It will look something like this:
+
+	sudo dpkg -i chefdk_0.8.1-1_amd64.deb
+
+Once the DK has been downloaded to your computer, upload it to the instance you want to use as your workstation with the following command:
+
+	scp -i  mykey.pem somefile.txt user-name@public-dns:destination
+
+
+## Chef Server, Knife and Starter Kit
+
+**Chef server** acts as a central repository for your cookbooks as well as for information about every node it manages.
+
+The `knife` command enables you to communicate with the **Chef server** from your workstation. 
+
+The **Starter Kit** provides the certificates that enables `knife` to securely communicate with the **Chef server**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

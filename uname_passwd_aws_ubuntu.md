@@ -15,7 +15,7 @@
 Now you can log in with `ssh ubuntu@PUBLIC_DNS` and it will prompt you for your password. 
 
 
-# Enable Username and Password Access to AWS CentOS 5.4 Instance
+# Enable Username and Password Access to AWS CentOS 6.* Instance
 
 1. `ssh` into your AWS Instance
 2. `sudo vi /etc/sshd/sshd_config`

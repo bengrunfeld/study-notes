@@ -81,11 +81,10 @@ mv ~/git-completion.bash ~/.git-completion.bash
 **Edit the File**  
 Now we want to edit the .bash_profile 
 
-	nano .cash_profile
+	nano .bash_profile
 
 	if [ -f ~/.git-completion.bash ]; then
-	source ~/.git-complation.bash
-	
+    source ~/.git-completion.bash
 	fi
 
 Now auto-completion is turned on and you can check that by typing

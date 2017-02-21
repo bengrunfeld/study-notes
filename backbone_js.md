@@ -6,7 +6,7 @@ BB differs from traditional MVC in that it has no `Controller` component.
 
 MVC has 3 components, BB has 6.
 
-#### BB Components
+## BB Components
 
 * Models - store data
 * Views - display model data onto a page
@@ -26,12 +26,12 @@ MVC has 3 components, BB has 6.
 
 Underscore helps you cycle through data and define areas on web page where data will be placed.
 
-#### Adding properties to the Model
+## Adding properties to the Model
 
 Models store application data.
 
 You really want to namespace your variables in BB, like so:
-
+	
 	var app = app || {};
 	
 	app.someOrange = Backbone.Model.extend({
@@ -89,7 +89,7 @@ To make a change to a model, we use the `set` method
 
 	specialOrange.set('age', 34);
 
-#### Collections
+## Collections
 
 A collection is a group of model instances.
 
@@ -119,17 +119,17 @@ To dynamically add an instance to a collection:
 
 	fruitBasket.add(cheekyVar);
 
-#### Views
+## Views
 
 Views contain the rules for displaying our model data inside of an HTML page.
 
 View decides what HTML structure our data should be displayed inside of. 
 
-Views decide if these elements need to be created in advance or if they already exist on our webpage
+Views decide if these elements need to be created in advance or if they already exist on our webpage.
 
-Views deicde what methods and properties are needed to get the data inside the web page elements.
+Views decide what methods and properties are needed to get the data inside the web page elements.
 
-BB gets its template functionality directly from Underscore.JS
+BB gets its template functionality directly from `Underscore.JS`
 
 BB *does* allow you to use other templating libraries like **Handlebars** and **Mustache**, but usually you can just use **Underscore**.
 
@@ -137,7 +137,7 @@ BB *does* allow you to use other templating libraries like **Handlebars** and **
 
 When `render` is invoked, thats the point at which the model data is displayed on a web page.
 
-#### Creating Views
+## Creating Views
 
 We generally create both a **Model** and a **Collection View**.
 
@@ -207,7 +207,7 @@ We're passing a param to `this.template` and it's a reference to the model that 
 
 The dollar sign `$` in front of `el` means you're referencing it with jQuery, which means we can apply jQuery methods to it. e.g. `.html()`
 
-#### Creating a Collection View
+## Creating a Collection View
 	
 	// Namespace the var
 	var app = || {};
@@ -233,9 +233,9 @@ The `render` method is applying the `addOrange` method to every model instance i
 
 A model needs to be assigned to `orangeView` and this is done with `({model: orange})`. This means that all singe model instances that are of the `orange` type are exposed to the `orangeView`'s render method.
 
-`this.$el` is a jQuery reference to the element in this view, which is the `section` tag. JQuery's `append` method is chained to it and will load whatever is happening inside of these parenthesis here.
+`this.$el` is a jQuery reference to the element in this view, which is the `section` tag. jQuery's `append` method is chained to it and will load whatever is happening inside of these parentheses here.
 
-#### Loading Model Data onto a Webpage
+## Loading Model Data onto a Webpage
 
 On your main JS page, add:
 

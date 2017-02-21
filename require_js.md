@@ -59,7 +59,7 @@ You can set the path of `dependencies` in config, so that you can just use an al
 	require.config({
 		baseUrl: "./js",
 		optimize: none //choose optimization here
-		watiSeconds: 10,
+		waitSeconds: 10,
 		packages: [
 			{
 				name: "json2",
@@ -95,7 +95,7 @@ There's a problem that sometimes affects backbone where **Underscore** doesn't g
 
 Everything you write inside of a function is a variable and dies at the end of the function. So it is best practice to keep your `define` statements inside of a function. E.g.
 
-	(function()bbkkjkkj{
+	(function(){
 		define([], function(){
 			var Person = function(first, last){
 				return {
@@ -109,7 +109,7 @@ Everything you write inside of a function is a variable and dies at the end of t
 
 **3. Stop yourself hunting errors**
 
-When you log an error, log the classname that it's coming from. In a modular envionrment on a large code base e.g.
+When you log an error, log the classname that it's coming from. In a modular environment on a large code base e.g.
 
 	if (typeOf thing == 'undefined'){
 		console.log('ThisClass::this_method - thing is not defined);

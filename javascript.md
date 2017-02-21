@@ -73,25 +73,31 @@ This creates a variable:
 For variable names, you can use letters, numbers, the _ underscore character, and the $ dollar sign. Variables cannot start with a number.
 
 To set the value of a variable:
+
 	var year;
 	year = 2012
 
 but this is also acceptable
+
 	var year = 2012
 
 Technically you don’t even need to use the word var. If you write
+
 	year=2012;
 
 Javascript will look for it, but if it doesn’t find it, it will create a variable called year with a value of 2012.
 
 Because JS is case-sensitive, these 2 variables are different:
+
 	var x = 20;
 	var X = 200;
 
 To create several variables at once in 1 line:
+
 	var day, month, year;
 
 This is the same as:
+
 	var day;
 	var month;
 	var year;
@@ -100,10 +106,12 @@ To create and set the values of multiple variables in 1 line:
 	var day = 20, month = 3, year = 2012;
 
 
-Declaring the Variable Type
+### Declaring the Variable Type
+
 JS is a weakly-typed language. We don’t declare a variable as a boolean, or integer or float, we just set the value of a variable, and JS decides what the variable type is for us.
 
 so it is fine to declare as follows:
+
 	var myVar = 200;
 	var myVar = “Hello”;
 	var myVar = ‘Hello’;
@@ -117,28 +125,28 @@ There is no difference between single and double quotes - just don’t mix them 
 
 To create an if statement:
 
-if ( condition ) {
-//code goes here....	
-}
+	if ( condition ) {
+		//code goes here....	
+	}
 
 The condition must evaluate to being true or false:
 
-if ( a < 50 ) {
-//code goes here....	
-}
+	if ( a < 50 ) {
+		//code goes here....	
+	}
 
 
 Study for yourself - operators and assignment operators
 
-If you only have one line of code after an if statement, you don’t need { } curly braces, but it’s bad form. 
+If you only have one line of code after an if statement, you don’t need `{ }` curly braces, but it’s bad form. 
 
 To create an if else statement:
 
-if ( condition ) {
-//code goes here....	
-} else {
-//other code goes here....	
-}
+	if ( condition ) {
+		//code goes here....	
+	} else {
+		//other code goes here....	
+	}
 
 What is the Difference between == And ===
 == checks that two variables are the same value
@@ -394,28 +402,29 @@ Here is how you would call a method via an object:
 
 Here is how you would call a method via an array:
 
-var myArray = [ 1 , 2 , 3 , 50 , 70 ]
+	var myArray = [ 1 , 2 , 3 , 50 , 70 ]
+
 myArray.reverse();
 
 Arrays have built in methods
 
 	//will return an array with reversed values
 	
-myArray.reverse();
+	myArray.reverse();
 
-//will join all the values in an array and output them as a single string
-//in this case, the browser will output “1, 2, 3, 50, 70”
-alert( myArray.join( ) );
+	//will join all the values in an array and output them as a single string
+	//in this case, the browser will output "1, 2, 3, 50, 70"
+	alert( myArray.join( ) );
+	
+	//will sort all the values in an array
 
-//will sort all the values in an array
-alert( myArray.sort( ) );
+	alert( myArray.sort( ) );
 
 Arrays are everywhere in Javascript and there is no avoiding them. For example, if you’d like to grab all the `<a>` elements in an HTML document, you could use the following code:
 
 	var myArrayOfLinks = document.getElementByTagName(“a”);
 
-This would grab every <a href=””> tag on the page and stack them into the array that we just named myArrayOfLinks.
-
+This would grab every `<a href="">` tag on the page and stack them into the array that we just named myArrayOfLinks.
 
 #### Numbers
 
@@ -721,6 +730,7 @@ So to access the Node you want, access it the same way you access a specific ind
 If you call the same method, but there is no such tag in the document, it will still return an array, but the array will be empty.
 
 e.g. If you have a document with no <a> tags, and you call the method:
+
 	var myLinks = document.getElementsByTagName(“a”);
 
 myLinks will have 0 places, and will have no contents.
@@ -728,7 +738,7 @@ myLinks will have 0 places, and will have no contents.
 
 #### Getting The Node Type
 
-So if I have in my HTML document <h1 id=”theTitle”>, I can get the Node Type with the following code:
+So if I have in my HTML document `<h1 id=”theTitle”>`, I can get the Node Type with the following code:
 
 var theTitle = document.getElementById("theTitle");
 
@@ -1289,21 +1299,22 @@ As said above, we can stop a form from being submitted by making the onsubmit ev
 
 So imagine we have a form in the main HTML document, where the form’s ID is myForm and the email ID is formEmail.
 
-	// handles the form submit event
-function prepareEventHandlers() {
-	document.getElementById("frmContact").onsubmit = function() {
-		// prevent a form from submitting if no email.
-		if (document.getElementById("email").value == "") {
-			document.getElementById("errorMessage").innerHTML = "Please provide at least an email address!";
-			// to STOP the form from submitting
-			return false;
-		} else {
-			// reset and allow the form to submit
-			document.getElementById("errorMessage").innerHTML = "";
-			return true;
+		// handles the form submit event
+
+		function prepareEventHandlers() {
+			document.getElementById("frmContact").onsubmit = function() {
+				// prevent a form from submitting if no email.
+				if (document.getElementById("email").value == "") {
+					document.getElementById("errorMessage").innerHTML = "Please provide at least an email address!";
+					// to STOP the form from submitting
+					return false;
+				} else {
+					// reset and allow the form to submit
+					document.getElementById("errorMessage").innerHTML = "";
+					return true;
+				}
+			};
 		}
-	};
-}
 
 // when the document loads
 window.onload =  function() {

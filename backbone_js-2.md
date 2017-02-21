@@ -4,7 +4,7 @@
 
 Source: [http://addyosmani.github.io/backbone-fundamentals](http://addyosmani.github.io/backbone-fundamentals)
 
-Old-style apps did heavy-lifting of data in back end
+Old-style apps did heavy-lifting of data in back end.
 
 New client applications pull raw data from the server and render it into the browser when and where it is needed.
 
@@ -104,7 +104,7 @@ To listed for changes to specific attributes, place an `this.on('change:attribut
 	    });
 	}
 
-#### Validation
+### Validation
 
 Backbone supports model validation through `model.validate()`, which allows checking the attribute values for a model prior to setting them. By default, validation occurs when the model is persisted using the `save()` method or when `set()` is called if `{validate:true}` is passed as an argument.
 
@@ -123,7 +123,7 @@ Note: the `attributes` object passed to the `validate` function represents what 
 
 It is not possible to change any Number, String, or Boolean attribute of the the **model attributes** within the function, but it is possible to change attributes in nested objects.
 
-### Views
+## Views
 
 Views contain the logic behind the presentation of the model’s data to the user.
 
@@ -162,6 +162,8 @@ The above code creates the DOM element below but doesn’t append it to the DOM.
 
 `myTest.$el` will give you the actual jQuery object itself.
 
+The reason we prefix `el` with a dollar sign `$` is because this causes `el` to be referenced by jQuery, which means that we can then apply jQuery functions to it, like the `html()` method that is used above.
+
 There are two ways to associate a DOM element with a view: a new element can be created for the view and subsequently added to the DOM **OR** a reference can be made to an element which already exists on the page.
 
 If the element already exists on the page, you can set `el` as a CSS selector that matches the element.
@@ -197,6 +199,8 @@ In the following template, `example-target` is used to pass the template to `_.t
 The `render()` method uses this template by passing it the `toJSON()` encoding of the attributes of the model associated with the view.
 
 A common Backbone convention is to return `this` at the end of `render()`.
+
+We cannot use `type="text/javascript"` because the browser will interpret this as raw Javascript and attempt to 
 
 #### Going Through a Full Example
 

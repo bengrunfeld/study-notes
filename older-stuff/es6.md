@@ -23,7 +23,7 @@ Creates a constant variable that cannot be reassigned a new value.
 Similar to a templating languages. Allows you to format your Javascript code with dynamic variables. Just use bat ticks.
 
     function hello(fname) {
-    console.log(`Good morning $(fname)`);
+    console.log(`Good morning ${fname}`);
     }
 
     hello('ben');

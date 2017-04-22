@@ -116,7 +116,7 @@ The Event Emitter is Node.js's implementation of the pub/sub design pattern, and
 
 ### Inheriting the Event Emitter into an Object
 
-The utilities module has an inherits function, and it's a way that we can add a object to the prototype of an existing object.
+The utilities module has an inherits function, and it's a way that we can add an object to the prototype of an existing object.
 
     let EventEmitter = require('events').EventEmitter
     let util = require('util')
@@ -127,7 +127,7 @@ If we now create a new instance of a Person, it will have an `on` and `emit` fun
 
 ## Creating Child Processes with Exec
 
-Node.js comes with a Child Process module which allows you to execute external processes in your environment. In other words, your Node.js app can run and communicate with other applications on the computer that it is hosting.
+Node.js comes with a `child_process` module which allows you to execute external processes in your environment. In other words, your Node.js app can run and communicate with other applications on the computer that it is hosting.
 
     let exec = require('child_process').exec
     exec('ls', (err, stdout) => {
@@ -214,3 +214,28 @@ If you're working with HTTPS, then you'll need to use The HTTPS Module. Both HTT
     req.on('error', (err) => { console.log(err) })
     req.end()
 
+## Creating a Web Server
+
+We use the `http.createServer` method of the `http` module to create a webserver. Every reqeust sent to this server will cause the method's callback function that we define to be invoked.
+
+    let http = require('http')
+    let server = http.createServer((req, res) => {
+      res.writeHead(200, {'Content-Type': 'text/plain'})
+      res.end('Output text')
+    })
+    server.listen(3000)
+    console.log('Listening on port 3000')
+
+The `req` object that we receive as an argument to this method will contain information about the requested headers, any data that is going along with the request, as well as information about our user, like their environment and so on.
+
+The other argument that we'll be adding here is going to be our response `res` object. So, we will have a blank response object also sent to this request function, and it's going to be our job to complete the response. We will do so by writing the response headers. So I'm going to use the `res.writeHead` method to complete our response headers. The first argument that we add to this method is going to be our response status code. 200 means that we have a successful response. 
+
+The second argument represents a JavaScript literal of all the headers that I am going to add to this response.
+
+`res.end` can be used to end our response, and we will send "Output Text". Finally we need to tell this server instance what IP and port it should be listening for incoming requests on.
+
+`server.listen` is a function that we can use to specific the IP address and incoming port for all of our web requests for this server. I'm going to add (3000), telling this server to listen to any requests on this local machine for port 3000.
+
+## Making an API
+
+To make an API, you filter URL's and HTTP methods with `if (req.url === '/')` and `if (req.method = 'GET')`. Then you can use regular JS to create a response and return it back.

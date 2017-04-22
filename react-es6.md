@@ -32,14 +32,16 @@ We can create Components using functions. Stateless functional components are fu
 It's typically a good idea to use stateless components, whenever possible. Stateless components offer a functional way to work with components, and, also, the React team has hinted that there may be some performance benefits of using these functions, rather than using createClass, or ES6 classes.
 
 When and why to use Stateless Functional Components:
-
+ 
 https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.sywh6s2za
 
 In my opinion, if you want to use React LifeCycle methods (e.g. componentWillMount) or other specific React functionality, then you should use React classes, otherwise use Stateless Functional Components.
 
+If your component has state or a lifecycle method(s), use a Class component. Otherwise, use a Functional component.
+
 ## Default Props
 
-An optional but very useful feature that use in React is default properties. When we setup defaults, we can use the default values if another value is not provided.
+An optional but very useful feature that you can use in React is default properties. When we setup defaults, we can use the default values if another value is not provided.
 
 ### Default Props with React.CreateClass
 
@@ -222,7 +224,7 @@ If you are using ES6 classes and you want to use a function by calling `this.say
 In the parent
 
     logData = (data) => console.log('From child', data)
-    <SomeModule logDataFromParent={logData}
+    <SomeModule logDataFromParent={logData} />
 
 In the child
 

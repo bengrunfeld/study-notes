@@ -1,5 +1,66 @@
 # Redux
 
+## TLDR;
+
+### Actions
+
+Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. You send them to the store using `store.dispatch()`. An action is simply a plain object that described *what happened*. E.g. Dave liked post 23571.
+
+### Action Creators
+
+Action creators are functions that return an action (hence creating them). 
+
+### Reducers
+
+Reducers specify how the application's state should change in response to an action. Reducers take the `previous state` and an `action` as params, and then uses those to create and return a `new state` (aka the next state). Reducers must stay pure - i.e. no side effects - calling it with the same inputs many times should produce the same output.
+
+    (previousState, action) => newState
+
+What not to do in reducers:
+
+* Mutate its arguments;
+* Perform side effects like API calls and routing transitions;
+* Call non-pure functions, e.g. Date.now() or Math.random().
+
+
+### Stores
+
+The Store is the object that brings `reducers` and `actions` together. You only have a single store in a Redux app. It has the following responsibilities:
+
+* Holds application state;
+* Allows access to state via `getState()`;
+* Allows state to be updated via `dispatch(action)`;
+* Registers listeners via `subscribe(listener)`;
+* Handles unregistering of listeners via the function returned by `subscribe(* listener)`
+
+To create a store:
+
+    let store = createStore(combinedReducers, [initialState])
+
+### The Redux LifeCycle
+
+#### 1. You call store.dispatch(action)
+
+#### 2. The Redux store calls the reducer function you gave it.
+
+The store will pass two arguments to the reducer: the current state tree and the action.
+
+#### 3. The root reducer (combinedReducers) may combine the output of multiple reducers into a single state tree.
+
+When you emit an action, combinedReducers will call all the reducers you listed with it. It will then combine all sets of results into a single state tree (e.g. a state object).
+
+#### 4. The Redux store saves the complete state tree returned by the root reducer (combinedReducers).
+
+This new tree is now the next state of your app! Every listener registered with `store.subscribe(listener)` will now be invoked; listeners may call `store.getState()` to get the current state.
+
+Now, the UI can be updated to reflect the new state. If you use bindings like React Redux, this is the point at which `component.setState(newState)` is called.
+
+
+
+
+
+## About Redux
+
 Redux is an implementation of the Flux architectural pattern.
 
 A big difference between Redux and Flux is that Redux only has one store. You cannot use multiple stores. 
@@ -59,7 +120,7 @@ Now that we've identified the actions, we want to identify the variables that th
 
 ### Initial State
 
-You can create an initial State with a json file (initialState.json). It's designed to be a snapshot of our State at any given time.
+You can create an initial State with a json file (e.g. `initialState.json`). It's designed to be a snapshot of our State at any given time.
 
     {
         'users': [
@@ -89,9 +150,11 @@ Actions at bare minimum have a `type` field, but also usually a `payload`. The a
 
 ## Reducers 
 
-Reducers are pure functions that are designed to manage specific parts of your state object. You need to create a reducer to manage every key in your state object. The reducer function **MUST BE** named with exactly the same name as the key of the state that they reducer is targeting.
+It's called a reducer because it's the type of function you would pass to `Array.prototype.reduce(reducer, ?initialValue)`.
 
-Remember, we're not going to change the state, we're going to create a new state value, given the current state.
+Reducers are pure functions that are designed to manage specific parts of your `state` object. You need to create a reducer to manage every key in your `state` object. The reducer function **MUST BE** named with exactly the same name as the key of the `state` that the reducer is targeting.
+
+Remember, we're not going to change the `state`, we're going to create a new `state` value, given the current `state`.
 
 So a `reducer` is a function that will take `state` and an `action` to produce a new `state`. 
 
@@ -103,7 +166,7 @@ So a `reducer` is a function that will take `state` and an `action` to produce a
 We usually save the reducer files to the `store` directory. E.g. `reducers.js`.
 
 You should always have a default for state, just in case it isn't added elsewhere. Also, Redux will throw you a warning if it isn't there.
-
+ 
 ## Composing Reducers
 
 **Composing** means using the return value of one function as the argument for another function, which itself returns a value.
@@ -121,7 +184,19 @@ So if you have a reducer that adds a spinner boolean to indicate if the spinner 
 			state
 	}
 
+**This is called reducer composition, and it's the fundamental pattern of building Redux apps.**
+
+I.e. the output of one reducer is used as the input for another reducer, and so on. 
+
+Each reducer is in charge of managing its own part of the global state. The state parameter can be different for every reducer, and corresponds to only the part of the state that it is in charge of managing.
+
+When the app is larger, we can split the reducers into separate files and keep them completely independent and managing different data domains.
+
+
+
 ## Combining Reducers
+
+All `combineReducers()` does is generate a function that calls your reducers with the slices of state selected according to their keys, and combining their results into a single object again.
 
 After installing Redux with `npm install --save redux`, we can use the `combinedReducers` method, which combines all of our reducers into a single function.
 
@@ -144,10 +219,11 @@ After installing Redux with `npm install --save redux`, we can use the `combined
     
     export default appReducers
 
+## The Store
 
-## Create Store
+### Store: Create Store
 
-With redux, we don't need to use our `appReducers` (above) to mutate the `state` because the store will manage the state for us. 
+With Redux, we don't need to use our `appReducers` (above) to mutate the `state` because the store will manage the state for us. 
 
 The `createStore` method is used to create instances of stores. 
 
@@ -178,19 +254,21 @@ Your application should **USE** the store. The store should not **BE** your appl
 	
 	const store = createStore(combinedReducers, initialState)
 
-## Get State
+### Store: Get State
 
-We can always looks at the state of the store by using the `getState()` method. 
+We can always look at the state of the store by using the `getState()` method. 
 
 	store.getState()
 
-By using the `singleReducer` (combinerReducers), our default state will be set from all the default values we set in our reducers. So store will use the `singleReducer` (combinedReduers) to calculate the initial state.
+By using the `singleReducer` (combinedReducers), our default state will be set from all the default values we set in our reducers. So store will use the `singleReducer` (combinedReduers) to calculate the initial state.
 
-## The Dispatcher
+### Store: The Dispatcher
 
 The store also has a `dispatcher` that dispatches actions that mutate the `state`. The dispatch method expects an action object. An action object is just a regular object that has a `type` field, and optionally a `payload`.
 
-## The Subscribe Method
+You can call store.dispatch(action) from anywhere in your app, including components and XHR callbacks, or even at scheduled intervals.
+
+### Store: The Subscribe Method
 
 The store has a subscribe method that allows you to assign callback handlers that are invoked every time state changes. 
 
@@ -202,7 +280,7 @@ The subscribe method will invoke the function once for every action that we disp
 
 You can subscribe as many callback handlers as you like.
 
-## The Unsubscribe Method
+### Store: The Unsubscribe Method
 
 The store also has an `unsubscribe` method that allows you to turn off store subscriptions. 
 
@@ -214,9 +292,9 @@ The store also has an `unsubscribe` method that allows you to turn off store sub
 
 Middleware allows us to add functionality directly to the store's dispatch pipeline. 
 
-By comparison, `subscribe` allows us to subscribe listeners to the store, and these listeners are invoked *after* the dispatch occurs.
-
 Middleware is far more powerful. Middleware gives us power over **how** actions are dispatched. We can add functionality *before* the action is dispatched, or *after* the action is dispatched. We can delay the dispatching of actions. We can even skip dispatching an action altogether. 
+
+By comparison, `subscribe` allows us to subscribe listeners to the store, and these listeners are invoked *after* the dispatch occurs.
 
 We're going to have to create a function that returns a function that returns a function.
 
@@ -252,7 +330,7 @@ This function gives us the action that is currently being dispatched, along with
 
 The code `result = next(action)` is where the action is dispatched and where the state can be expected to change.
 
-To make sure the state change gets registered, we must retun the result.
+To make sure the state change gets registered, we must return the result.
 
 So now we have a function that doesn't do much besides dispatching the action, and this makes sure we do not break the store's current dispatch pipeline. But inside of this function, we can add functionality before or after we dispatch the action. 
 
@@ -361,9 +439,11 @@ The above `then` functions pass themselves return the result and pass it as an a
 
 ## React-Redux Library
 
+`react-redux` is a library that you can import through NPM.
+
 ### The Provider
 
-`react-redux` is a library that you can import through NPM. It makes a component called the `Provider` available, which can be wrapped around any component tree, and it will place the `store` in context. That way, any child react component will be able to interact with the `store`.
+It makes a component called the `Provider` available, which can be wrapped around any component tree, and it will place the `store` in context. That way, any child react component will be able to interact with the `store`.
 
 	ReactDOM.render(
 		<Provider store={store}>
@@ -374,11 +454,13 @@ The above `then` functions pass themselves return the result and pass it as an a
 
 ### Connect
 
-`connect` is a function from the `react-redux` library. 
+`connect` is a function from the `react-redux` library.
 
-Connect creates a component that grabs the `state` out of `store` and can map it to properties in a child component.
+    const Container = connect(mapStateToProps, mapDispatchToProps)(UIComponent)
 
-We can then take data from `state` and map it to the properties of our React component. We need to return an object with the names of the properties that we want to map to as keys and the data as their values.
+`connect` grabs the `state` out of `store`, which was made available by the `Provider`, and maps whatever you specify from `state` to properties. 
+
+It then supplies these props to the component that it is wrapping around (in the above example: `UIComponent`) and then returns a new component (in the above example: `Container`) which is a copy of `UIComponent` that has been hydrated with the props from `mapStateToProps`.
 
 **Mapping props to React components**
 
@@ -396,6 +478,12 @@ We can then take data from `state` and map it to the properties of our React com
 This will take our `mapStateToProps` function and actually map the values that we've saved under `goal` and `target` to the properties of the UIComponent, `goal` and `target`. The second argument, `props` are any props that were passed to the component by the Parent.
 
 **Mapping dispatch to React components**
+
+`mapDispatchToProps` allows us to give our React components the ability to dispatch actions in a Redux app. I.e. it gives our components controlled access to `store.dispatch(action)`.
+
+`mapDispatchToProps` receives the store's `dispatch` function as an argument.
+
+
 
     import { connect } from 'react-redux'
     
@@ -419,3 +507,26 @@ Inside your React code, you can then call it with the following:
     
     <Component onClick={handleError} />
 
+#### Container Components vs Presentational Components
+
+Presentational components are regular React components that describe what something will look like, not how it will function. They communicate solely through `props`. They pass data up to their parents with 2 way data binding and receive props as well. 
+
+Containers wrap around a presentational component and feed data to it.
+
+Technically, a container component is just a React component that uses `store.subscribe()` to read a part of the Redux state tree and supply props to a presentational component it renders. You could write a container component by hand, but we suggest instead generating container components with the React Redux library's `connect()` function, which provides many useful optimizations to prevent unnecessary re-renders. (One result of this is that you shouldn't have to worry about the React performance suggestion of implementing `shouldComponentUpdate` yourself.) 
+
+To use connect(), you need to define a special function called mapStateToProps that tells how to transform the current Redux store state into the props you want to pass to a presentational component you are wrapping.
+
+In addition to reading the state, container components can dispatch actions.
+
+In a similar fashion, you can define a function called mapDispatchToProps() that receives the dispatch() method and returns callback props that you want to inject into the presentational component.
+
+    const mapDispatchToProps = (dispatch) => {
+      return {
+        onTodoClick: (id) => {
+          dispatch(toggleTodo(id))
+        }
+      }
+    }
+
+In case you are worried about mapStateToProps creating new objects too often, you might want to learn about computing derived data with reselect. (check docs)

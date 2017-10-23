@@ -168,7 +168,16 @@ A: Synchronous requests block the execution of code which creates "freezing" on 
 
 ### 24. What does supporting `first class functions` mean?
 
-In computer science, a language is said to support `first class functions` if it treats `functions` as `first class objects`. That means that the language supports constructing new functions during the execution of a program, storing them in data structures, passing them as arguments to other functions, and returning them as the values of other functions. 
+In computer science, a language is said to support `first class functions` if it treats `functions` as `first class objects`. That means that the language supports constructing new functions during the execution of a program, storing them in data structures, passing them as arguments to other functions, and returning them as the values of other functions.
+
+### 25. What are the similarities and differences between `high order functions` and `first class functions`?
+
+**Similarities:** Both allow functions as arguments and functions as return values.
+
+**Differences:** *high order* describes a mathematical concept of functions that operate on other functions. 
+
+*first class*, on the other hand, is a computer science term that describes programming language entities that have no restriction on their use. Therefore, first-class functions can appear anywhere in a program that other first class entities (e.g. numbers, arrays) can.
+
 
 
 

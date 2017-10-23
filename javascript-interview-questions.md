@@ -117,6 +117,8 @@ WHAT I DON'T LIKE: ES6 classes. They are named and used the same as regular OO c
 
 ### 3. Explain how Closures work and why you'd want/not want to use them
 
+In computer science, a *Closure* is a *first class function* (see 23), with free variables that are bound in the lexical environment. Such a function is said to be *closed over* its free variables. A closure is defined within the scope of its free variables, and the extent of those variables is at least as long as the lifetime of the closure itself. 
+
 ### 4. Explain the difference between `call`, `apply` and `bind`. Give examples of when you'd use each of them. 
 
 ### 5. Explain XHR requests
@@ -163,6 +165,12 @@ A: Synchronous requests block the execution of code which creates "freezing" on 
 ### 22. Explain event bubbling
 
 ### 23. Explain the difference between `pop`, `push`, `shift` and `unshift`
+
+### 24. What does supporting `first class functions` mean?
+
+In computer science, a language is said to support `first class functions` if it treats `functions` as `first class objects`. That means that the language supports constructing new functions during the execution of a program, storing them in data structures, passing them as arguments to other functions, and returning them as the values of other functions. 
+
+
 
 ## Sources
 

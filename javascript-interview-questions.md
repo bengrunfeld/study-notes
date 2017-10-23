@@ -178,6 +178,10 @@ In computer science, a language is said to support `first class functions` if it
 
 *first class*, on the other hand, is a computer science term that describes programming language entities that have no restriction on their use. Therefore, first-class functions can appear anywhere in a program that other first class entities (e.g. numbers, arrays) can.
 
+26. Explain what `currying` is.
+
+*High order functions* enable currying, which is a technique in which a function is applied to its arguments, with each application returning a new function that accepts the next argument. 
+
 
 
 

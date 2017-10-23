@@ -182,7 +182,11 @@ In computer science, a language is said to support `first class functions` if it
 
 *High order functions* enable currying, which is a technique in which a function is applied to its arguments, with each application returning a new function that accepts the next argument. 
 
+27. Explain the main concepts and rules of functional programming
 
+28. Explain the benefits and drawbacks of functional programming
+
+29. Why has functional programming become popular?
 
 
 ## Sources

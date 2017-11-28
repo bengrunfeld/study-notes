@@ -52,5 +52,11 @@ Which would you rather write a Unit Test for?
 * [Objects Should be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)
 * [Three Benefits of Using Immutable Object](https://medium.com/web-engineering-vox/3-benefits-of-using-immutable-objects-886ca2c56e85)
 * [Why is immutability so important(or needed) in javascript?](https://stackoverflow.com/a/34385684)
-* [Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
+* [Temporal Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming))
 * [XKCD - Side Effects](https://xkcd.com/1312/)
+* [About Thread Safety in Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+* 
+
+
+https://facebook.github.io/immutable-js/
+https://www.google.com/search?q=benefits+of+immutability&oq=benefits+&aqs=chrome.1.69i57j69i59j69i60l2j69i61j0.75443j0j7&sourceid=chrome&ie=UTF-8

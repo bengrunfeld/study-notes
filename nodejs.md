@@ -111,7 +111,6 @@ The Event Emitter is Node.js's implementation of the pub/sub design pattern, and
     emitter.on('customEvent', (message, status) => {
         console.log(`${status}: ${message}`)
     })
-
     emitter.emit('customEvent', 'All is good', 200)
 
 ### Inheriting the Event Emitter into an Object

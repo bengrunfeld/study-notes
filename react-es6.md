@@ -76,7 +76,7 @@ An optional but very useful feature that you can use in React is default propert
 ## Proptypes
 
 PropTypes allow us to supply a property type for all of our different properties, so that it will validate to make sure that we're supplying the right type.
-
+ 
 This is kind of like strong typing in Java (e.g. int, char, string, obj, etc).
 
     export const SomeModule = React.CreateClass({

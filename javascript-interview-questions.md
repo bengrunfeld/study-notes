@@ -4,6 +4,8 @@
 
 1. Explain about Async and Await
 
+With async functions, you can await on a promise. This halts the function in a non-blocking way, waits for the promise to resolve & returns the value. If the promise rejects, it throws with the rejection value, so you can deal with it using catch.
+
 [1](https://youtu.be/COKdtOgopWQ)
 
 ## ES6 Specific Questions
@@ -80,9 +82,8 @@ Once the final `yield` expression has been passed, and JS has reached the end of
 
 * You have tail call optimization.
 * You have import statements.
-* Lamba's are pretty chill.
+* Lamba's are pretty cool.
 * Immutable and block scoping objects with "const" and "let".
-* All your friends who only know ES5 will look at you like a strange but very powerful wizard.
 * Classes and OO inheritence.
 * Functors, and all that functional goodness.
 * String templates that handle interpolation for you.
@@ -101,13 +102,11 @@ WHAT I DON'T LIKE: ES6 classes. They are named and used the same as regular OO c
 
 ### 4. Explain how ES6 classes work
 
-
-
 ### 5. Explain some new additions to ES6
 
 ### 6. What is Callback Hell and how do you solve it?
 
-
+### 7. Difference between Observables and Promises
 
 ## Non-ES6 Questions
 
@@ -118,6 +117,12 @@ WHAT I DON'T LIKE: ES6 classes. They are named and used the same as regular OO c
 ### 3. Explain how Closures work and why you'd want/not want to use them
 
 ### 4. Explain the difference between `call`, `apply` and `bind`. Give examples of when you'd use each of them. 
+
+Use `bind()` when you want that function to later be called with a certain context, useful in events. Use `call()` or `apply()` when you want to invoke the function immediately, and modify the context.
+
+They all attach this into a function (or object) and the difference is in the function invocation. 
+
+`apply` is similar to `call` except that it takes an array-like object instead of listing the arguments out one at a time.
 
 ### 5. Explain XHR requests
 
@@ -163,6 +168,47 @@ A: Synchronous requests block the execution of code which creates "freezing" on 
 ### 22. Explain event bubbling
 
 ### 23. Explain the difference between `pop`, `push`, `shift` and `unshift`
+
+### 24. Talk about the following concepts
+
+* Javascript 
+* observables vs promises - JS moving away from Promises
+* http2
+* heatous requests (links in restful response)
+* oauth-2
+* database web services vs apis
+* performance testing
+* agile ceremonies
+
+
+what can you see from a POST request?
+How does a RESTful call get sent?
+
+Q: How are fat arrow functions different to regular functions.
+A: They automatically bind the context of this.
+
+Use a singleton pattern. You can maintain state in a singleton.
+
+
+How does garbage collection occur in the Browser?
+
+Can you mark something for garbage collection?
+
+What is a closure, how do you use it and please write one which increments a counter.
+
+In recursive programming, how do you avoid a stack overflow in a massive loop?
+
+What is the difference between call and apply
+
+What is the difference between foreach and map
+
+What type of data structure is the DOM?
+
+For N nodes on a DOM tree, how deep is the DOM
+
+What is the difference between an object and an array
+
+
 
 ## Sources
 

@@ -171,7 +171,7 @@ You should always have a default for state, just in case it isn't added elsewher
 
 **Composing** means using the return value of one function as the argument for another function, which itself returns a value.
 
-So if you have a reducer that adds a spinner boolean to indicate if the spinner should be turned on, and another reducer that *indicates* that a url fetch is in process from the server, the fetching reducer could also turn on the spinner but simply calling the spinner reducer. E.g.
+So if you have a reducer that adds a spinner boolean to indicate if the spinner should be turned on, and another reducer that *indicates* that a url fetch is in process from the server, the fetching reducer could also turn on the spinner by simply calling the spinner reducer. E.g.
 
 	action = {
 		type: C.ADD,

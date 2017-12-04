@@ -27,3 +27,78 @@ Reducers take the existing state and an action, then perform mutations on that s
 **8.** In our *Container* components, we have access to the `store` since  the `Provider` made it available to us. We use `connect`'s `mapDispatchToProps` function to make Redux's `store.dispatch(action)` available to React's *Presentational* components via `props`. So *Presentational* components can now call `store.dispatch(action)` via props.
 
 **9.** Finally, we use `let Container = connect(mapStateToProps, mapDispatchToProps)(PresenationalComponent)` to return a copy of `PresentationalComponent` that has been hydrated with data from `mapStateToProps` and also has access to the Redux `store.dispatch` method. We export `Container` and import it where we need to create this hydrated React component.
+
+
+------------
+
+## Higher Order Components
+
+HOC's are created by using a **function** that takes a components as an input and returns a new component which has been hydrated with data and functionality.
+
+Components should calculate what's going on inside of them
+Containers should supply the values via props that the components will use for the calculation
+
+------------
+
+## Naming Conventions
+
+### Terminology
+
+– Effect is a noun that means the result of an action
+– Affect is a verb that means to make a difference
+
+### Actions
+
+Name each action as `<NOUN>_<VERB>` with the present tense for the sake of namespacing and sorting your reducers. E.g.
+
+    TODO_ADD
+
+### Action Creators
+
+Name each action creator as `<verb><Noun>` as a convention to clearly identify what type of function it is. **Simple** action creators (i.e. those that cause a single Redux action to be consumed by the store) should be named as **effects** E.g.
+
+`const addTodo = createAction( 'TODO_ADD' )`
+
+**Complex** action creators – i.e. those that produce actions indirectly through Redux middleware – e.g. redux-thunk are more likely to **affect** your state. These should be named with present-tense verbs. E.g. ` loadPosts()`
+
+
+    const loadPosts = subreddit => dispatch => {
+      // Tell Redux we're now loading...
+      dispatch(loadingPosts(subreddit));
+     
+      fetch(subreddit).then(posts =>
+        // Tell Redux we succeeded
+        dispatch(loadingPostsSucceeded(posts));
+      }, err => {
+        // Tell Redux we failed
+        dispatch(loadingPostsFailed(err));
+      });
+    };
+
+### Async 
+
+What if the TodoMVC example was sending new todos to a server and needed to be acknowledged by the server before being added locally? Then `ADD_TODO/addTodo()` is insufficient. This is more accurate:
+
+    { 
+        TODO_ADD_REQUESTED: 'TODO_ADD_REQUESTED',
+        TODO_ADD_SUCCEEDED: 'TODO_ADD_SUCCEEDED',
+        TODO_ADD_FAILED: 'TODO_ADD_FAILED'
+    }
+
+### Selectors
+
+Name each selector as `get<Noun>` as a convention to clearly identify what type of function it is. E.g.
+
+    const getTodo = (state) => state
+
+
+### Action Types
+
+Your actions types should be **effects**. E.g. 
+
+    const actionsTypes = {
+      LOADING_POSTS:           'LOADING_POSTS',
+      LOADING_POSTS_FAILED:    'LOADING_POSTS_FAILED',
+      LOADING_POSTS_SUCCEEDED: 'LOADING_POSTS_SUCCEEDED',
+    };
+

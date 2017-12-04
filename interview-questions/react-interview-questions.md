@@ -14,7 +14,7 @@ Typically you’d use Webpack’s `DefinePlugin` method to set `NODE_ENV` to `pr
 
 ### Explain what JSX is and how it works
 
-React components are typically written in JSX, a JavaScript extension syntax allowing quoting of HTML and using HTML tag syntax to render subcomponents.[11] HTML syntax is processed into JavaScript calls of the React framework. Developers may also write in pure JavaScript.
+React components are typically written in JSX, a JavaScript extension syntax allowing quoting of HTML and using HTML tag syntax to render subcomponents. HTML syntax is processed into JavaScript calls of the React framework. Developers may also write in pure JavaScript.
 
 ### Explain how the One-Way Data Flow works
 
@@ -132,7 +132,7 @@ This method is called when a component is being removed from the DOM.
 
 `componentWillMount` - invoked immediately before mounting occurs. It is called before `render`, therefore setting state in this method will not trigger a re-rendering. Avoid introducing any side-effects or subscriptions in this method.
 
-`render` - creates a tree of React elements. When called, it examines `this.props` and `this.state` and returns a single React element. This element can be either a representation of a native DOM component, such as <div />, or another composite component that you've defined yourself. Returning `null` or `false` indicates that you don't want anything rendered.
+`render` - creates a tree of React elements. When called, it examines `this.props` and `this.state` and returns a single React element. This element can be either a representation of a native DOM component, such as `<div />`, or another composite component that you've defined yourself. Returning `null` or `false` indicates that you don't want anything rendered.
 
 `componentDidMount` - invoked immediately after a component is mounted. Ideal place for network requests (e.g. AJAX). Setting state in this method will trigger a re-rendering.
 
@@ -188,13 +188,13 @@ The second argument is a callback that gets executed once setState has completed
 
 ### In which lifecycle event do you make AJAX/Network requests and why?
 
-`componentDidUpdate` - the AJAX request could theoritically resolve before the component has mounted. Then you would be trying to call `setState` on a component that hasn't mounted, which would introduce bugs. Secondly, `componentWillMount` might get called multiple times per render by React's `reconciliation` algorithm for performance reasons. That would cause multiple AJAX requests to get sent. 
+Use `componentDidUpdate` or `componentDidMount`. If you use `componentWillMount`, the AJAX request could theoritically resolve before the component has mounted. Then you would be trying to call `setState` on a component that hasn't mounted, which would introduce bugs. Secondly, `componentWillMount` might get called multiple times per render by React's `reconciliation` algorithm for performance reasons. That would cause multiple AJAX requests to get sent. 
 
 ## Feature Specific Questions
 
 ### What’s the difference between an Element and a Component in React?
 
-An element is a representation of something in the UI, which will usually become `HTML`, e.g. `<a>`, `<div>`, etc. 
+An element is a representation of something in the UI, which will usually become HTML, e.g. `<a>`, `<div>`, etc. 
 
 A component is a function or class that accepts input and returns an element or other components.
 
@@ -228,9 +228,9 @@ Keys help React become more efficient at performing updates on lists.
 
 In uncontrolled components, data is handled by the DOM itself. In controlled components, data is only handled by the React component.
 
-In HTML, form elements such as <input>, <textarea>, and <select> typically maintain their own state and update it based on user input. In React controlled components, mutable state is typically kept in the `state` property of components, and only updated with `setState`.
+In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React controlled components, mutable state is typically kept in the `state` property of components, and only updated with `setState`.
 
-This means that `state` is the single source of truth. So if you wanted to change the `value` of an `input` box, you would call `setState` every time the user pressed a key, which would then fill `input` with the new value of `state`. 
+This means that `state` is the single source of truth. So if you wanted to change the `value` of an `<input>` box, you would call `setState` every time the user pressed a key, which would then fill `input` with the new value of `state`. 
 
 In uncontrolled components, we usually use `refs` to grab the data inside of form fields. 
 
@@ -275,7 +275,7 @@ If you use an incorrect type, or the value is required but you don't have it, Re
 
 ### Why would you use `React.Children.map(props.children, () => )` instead of `props.children.map(() => )`
 
-It’s not guaranteed that props.children will be an array. If there is only one child, then it will be an object. If there are many children, then it will be an array.
+It’s not guaranteed that `props.children` will be an array. If there is only one child, then it will be an object. If there are many children, then it will be an array.
 
     <Parent>
         <Child />
@@ -294,11 +294,11 @@ In order to solve cross browser compatibility issues, your event handlers in Rea
 
 ### Where does a parent component define its children components? 
 
-> Within the render method
+Within the render method
 
 ### Can a parent component access or read its children components properties?
 
-> Yes
+Yes
 
 ### How do you set the value of textarea?
 
@@ -318,13 +318,13 @@ In Stateless Functional Components, just use ES6 named params.
         )
     }
 
-### What does it mean whhen an input field does not supply a `value` property?
+### What does it mean when an input field does not supply a `value` property?
 
 That you're using an uncontrolled component. 
 
 ## Sources
 
-A lot of this information was learned, borrow, and used from the following:
+A lot of this information was learned and borrowed from the following:
 
 * https://www.lynda.com/React-js-tutorials/React-js-Essential-Training/496905-2.html
 * https://www.toptal.com/react/interview-questions

@@ -117,6 +117,8 @@ WHAT I DON'T LIKE: ES6 classes. They are named and used the same as regular OO c
 
 ### 3. Explain how Closures work and why you'd want/not want to use them
 
+In computer science, a *Closure* is a *first class function* (see 23), with free variables that are bound in the lexical environment. Such a function is said to be *closed over* its free variables. A closure is defined within the scope of its free variables, and the extent of those variables is at least as long as the lifetime of the closure itself. 
+
 ### 4. Explain the difference between `call`, `apply` and `bind`. Give examples of when you'd use each of them. 
 
 ### 5. Explain XHR requests
@@ -163,6 +165,29 @@ A: Synchronous requests block the execution of code which creates "freezing" on 
 ### 22. Explain event bubbling
 
 ### 23. Explain the difference between `pop`, `push`, `shift` and `unshift`
+
+### 24. What does supporting `first class functions` mean?
+
+In computer science, a language is said to support `first class functions` if it treats `functions` as `first class objects`. That means that the language supports constructing new functions during the execution of a program, storing them in data structures, passing them as arguments to other functions, and returning them as the values of other functions.
+
+### 25. What are the similarities and differences between `high order functions` and `first class functions`?
+
+**Similarities:** Both allow functions as arguments and functions as return values.
+
+**Differences:** *high order* describes a mathematical concept of functions that operate on other functions. 
+
+*first class*, on the other hand, is a computer science term that describes programming language entities that have no restriction on their use. Therefore, first-class functions can appear anywhere in a program that other first class entities (e.g. numbers, arrays) can.
+
+26. Explain what `currying` is.
+
+*High order functions* enable currying, which is a technique in which a function is applied to its arguments, with each application returning a new function that accepts the next argument. 
+
+27. Explain the main concepts and rules of functional programming
+
+28. Explain the benefits and drawbacks of functional programming
+
+29. Why has functional programming become popular?
+
 
 ## Sources
 

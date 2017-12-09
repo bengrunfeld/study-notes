@@ -1,3 +1,6 @@
+This is a `code comment`
+
+
 # Redux Workflow
 
 ## In Redux

@@ -14,6 +14,48 @@
 
     Some more code
 
+## Understanding Immutability in Javascript - Under the Hood
+
+In JavaScript, only `Objects` and `Arrays` are **mutable**, not primitive values - e.g. `Strings` and `Numbers`, which are **immutable**. 
+
+Immutability in this case means that the place in memory where the  string is stored in will not be modified
+
+    let a = 'hello'
+    a = a + ' world'
+    console.log(a)  // hello world
+
+### What's happening
+
+1. The existing value of `a` is retrieved from memory
+2. "World" is appended to the existing value of `a`
+3. The resultant value is then allocated to a new block of memory
+4. `a` object now points to the newly created memory space
+5. Previously created memory space is now available for garbage collection.
+
+- *s3*
+
+### Javascript Native Objects that are Mutable
+
+* Objects 
+* Arrays
+* Functions
+* Classes
+* Sets
+* Maps
+
+### Javascript Primitive Data Types that are Immutable
+
+* String
+* Number
+* Boolean
+* Null
+* Undefined
+* Symbol
+
+Symbol is used to make object properties that are anonymous. This data type is used as the key for an object property when the property is intended to be private, for the internal use of a class or an object type.
+
+- *s4*
+
 ## Ten Benefits of Immutability
 
 1. Thread Safety
@@ -33,7 +75,7 @@ In Javascript, Thread Safety is *usually* not an issue since the Browser is sing
 
 Immutable objects are thread-safe. This means that multiple threads can access the same object at the same time, without clashing with another thread.
 
-If no object methods can modify its state, no matter how many of them and how often are being called parallel—they will work in their own memory space in stack.
+If no object methods can modify its state, no matter how many of them and how often are being called parallel — they will work in their own memory space in stack.
 
 ### 2. Immutable objects are simpler to construct, test, and use
 
@@ -47,6 +89,8 @@ Which would you rather write a Unit Test for?
 
 * s1: [Oracle - Immutability](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
 * s2: [Wikipedia - Immutable Objects](https://en.wikipedia.org/wiki/Immutable_object)
+* s3: [MDN Glossary - Mutable](https://developer.mozilla.org/en-US/docs/Glossary/Mutable)
+* s4: [MDN Glossary - Symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
 
 
 * [Objects Should be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)

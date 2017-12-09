@@ -1,6 +1,6 @@
 # Immutable.js
 
-"Maximum reliance on immutable objects is widely accepted as a sound strategy for creating simple, reliable code." - *s1*
+"Maximum reliance on immutable objects is widely accepted as a sound strategy for creating simple, reliable code." - *s1 - Oracle*
 
 ## Definition of an Immutable Object
 
@@ -18,7 +18,7 @@
 
 In JavaScript, only `Objects` and `Arrays` are **mutable**, not primitive values - e.g. `Strings` and `Numbers`, which are **immutable**. 
 
-Immutability in this case means that the place in memory where the  string is stored in will not be modified
+Immutability in this case means that the place in memory where the string is stored in will not be modified.
 
     let a = 'hello'
     a = a + ' world'
@@ -58,16 +58,18 @@ Symbol is used to make object properties that are anonymous. This data type is u
 
 ## Ten Benefits of Immutability
 
-1. Thread Safety
-2. Immutable objects are simpler to construct, test, and use
-3. Avoid temporal coupling
-4. Avoid side effects
-5. Avoid identity mutability issues
-6. Avoid invalid object’s state
-7. Failure atomicity
-8. Increase Predictability
-9. Increase Performance
-10. Mutation Tracking
+Immutable object:
+
+1. are **Thread Safe**
+2. are simpler to construct, test, and use
+3. avoid temporal coupling
+4. avoid side effects
+5. avoid identity mutability issues
+6. avoid invalid state
+7. increased predictability
+8. increased performance
+9. enable mutation tracking
+10. provide failure atomicity
 
 ### 1. Thread Safety
 

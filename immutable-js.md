@@ -8,11 +8,16 @@
 
 ## Example of a Mutable Object
 
-    Some code
+    let username = 'Ben'
+    username = 'Charles'
 
 ## Example of an Immutable Object
 
-    Some more code
+    const username = 'Ben'
+    username = 'Charles'
+    
+    Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:10
 
 ## Understanding Immutability in Javascript - Under the Hood
 
@@ -60,7 +65,7 @@ Symbol is used to make object properties that are anonymous. This data type is u
 
 Immutable object:
 
-1. are **Thread Safe**
+1. are thread safe
 2. are simpler to construct, test, and use
 3. avoid temporal coupling
 4. avoid side effects
@@ -71,21 +76,58 @@ Immutable object:
 9. enable mutation tracking
 10. provide failure atomicity
 
-### 1. Thread Safety
+### 1. Immutable Objects are Thread Safe
+
+Immutable objects are thread safe. This means that multiple threads can access the same object at the same time without clashing with one another.
+
+If no object methods can modify its state, no matter how many of them and how often they are being called parallel — they will work in their own memory space in stack.
 
 In Javascript, Thread Safety is *usually* not an issue since the Browser is single threaded, meaning that only one command (of your code) is executed at a time.
 
-Immutable objects are thread-safe. This means that multiple threads can access the same object at the same time, without clashing with another thread.
+That said, multi-threading is possible with Web Workers, which spawn real OS-level threads.
 
-If no object methods can modify its state, no matter how many of them and how often are being called parallel — they will work in their own memory space in stack.
+> However, since web workers have carefully controlled communication points with other threads, it's actually very hard to cause concurrency problems. There's no access to non-threadsafe components or the DOM. And you have to pass specific data in and out of a thread through serialized objects. So you have to work really hard to cause problems in your code.
+  
+That said, MDN themselves provide an example of a threading error using Web Workers, so it's possible.
+
+*s5: About thread safety*
+
+![Meme: So you're telling me there's a chance](http://s2.quickmeme.com/img/80/80585fa126afe931d3686d9aa0c47e36d7b7b3db27bf52f7ce66f9e86bf91b3e.jpg "Meme: So you're telling me there's a chance")
 
 ### 2. Immutable objects are simpler to construct, test, and use
 
-Which would you rather write a Unit Test for?
+Mutable objects can have different internal states throughout their lifetime, all of which need to be tested explicitly. 
 
-    const getPosts = () => {
-        
+Imagine having to test the following:
+
+    let request = new Request({
+        method: "GET"
+        url: "https://credible.com"
+    })
+
+    let updateComments = (comments) => {
+        request.method = "PUT"
+        sendXHR(request, comments)
     }
+
+    let fetchPosts = () => {
+        request.method = "GET"
+        return sendXHR(request)
+    }
+
+    let sendXHR = (request) => {
+        $.ajax(request)
+    }
+
+If you're writing a Unit Test for `sendXHR`, you will have to test every permutation of `request`'s state. If `request` was immutable, there would be no uncertainty about its state.
+
+**Check this example with Bryce!!**
+
+### 3. avoid temporal coupling
+
+> Temporal Coupling occurs when two actions are bundled together into one module just because they happen to occur at the same time.
+
+*s6 Temporal Coupling*
 
 ## Sources
 
@@ -93,6 +135,10 @@ Which would you rather write a Unit Test for?
 * s2: [Wikipedia - Immutable Objects](https://en.wikipedia.org/wiki/Immutable_object)
 * s3: [MDN Glossary - Mutable](https://developer.mozilla.org/en-US/docs/Glossary/Mutable)
 * s4: [MDN Glossary - Symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
+* s5: [MDN - Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+* s6: [Wikipedia - Temporal Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)#Object-oriented_programming)
+
+
 
 
 * [Objects Should be Immutable](http://www.yegor256.com/2014/06/09/objects-should-be-immutable.html)

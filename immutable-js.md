@@ -63,7 +63,7 @@ Symbol is used to make object properties that are anonymous. This data type is u
 
 ## Ten Benefits of Immutability
 
-Immutable object:
+Immutable objects:
 
 1. are thread safe
 2. are simpler to construct, test, and use
@@ -100,34 +100,73 @@ Mutable objects can have different internal states throughout their lifetime, al
 
 Imagine having to test the following:
 
-    let request = new Request({
-        method: "GET"
-        url: "https://credible.com"
-    })
+    let request = new Request("https://credible.com")
 
-    let updateComments = (comments) => {
+    let updateComments = comments => {
         request.method = "PUT"
-        sendXHR(request, comments)
+        request.payload = comments
+        sendXHR(request)
     }
 
     let fetchPosts = () => {
         request.method = "GET"
         return sendXHR(request)
+        // payload may have been set by updateComments
     }
 
-    let sendXHR = (request) => {
+    let sendXHR = request => {
         $.ajax(request)
     }
 
-If you're writing a Unit Test for `sendXHR`, you will have to test every permutation of `request`'s state. If `request` was immutable, there would be no uncertainty about its state.
+If you're writing a Unit Test for `request`, you will have to test every possible combination of its state. If `request` was immutable, there would be no uncertainty about its state.
 
 **Check this example with Bryce!!**
 
-### 3. avoid temporal coupling
+### 3. Immutable Objects Avoid Temporal Coupling
 
 > Temporal Coupling occurs when two actions are bundled together into one module just because they happen to occur at the same time.
 
 *s6 Temporal Coupling*
+
+    let request = new Request(url)
+    request.method = "POST"
+    let first = request.send()
+    request.body = payload
+    let second = request.send()
+
+This code works. However, you must remember that the first request should be configured before the second one may happen. If we decide to remove the first request from the script, we will remove the second and the third line, and won't get any errors from the compiler:
+
+    let request = new Request(url)
+    // request.method = "POST"
+    // let first = request.send()
+    request.body = payload
+    let second = request.send()
+
+Now the script is broken although it compiled without errors. This is what temporal coupling is about - there is always some hidden information in the code that a programmer has to remember. In this example, we have to remember that the configuration for the first request is also used for the second one, and that the second request should always stay together and be executed after the first one.
+
+If the `Request` class were immutable, the requests would not be coupled, and removing one will not stop the other from working. 
+
+    const post = new Request(url, "POST")
+    const first = post.send()
+    const second = post.send(payload)
+
+### 4. Immutable Objects Avoid Side Effects
+
+In computer science, a function or expression is said to have a **side effect** if it modifies some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value.
+
+In the following code, we only intended to send requests to 2 URLs, but another part of the app added a url, and now a side effect has occured where an unexpected & unwanted request is being sent. If `urls` was immutable, this could not have happened.
+
+    let urls = ['cred.com', 'loans.com']
+    
+    // Some other part of the app makes an unexpected addition
+    urls.push('refi.com')
+
+    for (let i = 0; i < urls.length; i++) {
+        sendXHR(urls[i])
+    }
+
+### 5. avoid identity mutability issues
+
 
 ## Sources
 

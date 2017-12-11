@@ -63,7 +63,7 @@ Symbol is used to make object properties that are anonymous. This data type is u
 
 We will deal with `const` and `Object.assign` later in the talk.
 
-## Ten Benefits of Immutability
+## Benefits of Immutability
 
 Immutable objects:
 
@@ -73,10 +73,14 @@ Immutable objects:
 4. avoid side effects
 5. avoid identity mutability issues
 6. avoid invalid state
-7. increased predictability
-8. increased performance
+7. increase predictability
+8. increase performance `*`
 9. enable mutation tracking
 10. provide failure atomicity
+11. are much easier to cache
+12. prevent NULL references, which are bad
+
+`*` - debateable
 
 ### 1. Immutable Objects are Thread Safe
 
@@ -251,11 +255,33 @@ If you don't truly know what the contents of the object you're working with are,
 
 ### 8. Immutable Objects Cause Increased Performance
 
+[source](https://softwareengineering.stackexchange.com/questions/304574/does-immutability-hurt-performance-in-javascript)
+
 ### 9. Immutable Objects Enable Mutation Tracking
+
+[s1](https://www.sitepoint.com/immutability-javascript/)
+[s2](https://wecodetheweb.com/2016/02/12/immutable-javascript-using-es6-and-beyond/)
+[s3]()
 
 ### 10. Immutable Objects Provide Failure Atomicity
 
+### 11. are much easier to cache
 
+### 12. prevent NULL references, which are bad
+
+[source](http://www.yegor256.com/2014/05/13/why-null-is-bad.html)
+
+## Arguments Against Immutability
+
+### 1. “It's cheaper to update an existing object than create a new one”. 
+ 
+Oracle thinks that “The impact of object creation is often overestimated and can be offset by some of the efficiency associated with immutable objects. These include decreased overhead due to garbage collection, and the elimination of code needed to protect mutable objects from corruption.”
+
+[source](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
+
+Regarding Javascript the general consensus regarding low-level slowdown *without* using a library like Immutable that is highly optimized is that "it depends".
+
+[source](https://softwareengineering.stackexchange.com/questions/304574/does-immutability-hurt-performance-in-javascript)
 
 ## Enforcing Immutability by Convention
 

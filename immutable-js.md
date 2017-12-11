@@ -100,7 +100,7 @@ Mutable objects can have different internal states throughout their lifetime, al
 
 Imagine having to test the following:
 
-    let request = new Request("https://credible.com")
+    let request = new Request()
 
     let updateComments = comments => {
         request.method = "PUT"
@@ -118,7 +118,9 @@ Imagine having to test the following:
         $.ajax(request)
     }
 
-If you're writing a Unit Test for `request`, you will have to test every possible combination of its state. If `request` was immutable, there would be no uncertainty about its state.
+If `request` is mutable, then by the time it gets to `sendHXR`, you're not really sure what's in it. You have to write lots of extra tests to check and verify its internal state. 
+
+If `request` was immutable, there would be no such uncertainty.
 
 **Check this example with Bryce!!**
 
@@ -152,7 +154,9 @@ If the `Request` class were immutable, the requests would not be coupled, and re
 
 ### 4. Immutable Objects Avoid Side Effects
 
-In computer science, a function or expression is said to have a **side effect** if it modifies some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value.
+> A function or expression is said to have a **side effect** if it modifies some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value.
+
+[source](https://en.wikipedia.org/wiki/Side_effect_(computer_science))
 
 In the following code, we only intended to send requests to 2 URLs, but another part of the app added a url, and now a side effect has occured where an unexpected & unwanted request is being sent. If `urls` was immutable, this could not have happened.
 
@@ -165,7 +169,37 @@ In the following code, we only intended to send requests to 2 URLs, but another 
         sendXHR(urls[i])
     }
 
-### 5. avoid identity mutability issues
+### 5. Immutable Objects Avoid Identity Mutability Issues
+
+In my research, I found 2 different opinions on what Object Identity means. 
+    
+    * Reference Identity - the identity of an object is what address it points to in memory 
+    * Value Identity - the identity of an object consists of the values it contains. 
+
+#### Equality
+
+i.e. With regard to Reference Identity, 2 objects are considered equal if they both point to the same place in memory. Re Value Identity, 2 objects are considered equal if they contain the same values.
+
+[source](https://community.oracle.com/docs/DOC-983568)
+
+For the purposes of this lecture, I'm only going to deal with **Value Identity**.
+
+#### Indentity Mutability Issues
+
+In certain situations, you may want to use an Object Identity as a key in a Map (key value pairs). If this object is mutable, and its identity changes, it will no longer be usable as a key in that Map.
+
+    let d1 = new Date()
+    let guests = {}
+    guests[d1] = "Value"
+    console.log(guests[d1])         // Value
+    d1.setDate(d1.getDate() + 1)    // Changed by something else
+    console.log(guests[d1])         // Undefined
+
+### 6. Immutable Objects Avoid Invalid State
+
+
+
+    
 
 
 ## Sources
@@ -176,7 +210,7 @@ In the following code, we only intended to send requests to 2 URLs, but another 
 * s4: [MDN Glossary - Symbol](https://developer.mozilla.org/en-US/docs/Glossary/Symbol)
 * s5: [MDN - Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 * s6: [Wikipedia - Temporal Coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)#Object-oriented_programming)
-
+* s7: [Oracle - Object Identity](https://community.oracle.com/docs/DOC-983568)
 
 
 

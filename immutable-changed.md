@@ -1,15 +1,15 @@
-"Maximum reliance on immutable objects is widely accepted as a sound strategy for creating simple, reliable code." - [source - Oracle](Oracle - Immutability](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
+"Maximum reliance on immutable objects is widely accepted as a sound strategy for creating simple, reliable code." - [source - Oracle](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
 
-### Definition of an Immutable Object
+## Definition of an Immutable Object
 
 "In object-oriented and functional programming, an immutable object is an object whose state cannot be modified after it is created." – [Source - Wikipedia](https://en.wikipedia.org/wiki/Immutable_object)
 
-### Example of a Mutable Object
+## Example of a Mutable Object
 
     let username = 'Ben'
     username = 'Charles'
 
-### Example of an Immutable Object
+## Example of an Immutable Object
 
     const username = 'Ben'
     username = 'Charles'
@@ -17,7 +17,9 @@
     Uncaught TypeError: Assignment to constant variable.
     at <anonymous>:1:10
 
-### Understanding Immutability in Javascript - Under the Hood
+[[MORE]]
+
+## Understanding Immutability in Javascript - Under the Hood
 
 In JavaScript, only `Objects` and `Arrays` are **mutable**, not primitive values - e.g. `Strings` and `Numbers`, which are **immutable**. 
 
@@ -171,147 +173,7 @@ In the following code, we only intended to send requests to 2 URLs, but another 
     // Some other part of the app makes an unexpected addition
     urls.push('refi.com')
 
-    for (let i = 0; i < urls.length; i++) {
-        sendXHR(urls[i])
-    }
-
-[XKCD - Side Effects](https://xkcd.com/1312/)
-
-### 5. Immutable Objects Avoid Identity Mutability Issues
-
-In my research, I found 2 different opinions on what Object Identity means. 
-    
-    * Reference Identity - the identity of an object is what address it points to in memory 
-    * Value Identity - the identity of an object consists of the values it contains. 
-
-#### Equality
-
-i.e. With regard to Reference Identity, 2 objects are considered equal if they both point to the same place in memory. Re Value Identity, 2 objects are considered equal if they contain the same values.
-
-[source - Oracle](https://community.oracle.com/docs/DOC-983568)
-
-For the purposes of this lecture, I'm only going to deal with **Value Identity**.
-
-#### Indentity Mutability Issues
-
-In certain situations, you may want to use an Object Identity as a key in a Map (key value pairs). If this object is mutable, and its identity changes, it will no longer be usable as a key in that Map.
-
-    let d1 = new Date()
-    let guests = {}
-    guests[d1] = "Value"
-    console.log(guests[d1])         // Value
-    d1.setDate(d1.getDate() + 1)    // Changed by something else
-    console.log(guests[d1])         // Undefined
-
-If using a `Date` object as a key is unpaletable to you, then consider if we were to use an object property as the key. 
-
-e.g. 
-
-    let person = new Person({id: 1234, name: "Ben"})
-    let guests = {}
-    guests[person.id] = "Ben Grunfeld"
-    person.id = "4321"
-
-
-### 6. Immutable Objects Avoid Invalid State
-
-Ensuring that a mutable object maintains a valid state can be extremely difficult. Imagine we have a rate (e.g. APR) that has a minimum and a maximum, and that the current value must stay between those two limits.
-
-    let rate1 = new Rate({min: 1, max: 100, current: 50})
-    rate1.max = 45
-
-The object is now in an invalid state. Of course, we can enforce coding standards by convention, but it's hard to know how other parts of the application will use our code and if they will follow our conventions. If our object is mutable, then we have to start checking validity both in the constructor (when the object is created) and on any mutation. 
-
-Here is an incomplete list of rules to ensure valid state when using mutable objects:
-
-* Rule 1: Always re-validate every rule to ensure the correctness of an object.
-* Rule 2: You must always validate before mutating.
-* Rule 3: The second rule doesn't need to be followed in a constructor. In a constructor you are always allowed to mutate and then validate afterwards.
-* Rule 4: If there is a way to fix an invalid object, you are allowed to mutate and validate even outside of a constructor.
-* Rule 5A: Mutable objects must have some kind of notification mechanism when they change.
-* Rule 5B: Mutable objects must have a Copy function that can create deep copies of an object.
-* Rule 6A: Every mutable object we return must have a `changed` event that gets fired when an object was mutated.
-* Rule 6B: Never return mutable objects directly. Return defensive copies instead.
-* Rule 6C: Don't allow access to internal mutable objects at all.
-* Rule 7: Events can only be used if there is a way to fix an invalid object. If there is no way to fix an invalid object, use defensive copies.
-* Rule 8: If your mutable objects are accessed by multiple threads (mutable shared state) you also must add synchronization primitives to avoid race conditions that can bring an object into an invalid state.
-* Bonus Rule: Just because every method of an object has synchronization primitives doesn't mean it is thread-safe. Because of this, you probably want to ignore Rule 8.
-
-Agreeing on a set list of such rules inside of a large engineering team is *difficult* (to say the least). As the saying goes, "2 programmers, 3 opinions". Educating new devs in the above rules and enforcing/ensuring that they are ALL implemented becomes a big headache really quickly, and I'd argue that it borders on being impossible. People make mistakes, especially when things are complex - it's simply human nature. 
-
-Alternatively, when using truly Immutable objects, there are only two rules for ensuring valid state.
-
-* Rule 1: All validation logic must be contained in the constructor.
-* Rule 2: The constructor must be used when instantiating an object.
-
-Now that is MUCH simpler, and easier to agree upon and enforce in a large engineering team. 
-
-[source](https://sidburn.github.io/blog/2017/02/27/mutability-vs-immutability-validation)
-
-
-### 7. Immutable Objects Increase Predictability
-
-If you don't truly know what the contents of the object you're working with are, it becomes much harder to predict what will happen. 
-
-### 8. Immutable Objects Cause Increased Performance
-
-#### Arguments that Immutability hurts performance:
-
-* Creating new objects in memory is more expensive that mutating existing ones
-* Defensive copying (making a complete copy of an object and implementing changes on the copy instead of the original) creates a lot of garbage which would be avoided by mutating existing objects
-
-**Oracle's Rebuttal**
-
-"Programmers are often reluctant to employ immutable objects, because they worry about the cost of creating a new object as opposed to updating an object in place. The impact of object creation is often overestimated, and can be offset by some of the efficiencies associated with immutable objects. These include decreased overhead due to garbage collection, and the elimination of code needed to protect mutable objects from corruption."
-
-[source](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
-
-#### Arguments that Immutability improves Performance
-
-* Performance is largely a Productivity metric in a non-trivial codebase - i.e. developer performance
-* With an increase to productivity and (thread) safety can often come an increase to practical performance, if only because the developers have more time to tune and optimize their code without being swarmed by bugs.
-
-[source](https://softwareengineering.stackexchange.com/questions/304574/does-immutability-hurt-performance-in-javascript)
-
-
-#### Regarding Immutable.js' Performance
-
-* Some people claim that Immutable.js is actually much faster than native Javascript in some circumstances.
-
-[source](http://blog.klipse.tech/javascript/2016/06/23/immutable-perf.html)
-
-* Immutable-focused libraries such as Immutable.JS have been designed to overcome the issues with immutability inherent within JavaScript
-
-* In particular, immutably manipulating large, complex data sets, such as a nested Redux state tree, can generate many intermediate copies of objects, which consume memory and slow down performance as the browser’s garbage collector fights to clean things up. Immutable.JS avoids this by cleverly sharing data structures under the surface, minimizing the need to copy data.
-
-[source](https://redux.js.org/docs/recipes/UsingImmutableJS.html)
-
-
-
-### 9. Immutable Objects Enable Mutation Tracking
-
-One of the more complicated operations in Javascript is tracking if an object changed.
-
-Subscribing to data events throughout your application creates a huge overhead of book-keeping which can hurt performance, sometimes dramatically, and creates opportunities for areas of your application to get out of sync with each other due to easy to make programmer error.
-
-[source](https://facebook.github.io/immutable-js/)
-
-However, if you keep your state immutable you can just rely on `oldObject === newObject` to check if state has changed or not. This is way less CPU demanding.
-
-[source](https://wecodetheweb.com/2016/02/12/immutable-javascript-using-es6-and-beyond/)
-
-
-### 10. Immutable Objects Provide Failure Atomicity
-
-"Failure atomicity" means that if a method threw an exception, the object should still be usable afterwards.
-
-When using Immutable objects, failure atomicity happens by default, since the object's state cannot be modified. 
-
-#### Example of lack of failure atomicity when working with Mutable Objects
-
-    let size = 3
-    let data = 'abc'
-    while (size > -2) {
+    for (let i = 0; i  -2) {
         data.repeat(--size)
     }
     // Uncaught RangeError: Invalid count value
@@ -410,3 +272,4 @@ If Javascript, we use `Object.assign` to perform defensive copying. As noted abo
 * [Mutability vs Immutability re Valid State](https://sidburn.github.io/blog/2017/02/27/mutability-vs-immutability-validation)
 * [IMB - To mutate or not to mutate](https://www.ibm.com/developerworks/library/j-jtp02183/index.html)
 * [Null References: The Billion Dollar Mistake](https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare)
+ </anonymous>

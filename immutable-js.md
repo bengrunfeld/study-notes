@@ -251,7 +251,13 @@ Now that is MUCH simpler, and easier to agree upon and enforce in a large engine
 
 ### 7. Immutable Objects Increase Predictability
 
-If you don't truly know what the contents of the object you're working with are, it becomes much harder to predict what will happen. 
+#### Needing to know the contents of an object
+
+If you don't truly know what the contents of the object you're working with are, it becomes much harder to predict what will happen.
+
+#### Combining Immutable Objects with Pure Functions
+
+If your object is immutable, and is passed to a pure function, as soon as it executes once correctly, you know that it will work the same way forever. 
 
 ### 8. Immutable Objects Cause Increased Performance
 

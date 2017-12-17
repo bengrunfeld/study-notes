@@ -359,14 +359,28 @@ If an object is mutable, you have to exercise some care when storing a reference
 
 Tony Hoare once said: I call it my billion-dollar mistake. It was the invention of the null reference in 1965.
 
-One reason why `null` references are evil is that you cannot see if a function could return null or not. There are many others. 
-
 [source](http://sidburn.github.io/blog/2016/03/20/null-is-evil)
+
+One reason why `null` references are evil is that you cannot see if a function could return null or not. There are many others. 
 
 [source2](http://www.yegor256.com/2014/05/13/why-null-is-bad.html)
 
-
 So, let's just agree for the moment that `null` is bad.
+
+Nulls can creep into your code and cause havoc. E.g.
+
+    let user = {name: 'Ben'}
+    
+    function greet(user) {
+        return `Hello there ${user.name}`
+    }
+    
+    // Unintended mutation from another part of the app
+    let getUser = (obj) => obj.userName //errors our, returns null 
+    user = getUser()                    // user is now null
+    
+    greet(user)   // Uncaught TypeError: Cannot read property 'name' of null
+
 
 ## Enforcing Immutability by Convention
 

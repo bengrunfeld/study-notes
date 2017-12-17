@@ -365,6 +365,7 @@ One reason why `null` references are evil is that you cannot see if a function c
 
 [source2](http://www.yegor256.com/2014/05/13/why-null-is-bad.html)
 
+
 So, let's just agree for the moment that `null` is bad.
 
 ## Enforcing Immutability by Convention

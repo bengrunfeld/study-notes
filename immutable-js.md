@@ -105,8 +105,19 @@ If you need to apply a series of mutations locally before returning, Immutable.j
 
 Note, you can only use `set`, `push`, and `pop` in `withMutations`. Other methods like `map`, `filter`, `sort`, and `splice` will always return new immutable data-structures and **will NOT** mutate a mutable collection.
 
+### Lazy Seq
 
+`Seq` describes a lazy operation, meaning that it does as little work as necessary to respond to a method call. Seq enables efficient chaining of higher-order `Collection` methods (such as `map` and `filter`) by not creating intermediate `Collections`.
 
-## Map
+    const { Seq } = require('immutable')
+    const oddSquares = Seq([ 1, 2, 3, 4, 5, 6, 7, 8 ])
+      .filter(x => x % 2 !== 0)
+      .map(x => x * x)
+
+`Seq` is immutable, so any mutative method called on a `Seq` will return a new `Seq`.
+
+## Collections
+
+### Map
 
 Keep in mind, when using JS objects to construct Immutable Maps, that JavaScript Object properties are always strings, even if written in a quote-less shorthand, while Immutable Maps accept keys of any type.

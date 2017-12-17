@@ -8,6 +8,8 @@
 
 "In object-oriented and functional programming, an immutable object is an object whose state cannot be modified after it is created." – [Source - Wikipedia](https://en.wikipedia.org/wiki/Immutable_object)
 
+[[MORE]]
+
 ### Example of a Mutable Object
 
     let username = 'Ben'
@@ -104,7 +106,7 @@ That said, MDN themselves provide an example of a threading error using Web Work
 
 ![Meme: So you're telling me there's a chance](http://i0.kym-cdn.com/photos/images/original/000/840/283/350.png "Meme: So you're telling me there's a chance")
 
-### 2. Immutable objects are simpler to construct, test, and use
+### 2. Immutable Objects are Simpler to Construct, Test, and Use
 
 Mutable objects can have different internal states throughout their lifetime, all of which need to be tested explicitly. 
 
@@ -131,8 +133,6 @@ Imagine having to test the following:
 If `request` is mutable, then by the time it gets to `sendHXR`, you're not really sure what's in it. You have to write lots of extra tests to check and verify its internal state. 
 
 If `request` was immutable, there would be no such uncertainty.
-
-**Check this example with Bryce!!**
 
 ### 3. Immutable Objects Avoid Temporal Coupling
 
@@ -196,7 +196,7 @@ i.e. With regard to Reference Identity, 2 objects are considered equal if they b
 
 For the purposes of this lecture, I'm only going to deal with **Value Identity**.
 
-#### Identity Mutability Issues
+#### Identity mutability issues
 
 In certain situations, you may want to use an Object Identity as a key in a Map (key value pairs). If this object is mutable, and its identity changes, it will no longer be usable as a key in that Map.
 
@@ -259,24 +259,24 @@ Now that is MUCH simpler, and easier to agree upon and enforce in a large engine
 
 If you don't truly know what the contents of the object you're working with are, it becomes much harder to predict what will happen.
 
-#### Combining Immutable Objects with Pure Functions
+#### Combining immutable objects with pure functions
 
 If your object is immutable, and is passed to a pure function, as soon as it executes once correctly, you know that it will work the same way forever. 
 
-### 8. Immutable Objects help Improve Performance
+### 8. Immutable Objects Help Improve Performance
 
-#### Arguments that Immutability hurts performance:
+#### Arguments that immutability hurts performance:
 
 * Creating new objects in memory is more expensive that mutating existing ones
 * Defensive copying (making a complete copy of an object and implementing changes on the copy instead of the original) creates a lot of garbage which would be avoided by mutating existing objects
 
-**Oracle's Rebuttal**
+**Oracle's rebuttal**
 
 "Programmers are often reluctant to employ immutable objects, because they worry about the cost of creating a new object as opposed to updating an object in place. The impact of object creation is often overestimated, and can be offset by some of the efficiencies associated with immutable objects. These include decreased overhead due to garbage collection, and the elimination of code needed to protect mutable objects from corruption."
 
 [source](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)
 
-#### Arguments that Immutability Improves Performance
+#### Arguments that immutability improves performance
 
 * Performance is largely a Productivity metric in a non-trivial codebase - i.e. developer performance
 * With an increase to productivity and (thread) safety can often come an increase to practical performance, if only because the developers have more time to tune and optimize their code without being swarmed by bugs.
@@ -284,7 +284,7 @@ If your object is immutable, and is passed to a pure function, as soon as it exe
 [source](https://softwareengineering.stackexchange.com/questions/304574/does-immutability-hurt-performance-in-javascript)
 
 
-#### Regarding Immutable.js' Performance
+#### Regarding Immutable.js' performance
 
 * Some people claim that Immutable.js is actually much faster than native Javascript in some circumstances.
 
@@ -316,7 +316,7 @@ However, if you keep your state immutable you can just rely on `oldObject === ne
 
 When using Immutable objects, failure atomicity happens by default, since the object's state cannot be modified. 
 
-#### Example of lack of failure atomicity when working with Mutable Objects
+#### Example of lack of failure atomicity when working with mutable objects
 
     let size = 3
     let data = 'abc'
@@ -353,7 +353,7 @@ You still get the error, but `size` is in a consistent and usable state
 
 [source](http://jtechies.blogspot.com/2012/07/item-64-strive-for-failure-atomicity.html)
 
-### 11. Immutable Objects are much easier to cache
+### 11. Immutable Objects are Much Easier to Cache
 
 You can freely share and cache references to immutable objects without having to copy or clone them; you can cache their fields or the results of their methods without worrying about the values becoming stale or inconsistent with the rest of the object's state.
 
@@ -361,7 +361,7 @@ If an object is mutable, you have to exercise some care when storing a reference
 
 [source](https://www.ibm.com/developerworks/library/j-jtp02183/index.html)
 
-### 12. Immutable Objects prevent NULL references, which are bad
+### 12. Immutable Objects Prevent NULL References, Which Are Bad
 
 Tony Hoare once said: I call it my billion-dollar mistake. It was the invention of the null reference in 1965.
 
@@ -400,7 +400,7 @@ The problem is that `const` creates a read-only variable, although if the variab
     const c = [1, 2, 3]
     c[0] = 5        // Works without error
 
-### The Problem with Using Object.freeze for Immutability
+### The Problem with Using `Object.freeze` for Immutability
 
 > [Object.freeze] prevents new properties from being added to it; prevents existing properties from being removed; and prevents existing properties, or their enumerability, configurability, or writability, from being changed, it also prevents the prototype from being changed.
 

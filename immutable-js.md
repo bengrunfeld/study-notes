@@ -37,6 +37,80 @@ The difference is that instead of mutating the existing collection, all methods 
 
 Almost all of the ES2015 methods on `Array`, `Map`, and `Set` will be found in similar form on `Immutable.List`, `Immutable.Map`, and `Immutable.Set`
 
+## Main API
+
+### List
+
+Lists are very similar to Arrays. They implement Deque, with efficient addition and removal from both the end (`push`, `pop`) and beginning (`unshift`, `shift`).
+
+### Map
+
+Map is an unordered Collection.Keyed of (`key`, `value`) pairs.
+
+Multiple iterations of the same Map will iterate in the same order.
+
+Map's keys can be of any type, even Immutable collections. You can use Immutable.is to determine key equality. This allows the use of any value (including NaN) as a key.
+
+JavaScript object may be used as a key, however strict identity is used to evaluate key equality. Two similar looking objects will represent two different keys.
+
+
+### OrderedMap
+
+A type of Map that has the additional guarantee that the iteration order of entries will be the order in which they were `set()`.
+
+Note that OrderedMap are more expensive than non-ordered Map and may consume more memory.
+
+### Set
+
+A Collection of unique values.
+
+When iterating a Set, the entries will be (value, value) pairs. Iteration order of a Set is undefined, however is stable. Multiple iterations of the same Set will iterate in the same order.
+
+### OrderedSet
+
+A type of Set that has the additional guarantee that the iteration order of values will be the order in which they were added.
+
+Note that OrderedSet are more expensive than non-ordered Set and may consume more memory.
+
+### Stack
+
+Stacks are indexed collections which support very efficient addition and removal from the front using unshift(v) and shift()
+
+Note: reverse() or any inherent reverse traversal (reduceRight, lastIndexOf, etc.) is not efficient with a Stack.
+
+### Record
+
+A record is similar to a JS object, but enforces a specific set of allowed string keys, and has default values.
+
+The `Record()` function produces new Record Factories, which when called create Record instances.
+
+Records always have a value for the keys they define. removeing a key from a record simply resets it to the default value for that key.
+
+Values provided to the constructor not found in the Record type will be ignored.
+
+### Seq
+
+`Seq` describes a lazy operation, meaning that it does as little work as necessary to respond to a method call. Seq enables efficient chaining of higher-order `Collection` methods (such as `map` and `filter`) by not creating intermediate `Collections`.
+
+    const { Seq } = require('immutable')
+    const oddSquares = Seq([ 1, 2, 3, 4, 5, 6, 7, 8 ])
+      .filter(x => x % 2 !== 0)
+      .map(x => x * x)
+
+`Seq` is immutable, so any mutative method called on a `Seq` will return a new `Seq`.
+
+
+### Range
+
+Returns a Seq.Indexed of numbers from start (inclusive) to end (exclusive), by step, where start defaults to 0, step to 1, and end to infinity. When start is equal to end, returns empty range.
+
+### Repeat
+
+Returns a Seq.Indexed of value repeated times times. When times is not defined, returns an infinite Seq of value.
+
+
+## Additional Information about Immutable.js
+
 ### Use raw Javascript objects and arrays
 
 Immutable.js accepts plain JavaScript Arrays and Objects anywhere a method expects an `Collection`.
@@ -105,19 +179,3 @@ If you need to apply a series of mutations locally before returning, Immutable.j
 
 Note, you can only use `set`, `push`, and `pop` in `withMutations`. Other methods like `map`, `filter`, `sort`, and `splice` will always return new immutable data-structures and **will NOT** mutate a mutable collection.
 
-### Lazy Seq
-
-`Seq` describes a lazy operation, meaning that it does as little work as necessary to respond to a method call. Seq enables efficient chaining of higher-order `Collection` methods (such as `map` and `filter`) by not creating intermediate `Collections`.
-
-    const { Seq } = require('immutable')
-    const oddSquares = Seq([ 1, 2, 3, 4, 5, 6, 7, 8 ])
-      .filter(x => x % 2 !== 0)
-      .map(x => x * x)
-
-`Seq` is immutable, so any mutative method called on a `Seq` will return a new `Seq`.
-
-## Collections
-
-### Map
-
-Keep in mind, when using JS objects to construct Immutable Maps, that JavaScript Object properties are always strings, even if written in a quote-less shorthand, while Immutable Maps accept keys of any type.

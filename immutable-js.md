@@ -4,7 +4,7 @@
 
 ### via npm 
 
-    npm install --save
+    npm install immutable --save
 
 **to use**
 

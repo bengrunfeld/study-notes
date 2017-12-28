@@ -375,17 +375,17 @@ So, let's just agree for the moment that `null` is bad.
 
 Nulls can creep into your code and cause havoc. E.g.
 
-    let user = {name: 'Ben'}
+    let user1 = {name: 'Ben'}
     
     function greet(user) {
         return `Hello there ${user.name}`
     }
     
     // Unintended mutation from another part of the app
-    let getUser = (obj) => obj.userName //errors our, returns null 
-    user = getUser()                    // user is now null
+    // attempting to update the user1 object
+    user1 = fetch(user)    // error occurs and returns null
     
-    greet(user)   // Uncaught TypeError: Cannot read property 'name' of null
+    greet(user1)   // Uncaught TypeError: Cannot read property 'name' of null
 
 
 ## Enforcing Immutability by Convention

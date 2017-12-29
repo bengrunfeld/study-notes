@@ -368,6 +368,8 @@ We can still use `break`, `next`, `redo`, and `retry` with Iterators. Although `
 
 The most common code block methods are:
 
+If you use `!` with any of these, they update the values in-place. e.g. `merge!`
+
 * `find`
 * `merge`
 * `collect`
@@ -425,7 +427,7 @@ although we could write this as
     h1.merge(h2) {|k, o, n| o < n ? o : n}
 
 
-## Collect / Map
+### Collect / Map
 
 Collect and Map are exactly the same. Multiple names for the same thing. Yuchk...
 
@@ -444,6 +446,350 @@ RULE 1: Number of items in = number of items out
 RULE 2: Even though it works with Hashes and Ranges, it **always** outputs an array
 
 NOTE: If you use `puts` in a Collect/Map, then the return array will be filled with `nils`, because `puts` always returns `nil`.
+
+### Sort
+
+With sorts, we use the comparison operator `<=>`. This allows us to compare two values. 
+
+    a <=> b
+    1 <=> 2                 # -1    
+
+Returns -1 if   `a` < `b`
+Returns 0 if    `a` = `b`
+Returns 1 if    `a` > `b`
+
+When used with `sort`,
+
+Move left if        `a` < `b`
+Stay in place if    `a` = `b`
+Move right if       `a` > `b`
+
+    arr = [3, 5, 2, 1]
+    arr.sort {|v1, v2| v1 <=> v2}       # 1, 2, 3, 5
+    arr.sort                            # 1, 2, 3, 5
+    arr.sort {|v1, v2| v2 <=> v1}       # 5, 3, 2, 1
+    arr.sort.reverse                    # 5, 3, 2, 1
+
+If we just want to sort by one measurement, we can use `sort_by`
+
+    arr = ['cayla', 'daniel', 'adam', 'ben']
+    arr.sort_by {|name| name.length}    # ["ben", "adam", "cayla", "daniel"]
+
+You can sort hashes, but Ruby turns them into an array.
+
+    hash = {'a': 5, 'b': 3, 'c': 1}
+    hash.sort {|v1, v2| v1[1] <=> v2[1]}
+    # [[:c, 1], [:b, 3], [:a, 5]]
+
+### Inject (Accumulator)
+
+Similar to Javascripts Reduce method.
+
+By convention, the variable that holds the accumulated value is called `memo`.
+
+    (1..10).inject{|memo, n| memo + n}            # 55
+    (1..10).inject(100){|memo, n| memo + n}       # 155 init val of memo is 100
+
+Be careful about the return value of `memo` though. E.g.
+
+    (1..10).inject{|memo| memo * n if n != 3}     # Error!
+
+When `n` hits 3, then the entire code block is invalidated and does not run, so `nil` is returned. Then on the next iterateion, `memo` is `nil` and Ruby tries to multiply it by the next value in the Range, which generates and error.
+
+`puts` also returns `nil`, so be careful.
+
+    (1..10).inject{|memo| puts memo + n; memo}     
+
+This says the final value should be `memo`. It's the only time you get to use semicolon.
+
+## Defining and Calling Methods
+
+In other languages, these are called `functions`, but in Ruby, they're called `methods`.
+
+    def some_name
+        puts 'Hello there'
+    end
+    
+    some_name                   # Hello there
+
+### Modules
+
+Import a file with `require`. You can `require` a file in `irb`.
+
+### Return Values
+
+In a method code block, Ruby uses the last line of code as the return value. But we can also use the `return` keywords.
+
+All methods have a return value, even if its just `nil`.
+
+## Classes
+
+Class name are upper camelCase.
+
+    class SomeName
+        ...
+    end
+
+full e.g.
+
+    class Person
+      def yell
+        return "Hey!"
+      end
+    end
+    
+    ben = Person.new
+    puts ben.yell.downcase
+
+### Attributes
+
+Attributes are values that will persist inside of an instance.
+
+We use instance variables `@instance_var` as attributes inside of classes.
+
+You never have access to instance variables outside of the class. The class methods have access to them, but outside, we don't.
+
+    class Person
+      def set_noise
+        @noise = 'yell'
+      end
+    
+      def yell
+        @noise
+      end
+    end
+    
+    ben = Person.new
+    puts ben.yell
+
+Even though `@noise` is set inside of another method, it has global scope.
+
+### Reader/Writer Methods
+
+This is Ruby's naming take on getter/setters.
+
+    class Animal
+        def noise=(noise)
+            @noise = noise
+        end
+    
+        def noise
+            @noise
+        end
+    end
+    
+    cow = Animal.new
+    cow.noise = "Moo!"
+    puts cow.noise                    # Moo!
+
+Ruby figures out by the arguments which one is which.
+
+### Attribute Methods
+
+If you have a large class with lots of attributes, you can use the Attribute methods that Ruby provides to more efficiently set and get attribute values. 
+
+* `attr_reader` - creates a reader method
+* `attr_writer` - creates a writer method
+* `attr_accessor` - creates both a reader and a writer method
+
+The following are the same:
+
+    attr_writer :name
+    
+    def name
+        @name
+    end
+
+    attr_writer :name
+    
+    def name=(value)
+        @name = value
+    end
+
+    attr_accessor :name 
+    def name
+        @name
+    end
+    
+    def name=(value)
+        @name = value
+    end
+
+You can use these to create getter and setter methods for multiple attributes by separating attribute names with commas. E.g.
+
+    attr_accessor :name, :age, :weight
+
+Full example
+
+    class Animal
+        attr_accessor :name
+        attr_reader :age
+        attr_writer :opinion
+    end
+    cow = Animal.new
+    cow.opinion = "Moo"
+
+### Initialize
+
+Use the initialize function name as a constructor in Ruby
+
+    class Animal
+        def initialize(val1, val2)
+            @val1 = val1
+            @val2 = val2
+        end
+    end
+    
+    cow = Animal.new('bovine', 555)
+
+### Class Methods
+
+A class method is a method that can be called on the class, even without an instance of the class. 
+
+We can call methods directly on the class.
+
+An example of a class method is `cow = Animal.new`. Even though there is not yet an instance, we can call `new`.
+
+    class Animal
+        def self.talk
+            puts 'Hello'
+        end
+    end
+    
+    cow = Animal.talk
+
+### Class Attributes
+
+Class attributes store values that apply to the class generally.
+    
+    class Animal
+        @@species = 'bovine'
+    
+        def self.talk
+          puts "Hello #{@@species}"
+        end
+    end
+    
+    cow = Animal.talk
+
+### Overloading Methods
+
+Ruby will know which method you want to use based on there being or not being params.
+
+    class Animal
+        def self.species
+          @@species
+        end
+    
+        def self.species(arg='')
+          @@species = arg
+        end
+    end
+    
+    Animal.species('froggy')
+    puts Animal.species
+
+### Inheritance
+
+Bestowal of methods and attributes of another class.
+
+Ruby terminology is to call the Parent the Superclass and to call the Child the Subclass.
+
+To make a class a Subclass - so that it inherits the variables and methods of another class, use the `<` sign.
+
+In Ruby, we can inherit from **one and only one** Superclass. That means that we do NOT have multiple inheritance.
+
+    class Animal
+        ...
+    end
+    
+    class Cow < Animal
+        ...
+    end
+
+### Subclass overwriting
+
+You can overwrite methods in the Parent class just be redefining them in the Child as long as they have the same name. You can also do this for the core Ruby language:
+
+    class Array
+        def to_s
+            self.join(', ') 
+        end
+    end
+
+### Super
+
+Super is a method that calls the function of the same name in the Parent Class.
+
+    class Animal
+        def self.eat
+          puts 'Lets eat'
+        end
+    end
+    
+    class Cow < Animal
+        def self.eat
+          super
+          puts 'Lets eat again' 
+        end
+    end
+    
+    Cow.eat
+
+## Modules
+
+Modules are wrappers around Ruby code, but that CAN'T be instantiated. You can never have an instance of a module. Instead, we use Modules in conjunction with our classes.
+
+### Namespaces
+
+Namespacing allows us to have class names that don't conflict. 
+
+We use Modules to namespace Ruby classes to ensure there is no naming conflict that arises.
+
+    module Life
+      class Animal
+          def self.eat
+            puts 'Lets eat'
+          end
+      end
+    end
+    
+    Life::Animal.eat
+
+Use the `::` to indicate the class belongs to a specific module.
+ 
+### Mixins
+
+We can import blocks of code to our classes using Modules.
+
+    module Life
+      attr_accessor :name, :species
+    
+      def breathe
+        puts 'Remember to breathe'
+      end
+    end
+    
+    class Animal
+        include Life
+    end
+    
+    cow = Animal.new
+    cow.breathe
+
+### Load, Require, Include
+
+`load` uses relative and absolute paths to load in an external file.
+
+`include` is only for bringing Modules in as mixins. It has NOTHING to do with files.
+
+`require` is the same as load, but if you have already `required` a file once in the context, it will not load it in again. It keeps track of which files have been loaded, so that it doesn't duplicate the task.
+
+If you want to refresh the code and bring something in a second time, use `load`, but usually you should just use `require`.
+
+
+
+
 
 
 

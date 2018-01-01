@@ -63,7 +63,7 @@ Flags prevent large documentation from being downloaded as well.
 
 If you don't specify mysql, then rails will default to sqlite.
 
-    rails new peach_app -d mysql
+    rails new rails_app -d mysql
 
 ## Accessing a Project
 
@@ -85,7 +85,5 @@ From the command line, Rails can generate a lot of things for us, like Controlle
 So with this command, Rails will generate a new controller called demo, and then any arguments after demo will be considered its views.
 
 Methods inside of Controllers are called `actions`, because they are the actions we are asking the Controller to perform.
-
-
 
 

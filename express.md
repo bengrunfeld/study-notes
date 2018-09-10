@@ -100,12 +100,18 @@ This means that we have one client connection and every client that connects is 
 
 We want to add listeners for messages that are sent from the client to the socket server. 
 
-    ws.on('message', (msg) => {
-        if (msg === 'exit') {
-            ws.close()
-        } else {
-            wss.
-        }
+    let WebSocketServer = require('ws').Server
+    let wss = new WebSocketServer({ port: 3000 })
+    wss.on('connection', ws => {
+        ws.on('message', msg => {
+            if (msg === 'exit') {
+                ws.close()
+            } else {
+                wss.clients.forEach(client => client.send(msg))
+            }
+        })
+        
+        ws.send('Welcome to cyber chat')
     })
 
 `ws.close()` leaves my socket server running, but it closes this client's connection. Otherwise, if the client has typed anything else, we want to broadcast that to all of the clients.
@@ -113,6 +119,14 @@ We want to add listeners for messages that are sent from the client to the socke
 WSS, is our websocket server instance. `clients` is an array of all the connected websockets.
 
 Because it's a javascript array, I can use the forEach function. The forEach function takes in a callback that will be invoked once for every one of the clients that are in that array. So, I'm going to pass the individual client to this function. So, now we have nice loop, looping through all of the clients, and to broadcast the chat message back, I'm just going to invoke a client.send.
+
+**Client code:**
+
+    let ws = new Websocket('ws://localhost:8080')
+    ws.onopen = () => console.log('Connected to websocket')
+    ws.onclose = () => console.log('Disconnected from websocket')
+    ws.onmessage = msg => console.log('Message: ', msg.data)
+    const sendData = data => ws.send(data)
 
 ## Socket.IO
 

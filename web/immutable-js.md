@@ -64,7 +64,7 @@ Note that OrderedMap are more expensive than non-ordered Map and may consume mor
 
 A Collection of unique values.
 
-When iterating a Set, the entries will be (value, value) pairs. Iteration order of a Set is undefined, however is stable. Multiple iterations of the same Set will iterate in the same order.
+When iterating a Set, the entries will be (value, value) pairs. Iteration order of a Set is `undefined`, however is stable. Multiple iterations of the same Set will iterate in the same order.
 
 ### OrderedSet
 

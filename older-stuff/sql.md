@@ -15,10 +15,11 @@ The `SELECT` statements retrieves information. The `*` character means "everythi
 The only selects the columns `FirstName` and `Address` from the `Customers` table.
 
 	SELECT FirstName AS 'First Name', Address as Destination FROM Customers
-	
+
 This statment uses aliases for column names. The results will show `First Name` instead of `FirstName`. Note to use single quotation marks to delimit names using spaces, otherwise you'll get an error. Some SQL servers **DON'T** like **double quotes**.
 
 ##Selecting Rows
+
 You can specify which `rows` you want returned by using a `WHERE` filter.
 
 	SELECT name, slug FROM wp_terms WHERE slug = 'MongoDB'
@@ -45,7 +46,7 @@ The `GROUP BY` statment takes all the rows that have the same value in the speci
 
 Continent	| Countries
 ---------	|----------
-Asia			| 51
+Asia		| 51
 Europe		| 46
 USA			| 50
 Africa		| 58
@@ -63,7 +64,7 @@ In the e.g. above, `Hello, World` is an expression.
 `SELECT` is the **clause**.
 
 	SELECT Name, Continent, Region FROM Country WHERE Continent = 'Europe'
-	
+
 The full above e.g. is a **statement**. `SELECT`, `FROM`, and `WHERE` are **clauses**, and their associated values are the **expressions**.
 
 	SELECT COUNT(*) FROM Country
@@ -71,6 +72,7 @@ The full above e.g. is a **statement**. `SELECT`, `FROM`, and `WHERE` are **clau
 Above, `COUNT(*)` counts as an **expression**, even though it is a function.
 
 ##Formatting SQL
+
 Because SQL ignores whitespace and new line characters, we can use that to our advantage to format SQL in a way that makes it even more readable.
 
 	SELECT Name as 'Full Name', Address as Destination 
@@ -78,10 +80,11 @@ Because SQL ignores whitespace and new line characters, we can use that to our a
 		JOIN City AS ct
 			ON ct.ID = c.Capital
 		ORDER BY c.Name DESC
-	
+
 Semicolons `;` separate or terminate SQL statements. When it's only a single SQL statement, you generally won't see it, but when there are multiple SQL statements, it will probably be used.
 
 ##Creating Databases, Tables, and Columns
+
 The syntax for creating a database is usually not used, because databases differ so widely in this, but this will give you the general idea.
 
 	CREATE DATABASE wishlist
@@ -96,7 +99,7 @@ Will create a database called `wishlist`.
 		state CHAR(2),
 		zip CHAR(10) 
 	);
-	
+
 Will create a table with the attributes involved. This is an area where many databases are very different.
 
 ##Creating Rows in Tables
@@ -200,13 +203,13 @@ You can use `WHERE` to filter rows where a cell contains a literal string. E.g.
 	SELECT StateCode, StateName, Population
 		FROM State
 		WHERE StateCode = 'CO'
-	
+
 ### Using WHERE with other Operators
 
 	SELECT StateCode, StateName, Population
 		FROM State
 		WHERE Population >= 450000
-	
+
 This will only return rows from the state table where the population **IS GREATER THAN OR EQUAL TO** 450000. Note the lack of single quotes around the number.
 
 ### Using WHERE to match part of a string
@@ -239,7 +242,7 @@ You can combine `WHERE` clauses using the logical operators `AND` and `OR`.
 		FROM State
 		WHERE StateCode IN ( 'CO', 'MA', 'GA' )
 		AND Population > 450000
-	
+
 This will return records with the matching `StateCodes` **AND** a `Population` greater than 450000.
 
 ## Removing Duplicates with DISTICT
@@ -259,7 +262,7 @@ Results returned by a query are not guaranteed to be in any particular order, un
 	SELECT CityName, State
 		FROM City
 		ORDER BY CityName
-	
+
 This will return a list of city names and their respective states from the `City` table ordered alphabetically by the `CityName` column.
 
 The `ORDER BY` clause is capable of sorting by more than one column. E.g, if you want your output to be ordered by `State`, and THEN `CityName`, you could accomplish this with the following `ORDER BY` clause.
@@ -267,7 +270,7 @@ The `ORDER BY` clause is capable of sorting by more than one column. E.g, if you
 	SELECT CityName, State
 		FROM City
 		ORDER BY State, CityName
-	
+
 The `ORDER BY` clause can use an expression as well.
 
 	SELECT Region, AVG(LifeExpectancy) AS AvgLe
@@ -275,7 +278,7 @@ The `ORDER BY` clause can use an expression as well.
 		WHERE LifeExpectancy
 		GROUP BY Region
 		ORDER BY AvgLe
-	
+
 This will return regions and their life expectancies from the country table, where there is a non-NULL value in the `LifeExpectancy` column. It will be grouped by region, and ordered by average life expectancy.
 
 Note: we've used `ORDER BY AvgLe` instead of `ORDER BY AVG(LifeExpectancy)` because if we change the first expression of `AVG(LifeExpectancy)`, then we only have to make the change in one place. The variable used in `ORDER BY` will automatically update.
@@ -339,7 +342,7 @@ You can also manually add columns to the index by using the `INDEX` keyword in t
 		INDEX(name)
 		INDEX(zip)
 	);
-	
+
 ## SQL String Functions
 
 To include a single quote `'` in a string literal, type 2 single quotes next to each other `''`. That will do the trick. E.g.
@@ -357,8 +360,8 @@ The `LENGTH` function reports the number of characters in a string.
 You can also use it in a query:
 
 	SELECT title, LENGTH(title) AS 'Title Length'
-		FROM album
-	
+		FROM album	
+
 ### The SUBSTRING Function
 
 The `SUBSTRING` function extracts a portion of a string and returns it as a new string.

@@ -36,4 +36,4 @@ How do you specify that you want to transpile React
 
 How do you decide what to test vs what not to test? What are the most important parts of your app that need to be tested
 
-How do you keep the Winow 
+How do you keep the Window object clear

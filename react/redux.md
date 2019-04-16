@@ -95,7 +95,7 @@ Composition refers to the ability to put functions together so that one function
 
 ### Application of Functional Programming in Redux
 
-In Redux, Composition is used in the store. The reducer functions that we create to manage parts of the state tree are composed, and the action and state is sent to and piped through each of these reducers until state is eventually mutated. 
+In Redux, Composition is used in the store. The reducer functions that we create to manage parts of the state tree are composed, and the action and state are sent to and piped through each of these reducers until state is eventually mutated. 
 
 ## Application Planning
 
@@ -112,7 +112,7 @@ List all of your action types as an object in `constants.js`.
         REVOKE_ADMIN_PRIVS: "REVOKE_ADMIN_PRIVS"
     }
 
-One of the reasons we use this paradigm is because if we just use the string value in our app, Javascript won't throw an error, but if we make a typo with the variable name, then Javascript **will** thrown an error.
+One of the reasons we use this paradigm is because if we just use the string value in our app, Javascript won't throw an error if we make a typo in the variable name, but if we use constants and make a typo, then Javascript **will** thrown an error.
 
 ### Planning State
 
@@ -150,7 +150,7 @@ Actions at bare minimum have a `type` field, but also usually a `payload`. The a
 
 ## Reducers 
 
-It's called a reducer because it's the type of function you would pass to `Array.prototype.reduce(reducer, ?initialValue)`.
+It's called a reducer because it's the type of function you would pass to `Array.prototype.reduce(reducer, ?initialValue)`. A reducer is called that because it reduces a data set to a single value.
 
 Reducers are pure functions that are designed to manage specific parts of your `state` object. You need to create a reducer to manage every key in your `state` object. The reducer function **MUST BE** named with exactly the same name as the key of the `state` that the reducer is targeting.
 
@@ -159,9 +159,7 @@ Remember, we're not going to change the `state`, we're going to create a new `st
 So a `reducer` is a function that will take `state` and an `action` to produce a new `state`. 
 
 	export const spinner = (state=false, action) => 
-		(action.type === C.ADD)?
-		action.payload:
-		state
+		(action.type === C.ADD) ? action.payload : state
 
 We usually save the reducer files to the `store` directory. E.g. `reducers.js`.
 
@@ -487,7 +485,7 @@ This will take our `mapStateToProps` function and actually map the values that w
 
     import { connect } from 'react-redux'
     
-    const mapDispatchToProps = (dispatch) => {
+    const mapDispatchToProps = dispatch => {
         return {
             onClearError(index){
                 clearError(index)
@@ -509,7 +507,7 @@ Inside your React code, you can then call it with the following:
 
 #### Container Components vs Presentational Components
 
-Presentational components are regular React components that describe what something will look like, not how it will function. They communicate solely through `props`. They pass data up to their parents with 2 way data binding and receive props as well. 
+Presentational components are regular React components that describe what something will look like, not how it will function. They communicate solely through `props`. They pass data up to their parents with 2-Way Data Binding and receive props as well. 
 
 Containers wrap around a presentational component and feed data to it.
 
@@ -523,7 +521,7 @@ In a similar fashion, you can define a function called mapDispatchToProps() that
 
     const mapDispatchToProps = (dispatch) => {
       return {
-        onTodoClick: (id) => {
+        onTodoClick: id => {
           dispatch(toggleTodo(id))
         }
       }

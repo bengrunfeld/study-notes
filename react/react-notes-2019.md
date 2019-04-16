@@ -10,7 +10,7 @@ Keys only need to be unique among their siblings
 
 A `controlled component` is a form element that uses React `state` as its single source of truth.
 
-`Lifting state up` means lifting up state to the closes ancestor of two or more components so that when that state is updated, both components will update and re-render. 
+`Lifting state up` means lifting up state to the closest ancestor of two or more components so that when that state is updated, both components will update and re-render. 
 
 ## Forms
 
@@ -42,7 +42,7 @@ Arguments against context:
 
 # Error Boundaries
 
-Error boundaries are React components that catch JavaScript errors anywhere **in their child component tree**, log those errors, and display a fallback UI instead of the component tree that crashed.
+Error boundaries are React components that catch JavaScript errors **anywhere in their child component tree**, log those errors, and display a fallback UI instead of the component tree that crashed.
 
 Only class components can be error boundaries.
 
@@ -57,11 +57,11 @@ If an error boundary fails trying to render the error message, the error will pr
 
 The value of the ref differs depending on the type of the node:
 
-* When the ref attribute is used on an HTML element, the ref created in the constructor with React.createRef() receives the underlying DOM element as its current property.
+* When the ref attribute is used on an HTML element, the ref created in the constructor with `React.createRef()` receives the underlying DOM element as its current property.
 
-* When the ref attribute is used on a custom class component, the ref object receives the mounted instance of the component as its current.
+* When the ref attribute is used on a custom class component, the ref object receives the mounted instance of the component as its current property.
 
-We CANNOT use the ref attribute on functional components because they don’t have instances, but we CAN use the ref attribute inside a functional component as long as you refer to a DOM element or a class component
+We CANNOT use the ref attribute **on** functional components because they don’t have instances, but we CAN use the ref attribute **inside** a functional component as long as you refer to a DOM element or a class component.
 
 When to use refs: 
 
@@ -111,7 +111,7 @@ Don’t Use HOCs Inside the render Method
 
 Static Methods Must Be Copied Over
 
-Refs Aren’t Passed Through - While the convention for higher-order components is to pass through all props to the wrapped component, this does not work for refs. The solution for this problem is to use the React.forwardRef API (introduced with React 16.3)
+Refs Aren’t Passed Through - While the convention for higher-order components is to pass through all props to the wrapped component, this does not work for refs. The solution for this problem is to use the `React.forwardRef` API (introduced with React 16.3)
 
 # Portals
 
@@ -145,7 +145,7 @@ Hooks are JavaScript functions, but they impose two additional rules:
 
 * Only call Hooks at the top level. Don’t call Hooks inside loops, conditions, or nested functions.
 
-* Only call Hooks from React function components. Don’t call Hooks from regular JavaScript functions. (There is just one other valid place to call Hooks — your own custom Hooks. We’ll learn about them in a moment.)
+* Only call Hooks from React functional components. Don’t call Hooks from regular JavaScript functions. (There is just one other valid place to call Hooks — your own custom Hooks. We’ll learn about them in a moment.)
 
 Linter for React Hooks: https://www.npmjs.com/package/eslint-plugin-react-hooks
 

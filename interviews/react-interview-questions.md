@@ -14,13 +14,13 @@ Typically you’d use Webpack’s `DefinePlugin` method to set `NODE_ENV` to `pr
 
 ### Explain what JSX is and how it works
 
-React components are typically written in JSX, a JavaScript extension syntax allowing quoting of HTML and using HTML tag syntax to render subcomponents. HTML syntax is processed into JavaScript calls of the React framework. Developers may also write in pure JavaScript.
+React components are typically written in JSX, a JavaScript extension syntax allowing quoting of HTML and using HTML tag syntax to render subcomponents. HTML syntax is processed into JavaScript calls of the React framework. Developers may also write in pure JavaScript. It stops XSS attacks.
 
 ### Explain how the One-Way Data Flow works
 
 In React, data flows from the parent to the child, but not the other way around. This is designed to alleviate cascading updates that traditional MVC suffers from. 
 
-Properties, a set of immutable values, are passed to a component's renderer as properties in its HTML tag. A component cannot directly modify any properties passed to it, but can be passed callback functions that do modify values. This mechanism's promise is expressed as "properties flow down; actions flow up".
+A set of immutable values are passed to a component's renderer as **properties** in its HTML tag. A component cannot directly modify any properties passed to it, but can be passed callback functions that do modify values. This mechanism's promise is expressed as "properties flow down; actions flow up".
 
 ### What are the differences between React in ES5 and ES6? What are the advantages/disadvantages of using ES6?
 
@@ -39,7 +39,7 @@ React in ES5 has autobinding, while React in ES6 does not. For that reason, we h
     }
     window.addEventListener('keyup', thing.speak)
 
-In the above code, if we call `thing.speak()`, it will log `mike`, but pressing a key will log `underfined`, context of the callback is the global object. The browser’s global object – `window` – becomes `this` inside the `speak()` function, so `this.name` becomes `window.name`, which is undefined. 
+Using ES5, in the above code if we call `thing.speak()`, it will log `mike`, but in ES6, pressing a key will log `undefined` as context of the callback is the global object. The browser’s global object – `window` – becomes `this` inside the `speak()` function, so `this.name` becomes `window.name`, which is undefined. 
 
 React in ES5 automatically does autobinding, effectively doing the following:
 
@@ -212,7 +212,7 @@ Refs are an escape hatch from React's declarative model that allow you to direct
 
 Avoid using refs for anything that can be done declaratively.
 
-You may not use the ref attribute on functional components because they don't have instances.
+You may not use the ref attribute on functional components because they don't have instances, although you can use refs *inside* a functional component.
 
 ### Give a situation where you would want to use refs over controlled components
 
@@ -236,9 +236,11 @@ In uncontrolled components, we usually use `refs` to grab the data inside of for
 
 ### What are High Order Components (HOC's) and how would you use them in React?
 
-HOC's aren't just a feature of React, they are a pattern that exists in software engineering. 
+Higher Order Functions are functions that return another function, and they are a widely used pattern in Functional Programming.
 
-A higher-order component is a function that takes a component and returns a new component.
+Similarly, a Higher Order Component is a function that takes a component as a parameter and returns a new component.
+
+HOC's aren't just a feature of React, they are a pattern that exists in software engineering. 
 
 Whereas a component transforms props into UI, a higher-order component transforms a component into another component.
 

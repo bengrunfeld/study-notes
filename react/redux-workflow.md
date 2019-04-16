@@ -1,6 +1,3 @@
-This is a `code comment`
-
-
 # Redux Workflow
 
 ## In Redux
@@ -92,7 +89,7 @@ What if the TodoMVC example was sending new todos to a server and needed to be a
 
 Name each selector as `get<Noun>` as a convention to clearly identify what type of function it is. E.g.
 
-    const getTodo = (state) => state
+    const getTodo = state => state
 
 
 ### Action Types

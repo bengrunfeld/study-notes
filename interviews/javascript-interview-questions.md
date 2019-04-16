@@ -122,7 +122,7 @@ In computer science, a *Closure* is a *first class function* (see 23), with free
 
 Use `bind()` when you want that function to later be called with a certain context, useful in events. Use `call()` or `apply()` when you want to invoke the function immediately, and modify the context.
 
-They all attach this into a function (or object) and the difference is in the function invocation. 
+They all attach `this` to a function (or object) and the difference is in the function invocation. 
 
 `apply` is similar to `call` except that it takes an array-like object instead of listing the arguments out one at a time.
 
@@ -199,8 +199,6 @@ Can you mark something for garbage collection?
 What is a closure, how do you use it and please write one which increments a counter.
 
 In recursive programming, how do you avoid a stack overflow in a massive loop?
-
-What is the difference between call and apply
 
 What is the difference between foreach and map
 

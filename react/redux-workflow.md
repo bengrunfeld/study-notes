@@ -102,3 +102,7 @@ Your actions types should be **effects**. E.g.
       LOADING_POSTS_SUCCEEDED: 'LOADING_POSTS_SUCCEEDED',
     };
 
+
+## Misc
+
+Technically, a container component is just a React component that uses store.subscribe() to read a part of the Redux state tree and supply props to a presentational component it renders.

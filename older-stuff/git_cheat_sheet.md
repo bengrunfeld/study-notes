@@ -1,5 +1,10 @@
 #Git Cheat Sheet
 
+## To checkout a remote branch that you don't have locally
+
+-   `get fetch --all -p`
+-   `get checkout REMOTE_BRANCH`
+
 ###To Create a New Repo on GitHub
 
 1. Click the `create new repo` icon on the top right hand corner of the screen.
@@ -9,8 +14,3 @@
 5. Go to your master branch and do `git merge origin/master`
 6. Add some code and make an initial `commit`
 7. Do `git push <alias> <branch-name>`
-
-
-
-
-

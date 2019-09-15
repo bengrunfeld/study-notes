@@ -1,4 +1,5 @@
 # SQL Example
+
 This is a basic example consisting of 2 tables, People and Friends, and retreiving information from those tables.
 
 ## ERD
@@ -96,5 +97,3 @@ Add records to tables:
 		GROUP BY f.p_id_FK
 
 5 - List the name of the Initial Friend, the name of the New friend, where they met, and what character trait of the New Friend drew the Initial friend to like him.
-
-        

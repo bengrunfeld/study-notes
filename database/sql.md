@@ -4,7 +4,7 @@ SQL is used for defining and operating on relational databases.
 
 SQL is used to directly control relational databases.
 
-##Selecting Columns
+## Selecting Columns
 
 	SELECT * FROM Customers
 
@@ -18,7 +18,7 @@ The only selects the columns `FirstName` and `Address` from the `Customers` tabl
 
 This statment uses aliases for column names. The results will show `First Name` instead of `FirstName`. Note to use single quotation marks to delimit names using spaces, otherwise you'll get an error. Some SQL servers **DON'T** like **double quotes**.
 
-##Selecting Rows
+## Selecting Rows
 
 You can specify which `rows` you want returned by using a `WHERE` filter.
 
@@ -26,7 +26,8 @@ You can specify which `rows` you want returned by using a `WHERE` filter.
 
 This will only return rows where the column value of `slug` equals `MongoDB`.
 
-##The COUNT Function
+## The COUNT Function
+
 `COUNT` is an aggregator function, which means it works on a group of rows at a time.  
 
 	SELECT COUNT(*) FROM wp_terms
@@ -37,7 +38,8 @@ This will count **all** the rows in the `wp_terms` table.
 
 This will count the rows of a single column only where the row does not contain a value of `NULL`. If there is a `non-NULL` in the field, it will be counted.
 
-##The GROUP BY Function
+## The GROUP BY Function
+
 `GROUP BY` works with aggregator functions. It groups together all the rows that **have the same value** in that column, then applies the aggregator function. 
 
 The `GROUP BY` statment takes all the rows that have the same value in the specified column and represents them only once, but applies the aggregator function to all the instances of the specified column in the table.
@@ -51,10 +53,12 @@ Europe		| 46
 USA			| 50
 Africa		| 58
 
-##Standardized SQL
+## Standardized SQL
+
 Most SQL is vendor specific. So SQL that will work on one DBMS might not work on another DBMS.
 
-##SQL Syntax
+## SQL Syntax
+
 SQL is made up of `clauses`, `expressions` and `functions`.
 
 	SELECT 'Hello, World'
@@ -71,7 +75,7 @@ The full above e.g. is a **statement**. `SELECT`, `FROM`, and `WHERE` are **clau
 
 Above, `COUNT(*)` counts as an **expression**, even though it is a function.
 
-##Formatting SQL
+## Formatting SQL
 
 Because SQL ignores whitespace and new line characters, we can use that to our advantage to format SQL in a way that makes it even more readable.
 
@@ -83,7 +87,7 @@ Because SQL ignores whitespace and new line characters, we can use that to our a
 
 Semicolons `;` separate or terminate SQL statements. When it's only a single SQL statement, you generally won't see it, but when there are multiple SQL statements, it will probably be used.
 
-##Creating Databases, Tables, and Columns
+## Creating Databases, Tables, and Columns
 
 The syntax for creating a database is usually not used, because databases differ so widely in this, but this will give you the general idea.
 
@@ -102,7 +106,7 @@ Will create a database called `wishlist`.
 
 Will create a table with the attributes involved. This is an area where many databases are very different.
 
-##Creating Rows in Tables
+## Creating Rows in Tables
 
 The `INSERT` statement is used to create a new **row** in a table, that is to insert data into a table.
 
@@ -116,7 +120,7 @@ The `INSERT` statement is used to create a new **row** in a table, that is to in
 			'90210'
 		)
 
-##Joins
+## Joins
 
 There are 2 main forms of `JOIN` syntax. One is newer and one is older. Here is the newer form
 
@@ -128,7 +132,7 @@ There are 2 main forms of `JOIN` syntax. One is newer and one is older. Here is 
 
 This is a `SELECT` clause that uses a `JOIN`. 
 
-###The Old Way
+### The Old Way
 
 There is an older form of this syntax which is still used by people who haven't come up to date. It will still work in most databases.
 
@@ -139,7 +143,7 @@ There is an older form of this syntax which is still used by people who haven't 
 
 The reason to use the newer version is because it makes the fact that a `JOIN` is occuring a lot more obvious.
 
-##Types of Joins
+## Types of Joins
 
 ### 1. Inner Join
 
@@ -441,7 +445,7 @@ Use `DIV` to perform integer division WITHOUT any floating point.
 
 Look at `LPAD` and `MOD` for performing other integer arithmetic.
 
-##Date and Times in SQL
+## Date and Times in SQL
 
 Dates and Times are a distinct type of data in SQL.
 
@@ -485,8 +489,8 @@ It counts the number of distinct values in the HeadOfState column.
 
 Gives you the sum
 
-	SELECT SUM(someColumn)
-	
+	SELECT SUM(someColumn)	
+
 `MAX`, `AVG`, basically just go and check the documentation to see what's available.
 
 

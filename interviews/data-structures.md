@@ -20,19 +20,20 @@ Again, it's important to remember that with reference types, we are adding this 
 
 ## Multi-Dimensional Array
 
-A Multi-Dimensional Array is an array whose elements are all arrays of the same length. E.g.
+A Multi-Dimensional Array is an array whose elements are also arrays.
 
     [[1, 2], [2, 4], [6, 8]]
+
+
+## Rectangular Arrays
+
+A Rectangular Array is a multi-dimensional array whose elements are all arrays of the same length (hence creating something that looks like a rectangle).
 
 ## Jagged Arrays
 
 A Jagged Array is a Multi-Dimensional Array where the elements are arrays which have different lengths. E.g.
 
     [[1, 2], [2, 4, -7], [9, 9, 0, 3]]
-
-### Question:
-
-What is the most efficient method to add or remove an item to an array - especially in Node.js? Is it `push/pop`, or to simply copy the entire array with/without the desired element to a new array with spread operator?
 
 ## Linked List
 
@@ -243,8 +244,93 @@ In checking to see if an object is in the set, we already need to have the objec
 
 ## Tree Data Structures
 
+The nodes in the tree might be linked to one, two or more nodes. How these objects are physically allocated in memory is unimportant. 
+
+Just like a linked list, there's always a specific starting node in a tree data structure, which is called the `Root Node`.
+
+This root node can contain data as well as links to other nodes. In most languages, these links or pointers will be object references. 
+
+The linked nodes are called `Child Nodes`. The root node has no parent, although child nodes can be parents to other nodes, which are their children.
+
+Child nodes with the same parent are called `siblings`.
+
+A node with no children is called a `leaf` or leaf node.
+
+We can also put constraints on the tree data structure, e.g. that a parent can only have a maximum of two three nodes.
+
+## Binary Trees
+
+A Binary Tree is a Tree which adds the contstraint that each node MUST HAVE two child nodes.
+
+We call the child nodes `left` and `right` respectively. 
+
+These left and right child nodes could be null or have values.
+
+## Binary Search Trees
+
+A Binary Search Tree (BST) adds an order contraint.
+
+We keep a sorted data structure by being particular about what values are in the left child, right child, and parent nodes. 
+
+This makes the data structure more than just a collection of stuff strung together. It stays sorted without immense amounts of reshuffling that would be needed in a basic array. 
+
+The rule for BST's is:
+
+A left child node must be less than its parent and a right child node must be more than its parent. This rule follows all the way down.
+
+    left child < parent
+    right child > parent
+
+As we insert new nodes with values, the tree must always stay sorted.
+
+A BST is often used to store key-value pairs, so in this case, what we'd be storing is the key to an object.
+
+            50
+            | 
+       ______________
+       |            |
+       25           75
+    ________     _________
+    |      |     |       |
+    10     40   60       90
 
 
+If we were going to add the node `45`, then it would become the right child node of `40`, since it is larger than 40, but less large than 50.
+
+If we added the node `55`, it would become the left child node of `60`, since it is greater than the root node, but less than `75` and less than `60`, etc.
+
+### How to find data in a BST
+
+Imagine the we want to look for the number `90`. First, we compare 90 to 50, and it is larger, so we look in the right child node, 75. 90 is larger than 75, so we look in its right child node, 90, and we find our match.
+
+Each time we head down a path, we discard entire sections of the tree, so it is very quick to find a specific element.
+
+To keep this optimized, the tree MUST remain sorted.
+
+When you have more nodes on one side of the tree than the other, we call this `unbalanced`.
+
+Although dictionaries are often implemented with hash tables, if you want to keep your keys in a sorted order, hash tables aren't really good at that while binary search trees do a great job.
+
+### Big-O for BSTs
+
+Balanced BST: Logarithmic time - `O(log n)`
+Unbalanced BST: Linear time - `O(n)`
 
 
+## Heaps
+
+A heap is a data structure that's implemented as a binary tree with additional constraints.
+
+As we add items to the heap, they are always added top to bottom, left to right. We completely fill in the level before moving onto the next. This means we don't have to worry about the tree becoming imbalanced, like a binary search tree can. 
+
+I hereby refuse to write any more about Heaps, because the rules are complex.
+
+Heaps are good for priority queues, and certain sorting algorithms.
+
+### Big-O for Heaps
+
+Find mix/max: Constant time - `O(1)`
+Insert: Logarithmic time - `O(log n)`
+Search: Linear time - `O(n)`
+Delete: Linear time - `O(n)`
 

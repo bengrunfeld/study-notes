@@ -67,7 +67,7 @@ Algos have several characteristics that can be used to describe them:
 * Computational algos - take one set of data and derive another set of data from it
 * Collection algos - filter out unwanted data, count specific items, etc
 
-## Algo Performance - Big O Notation
+## Algo Performance - Big-O Notation
 
 We want to measure how the performance of an algorithm changes, based on the size of the input set of data.
 
@@ -86,15 +86,15 @@ O(n^2)      | Quadratic     | Simple sorting algos like bubble-sort, selection, 
 
 ### O(1)
 
-Big-O of 1: Constant time. It means that the operation in question doesn't depend on the number of elements in the given data set.
+Called: "O of 1" or **Constant Time**. It means that the operation in question doesn't depend on the number of elements in the given data set.
 
 ### O(log n)
 
-As the number of items in the sorted array grows, it only takes a logarithmic time relationship to find any given item. 
+Called "O log n" or **Logarithmic Time**. As the number of items in the sorted array grows, it only takes a logarithmic time relationship to find any given item. 
 
 ### O(n)
 
-As more items are added to the array in an unsorted fashion, it takes a corresponding linear amount of time to perform a search.
+Called "O of n" or **Linear Time**. As more items are added to the array in an unsorted fashion, it takes a corresponding linear amount of time to perform a search.
 
 e.g. Insertion & Deletion in an array. Remember, we always consider the worst case scanario with Big-O.
 
@@ -104,13 +104,13 @@ e.g. Insertion & Deletion in an array. Remember, we always consider the worst ca
 
 ### O (n log n)
 
-Log-linear time complexity.
+Called "O n log n" or **Log-linear Time**.
 
 ### O(n^2)
 
-As the number of items in the data set increases, the time it takes to process them increases at the square of that number. 
+Called "O of n squared" or **Quadratic Time**. As the number of items in the data set increases, the time it takes to process them increases at the square of that number. 
 
-#### Explanation of `log(n)` in Big O Notation
+#### Explanation of `log(n)` in Big-O Notation
 
 https://stackoverflow.com/q/2307283/1676476
 

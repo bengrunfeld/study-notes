@@ -29,6 +29,12 @@ A Multi-Dimensional Array is an array whose elements are also arrays.
 
 A Rectangular Array is a multi-dimensional array whose elements are all arrays of the same length (hence creating something that looks like a rectangle).
 
+    [
+        [1, 2, 3], 
+        [5, 9, 1], 
+        [6, 8, 0]
+    ]
+
 ## Jagged Arrays
 
 A Jagged Array is a Multi-Dimensional Array where the elements are arrays which have different lengths. E.g.

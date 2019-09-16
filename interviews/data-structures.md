@@ -39,7 +39,11 @@ A Rectangular Array is a multi-dimensional array whose elements are all arrays o
 
 A Jagged Array is a Multi-Dimensional Array where the elements are arrays which have different lengths. E.g.
 
-    [[1, 2], [2, 4, -7], [9, 9, 0, 3]]
+    [
+        [1, 2], 
+        [2, 4, -7], 
+        [9, 9, 0, 3]
+    ]
 
 # Algorithms
 

@@ -392,8 +392,8 @@ Although dictionaries are often implemented with hash tables, if you want to kee
 
 ### Big-O for BSTs
 
-Balanced BST: Logarithmic time - `O(log n)`
-Unbalanced BST: Linear time - `O(n)`
+* Balanced BST: Logarithmic time - `O(log n)`
+* Unbalanced BST: Linear time - `O(n)`
 
 
 ## Heaps
@@ -408,8 +408,8 @@ Heaps are good for priority queues, and certain sorting algorithms.
 
 ### Big-O for Heaps
 
-Find mix/max: Constant time - `O(1)`
-Insert: Logarithmic time - `O(log n)`
-Search: Linear time - `O(n)`
-Delete: Linear time - `O(n)`
+* Find mix/max: Constant time - `O(1)`
+* Insert: Logarithmic time - `O(log n)`
+* Search: Linear time - `O(n)`
+* Delete: Linear time - `O(n)`
 

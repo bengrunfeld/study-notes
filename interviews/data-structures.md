@@ -4,9 +4,9 @@ Data structures are containers. They allow us to combine several pieces of data 
 
 A Data Structure is a collection with a defined way of accessing and storing items.
 
-## Primatves 
+## Primitives 
 
-Primatives are numbers (e.g. int, float, double, long, etc), characters, and booleans.
+Primitives are numbers (e.g. int, float, double, long, etc), characters, and booleans.
 
 ## Reference Types
 
@@ -51,7 +51,8 @@ Algos have several characteristics that can be used to describe them:
 
 * Complexity
     - Space complexity: how much storage and space the algo needs
-    - Time complexity: how efficient the algo is, relative to the size of the input it is given to work on (aka how much time does it take to complete)
+    - Time complexity: how efficient the algo is, relative to the size of the input it is given to work on. Complexity is commonly estimated by counting the number of basic operations performed by the algorithm, supposing that each basic operation takes a fixed amount of time to perform. Thus, the amount of time taken and the number of elementary operations performed by the algorithm are taken to differ by at most a constant factor. 
+    
 * Inputs and Outputs
     - (What does the algo accept and what are the results)
 * Classifications
@@ -74,6 +75,7 @@ The reason the letter O (in Big-O) is used is because the growth rate of an algo
 
 It usually describes the **worst case scenario** of how long it takes to perform a given operation. And it's important to note that many different algorithms and data structures have more than one Big-O value.
 
+
 Notation    | Description   | Example
 ------------|---------------|----------------------------------------
 O(1)        | Constant Time | Looking up a single element in an array
@@ -84,7 +86,7 @@ O(n^2)      | Quadratic     | Simple sorting algos like bubble-sort, selection, 
 
 ### O(1)
 
-Big-O of 1: means that the operation in question doesn't depend on the number of elements in the given data set.
+Big-O of 1: Constant time. It means that the operation in question doesn't depend on the number of elements in the given data set.
 
 ### O(log n)
 

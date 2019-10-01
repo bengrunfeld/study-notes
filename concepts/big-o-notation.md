@@ -96,6 +96,21 @@ Since we can do this for all sloped lines, they fall under the same Big O.
 
 ## Algorithm Time
 
+### Constant Time
+
+Imagine a racer that can teleport. That means that it would take the same amount of time for them to travel any distance. We call this runtime `O(1)` or **constant time**.
+
+This Big O covers ALL teleportation, whether it takes 1 second or 1 million years, since the time is constant, even if the distance is variable.
+
+
+### Logarithmic Time 
+
+Imagine a spaceship that doubles it speed with every passing unit of distance. This behavior is the inverse of the the Exponential Algorithm, and is represented by `O(log n)`.
+
+### Linear Time 
+
+When in the worst case scenario, you need to traverse the whole sequence to calculate the operation. For example finding an element in an unsorted list (find in array). 
+
 ### Quadratic Time
 
 An algo with a loop is considered `O(n²)`, which is **quadratic**. A quadratic algo may seem faster than a linear algo in the beginning, but eventually the linear algo becomes faster. Even a performance boost cannot make the quadratic algo faster, as distance increases.
@@ -106,15 +121,6 @@ We group together all algos with the form `O(nᵏ)` under the term **Polynomial 
 
 Some algos repeat all previous steps before making the next one. These are considered `O(2ⁿ)`, and are VERY slow.
 
-### Constant Time
-
-Imagine a racer that can teleport. That means that it would take the same amount of time for them to travel any distance. We call this runtime `O(1)` or **constant time**.
-
-This Big O covers ALL teleportation, whether it takes 1 second or 1 million years, since the time is constant, even if the distance is variable.
-
-### Logarithmic Time 
-
-Imagine a spaceship that doubles it speed with every passing unit of distance. This behavior is the inverse of the the Exponential Algorithm, and is represented by `O(log n)`.
 
 ## Input Type
 

@@ -2,7 +2,7 @@
 
 Every section should begin in the same way, and have a section: Why is this important.
 
-**Curring**: is the concept that each function only accepts one argument. If a second argument is needed, the function should return another function which accepts the second argument, and so on.
+**Currying**: is the concept that each function only accepts one argument. If a second argument is needed, the function should return another function which accepts the second argument, and so on.
 
 **Why its important:** Because functions know exactly what to expect this way.
 

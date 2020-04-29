@@ -4,13 +4,13 @@
 
 ### What is React, who developed it, and how is it different from other frameworks?
 
-React is a JavaScript library that was developed by Facebook for building User Interfaces (UI's). This corresponds to the View in the Model-View-Controller (MVC) pattern. 
+React is a JavaScript library that was developed by Facebook for building User Interfaces (UI's). This corresponds to the View in the Model-View-Controller (MVC) pattern.
 
-React uses a declarative paradigm that makes it easier to reason about your application, and React computes the minimal set of changes necessary to keep your DOM up-to-date.[1](https://code.facebook.com/projects/176988925806765/react/) [2](https://en.wikipedia.org/wiki/React_(JavaScript_library))
+React uses a declarative paradigm that makes it easier to reason about your application, and React computes the minimal set of changes necessary to keep your DOM up-to-date.[1](https://code.facebook.com/projects/176988925806765/react/) [2](<https://en.wikipedia.org/wiki/React_(JavaScript_library)>)
 
 ### How do you tell React to build in Production mode and what will that do?
 
-Typically you’d use Webpack’s `DefinePlugin` method to set `NODE_ENV` to `production`. This will strip out things like propType validation and extra warnings. 
+Typically you’d use Webpack’s `DefinePlugin` method to set `NODE_ENV` to `production`. This will strip out things like propType validation and extra warnings.
 
 ### Explain what JSX is and how it works
 
@@ -18,7 +18,7 @@ React components are typically written in JSX, a JavaScript extension syntax all
 
 ### Explain how the One-Way Data Flow works
 
-In React, data flows from the parent to the child, but not the other way around. This is designed to alleviate cascading updates that traditional MVC suffers from. 
+In React, data flows from the parent to the child, but not the other way around. This is designed to alleviate cascading updates that traditional MVC suffers from.
 
 A set of immutable values are passed to a component's renderer as **properties** in its HTML tag. A component cannot directly modify any properties passed to it, but can be passed callback functions that do modify values. This mechanism's promise is expressed as "properties flow down; actions flow up".
 
@@ -39,7 +39,7 @@ React in ES5 has autobinding, while React in ES6 does not. For that reason, we h
     }
     window.addEventListener('keyup', thing.speak)
 
-Using ES5, in the above code if we call `thing.speak()`, it will log `mike`, but in ES6, pressing a key will log `undefined` as context of the callback is the global object. The browser’s global object – `window` – becomes `this` inside the `speak()` function, so `this.name` becomes `window.name`, which is undefined. 
+Using ES5, in the above code if we call `thing.speak()`, it will log `mike`, but in ES6, pressing a key will log `undefined` as context of the callback is the global object. The browser’s global object – `window` – becomes `this` inside the `speak()` function, so `this.name` becomes `window.name`, which is undefined.
 
 React in ES5 automatically does autobinding, effectively doing the following:
 
@@ -54,15 +54,15 @@ But in ES6, we need to make the context of `this` available to the `sayHi` metho
             super(props)
             this.state = {
                 name: ben,
-                age: 37        
+                age: 37
             }
             this.sayHi = this.sayHi.bind(this)
         }
-        
+
         sayHi() {
             console.log(this.state.name)
         }
-    }    
+    }
 
 ### Explain the Virtual DOM and how React renders it to the actual DOM.
 
@@ -70,7 +70,7 @@ React creates an in-memory data structure cache, computes the resulting differen
 
 ### How does transpiling with Babel work?
 
-Babel transpiles React code to plain vanilla Javascript that is cross browser compliant. 
+Babel transpiles React code to plain vanilla Javascript that is cross browser compliant.
 
 ### What is the difference between React's Router and Backbone's Router?
 
@@ -81,7 +81,7 @@ When a route is triggered in React's router, a component is called, and decides 
 
 If you used Backbone's Router with React, it would have to manually mount and unmount React components from the DOM regularly. This would cause havok.
 
-Backbone's router demands that you create a flat list of routes (`/users/:id`, `/users/:post`, `users/list`). 
+Backbone's router demands that you create a flat list of routes (`/users/:id`, `/users/:post`, `users/list`).
 
 React uses Higher Order Components (HOC's) that have children define sub routers. E.g.
 
@@ -103,26 +103,26 @@ React uses Higher Order Components (HOC's) that have children define sub routers
 
 These methods are called when an instance of a component is being created and inserted into the DOM.
 
-* `constructor()`
-* `componentWillMount()`
-* `render()`
-* `componentDidMount()`
+-   `constructor()`
+-   `componentWillMount()`
+-   `render()`
+-   `componentDidMount()`
 
 **Updating**
 
 An update can be caused by changes to props or state. These methods are called when a component is being re-rendered.
 
-* `componentWillReceiveProps()`
-* `shouldComponentUpdate()`
-* `componentWillUpdate()`
-* `render()`
-* `componentDidUpdate()`
+-   `componentWillReceiveProps()`
+-   `shouldComponentUpdate()`
+-   `componentWillUpdate()`
+-   `render()`
+-   `componentDidUpdate()`
 
 **Unmounting**
 
 This method is called when a component is being removed from the DOM.
 
-* `componentWillUnmount()`
+-   `componentWillUnmount()`
 
 ### Explain the lifecycle methods, when they occur, and how you would use each of them
 
@@ -144,9 +144,9 @@ This method is called when a component is being removed from the DOM.
 
 `componentWillUpdate` - invoked immediately before rendering when new props or state are being received. Cannot call `setState` here and is not called on initial render. If you need to update state in response to a prop change, use `componentWillReceiveProps`.
 
-`componentDidUpdate` - invoked immediately after update occurs. Operate on the DOM in this method and make network requests here, if needed, but compare to previous `props` & `state`. Not called for the initial render. 
+`componentDidUpdate` - invoked immediately after update occurs. Operate on the DOM in this method and make network requests here, if needed, but compare to previous `props` & `state`. Not called for the initial render.
 
-**Unmounting** 
+**Unmounting**
 
 `componentWillUnmount` - invoked immediately before a component is unmounted. Perform cleanup here, e.g. invalidating timers, canceling network requests, or cleaning up any DOM elements that were created in componentDidMount.
 
@@ -154,7 +154,7 @@ This method is called when a component is being removed from the DOM.
 
 `setState(updater, callback)`
 
-`setState` takes 2 arguments, an `updater` and a callback that gets executed once setState has completed. 
+`setState` takes 2 arguments, an `updater` and a callback that gets executed once setState has completed.
 
 The `updater` can either be a function or an object. Both are executed asynchronously. If it is a function, it takes the form:
 
@@ -176,31 +176,31 @@ The core idea of reconcialiation is to be as efficient as possible on the UI by 
 
 ### What is the difference between `forceUpdate` and `setState`? Do they both update the state?
 
-`setState` causes your app to update when `props` or `state` have changed. But if your app relies on other data, you can force an update (`render`) with `forceUpdate`. 
+`setState` causes your app to update when `props` or `state` have changed. But if your app relies on other data, you can force an update (`render`) with `forceUpdate`.
 
 Calling `forceUpdate` will cause `render` to be called on the component, skipping `shouldComponentUpdate`. This will trigger the normal lifecycle methods for child components, including the `shouldComponentUpdate` method of each child. React will still only update the DOM if the markup changes.
- 
+
 Use of `forceUpdate` should be avoided as much as possible. Use `state` and `props` instead.
 
 ### What is the second argument that can optionally be passed to setState and what is its purpose?
 
-The second argument is a callback that gets executed once setState has completed. 
+The second argument is a callback that gets executed once setState has completed.
 
 ### In which lifecycle event do you make AJAX/Network requests and why?
 
-Use `componentDidUpdate` or `componentDidMount`. If you use `componentWillMount`, the AJAX request could theoritically resolve before the component has mounted. Then you would be trying to call `setState` on a component that hasn't mounted, which would introduce bugs. Secondly, `componentWillMount` might get called multiple times per render by React's `reconciliation` algorithm for performance reasons. That would cause multiple AJAX requests to get sent. 
+Use `componentDidUpdate` or `componentDidMount`. If you use `componentWillMount`, the AJAX request could theoritically resolve before the component has mounted. Then you would be trying to call `setState` on a component that hasn't mounted, which would introduce bugs. Secondly, `componentWillMount` might get called multiple times per render by React's `reconciliation` algorithm for performance reasons. That would cause multiple AJAX requests to get sent.
 
 ## Feature Specific Questions
 
 ### What’s the difference between an Element and a Component in React?
 
-An element is a representation of something in the UI, which will usually become HTML, e.g. `<a>`, `<div>`, etc. 
+An element is a representation of something in the UI, which will usually become HTML, e.g. `<a>`, `<div>`, etc.
 
 A component is a function or class that accepts input and returns an element or other components.
 
 ### What is the difference between Class Components and Stateless Functional Components (aka Pure Functional Components, etc)? When would you use one over the other?
 
-If your component needs to work with `this.state`, or `this.setState`, or lifecycle methods, use a Class Component, otherwise use a Stateless Functional Component. 
+If your component needs to work with `this.state`, or `this.setState`, or lifecycle methods, use a Class Component, otherwise use a Stateless Functional Component.
 
 ### What is the difference between createElement and cloneElement?
 
@@ -208,21 +208,21 @@ If your component needs to work with `this.state`, or `this.setState`, or lifecy
 
 ### What are refs in React and why are they important?
 
-Refs are an escape hatch from React's declarative model that allow you to directly access the DOM. These are mostly used to grab form data in uncontrolled components. (In uncontrolled components, data is handled by the DOM itself, instead of via the React components, which is controlled). 
+Refs are an escape hatch from React's declarative model that allow you to directly access the DOM. These are mostly used to grab form data in uncontrolled components. (In uncontrolled components, data is handled by the DOM itself, instead of via the React components, which is controlled).
 
 Avoid using refs for anything that can be done declaratively.
 
-You may not use the ref attribute on functional components because they don't have instances, although you can use refs *inside* a functional component.
+You may not use the ref attribute on functional components because they don't have instances, although you can use refs _inside_ a functional component.
 
 ### Give a situation where you would want to use refs over controlled components
 
-* Managing focus, text selection, or media playback.
-* Triggering imperative animations.
-* Integrating with third-party DOM libraries.
+-   Managing focus, text selection, or media playback.
+-   Triggering imperative animations.
+-   Integrating with third-party DOM libraries.
 
 ### What are keys in React and why are they important?
 
-Keys help React become more efficient at performing updates on lists. 
+Keys help React become more efficient at performing updates on lists.
 
 ### What is the difference between a controlled component and an uncontrolled component?
 
@@ -230,9 +230,9 @@ In uncontrolled components, data is handled by the DOM itself. In controlled com
 
 In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React controlled components, mutable state is typically kept in the `state` property of components, and only updated with `setState`.
 
-This means that `state` is the single source of truth. So if you wanted to change the `value` of an `<input>` box, you would call `setState` every time the user pressed a key, which would then fill `input` with the new value of `state`. 
+This means that `state` is the single source of truth. So if you wanted to change the `value` of an `<input>` box, you would call `setState` every time the user pressed a key, which would then fill `input` with the new value of `state`.
 
-In uncontrolled components, we usually use `refs` to grab the data inside of form fields. 
+In uncontrolled components, we usually use `refs` to grab the data inside of form fields.
 
 ### What are High Order Components (HOC's) and how would you use them in React?
 
@@ -240,7 +240,7 @@ Higher Order Functions are functions that return another function, and they are 
 
 Similarly, a Higher Order Component is a function that takes a component as a parameter and returns a new component.
 
-HOC's aren't just a feature of React, they are a pattern that exists in software engineering. 
+HOC's aren't just a feature of React, they are a pattern that exists in software engineering.
 
 Whereas a component transforms props into UI, a higher-order component transforms a component into another component.
 
@@ -254,9 +254,9 @@ The wrapped component receives all the props of the container, along with a new 
 
 The point of mixins is to give devs new to functional programming a way to reuse code between components when you aren’t sure how to solve the same problem with composition. While they aren't deprecated, their use is strongly not recommended. Here's why [1](https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html):
 
-* Mixins introduce implicit dependencies
-* Mixins cause name clashes
-* Mixins cause snowballing complexity
+-   Mixins introduce implicit dependencies
+-   Mixins cause name clashes
+-   Mixins cause snowballing complexity
 
 **HOC's** - above
 
@@ -266,8 +266,7 @@ Mixins are possible, but not built-in to React’s ES6 API. However, the ES6 API
 
 ES6 classes allow us to inherit the functionality of another class, however this makes it more difficult to create a single Component that inherits properties from several mixins or classes. Instead, we need to create prototype chains.
 
-
-### How does PropType validation work in React? 
+### How does PropType validation work in React?
 
 PropTypes allow us to supply a property type for all of our different properties, so that it will validate to make sure that we're supplying the right type.
 
@@ -294,7 +293,7 @@ vs
 
 In order to solve cross browser compatibility issues, your event handlers in React will be passed instances of SyntheticEvent, which is React’s cross-browser wrapper around the browser’s native event. These synthetic events have the same interface as native events you’re used to, except they work identically across all browsers.
 
-### Where does a parent component define its children components? 
+### Where does a parent component define its children components?
 
 Within the render method
 
@@ -322,13 +321,21 @@ In Stateless Functional Components, just use ES6 named params.
 
 ### What does it mean when an input field does not supply a `value` property?
 
-That you're using an uncontrolled component. 
+That you're using an uncontrolled component.
+
+## October 2019
+
+### How does createElement work - how does it translate jsx into html?
+
+### How does JSX become html?
+
+### How does the virtual dom work in depth at the technical level?
 
 ## Sources
 
 A lot of this information was learned and borrowed from the following:
 
-* https://www.lynda.com/React-js-tutorials/React-js-Essential-Training/496905-2.html
-* https://www.toptal.com/react/interview-questions
-* https://tylermcginnis.com/react-interview-questions/
-* https://www.codementor.io/reactjs/tutorial/5-essential-reactjs-interview-questions
+-   https://www.lynda.com/React-js-tutorials/React-js-Essential-Training/496905-2.html
+-   https://www.toptal.com/react/interview-questions
+-   https://tylermcginnis.com/react-interview-questions/
+-   https://www.codementor.io/reactjs/tutorial/5-essential-reactjs-interview-questions

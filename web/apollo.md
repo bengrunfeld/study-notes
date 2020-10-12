@@ -1,5 +1,23 @@
 # Apollo
 
+## React-Apollo - CLIENT
+
+-   ApolloClient
+-   ApolloProvider
+-   gql
+-   graphql
+-   createNetworkInterface
+
+## GraphQL-Tools - SERVER
+
+-   makeExecutableSchema
+-   addMockFunctionsToSchema
+-
+
+## Naming Convention
+
+Name of your component followed by "Query" or "Mutation".
+
 ## Schemas
 
 A schema is like a blueprint that describes all of your data's types and their relationships.
@@ -20,5 +38,4 @@ The Mutation type is the entry point into our graph for modifying data. Just lik
 
 ## Data Sources
 
-An Apollo data source is a class that encapsulates all of the data fetching logic, as well as caching and deduplication, for a particular service. 
-
+An Apollo data source is a class that encapsulates all of the data fetching logic, as well as caching and deduplication, for a particular service.

@@ -104,7 +104,7 @@ Aliases use a name followed by a colon `:`
 
 If you are querying the same sets of fields in different queries, you may want to use fragments.
 
-Fragments are reusable sets of fields that can be included in queries as needed.
+Fragments are reusable sets of fields that can be included in queries as needed. aka an abstraction.
 
 Essentially they're a list of the fields that you want to query, and you can use the reference to them like a variable in your queries.
 
@@ -211,4 +211,3 @@ The API defines which mutations are allowed, and they, like queries, are in a sp
             postalAddress
         }
     }
-

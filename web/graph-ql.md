@@ -1,17 +1,25 @@
 # GraphQL
 
+## IMPORTANT
+
+The GraphQL type definition name needs to match the name of the resolver.
+
+The fields in the type definition are case sensitive, and they need to exactly match the fields returned to the client by the resolver.
+
+You need to return at least one item when doing a mutation.
+
     let { graphql, buildSchema } = require('graphql')
 
 Two functions are necessary for any GraphQL query to work:
 
-* buildSchema()
-* graphql()
+- buildSchema()
+- graphql()
 
 ## BuildSchema
 
 `buildSchema` creates a `GraphQLSchema` object from the GraphQL schema language. The types mapped out in the schema will map to functions that exist in `root`.
 
-`root` is an object literal that contains a list of functions called `resolvers`. These resolvers provide a function to handle each API endpoint.
+`root` is an object literal that contains a list of functions called `resolvers`. These `resolvers` provide a function to handle each API endpoint.
 
 ## Basic Types
 
@@ -23,7 +31,7 @@ All types are nullable, unless you use `!`, which declares that they cannot be n
 
 To use a list type, surround the type in square brackets, so `[Int]` is a list of integers.
 
-Each of these types maps straightforwardly to JavaScript, so you can just return plain old JavaScript objects in APIs that return these types. 
+Each of these types maps straightforwardly to JavaScript, so you can just return plain old JavaScript objects in APIs that return these types.
 
 E.g. list = array
 
@@ -58,9 +66,11 @@ When you're passing arguments in code, it's generally better to avoid constructi
 
     let dice = 3
     let sides = 6
+
     var query = `query RollDice($dice: Int!, $sides: Int) {
       rollDice(numDice: $dice, numSides: $sides)
     }`;
+
     xhr.send(JSON.stringify({
       query: query,
       variables: { dice: dice, sides: sides },
@@ -93,4 +103,3 @@ Input types can't have fields that are other objects, only basic scalar types, l
       createMessage(input: MessageInput): Message
       updateMessage(id: ID!, input: MessageInput): Message
     }
-
